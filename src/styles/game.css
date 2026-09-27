@@ -1,5 +1,8 @@
 /* Main game page: canvas + HTML overlay screens. */
 #app {
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
   position: fixed;
   inset: 0;
   overflow: hidden;
@@ -514,4 +517,71 @@
   font-family: var(--font-mono);
   font-size: 0.85em;
   max-width: 50em;
+}
+
+/* ── on-screen control pad */
+.touch-controls {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 0;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+.tc-group {
+  position: absolute;
+  bottom: calc(3.2vmin + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  gap: 2.2vmin;
+  align-items: flex-end;
+  pointer-events: auto;
+  touch-action: none;
+}
+.tc-left {
+  left: calc(3.2vmin + env(safe-area-inset-left, 0px));
+}
+.tc-right {
+  right: calc(3.2vmin + env(safe-area-inset-right, 0px));
+}
+.tc-btn {
+  width: 14vmin;
+  height: 14vmin;
+  min-width: 56px;
+  min-height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(20, 17, 30, 0.32);
+  border: 2px solid rgba(232, 145, 58, 0.4);
+  color: rgba(242, 220, 190, 0.85);
+  font-size: max(20px, 4.2vmin);
+  font-family: var(--font-body);
+  letter-spacing: 0.08em;
+  touch-action: none;
+  transition: background 0.06s, transform 0.06s;
+}
+.tc-btn.tc-dir {
+  border-radius: 22%;
+}
+.tc-btn.tc-action {
+  width: 17vmin;
+  height: 17vmin;
+  font-size: max(14px, 2.8vmin);
+  font-weight: 600;
+}
+.tc-btn.tc-dash {
+  width: 13vmin;
+  height: 13vmin;
+  margin-bottom: 9vmin;
+  border-color: rgba(143, 125, 208, 0.6);
+}
+.tc-btn.held {
+  background: rgba(232, 145, 58, 0.45);
+  transform: scale(0.94);
+  color: #fff;
+}
+.settings-select {
+  width: 100%;
 }

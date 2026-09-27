@@ -6,6 +6,7 @@ import type { GameScene } from '../game/scenes/GameScene';
 import { Audio } from '../game/systems/AudioSystem';
 import { formatTime } from '../game/systems/SaveSystem';
 import { Hud } from '../ui/Hud';
+import { TouchControls, touchControlsWanted } from '../ui/TouchControls';
 import { h } from '../ui/dom';
 
 /**
@@ -17,6 +18,7 @@ export class Playtest {
   private overlay: HTMLElement;
   private game: Phaser.Game;
   private result: HTMLElement | null = null;
+  private touch: TouchControls | null = null;
   private onKey = (e: KeyboardEvent) => {
     if (e.key === 'Escape') {
       e.preventDefault();
@@ -30,8 +32,13 @@ export class Playtest {
   ) {
     const gameRoot = h('div', { class: 'pt-game' });
     const frame = h('div', { class: 'ui-frame' });
+    const ptUi = h('div', { class: 'pt-ui' }, frame);
     const hud = new Hud(level.name, 'PLAYTEST', () => this.close());
     frame.append(hud.el);
+    if (touchControlsWanted()) {
+      this.touch = new TouchControls({ dash: level.abilities.dash });
+      ptUi.append(this.touch.el);
+    }
     const bar = h(
       'div',
       { class: 'pt-bar' },
@@ -39,7 +46,7 @@ export class Playtest {
       h('button', { class: 'btn small', onclick: () => this.restart() }, 'Restart (R)'),
       h('button', { class: 'btn small primary', onclick: () => this.close() }, '← Back to editor (Esc)'),
     );
-    this.overlay = h('div', { class: 'pt-overlay' }, gameRoot, h('div', { class: 'pt-ui' }, frame), bar);
+    this.overlay = h('div', { class: 'pt-overlay' }, gameRoot, ptUi, bar);
     document.body.append(this.overlay);
     window.addEventListener('keydown', this.onKey, true);
     Audio.unlock();
@@ -86,6 +93,7 @@ export class Playtest {
   }
 
   close(): void {
+    this.touch?.destroy();
     window.removeEventListener('keydown', this.onKey, true);
     Audio.stopMusic();
     this.game.destroy(true);

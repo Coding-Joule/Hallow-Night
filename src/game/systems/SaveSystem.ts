@@ -13,10 +13,12 @@ export interface ProgressData {
   levels: Record<string, LevelRecord>;
   /** Abilities whose "new ability" banner has been shown. */
   seenAbilities: string[];
+  /** In-world tutorial hints already shown (e.g. "object:spikes"). */
+  seenTutorials: string[];
 }
 
 function emptyProgress(): ProgressData {
-  return { version: 1, levels: {}, seenAbilities: [] };
+  return { version: 1, levels: {}, seenAbilities: [], seenTutorials: [] };
 }
 
 export function loadProgress(): ProgressData {
@@ -34,6 +36,7 @@ export function loadProgress(): ProgressData {
     }
   }
   if (Array.isArray(data?.seenAbilities)) p.seenAbilities = data.seenAbilities.filter((s) => typeof s === 'string');
+  if (Array.isArray(data?.seenTutorials)) p.seenTutorials = data.seenTutorials.filter((s) => typeof s === 'string');
   return p;
 }
 

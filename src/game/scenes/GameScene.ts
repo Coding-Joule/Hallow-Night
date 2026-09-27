@@ -3,6 +3,7 @@ import { FIXED_STEP } from '../config/physics';
 import { RESPAWN_DELAY } from '../config/game';
 import type { LevelData } from '../levels/schema';
 import { LevelRenderer } from '../render/LevelRenderer';
+import { WorldText } from '../render/WorldText';
 import { World } from '../sim/World';
 import type { WorldEvent } from '../sim/types';
 import { Audio, type SfxName } from '../systems/AudioSystem';
@@ -44,6 +45,7 @@ const EVENT_SFX: Partial<Record<WorldEvent['type'], SfxName>> = {
 export class GameScene extends Phaser.Scene {
   private world!: World;
   private levelView!: LevelRenderer;
+  private worldText!: WorldText;
   private inputSys!: InputSystem;
   private host!: GameHost;
   private level!: LevelData;
@@ -78,6 +80,7 @@ export class GameScene extends Phaser.Scene {
       screenshake: () => settings().screenshake,
       reducedMotion: () => settings().reducedMotion,
     });
+    this.worldText = new WorldText(this, this.world, this.host.tutorials ?? null);
     this.inputSys = new InputSystem(this);
     this.cameras.main.fadeIn(350, 7, 6, 13);
     Audio.startMusic(this.level.music);
@@ -151,6 +154,7 @@ export class GameScene extends Phaser.Scene {
     }
 
     this.levelView.update(dt, this.world.time);
+    this.worldText.update(dt);
     this.hudTimer -= dt;
     if (this.hudTimer <= 0) {
       this.hudTimer = 1 / 20;

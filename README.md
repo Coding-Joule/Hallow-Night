@@ -42,6 +42,10 @@ The repository **is** the website: the built game sits at the repository root (`
 | Crouch · drop through thin ledges | ↓ / S · ↓ + Jump | Down |
 | Pause · Restart | Esc / P · R | Start · Select |
 
+On touch screens (phones, tablets) an on-screen pad appears automatically: ◀ ▶ ▼ and JUMP, plus DASH in levels where dash is unlocked (Settings → *On-screen controls*: Auto / Always show / Hide).
+
+The first time the player meets a new kind of object or gains an ability, a short hint is painted into the level behind the action (no pop-ups; you can walk right over it). Sign texts are shown the same way. The hint texts live in `src/game/levels/tutorials.ts`; which hints have been shown is saved with the progress.
+
 Abilities unlock as you progress: **wall slide & wall jump** (World 3), **dash** (World 5), **double jump** (World 6).
 Movement uses coyote time, jump buffering, variable jump height, corner correction and a fixed 120 Hz simulation.
 
@@ -239,8 +243,8 @@ All keys are defined in `src/game/config/storageKeys.ts`:
 
 | Key | Contents |
 | --- | --- |
-| `hallow-night-progress` | cleared levels, best times, relics found, deaths, abilities already introduced |
-| `hallow-night-settings` | volumes, screen shake, reduced motion, timer, sharp rendering |
+| `hallow-night-progress` | cleared levels, best times, relics found, deaths, tutorial hints already shown |
+| `hallow-night-settings` | volumes, screen shake, reduced motion, timer, sharp rendering, on-screen controls |
 | `hallow-night-user-levels` | public editor levels |
 | `hallow-night-creator-drafts` | creator drafts |
 | `hallow-night-editor-session` / `hallow-night-creator-session` | last opened level in each editor |

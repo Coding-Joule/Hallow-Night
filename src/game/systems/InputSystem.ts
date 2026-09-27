@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import type { InputState } from '../sim/types';
+import { touchState } from '../../ui/TouchControls';
 
 /**
  * Keyboard + gamepad → InputState.
@@ -53,12 +54,13 @@ export class InputSystem {
     const pad = this.pad();
     const axisX = pad ? pad.leftStick.x : 0;
     const axisY = pad ? pad.leftStick.y : 0;
-    const left = k.left.isDown || k.a.isDown || axisX < -0.4 || !!pad?.left;
-    const right = k.right.isDown || k.d.isDown || axisX > 0.4 || !!pad?.right;
-    const down = k.down.isDown || k.s.isDown || axisY > 0.5 || !!pad?.down;
+    const t = touchState;
+    const left = k.left.isDown || k.a.isDown || axisX < -0.4 || !!pad?.left || t.left;
+    const right = k.right.isDown || k.d.isDown || axisX > 0.4 || !!pad?.right || t.right;
+    const down = k.down.isDown || k.s.isDown || axisY > 0.5 || !!pad?.down || t.down;
     const up = k.up.isDown || k.w.isDown || axisY < -0.5 || !!pad?.up;
-    const jump = k.space.isDown || k.z.isDown || k.up.isDown || k.w.isDown || k.k.isDown || !!pad?.A;
-    const dash = k.shift.isDown || k.x.isDown || k.j.isDown || !!pad?.X || !!pad?.B || (pad ? pad.R1 > 0.5 || pad.R2 > 0.5 : false);
+    const jump = k.space.isDown || k.z.isDown || k.up.isDown || k.w.isDown || k.k.isDown || !!pad?.A || t.jump;
+    const dash = k.shift.isDown || k.x.isDown || k.j.isDown || !!pad?.X || !!pad?.B || (pad ? pad.R1 > 0.5 || pad.R2 > 0.5 : false) || t.dash;
     const pause = k.esc.isDown || k.p.isDown || (pad ? pad.buttons[9]?.pressed === true : false);
     const restart = k.r.isDown || (pad ? pad.buttons[8]?.pressed === true : false);
     const out = {

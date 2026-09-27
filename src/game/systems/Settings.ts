@@ -10,6 +10,8 @@ export interface GameSettings {
   showTimer: boolean;
   /** Render at 2× resolution (sharper). Turn off on slow machines. */
   sharpRendering: boolean;
+  /** On-screen control pad: auto = only on touch screens. */
+  onScreenControls: 'auto' | 'on' | 'off';
 }
 
 export const DEFAULT_SETTINGS: GameSettings = {
@@ -20,6 +22,7 @@ export const DEFAULT_SETTINGS: GameSettings = {
   reducedMotion: false,
   showTimer: true,
   sharpRendering: true,
+  onScreenControls: 'auto',
 };
 
 type Listener = (s: GameSettings) => void;
@@ -41,6 +44,7 @@ export function loadSettings(): GameSettings {
     reducedMotion: typeof raw.reducedMotion === 'boolean' ? raw.reducedMotion : DEFAULT_SETTINGS.reducedMotion,
     showTimer: typeof raw.showTimer === 'boolean' ? raw.showTimer : DEFAULT_SETTINGS.showTimer,
     sharpRendering: typeof raw.sharpRendering === 'boolean' ? raw.sharpRendering : DEFAULT_SETTINGS.sharpRendering,
+    onScreenControls: raw.onScreenControls === 'on' || raw.onScreenControls === 'off' ? raw.onScreenControls : 'auto',
   };
   return current;
 }

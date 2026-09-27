@@ -190,6 +190,21 @@ export function settingsScreen(onBack: () => void, onResetProgress?: () => void)
     });
     return [h('label', {}, label), h('div', {}, input, note ? h('span', { class: 'hint', style: 'margin-left:0.6em' }, note) : null), h('span')];
   };
+  const controlsSelect = () => {
+    const sel = h(
+      'select',
+      { class: 'settings-select' },
+      (
+        [
+          ['auto', 'Auto (touch screens)'],
+          ['on', 'Always show'],
+          ['off', 'Hide'],
+        ] as const
+      ).map(([v, t]) => h('option', { value: v, selected: s.onScreenControls === v }, t)),
+    );
+    sel.addEventListener('change', () => updateSettings({ onScreenControls: sel.value as GameSettings['onScreenControls'] }));
+    return [h('label', {}, 'On-screen controls'), sel, h('span')];
+  };
   return h(
     'div',
     { class: 'screen card-screen' },
@@ -207,6 +222,7 @@ export function settingsScreen(onBack: () => void, onResetProgress?: () => void)
         toggle('reducedMotion', 'Reduced motion'),
         toggle('showTimer', 'Show timer'),
         toggle('sharpRendering', 'Sharp rendering', 'turn off if the game runs slowly (reload to apply)'),
+        controlsSelect(),
       ),
       h(
         'div',
@@ -223,6 +239,8 @@ export function settingsScreen(onBack: () => void, onResetProgress?: () => void)
         h('span', {}, 'Hold toward a wall to slide, then jump'),
         h('b', {}, 'Pause / Restart'),
         h('span', {}, h('kbd', {}, 'Esc'), ' ', h('kbd', {}, 'P'), '  /  ', h('kbd', {}, 'R')),
+        h('b', {}, 'Touch'),
+        h('span', {}, 'On-screen pad: ◀ ▶ move · ▼ crouch/drop · JUMP · DASH (when unlocked)'),
         h('b', {}, 'Gamepad'),
         h('span', {}, 'Stick/D-pad move · A jump · X/B/RB dash · Start pause'),
       ),
@@ -309,9 +327,3 @@ export function completeScreen(info: CompleteInfo, a: { retry(): void; next?(): 
     ),
   );
 }
-
-export const ABILITY_INFO: Record<string, [string, string]> = {
-  wallJump: ['Wall Jump', 'Hold toward a wall to slide down it — press JUMP to leap away.'],
-  dash: ['Dash', 'Press SHIFT / X for a burst of speed. Dash into cracked walls to break them.'],
-  doubleJump: ['Double Jump', 'Press JUMP again in mid-air.'],
-};

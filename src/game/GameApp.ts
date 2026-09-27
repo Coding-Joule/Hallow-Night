@@ -1,7 +1,8 @@
 import Phaser from 'phaser';
 import { Hud } from '../ui/Hud';
+import { TouchControls, touchControlsWanted } from '../ui/TouchControls';
 import { enableArrowNav, h } from '../ui/dom';
-import { ABILITY_INFO, completeScreen, levelSelectScreen, pauseScreen, settingsScreen, titleScreen } from '../ui/screens';
+import { completeScreen, levelSelectScreen, pauseScreen, settingsScreen, titleScreen } from '../ui/screens';
 import { createPhaserGame } from './createGame';
 import { getBuiltinLevels, loadBuiltinLevels, type BuiltinLevelEntry } from './levels/registry';
 import { getWorld } from './levels/worlds';
@@ -17,9 +18,11 @@ import { devUnlockAll, getRecord, isUnlocked, loadProgress, recordCompletion, re
 export class GameApp {
   private game: Phaser.Game;
   private frame: HTMLElement;
+  private uiRoot: HTMLElement;
   private screen: HTMLElement | null = null;
   private overlay: HTMLElement | null = null;
   private hud: Hud | null = null;
+  private touch: TouchControls | null = null;
   private progress: ProgressData = loadProgress();
   private readonly unlockAll = devUnlockAll();
   private current: BuiltinLevelEntry | null = null;
@@ -29,6 +32,7 @@ export class GameApp {
     const gameRoot = h('div', { id: 'game-root' });
     this.frame = h('div', { class: 'ui-frame' });
     const uiRoot = h('div', { id: 'ui-root' }, this.frame);
+    this.uiRoot = uiRoot;
     root.append(gameRoot, uiRoot);
     this.game = createPhaserGame(gameRoot);
     enableArrowNav(this.frame);
@@ -86,6 +90,8 @@ export class GameApp {
   private clearHud(): void {
     this.hud?.el.remove();
     this.hud = null;
+    this.touch?.destroy();
+    this.touch = null;
     this.setOverlay(null);
   }
 
@@ -154,34 +160,39 @@ export class GameApp {
     const label = `${world.index}-${lvl.order}`;
     this.hud = new Hud(lvl.name, label, () => this.pause());
     this.frame.append(this.hud.el);
+    if (touchControlsWanted()) {
+      this.touch = new TouchControls({ dash: lvl.abilities.dash });
+      this.uiRoot.append(this.touch.el); // full-screen corners, not the 16:9 frame
+    }
 
     const host: GameHost = {
       onHud: (s: HudState) => this.hud?.update(s),
       onPauseRequest: () => this.pause(),
       onComplete: (info) => this.complete(entry, info),
       onReady: () => this.introBanner(entry),
+      tutorials: {
+        seen: (key) => this.progress.seenTutorials.includes(key),
+        markSeen: (key) => {
+          if (this.progress.seenTutorials.includes(key)) return;
+          this.progress.seenTutorials.push(key);
+          saveProgress(this.progress);
+        },
+      },
     };
     if (sm.isActive('Game') || sm.isPaused('Game')) sm.stop('Game');
     sm.start('Game', { level: lvl, host });
   }
 
   private introBanner(entry: BuiltinLevelEntry): void {
+    // new abilities and objects are explained by hints painted into the level
     const lvl = entry.level;
     const world = getWorld(lvl.world);
-    const newAbility = (Object.keys(ABILITY_INFO) as (keyof typeof lvl.abilities)[]).find(
-      (k) => lvl.abilities[k] && !this.progress.seenAbilities.includes(k),
-    );
     this.hud?.banner(`${world.name} · ${world.index}-${lvl.order}`, lvl.name);
-    if (newAbility) {
-      this.progress.seenAbilities.push(newAbility);
-      saveProgress(this.progress);
-      const [name, text] = ABILITY_INFO[newAbility];
-      setTimeout(() => this.hud?.banner('New ability', name, text, 5200), 3300);
-    }
   }
 
   private pause(): void {
     if (!this.current || this.overlay) return;
+    this.touch?.reset();
     this.scene.setPaused(true);
     this.setOverlay(
       pauseScreen({

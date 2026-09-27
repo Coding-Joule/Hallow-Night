@@ -12,9 +12,7 @@ export class Hud {
   private deathsEl: HTMLElement;
   private keysEl: HTMLElement;
   private relicEl: HTMLElement;
-  private signEl: HTMLElement;
   private timerChip: HTMLElement;
-  private lastSign: string | null = null;
   private lastKeys = '';
 
   constructor(title: string, subtitle: string, onPause: () => void) {
@@ -23,7 +21,6 @@ export class Hud {
     this.keysEl = h('span', { class: 'hud-chip', style: 'display:none' });
     this.relicEl = h('span', { class: 'hud-chip', style: 'display:none' });
     this.timerChip = h('span', { class: 'hud-chip' }, this.timeEl);
-    this.signEl = h('div', { class: 'hud-sign', style: 'display:none' });
     this.el = h(
       'div',
       { class: 'hud' },
@@ -41,7 +38,6 @@ export class Hud {
           h('button', { class: 'hud-pause', onclick: onPause, title: 'Pause (Esc)' }, '❚❚'),
         ),
       ),
-      this.signEl,
     );
   }
 
@@ -59,11 +55,6 @@ export class Hud {
       this.relicEl.style.display = '';
       this.relicEl.textContent = `◆ ${s.relicsFound}/${s.relicTotal}`;
       this.relicEl.style.color = s.relicsFound > 0 ? '#bfe3ff' : '';
-    }
-    if (s.sign !== this.lastSign) {
-      this.lastSign = s.sign;
-      this.signEl.style.display = s.sign ? '' : 'none';
-      this.signEl.textContent = s.sign ?? '';
     }
   }
 

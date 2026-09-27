@@ -1,3 +1,4 @@
+import type { TutorialMemory } from '../render/WorldText';
 import type { WorldEvent } from '../sim/types';
 
 export interface HudState {
@@ -28,4 +29,6 @@ export interface GameHost {
   onWorldEvent?(e: WorldEvent): void;
   /** Called once the level is displayed. */
   onReady?(): void;
+  /** One-time in-world hints (omit to show only sign texts, e.g. in playtests). */
+  tutorials?: TutorialMemory;
 }
