@@ -132,6 +132,8 @@ export interface ReachResult {
   checkpoints: Set<string>;
   maxX: number;
   frontier: string;
+  /** Footholds you can reach but never leave again: no way to the goal and no way to die (soft-locks). */
+  traps: { x: number; y: number }[];
 }
 
 export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates?: number } = {}): ReachResult {
@@ -140,7 +142,10 @@ export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates
   const p = world.player;
   const ms = macros(level.abilities);
   const visited = new Set<string>();
-  const queue: { x: number; y: number }[] = [];
+  const queue: { x: number; y: number; key: string }[] = [];
+  const pos = new Map<string, { x: number; y: number }>();
+  const edges = new Map<string, Set<string>>();
+  const exits = new Set<string>(); // states from which the goal or a death is one move away
   const relics = new Set<string>();
   const keys = new Set<string>();
   const checkpoints = new Set<string>();
@@ -149,17 +154,20 @@ export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates
   let lastNear = '';
   const keyOf = () => `${p.groundEntity?.id ?? p.groundSlope?.id ?? '?'}:${Math.round(p.x / 20)}`;
 
-  const push = () => {
+  const push = (): string => {
     const k = keyOf();
-    if (visited.has(k)) return;
+    if (visited.has(k)) return k;
     visited.add(k);
-    queue.push({ x: p.x + p.w / 2, y: p.y + p.h });
+    const pt = { x: p.x + p.w / 2, y: p.y + p.h };
+    pos.set(k, pt);
+    queue.push({ ...pt, key: k });
+    return k;
   };
 
   // settle at spawn
   p.placeAt(level.spawn.x, level.spawn.y);
   for (let i = 0; i < 120 && !p.grounded; i++) world.step(FIXED_STEP);
-  if (!p.grounded) return { goal: false, states: 0, relics, keys, checkpoints, maxX, frontier: 'spawn not grounded' };
+  if (!p.grounded) return { goal: false, states: 0, relics, keys, checkpoints, maxX, frontier: 'spawn not grounded', traps: [] };
   push();
   const maxStates = opts.maxStates ?? 4000;
 
@@ -184,6 +192,7 @@ export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates
       let dashDone = false;
       let jumpHeldUntil = m.hold;
       let lastJumpPress = -1;
+      let reachedGoal = false;
       const input: InputState = { left: false, right: false, up: false, down: false, jump: false, jumpPressed: false, dashPressed: false };
       for (let step = 0; step < (m.wall ? 1200 : 300); step++) {
         input.jumpPressed = false;
@@ -227,6 +236,7 @@ export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates
         t += FIXED_STEP;
         if (world.finished) {
           goal = true;
+          reachedGoal = true;
           world.finished = false;
           break;
         }
@@ -239,9 +249,14 @@ export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates
         if (!left && step > 90) break; // walked a while without leaving ground
       }
       if (prevWallJumps > 30) continue;
-      if (!p.dead && p.grounded) {
+      if (reachedGoal || p.dead) exits.add(s.key);
+      else if (p.grounded) {
         maxX = Math.max(maxX, p.x);
-        push();
+        const k = push();
+        if (k !== s.key) {
+          if (!edges.has(s.key)) edges.set(s.key, new Set());
+          edges.get(s.key)!.add(k);
+        }
       }
       // reset per-sim world state
       world.relicsFound.clear();
@@ -250,5 +265,22 @@ export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates
     }
     lastNear = `${Math.round(s.x / 32)},${Math.round(s.y / 32)}`;
   }
-  return { goal, states: visited.size, relics, keys, checkpoints, maxX: Math.round(maxX / 32), frontier: lastNear };
+  // states that can still reach an exit (reverse propagation)
+  const escapes = new Set(exits);
+  let changed = true;
+  while (changed) {
+    changed = false;
+    for (const [from, tos] of edges) {
+      if (escapes.has(from)) continue;
+      for (const t of tos)
+        if (escapes.has(t)) {
+          escapes.add(from);
+          changed = true;
+          break;
+        }
+    }
+  }
+  const complete = queue.length === 0; // only meaningful if the search finished
+  const traps = complete ? [...visited].filter((k) => !escapes.has(k)).map((k) => pos.get(k)!) : [];
+  return { goal, states: visited.size, relics, keys, checkpoints, maxX: Math.round(maxX / 32), frontier: lastNear, traps };
 }

@@ -322,8 +322,8 @@
       "id": "one-way-7",
       "type": "oneWay",
       "x": 1792,
-      "y": 512,
-      "width": 128,
+      "y": 544,
+      "width": 96,
       "height": 16,
       "properties": {
         "style": "wood"
@@ -343,9 +343,9 @@
     {
       "id": "one-way-8",
       "type": "oneWay",
-      "x": 1984,
-      "y": 512,
-      "width": 64,
+      "x": 1920,
+      "y": 448,
+      "width": 96,
       "height": 16,
       "properties": {
         "style": "wood"

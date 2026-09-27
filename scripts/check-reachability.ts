@@ -35,9 +35,13 @@ for (const f of files) {
   const r = reach(lvl);
   const relics = lvl.objects.filter((o) => o.type === 'relic').map((o) => o.id).filter((id) => !r.relics.has(id));
   if (!r.goal) failed++;
+  // group trapped footholds into tile areas for a readable report
+  const areas = [...new Set(r.traps.map((t) => `(${Math.floor(t.x / 32)},${Math.floor(t.y / 32)})`))];
+  if (areas.length) failed++;
   console.log(
     `${r.goal ? 'OK  ' : 'FAIL'} ${lvl.id.padEnd(22)} explored ${String(r.states).padStart(4)} footholds, furthest x ${r.maxX}/${Math.round(lvl.width / 32)} tiles` +
-      `${relics.length ? `  (relic not reached: ${relics.join(', ')})` : ''}  ${Date.now() - t0}ms`,
+      `${relics.length ? `  (relic not reached: ${relics.join(', ')})` : ''}  ${Date.now() - t0}ms` +
+      (areas.length ? `\n     TRAPPED (can get in, can't get out) at tiles: ${areas.slice(0, 12).join(' ')}${areas.length > 12 ? ' …' : ''}` : ''),
   );
 }
 process.exit(failed ? 1 : 0);
