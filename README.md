@@ -14,9 +14,9 @@ The repository **is** the website: the built game sits at the repository root (`
 
 | Page | Address |
 | --- | --- |
-| Game | https://coding-joule.github.io/test/ |
-| Public level editor | https://coding-joule.github.io/test/editor/ |
-| Built-in level creator | https://coding-joule.github.io/test/secret-creations/ |
+| Game | https://coding-joule.github.io/Hallow-Night/ |
+| Public level editor | https://coding-joule.github.io/Hallow-Night/editor/ |
+| Built-in level creator | https://coding-joule.github.io/Hallow-Night/secret-creations/ |
 
 * **Levels are loaded at runtime**, so adding or editing a level file on GitHub goes live as soon as Pages redeploys — no rebuild.
 * The workflow `.github/workflows/site.yml` runs on every push: it validates all levels and runs the tests (a red ❌ in the **Actions** tab means something is wrong), and if game/editor code under `src/` or `web/` changed, it rebuilds and commits the site files automatically.
@@ -194,7 +194,7 @@ On death the player returns to the last lit checkpoint; enemies, falling/crumbli
 
 Built-in levels live in **`levels/<world>/`** and the play order is **`levels/manifest.json`**.
 
-1. Open **https://coding-joule.github.io/test/secret-creations/**.
+1. Open **https://coding-joule.github.io/Hallow-Night/secret-creations/**.
 2. **NEW LEVEL** (or **EDIT BUILT-IN** / **OPEN JSON** to start from an existing file). Fill in *Level ID, Name, World, World Order, Global #, Width, Height, Background, Abilities, Start, Goal* at the top, and build the level on the canvas. Drafts auto-save in your browser.
 3. **▶ PLAYTEST** — plays it in the real game engine. `Esc` returns to the creator.
 4. **✓ VALIDATE LEVEL** — fix any errors listed (click an object id to jump to it).
