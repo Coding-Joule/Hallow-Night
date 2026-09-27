@@ -1,0 +1,818 @@
+{
+  "version": 1,
+  "id": "haunted-manor-18",
+  "name": "Servants' Passage",
+  "world": "haunted-manor",
+  "order": 3,
+  "number": 18,
+  "width": 6720,
+  "height": 1280,
+  "spawn": {
+    "x": 80,
+    "y": 384
+  },
+  "goal": {
+    "x": 6544,
+    "y": 480
+  },
+  "background": "haunted-manor",
+  "music": "haunted-manor",
+  "abilities": {
+    "wallJump": true,
+    "dash": false,
+    "doubleJump": false
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 0,
+      "width": 6720,
+      "height": 64,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 0,
+      "y": 384,
+      "width": 1088,
+      "height": 64,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 160,
+      "y": 360,
+      "width": 32,
+      "height": 24,
+      "properties": {
+        "kind": "candles",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "sign-1",
+      "type": "sign",
+      "x": 256,
+      "y": 352,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "Timed switches hold for a few moments only."
+      }
+    },
+    {
+      "id": "gate-1",
+      "type": "gate",
+      "x": 768,
+      "y": 192,
+      "width": 32,
+      "height": 192,
+      "properties": {
+        "initiallyOpen": false,
+        "openDirection": "up",
+        "speed": 400
+      }
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 768,
+      "y": 64,
+      "width": 32,
+      "height": 128,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "timed-switch-1",
+      "type": "timedSwitch",
+      "x": 388,
+      "y": 352,
+      "width": 24,
+      "height": 32,
+      "properties": {
+        "targets": [
+          "gate-1"
+        ],
+        "duration": 3
+      }
+    },
+    {
+      "id": "ghost-1",
+      "type": "ghost",
+      "x": 896,
+      "y": 224,
+      "width": 30,
+      "height": 32,
+      "properties": {
+        "range": 150,
+        "speed": 35,
+        "leash": 360
+      }
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 1280,
+      "y": 64,
+      "width": 96,
+      "height": 512,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 960,
+      "y": 768,
+      "width": 640,
+      "height": 512,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "one-way-1",
+      "type": "oneWay",
+      "x": 1088,
+      "y": 512,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 1408,
+      "y": 736,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "kind": "crate",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 1472,
+      "y": 732,
+      "width": 28,
+      "height": 36,
+      "properties": {
+        "kind": "barrel",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 992,
+      "y": 704,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "timed-platform-1",
+      "type": "timedPlatform",
+      "x": 1632,
+      "y": 736,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2,
+        "offTime": 2,
+        "offset": 0,
+        "signalMode": "showWhenActive"
+      }
+    },
+    {
+      "id": "timed-platform-2",
+      "type": "timedPlatform",
+      "x": 1952,
+      "y": 672,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2,
+        "offTime": 2,
+        "offset": 0,
+        "signalMode": "hideWhenActive"
+      }
+    },
+    {
+      "id": "timed-platform-3",
+      "type": "timedPlatform",
+      "x": 2272,
+      "y": 672,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2,
+        "offTime": 2,
+        "offset": 0,
+        "signalMode": "showWhenActive"
+      }
+    },
+    {
+      "id": "sign-2",
+      "type": "sign",
+      "x": 1440,
+      "y": 736,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "The kitchen stones answer to the levers."
+      }
+    },
+    {
+      "id": "lever-1",
+      "type": "lever",
+      "x": 1540,
+      "y": 736,
+      "width": 24,
+      "height": 32,
+      "properties": {
+        "targets": [
+          "timed-platform-1",
+          "timed-platform-2",
+          "timed-platform-3"
+        ],
+        "startOn": false
+      }
+    },
+    {
+      "id": "platform-1",
+      "type": "platform",
+      "x": 1792,
+      "y": 704,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "lever-2",
+      "type": "lever",
+      "x": 1828,
+      "y": 672,
+      "width": 24,
+      "height": 32,
+      "properties": {
+        "targets": [
+          "timed-platform-1",
+          "timed-platform-2",
+          "timed-platform-3"
+        ],
+        "startOn": false
+      }
+    },
+    {
+      "id": "platform-2",
+      "type": "platform",
+      "x": 2112,
+      "y": 640,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "lever-3",
+      "type": "lever",
+      "x": 2148,
+      "y": 608,
+      "width": 24,
+      "height": 32,
+      "properties": {
+        "targets": [
+          "timed-platform-1",
+          "timed-platform-2",
+          "timed-platform-3"
+        ],
+        "startOn": false
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 1600,
+      "y": 960,
+      "width": 832,
+      "height": 320,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spikes-1",
+      "type": "spikes",
+      "x": 1600,
+      "y": 944,
+      "width": 832,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 2432,
+      "y": 704,
+      "width": 256,
+      "height": 576,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 2464,
+      "y": 640,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-8",
+      "type": "ground",
+      "x": 2688,
+      "y": 64,
+      "width": 64,
+      "height": 448,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "locked-door-1",
+      "type": "lockedDoor",
+      "x": 2688,
+      "y": 512,
+      "width": 32,
+      "height": 192,
+      "properties": {
+        "color": "gold"
+      }
+    },
+    {
+      "id": "ground-9",
+      "type": "ground",
+      "x": 2688,
+      "y": 704,
+      "width": 1024,
+      "height": 576,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ghost-2",
+      "type": "ghost",
+      "x": 3040,
+      "y": 512,
+      "width": 30,
+      "height": 32,
+      "properties": {
+        "range": 180,
+        "speed": 45,
+        "leash": 360
+      }
+    },
+    {
+      "id": "key-1",
+      "type": "key",
+      "x": 2532,
+      "y": 516,
+      "width": 24,
+      "height": 24,
+      "properties": {
+        "color": "gold"
+      }
+    },
+    {
+      "id": "platform-3",
+      "type": "platform",
+      "x": 2496,
+      "y": 608,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "one-way-2",
+      "type": "oneWay",
+      "x": 2976,
+      "y": 608,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "one-way-3",
+      "type": "oneWay",
+      "x": 3072,
+      "y": 512,
+      "width": 64,
+      "height": 16,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 3136,
+      "y": 416,
+      "width": 256,
+      "height": 96,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "key-2",
+      "type": "key",
+      "x": 3236,
+      "y": 356,
+      "width": 24,
+      "height": 24,
+      "properties": {
+        "color": "bone"
+      }
+    },
+    {
+      "id": "locked-door-2",
+      "type": "lockedDoor",
+      "x": 3648,
+      "y": 512,
+      "width": 32,
+      "height": 192,
+      "properties": {
+        "color": "bone"
+      }
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 3648,
+      "y": 64,
+      "width": 64,
+      "height": 448,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ghost-3",
+      "type": "ghost",
+      "x": 3456,
+      "y": 576,
+      "width": 30,
+      "height": 32,
+      "properties": {
+        "range": 150,
+        "speed": 40,
+        "leash": 360
+      }
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 3712,
+      "y": 704,
+      "width": 320,
+      "height": 256,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "hidden-wall-1",
+      "type": "hiddenWall",
+      "x": 3712,
+      "y": 960,
+      "width": 320,
+      "height": 192,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 3712,
+      "y": 1152,
+      "width": 320,
+      "height": 128,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 3782,
+      "y": 1094,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 4032,
+      "y": 1152,
+      "width": 640,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "one-way-4",
+      "type": "oneWay",
+      "x": 4032,
+      "y": 864,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "one-way-5",
+      "type": "oneWay",
+      "x": 4192,
+      "y": 992,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "checkpoint-3",
+      "type": "checkpoint",
+      "x": 4096,
+      "y": 1088,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "gate-2",
+      "type": "gate",
+      "x": 4672,
+      "y": 960,
+      "width": 32,
+      "height": 192,
+      "properties": {
+        "initiallyOpen": false,
+        "openDirection": "up",
+        "speed": 400
+      }
+    },
+    {
+      "id": "ground-15",
+      "type": "ground",
+      "x": 4672,
+      "y": 704,
+      "width": 64,
+      "height": 256,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "timed-switch-2",
+      "type": "timedSwitch",
+      "x": 4356,
+      "y": 1120,
+      "width": 24,
+      "height": 32,
+      "properties": {
+        "targets": [
+          "gate-2"
+        ],
+        "duration": 2.5
+      }
+    },
+    {
+      "id": "ghost-4",
+      "type": "ghost",
+      "x": 4480,
+      "y": 960,
+      "width": 30,
+      "height": 32,
+      "properties": {
+        "range": 120,
+        "speed": 30,
+        "leash": 360
+      }
+    },
+    {
+      "id": "ground-16",
+      "type": "ground",
+      "x": 4736,
+      "y": 1152,
+      "width": 1984,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "platform-4",
+      "type": "platform",
+      "x": 4864,
+      "y": 1056,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "platform-5",
+      "type": "platform",
+      "x": 4992,
+      "y": 960,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "timed-platform-4",
+      "type": "timedPlatform",
+      "x": 5120,
+      "y": 864,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2,
+        "offTime": 1.2,
+        "offset": 0,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "timed-platform-5",
+      "type": "timedPlatform",
+      "x": 5248,
+      "y": 768,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2,
+        "offTime": 1.2,
+        "offset": 1,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "ground-17",
+      "type": "ground",
+      "x": 5376,
+      "y": 672,
+      "width": 320,
+      "height": 480,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "checkpoint-4",
+      "type": "checkpoint",
+      "x": 5408,
+      "y": 608,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ghost-5",
+      "type": "ghost",
+      "x": 5632,
+      "y": 448,
+      "width": 30,
+      "height": 32,
+      "properties": {
+        "range": 200,
+        "speed": 50,
+        "leash": 360
+      }
+    },
+    {
+      "id": "ground-18",
+      "type": "ground",
+      "x": 5696,
+      "y": 480,
+      "width": 96,
+      "height": 672,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-19",
+      "type": "ground",
+      "x": 5504,
+      "y": 256,
+      "width": 96,
+      "height": 320,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-20",
+      "type": "ground",
+      "x": 5792,
+      "y": 480,
+      "width": 928,
+      "height": 672,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 5888,
+      "y": 320,
+      "width": 48,
+      "height": 64,
+      "properties": {
+        "kind": "portrait",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 6112,
+      "y": 424,
+      "width": 32,
+      "height": 56,
+      "properties": {
+        "kind": "candelabra",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-6",
+      "type": "decoration",
+      "x": 6336,
+      "y": 384,
+      "width": 64,
+      "height": 96,
+      "properties": {
+        "kind": "bookshelf",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-7",
+      "type": "decoration",
+      "x": 6560,
+      "y": 320,
+      "width": 40,
+      "height": 56,
+      "properties": {
+        "kind": "window",
+        "layer": "back",
+        "flip": false
+      }
+    }
+  ]
+}

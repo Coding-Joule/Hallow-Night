@@ -1,0 +1,205 @@
+/* Shared design tokens + controls for the game, editor and creator. */
+:root {
+  --bg: #07060d;
+  --panel: #16151c;
+  --panel-2: #1e1d25;
+  --panel-3: #26252f;
+  --line: #34323f;
+  --text: #e6e0d2;
+  --text-dim: #9d97a8;
+  --text-faint: #6c6778;
+  --accent: #e8913a;
+  --accent-2: #f2b25a;
+  --accent-dim: #8a5424;
+  --danger: #d9534f;
+  --ok: #7fb069;
+  --violet: #8f7dd0;
+  --radius: 4px;
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Palatino Linotype', Palatino, 'Book Antiqua', Georgia, 'Times New Roman', serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--text);
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+  user-select: none;
+  white-space: nowrap;
+}
+.btn:hover,
+.btn:focus-visible {
+  border-color: var(--accent);
+  color: #fff;
+  outline: none;
+}
+.btn:active {
+  background: var(--panel-3);
+}
+.btn.primary {
+  border-color: var(--accent);
+  background: linear-gradient(#3a2414, #2a1a10);
+  color: var(--accent-2);
+}
+.btn.primary:hover {
+  background: linear-gradient(#4a2e18, #342012);
+}
+.btn.danger:hover {
+  border-color: var(--danger);
+  color: #ffb3a8;
+}
+.btn.small {
+  padding: 3px 8px;
+  font-size: 12px;
+}
+.btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+  border-color: var(--line);
+  color: var(--text-dim);
+}
+.btn.active {
+  border-color: var(--accent);
+  color: var(--accent-2);
+  background: #2a1d14;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+input[type='text'],
+input[type='number'],
+select,
+textarea {
+  background: #0f0e14;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 5px 7px;
+  min-width: 0;
+}
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+input[type='range'] {
+  accent-color: var(--accent);
+}
+input[type='checkbox'] {
+  accent-color: var(--accent);
+}
+
+kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  border: 1px solid var(--line);
+  border-bottom-width: 2px;
+  border-radius: 3px;
+  background: var(--panel-2);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.toast-host {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 1000;
+  pointer-events: none;
+}
+.toast {
+  background: var(--panel-2);
+  border: 1px solid var(--accent-dim);
+  border-left: 3px solid var(--accent);
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  animation: toast-in 0.2s ease-out;
+}
+.toast.error {
+  border-left-color: var(--danger);
+  border-color: #6a2a28;
+}
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 3, 8, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+}
+.modal {
+  background: var(--panel);
+  border: 1px solid var(--accent-dim);
+  border-radius: 6px;
+  padding: 22px 24px;
+  min-width: 320px;
+  max-width: min(640px, 92vw);
+  max-height: 88vh;
+  overflow: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+.modal h2 {
+  margin: 0 0 12px;
+  font-family: var(--font-display);
+  font-weight: normal;
+  letter-spacing: 0.08em;
+  color: var(--accent-2);
+}
+.modal .actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}

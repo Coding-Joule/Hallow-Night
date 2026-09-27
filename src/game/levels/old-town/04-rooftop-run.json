@@ -1,0 +1,666 @@
+{
+  "version": 1,
+  "id": "old-town-04",
+  "name": "Rooftop Run",
+  "world": "old-town",
+  "order": 4,
+  "number": 4,
+  "width": 6720,
+  "height": 960,
+  "spawn": {
+    "x": 80,
+    "y": 832
+  },
+  "goal": {
+    "x": 6544,
+    "y": 352
+  },
+  "background": "old-town",
+  "music": "old-town",
+  "abilities": {
+    "wallJump": false,
+    "dash": false,
+    "doubleJump": false
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 832,
+      "width": 512,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 160,
+      "y": 720,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "platform-1",
+      "type": "platform",
+      "x": 288,
+      "y": 768,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 384,
+      "y": 704,
+      "width": 192,
+      "height": 256,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 576,
+      "y": 640,
+      "width": 192,
+      "height": 320,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "one-way-1",
+      "type": "oneWay",
+      "x": 672,
+      "y": 544,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 768,
+      "y": 448,
+      "width": 256,
+      "height": 512,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 608,
+      "y": 584,
+      "width": 40,
+      "height": 56,
+      "properties": {
+        "kind": "window",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 832,
+      "y": 456,
+      "width": 40,
+      "height": 56,
+      "properties": {
+        "kind": "window",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 832,
+      "y": 616,
+      "width": 40,
+      "height": 56,
+      "properties": {
+        "kind": "window",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "sign-1",
+      "type": "sign",
+      "x": 864,
+      "y": 416,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "Run before you jump — speed carries you further."
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 1152,
+      "y": 448,
+      "width": 224,
+      "height": 512,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 1504,
+      "y": 416,
+      "width": 192,
+      "height": 544,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 1216,
+      "y": 488,
+      "width": 40,
+      "height": 56,
+      "properties": {
+        "kind": "window",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-6",
+      "type": "decoration",
+      "x": 1536,
+      "y": 456,
+      "width": 40,
+      "height": 56,
+      "properties": {
+        "kind": "window",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 1824,
+      "y": 384,
+      "width": 160,
+      "height": 576,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "one-way-2",
+      "type": "oneWay",
+      "x": 1984,
+      "y": 320,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-8",
+      "type": "ground",
+      "x": 2112,
+      "y": 256,
+      "width": 256,
+      "height": 704,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "decoration-7",
+      "type": "decoration",
+      "x": 2240,
+      "y": 144,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 2144,
+      "y": 192,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "platform-2",
+      "type": "platform",
+      "x": 2432,
+      "y": 224,
+      "width": 64,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "platform-3",
+      "type": "platform",
+      "x": 2592,
+      "y": 192,
+      "width": 64,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "platform-4",
+      "type": "platform",
+      "x": 2752,
+      "y": 256,
+      "width": 64,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "platform-5",
+      "type": "platform",
+      "x": 2912,
+      "y": 224,
+      "width": 64,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-9",
+      "type": "ground",
+      "x": 3072,
+      "y": 288,
+      "width": 320,
+      "height": 672,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "decoration-8",
+      "type": "decoration",
+      "x": 3136,
+      "y": 328,
+      "width": 40,
+      "height": 56,
+      "properties": {
+        "kind": "window",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-9",
+      "type": "decoration",
+      "x": 3264,
+      "y": 328,
+      "width": 40,
+      "height": 56,
+      "properties": {
+        "kind": "window",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "moving-platform-1",
+      "type": "movingPlatform",
+      "x": 3392,
+      "y": 288,
+      "width": 64,
+      "height": 24,
+      "properties": {
+        "axis": "vertical",
+        "distance": -160,
+        "speed": 55,
+        "wait": 0.8,
+        "startOffset": 0,
+        "triggered": false
+      }
+    },
+    {
+      "id": "platform-6",
+      "type": "platform",
+      "x": 3488,
+      "y": 64,
+      "width": 64,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 3494,
+      "y": 6,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 3392,
+      "y": 832,
+      "width": 640,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "one-way-3",
+      "type": "oneWay",
+      "x": 3456,
+      "y": 416,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "one-way-4",
+      "type": "oneWay",
+      "x": 3616,
+      "y": 544,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "one-way-5",
+      "type": "oneWay",
+      "x": 3456,
+      "y": 672,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "decoration-10",
+      "type": "decoration",
+      "x": 3680,
+      "y": 720,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-11",
+      "type": "decoration",
+      "x": 3776,
+      "y": 800,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "kind": "crate",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 3840,
+      "y": 768,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "platform-7",
+      "type": "platform",
+      "x": 3904,
+      "y": 768,
+      "width": 64,
+      "height": 32,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 4032,
+      "y": 704,
+      "width": 128,
+      "height": 256,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "moving-platform-2",
+      "type": "movingPlatform",
+      "x": 4160,
+      "y": 672,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "axis": "vertical",
+        "distance": -256,
+        "speed": 60,
+        "wait": 0.4,
+        "startOffset": 0,
+        "triggered": false
+      }
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 4288,
+      "y": 384,
+      "width": 320,
+      "height": 576,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "decoration-12",
+      "type": "decoration",
+      "x": 4352,
+      "y": 424,
+      "width": 40,
+      "height": 56,
+      "properties": {
+        "kind": "window",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-13",
+      "type": "decoration",
+      "x": 4480,
+      "y": 424,
+      "width": 40,
+      "height": 56,
+      "properties": {
+        "kind": "window",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-14",
+      "type": "decoration",
+      "x": 4416,
+      "y": 356,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "jackOLantern",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "moving-platform-3",
+      "type": "movingPlatform",
+      "x": 4608,
+      "y": 384,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "axis": "horizontal",
+        "distance": 192,
+        "speed": 85,
+        "wait": 0.4,
+        "startOffset": 0,
+        "triggered": false
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 4992,
+      "y": 416,
+      "width": 160,
+      "height": 544,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 5280,
+      "y": 384,
+      "width": 128,
+      "height": 576,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "ground-15",
+      "type": "ground",
+      "x": 5536,
+      "y": 352,
+      "width": 160,
+      "height": 608,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "one-way-6",
+      "type": "oneWay",
+      "x": 5696,
+      "y": 288,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-16",
+      "type": "ground",
+      "x": 5824,
+      "y": 352,
+      "width": 896,
+      "height": 608,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "decoration-15",
+      "type": "decoration",
+      "x": 5920,
+      "y": 240,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-16",
+      "type": "decoration",
+      "x": 6016,
+      "y": 392,
+      "width": 40,
+      "height": 56,
+      "properties": {
+        "kind": "window",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-17",
+      "type": "decoration",
+      "x": 6208,
+      "y": 392,
+      "width": 40,
+      "height": 56,
+      "properties": {
+        "kind": "window",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-18",
+      "type": "decoration",
+      "x": 6336,
+      "y": 324,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "pumpkin",
+        "layer": "back",
+        "flip": false
+      }
+    }
+  ]
+}

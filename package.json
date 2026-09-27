@@ -1,0 +1,26 @@
+{
+  "name": "hallow-night",
+  "private": true,
+  "version": "1.0.0",
+  "description": "HALLOW NIGHT \u2014 a Halloween 2D platformer with JSON levels and level editors",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check-levels": "vitest run tests/builtinLevels.test.ts",
+    "check-reach": "tsx scripts/check-reachability.ts"
+  },
+  "dependencies": {
+    "phaser": "^3.90.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2"
+  }
+}

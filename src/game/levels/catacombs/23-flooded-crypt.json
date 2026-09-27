@@ -1,0 +1,584 @@
+{
+  "version": 1,
+  "id": "catacombs-23",
+  "name": "Flooded Crypt",
+  "world": "catacombs",
+  "order": 3,
+  "number": 23,
+  "width": 7360,
+  "height": 1088,
+  "spawn": {
+    "x": 80,
+    "y": 832
+  },
+  "goal": {
+    "x": 7184,
+    "y": 384
+  },
+  "background": "catacombs",
+  "music": "catacombs",
+  "abilities": {
+    "wallJump": true,
+    "dash": true,
+    "doubleJump": false
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 0,
+      "width": 7360,
+      "height": 96,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 0,
+      "y": 832,
+      "width": 448,
+      "height": 256,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 128,
+      "y": 736,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "sludge-1",
+      "type": "sludge",
+      "x": 448,
+      "y": 928,
+      "width": 6912,
+      "height": 160,
+      "properties": {}
+    },
+    {
+      "id": "falling-platform-1",
+      "type": "fallingPlatform",
+      "x": 480,
+      "y": 800,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-platform-2",
+      "type": "fallingPlatform",
+      "x": 640,
+      "y": 768,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "platform-1",
+      "type": "platform",
+      "x": 800,
+      "y": 768,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "falling-platform-3",
+      "type": "fallingPlatform",
+      "x": 992,
+      "y": 736,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-platform-4",
+      "type": "fallingPlatform",
+      "x": 1152,
+      "y": 768,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 1312,
+      "y": 768,
+      "width": 192,
+      "height": 160,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 1344,
+      "y": 704,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 1664,
+      "y": 704,
+      "width": 64,
+      "height": 224,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 1920,
+      "y": 672,
+      "width": 64,
+      "height": 256,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 2176,
+      "y": 704,
+      "width": 64,
+      "height": 224,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 2400,
+      "y": 640,
+      "width": 160,
+      "height": 288,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "skeleton-1",
+      "type": "skeleton",
+      "x": 2436,
+      "y": 598,
+      "width": 24,
+      "height": 42,
+      "properties": {
+        "speed": 40,
+        "direction": "left"
+      }
+    },
+    {
+      "id": "ground-8",
+      "type": "ground",
+      "x": 2560,
+      "y": 96,
+      "width": 1280,
+      "height": 320,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "moving-platform-1",
+      "type": "movingPlatform",
+      "x": 2624,
+      "y": 704,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "axis": "horizontal",
+        "distance": 256,
+        "speed": 80,
+        "wait": 0.4,
+        "startOffset": 0,
+        "triggered": false
+      }
+    },
+    {
+      "id": "spikes-1",
+      "type": "spikes",
+      "x": 2816,
+      "y": 416,
+      "width": 192,
+      "height": 16,
+      "properties": {
+        "direction": "down"
+      }
+    },
+    {
+      "id": "falling-platform-5",
+      "type": "fallingPlatform",
+      "x": 3040,
+      "y": 672,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "moving-platform-2",
+      "type": "movingPlatform",
+      "x": 3200,
+      "y": 672,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "axis": "horizontal",
+        "distance": 288,
+        "speed": 90,
+        "wait": 0.4,
+        "startOffset": 0.5,
+        "triggered": false
+      }
+    },
+    {
+      "id": "ground-9",
+      "type": "ground",
+      "x": 3616,
+      "y": 672,
+      "width": 224,
+      "height": 256,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 3648,
+      "y": 608,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 3840,
+      "y": 672,
+      "width": 128,
+      "height": 256,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 3872,
+      "y": 192,
+      "width": 96,
+      "height": 352,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 4064,
+      "y": 416,
+      "width": 96,
+      "height": 512,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 3968,
+      "y": 896,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 4006,
+      "y": 838,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 4160,
+      "y": 416,
+      "width": 352,
+      "height": 96,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-15",
+      "type": "ground",
+      "x": 3840,
+      "y": 96,
+      "width": 672,
+      "height": 64,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "checkpoint-3",
+      "type": "checkpoint",
+      "x": 4224,
+      "y": 352,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "falling-platform-6",
+      "type": "fallingPlatform",
+      "x": 4544,
+      "y": 448,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-hazard-1",
+      "type": "fallingHazard",
+      "x": 4672,
+      "y": 96,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "triggerWidth": 64,
+        "fallDelay": 0.25,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-platform-7",
+      "type": "fallingPlatform",
+      "x": 4704,
+      "y": 480,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-platform-8",
+      "type": "fallingPlatform",
+      "x": 4864,
+      "y": 448,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-hazard-2",
+      "type": "fallingHazard",
+      "x": 4992,
+      "y": 96,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "triggerWidth": 64,
+        "fallDelay": 0.25,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-platform-9",
+      "type": "fallingPlatform",
+      "x": 5024,
+      "y": 480,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-16",
+      "type": "ground",
+      "x": 5184,
+      "y": 448,
+      "width": 256,
+      "height": 480,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "armored-skeleton-1",
+      "type": "armoredSkeleton",
+      "x": 5282,
+      "y": 404,
+      "width": 28,
+      "height": 44,
+      "properties": {
+        "speed": 35,
+        "direction": "left"
+      }
+    },
+    {
+      "id": "ground-17",
+      "type": "ground",
+      "x": 5568,
+      "y": 512,
+      "width": 64,
+      "height": 416,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-18",
+      "type": "ground",
+      "x": 5824,
+      "y": 480,
+      "width": 64,
+      "height": 448,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "moving-platform-3",
+      "type": "movingPlatform",
+      "x": 5952,
+      "y": 480,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "axis": "vertical",
+        "distance": -160,
+        "speed": 70,
+        "wait": 0.4,
+        "startOffset": 0,
+        "triggered": false
+      }
+    },
+    {
+      "id": "ground-19",
+      "type": "ground",
+      "x": 6112,
+      "y": 352,
+      "width": 96,
+      "height": 576,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "falling-platform-10",
+      "type": "fallingPlatform",
+      "x": 6304,
+      "y": 384,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-20",
+      "type": "ground",
+      "x": 6464,
+      "y": 384,
+      "width": 896,
+      "height": 544,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 6592,
+      "y": 288,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 6784,
+      "y": 368,
+      "width": 40,
+      "height": 16,
+      "properties": {
+        "kind": "bones",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 6976,
+      "y": 360,
+      "width": 32,
+      "height": 24,
+      "properties": {
+        "kind": "candles",
+        "layer": "back",
+        "flip": false
+      }
+    }
+  ]
+}
