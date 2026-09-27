@@ -1,25 +1,29 @@
-name: Check levels & rebuild site
+name: Check levels, rebuild & deploy site
 
-# GitHub Pages serves this branch directly ("Deploy from a branch", root).
-# Levels are plain JSON fetched at runtime, so level edits go live without a
-# rebuild; this workflow just validates them. When game/editor source code
-# changes, it also rebuilds the site and commits the built files.
+# Runs on every push to main:
+#  1. validates all levels and runs the tests
+#  2. rebuilds the site and commits the built files if the code changed
+#  3. publishes the site to GitHub Pages
+# Works with Pages source set to "GitHub Actions" (recommended) and also
+# with "Deploy from a branch" (main, / root), since the built site is
+# committed to the repository root.
 
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - 'index.html'
-      - 'assets/**'
-      - 'editor/index.html'
-      - 'secret-creations/index.html'
   workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  check-and-build:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -36,10 +40,27 @@ jobs:
         run: |
           git add -A index.html assets editor/index.html secret-creations/index.html .nojekyll
           if git diff --cached --quiet; then
-            echo "Site already up to date."
+            echo "Site files already up to date."
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898+github-actions[bot]@users.noreply.github.com"
             git commit -m "Rebuild site [skip ci]"
             git push
           fi
+      - name: Collect the files to publish
+        run: |
+          mkdir _site
+          cp -r index.html assets editor secret-creations levels .nojekyll _site/
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
