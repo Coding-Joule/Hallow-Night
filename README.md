@@ -6,45 +6,20 @@ Built with **TypeScript + Vite + Phaser 3**. No backend, no database, no account
 
 ---
 
-## Running
+## Hosting on GitHub Pages
 
-```bash
-npm install
-npm run dev
-```
+The site is published by GitHub Pages — nothing needs to be installed or run locally.
 
-Then open:
+**One-time setup:** in the repository go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
+After that, every push to `main` runs `.github/workflows/deploy.yml`, which tests, builds and publishes the site (progress is visible in the **Actions** tab).
 
-| Page | URL (dev) |
+| Page | Address |
 | --- | --- |
-| Game | http://localhost:5173/ |
-| Public level editor | http://localhost:5173/editor/ |
-| Built-in level creator | http://localhost:5173/secret-creations/ |
+| Game | https://coding-joule.github.io/test/ |
+| Public level editor | https://coding-joule.github.io/test/editor/ |
+| Built-in level creator | https://coding-joule.github.io/test/secret-creations/ |
 
-## Building
-
-```bash
-npm run build      # typecheck + production build into dist/
-npm run preview    # serve dist/ locally
-```
-
-The build uses relative asset paths (`base: './'`), so `dist/` works from any sub-folder of any static host (GitHub Pages, Netlify, itch.io, a plain web server…).
-
-### Other commands
-
-| Command | What it does |
-| --- | --- |
-| `npm run typecheck` | TypeScript check only |
-| `npm run test` | Unit tests (validation, serialisation, storage, physics, all 35 built-in levels) |
-| `npm run check-levels` | Only the built-in level tests |
-| `npm run check-reach` | Physics-based reachability check of every level (see below) |
-| `npm run check-reach -- path/to/level.json` | Same, for specific files |
-
-### Deploying to GitHub Pages
-
-`.github/workflows/deploy.yml` builds and publishes `dist/` on every push to `main`.
-One-time setup: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-For this repository the site is served at `https://<user>.github.io/<repo>/` (editor at `…/editor/`).
+> Pages must be set to **GitHub Actions**, not "Deploy from a branch": the repository holds TypeScript source, and the workflow is what turns it into the playable site.
 
 ### Developer URL flags
 
@@ -218,7 +193,7 @@ On death the player returns to the last lit checkpoint; enemies, falling/crumbli
 
 Built-in levels live in **`src/game/levels/<world>/`** and the play order is **`src/game/levels/manifest.json`**.
 
-1. Open **`/secret-creations/`** (e.g. http://localhost:5173/secret-creations/ or `https://<user>.github.io/<repo>/secret-creations/`).
+1. Open **https://coding-joule.github.io/test/secret-creations/**.
 2. **NEW LEVEL** (or **EDIT BUILT-IN** / **OPEN JSON** to start from an existing file). Fill in *Level ID, Name, World, World Order, Global #, Width, Height, Background, Abilities, Start, Goal* at the top, and build the level on the canvas. Drafts auto-save in your browser.
 3. **▶ PLAYTEST** — plays it in the real game engine. `Esc` returns to the creator.
 4. **✓ VALIDATE LEVEL** — fix any errors listed (click an object id to jump to it).
@@ -228,9 +203,9 @@ Built-in levels live in **`src/game/levels/<world>/`** and the play order is **`
    ```json
    { "levels": [ "…", "haunted-manor/18-servants-passage.json", "…" ] }
    ```
-8. Commit and push (`npm run test` first is a good idea). GitHub Pages redeploys automatically; the level shows up in Level Select.
+8. Commit (you can upload/edit files directly on github.com). The Pages workflow validates every level, rebuilds the site, and the level shows up in Level Select. If the workflow fails, open it in the **Actions** tab to see which level is broken.
 
-Hand-editing JSON in GitHub works too — the game validates every file on load and logs clear errors to the browser console for any broken level (the rest of the game keeps working). `npm run test` also validates every level, and `npm run check-reach` checks that each one can actually be completed with the physics.
+Hand-editing JSON in GitHub works too — the deploy workflow validates every level before publishing, and the game also skips (and logs to the browser console) any level that fails to load.
 
 > The test suite expects exactly 35 campaign levels numbered 1–35. If you add more, update `tests/builtinLevels.test.ts` accordingly.
 
@@ -274,7 +249,7 @@ Completing a level unlocks the next. Settings → *Reset progress* clears the ca
 
 ## Tuning movement
 
-All important movement values are in **`src/game/config/physics.ts`** (`PLAYER_SPEED`, `PLAYER_ACCELERATION`, `PLAYER_DRAG`, `JUMP_VELOCITY`, `COYOTE_TIME`, `JUMP_BUFFER_TIME`, `WALL_SLIDE_SPEED`, `WALL_JUMP_X`, `WALL_JUMP_Y`, `DASH_SPEED`, `DASH_DURATION`, …). The comment at the top lists what the defaults allow (≈3 tiles of jump height, ≈5 tiles of running jump, ≈8 tiles with a dash). The built-in levels were verified against these values — run `npm run check-reach` after changing them.
+All important movement values are in **`src/game/config/physics.ts`** (`PLAYER_SPEED`, `PLAYER_ACCELERATION`, `PLAYER_DRAG`, `JUMP_VELOCITY`, `COYOTE_TIME`, `JUMP_BUFFER_TIME`, `WALL_SLIDE_SPEED`, `WALL_JUMP_X`, `WALL_JUMP_Y`, `DASH_SPEED`, `DASH_DURATION`, …). The comment at the top lists what the defaults allow (≈3 tiles of jump height, ≈5 tiles of running jump, ≈8 tiles with a dash). The built-in levels were verified against these values, so big changes may make some jumps impossible.
 
 ## The levels
 
@@ -292,7 +267,7 @@ Every level hides one **moon relic** (the level-select screen tracks them).
 
 ## Tests
 
-`npm run test` runs Vitest suites for JSON validation, the object schema registry, serialisation round-trips and official file naming, storage/progress utilities, core physics (jump height, one-way platforms, moving platforms, checkpoints, switches) and all built-in levels (strict validation, numbering, safe spawn, ability progression).
+The deploy workflow runs Vitest suites for JSON validation, the object schema registry, serialisation round-trips and official file naming, storage/progress utilities, core physics (jump height, one-way platforms, moving platforms, checkpoints, switches) and all built-in levels (strict validation, numbering, safe spawn, ability progression).
 
 ## Known limitations
 
