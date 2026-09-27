@@ -35,9 +35,19 @@ export class GameApp {
     this.game.events.once('boot-complete', () => this.onBoot());
   }
 
-  private onBoot(): void {
-    const { problems } = loadBuiltinLevels();
+  private async onBoot(): Promise<void> {
+    const { problems } = await loadBuiltinLevels();
     if (problems.length) console.warn('Some built-in levels failed to load', problems);
+    if (getBuiltinLevels().length === 0) {
+      this.setScreen(
+        h(
+          'div',
+          { class: 'screen card-screen' },
+          h('div', { class: 'screen-panel' }, h('h2', { class: 'screen-title' }, 'No levels found'), h('pre', { class: 'error-box' }, problems.map((p) => `${p.path}: ${p.message}`).join('\n'))),
+        ),
+      );
+      return;
+    }
     const q = new URLSearchParams(location.search);
     const direct = q.get('level');
     const entry = direct ? getBuiltinLevels().find((e) => e.level.id === direct || String(e.level.number) === direct) : undefined;

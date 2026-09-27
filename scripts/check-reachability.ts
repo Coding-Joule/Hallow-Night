@@ -20,7 +20,7 @@ const root = resolve(import.meta.dirname, '..');
 const args = process.argv.slice(2);
 const files = args.length
   ? args
-  : (JSON.parse(readFileSync(`${root}/src/game/levels/manifest.json`, 'utf8')).levels as string[]).map((p) => `${root}/src/game/levels/${p}`);
+  : (JSON.parse(readFileSync(`${root}/levels/manifest.json`, 'utf8')).levels as string[]).map((p) => `${root}/levels/${p}`);
 
 let failed = 0;
 for (const f of files) {

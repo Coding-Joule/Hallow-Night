@@ -8,10 +8,9 @@ Built with **TypeScript + Vite + Phaser 3**. No backend, no database, no account
 
 ## Hosting on GitHub Pages
 
-The site is published by GitHub Pages — nothing needs to be installed or run locally.
+The repository **is** the website: the built game sits at the repository root (`index.html`, `assets/`, `editor/`, `secret-creations/`) and the levels are plain JSON files in `levels/`. Nothing needs to be installed or run locally.
 
-**One-time setup:** in the repository go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**.
-After that, every push to `main` runs `.github/workflows/deploy.yml`, which tests, builds and publishes the site (progress is visible in the **Actions** tab).
+**Setup:** **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch **main**, folder **/ (root)**.
 
 | Page | Address |
 | --- | --- |
@@ -19,7 +18,9 @@ After that, every push to `main` runs `.github/workflows/deploy.yml`, which test
 | Public level editor | https://coding-joule.github.io/test/editor/ |
 | Built-in level creator | https://coding-joule.github.io/test/secret-creations/ |
 
-> Pages must be set to **GitHub Actions**, not "Deploy from a branch": the repository holds TypeScript source, and the workflow is what turns it into the playable site.
+* **Levels are loaded at runtime**, so adding or editing a level file on GitHub goes live as soon as Pages redeploys — no rebuild.
+* The workflow `.github/workflows/site.yml` runs on every push: it validates all levels and runs the tests (a red ❌ in the **Actions** tab means something is wrong), and if game/editor code under `src/` or `web/` changed, it rebuilds and commits the site files automatically.
+* Don't edit the root `index.html`, `assets/`, `editor/index.html` or `secret-creations/index.html` by hand — they are generated. The page sources are in `web/`.
 
 ### Developer URL flags
 
@@ -49,16 +50,16 @@ Movement uses coyote time, jump buffering, variable jump height, corner correcti
 ## Project structure
 
 ```
-index.html                  game page
-editor/index.html           public level editor page
-secret-creations/index.html built-in level creator page (noindex, unlinked)
+levels/                     the 35 built-in levels (<world>/<NN-name>.json) + manifest.json
+index.html, assets/,        the BUILT site served by GitHub Pages (generated — don't edit)
+editor/, secret-creations/
+web/                        page sources (index.html, editor/, secret-creations/)
 src/
   main.ts / editor-main.ts / creator-main.ts   page entry points
   game/
     config/        physics.ts (movement tuning), game.ts, storageKeys.ts
     levels/        schema.ts, objectTypes.ts, validate.ts, serialize.ts,
-                   registry.ts, worlds.ts, manifest.json
-                   <world>/<NN-name>.json   ← the 35 built-in levels
+                   registry.ts (loads levels/), worlds.ts
     sim/           pure-TypeScript simulation (no Phaser): World, Player,
                    entities/ (terrain, platforms, hazards, interactive, enemies)
     render/        Phaser views, parallax backgrounds, effects, SVG art (art/)
@@ -71,8 +72,8 @@ src/
   creator/         SecretCreatorApp.ts
   ui/              DOM helpers, HUD, menu screens
   styles/          CSS
-tests/             Vitest suites
-scripts/           reachability checker
+tests/             Vitest suites (run by the workflow)
+scripts/           build publishing + level reachability checker
 ```
 
 **Key architecture decisions**
@@ -80,7 +81,7 @@ scripts/           reachability checker
 * **One loader, one engine.** Built-in levels, user levels, imported files and editor playtests all go through `parseLevel()` (validation + defaults) and then the same `World` simulation and `GameScene`. The editors' Playtest button runs the real game in an overlay — there is no separate preview engine.
 * **Simulation is separate from rendering.** `src/game/sim` is plain TypeScript: it can be unit-tested and run headless (the tests and the reachability checker do exactly that). `src/game/render` only reads simulation state.
 * **The object registry (`objectTypes.ts`) is the single source of truth** for every object type: its category, default size, resizable axes and properties. The editor inspector, the validator and the defaults are all generated from it — add a property there and it is editable and validated everywhere.
-* **Levels are bundled, not fetched.** `registry.ts` uses Vite's `import.meta.glob` to bundle every JSON under `src/game/levels/*/`, and `manifest.json` decides which ones are in the campaign and in what order. The game works offline and from `file`-like static hosts with no loading code.
+* **Levels are data files fetched at runtime.** `registry.ts` loads `levels/manifest.json` and every file it lists, validating each; a broken file is skipped (and logged) without breaking the rest of the game. That is what lets you edit levels on GitHub without rebuilding anything.
 
 ---
 
@@ -191,23 +192,22 @@ On death the player returns to the last lit checkpoint; enemies, falling/crumbli
 
 ## Adding an official (built-in) level
 
-Built-in levels live in **`src/game/levels/<world>/`** and the play order is **`src/game/levels/manifest.json`**.
+Built-in levels live in **`levels/<world>/`** and the play order is **`levels/manifest.json`**.
 
 1. Open **https://coding-joule.github.io/test/secret-creations/**.
 2. **NEW LEVEL** (or **EDIT BUILT-IN** / **OPEN JSON** to start from an existing file). Fill in *Level ID, Name, World, World Order, Global #, Width, Height, Background, Abilities, Start, Goal* at the top, and build the level on the canvas. Drafts auto-save in your browser.
 3. **▶ PLAYTEST** — plays it in the real game engine. `Esc` returns to the creator.
 4. **✓ VALIDATE LEVEL** — fix any errors listed (click an object id to jump to it).
 5. **EXPORT OFFICIAL JSON** — downloads e.g. `18-servants-passage.json` (file name = `<global number>-<slug of name>.json`) and shows the exact path and manifest line, each with a Copy button. (**COPY JSON** puts the full JSON on the clipboard instead.)
-6. Put the file in the matching folder, e.g. `src/game/levels/haunted-manor/18-servants-passage.json` (replace the old file when editing an existing level).
-7. If it is a **new** level, add its path to `src/game/levels/manifest.json` at the position where it should be played:
+6. Upload the file to the matching folder on GitHub, e.g. `levels/haunted-manor/18-servants-passage.json` (replace the old file when editing an existing level).
+7. If it is a **new** level, add its path to `levels/manifest.json` at the position where it should be played:
    ```json
    { "levels": [ "…", "haunted-manor/18-servants-passage.json", "…" ] }
    ```
-8. Commit (you can upload/edit files directly on github.com). The Pages workflow validates every level, rebuilds the site, and the level shows up in Level Select. If the workflow fails, open it in the **Actions** tab to see which level is broken.
+8. Commit. Pages redeploys and the level shows up in Level Select (give it a minute). The workflow also validates every level — if it shows a red ❌ in the **Actions** tab, open it to see which level is broken.
 
 Hand-editing JSON in GitHub works too — the deploy workflow validates every level before publishing, and the game also skips (and logs to the browser console) any level that fails to load.
 
-> The test suite expects exactly 35 campaign levels numbered 1–35. If you add more, update `tests/builtinLevels.test.ts` accordingly.
 
 ---
 

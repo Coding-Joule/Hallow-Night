@@ -70,8 +70,8 @@ export function manifestEntry(level: Pick<LevelData, 'name' | 'number' | 'order'
   return `${level.world}/${officialFilename(level)}`;
 }
 
-export const BUILTIN_LEVEL_DIR = 'src/game/levels';
-export const MANIFEST_PATH = 'src/game/levels/manifest.json';
+export const BUILTIN_LEVEL_DIR = 'levels';
+export const MANIFEST_PATH = 'levels/manifest.json';
 
 export function officialPath(level: Pick<LevelData, 'name' | 'number' | 'order' | 'world'>): string {
   return `${BUILTIN_LEVEL_DIR}/${manifestEntry(level)}`;

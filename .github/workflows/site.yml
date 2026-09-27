@@ -1,0 +1,45 @@
+name: Check levels & rebuild site
+
+# GitHub Pages serves this branch directly ("Deploy from a branch", root).
+# Levels are plain JSON fetched at runtime, so level edits go live without a
+# rebuild; this workflow just validates them. When game/editor source code
+# changes, it also rebuilds the site and commits the built files.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'index.html'
+      - 'assets/**'
+      - 'editor/index.html'
+      - 'secret-creations/index.html'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate levels and run tests
+        run: npm test
+      - name: Build site into the repository root
+        run: npm run build
+      - name: Commit rebuilt site (only if it changed)
+        run: |
+          git add -A index.html assets editor/index.html secret-creations/index.html .nojekyll
+          if git diff --cached --quiet; then
+            echo "Site already up to date."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Rebuild site [skip ci]"
+            git push
+          fi

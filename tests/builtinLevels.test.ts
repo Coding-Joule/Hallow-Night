@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import manifest from '../src/game/levels/manifest.json';
-import { loadBuiltinLevels } from '../src/game/levels/registry';
+import { manifest, registry } from './loadLevels';
 import { manifestEntry } from '../src/game/levels/serialize';
 import { parseLevel } from '../src/game/levels/validate';
 import { WORLDS } from '../src/game/levels/worlds';
@@ -8,17 +7,17 @@ import { FIXED_STEP } from '../src/game/config/physics';
 import { overlaps } from '../src/game/sim/types';
 import { World } from '../src/game/sim/World';
 
-const { levels, problems } = loadBuiltinLevels();
+const { levels, problems } = registry;
 
 describe('built-in levels', () => {
   it('every manifest entry loads', () => {
     expect(problems).toEqual([]);
-    expect(levels.length).toBe((manifest as { levels: string[] }).levels.length);
+    expect(levels.length).toBe(manifest.levels.length);
   });
 
-  it('there are 35 levels, 5 per world, numbered 1..35', () => {
-    expect(levels).toHaveLength(35);
-    levels.forEach((e, i) => {
+  it('the original campaign has 35 levels, 5 per world, numbered 1..35', () => {
+    expect(levels.length).toBeGreaterThanOrEqual(35);
+    levels.slice(0, 35).forEach((e, i) => {
       expect(e.level.number).toBe(i + 1);
       expect(e.level.world).toBe(WORLDS[Math.floor(i / 5)].id);
       expect(e.level.order).toBe((i % 5) + 1);
@@ -56,7 +55,7 @@ describe('built-in levels', () => {
   });
 
   it('abilities unlock progressively', () => {
-    for (const e of levels) {
+    for (const e of levels.slice(0, 35)) {
       const n = e.level.number!;
       expect(e.level.abilities.wallJump, e.path).toBe(n >= 11);
       expect(e.level.abilities.dash, e.path).toBe(n >= 21);
