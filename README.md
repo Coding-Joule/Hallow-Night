@@ -10,7 +10,7 @@ Built with **TypeScript + Vite + Phaser 3**. No backend, no database, no account
 
 The repository **is** the website: the built game sits at the repository root (`index.html`, `assets/`, `editor/`, `secret-creations/`) and the levels are plain JSON files in `levels/`. Nothing needs to be installed or run locally.
 
-**Setup:** **Settings → Pages → Build and deployment → Source: GitHub Actions**. (Deploy from a branch, main, / root, also works.)
+**Setup:** **Settings → Pages → Build and deployment → Source: Deploy from a branch**, branch **main**, folder **/ (root)**.
 
 | Page | Address |
 | --- | --- |
@@ -18,8 +18,8 @@ The repository **is** the website: the built game sits at the repository root (`
 | Public level editor | https://coding-joule.github.io/Hallow-Night/editor/ |
 | Built-in level creator | https://coding-joule.github.io/Hallow-Night/secret-creations/ |
 
-* **Levels are loaded at runtime**, so adding or editing a level file on GitHub needs no code rebuild — it goes live when the workflow finishes (about a minute).
-* The workflow `.github/workflows/site.yml` runs on every push: it validates all levels and runs the tests, rebuilds and commits the site files if game/editor code under `src/` or `web/` changed, and publishes the site. A red ❌ in the **Actions** tab means something is wrong (open it to see which level or test failed); a green ✓ means the new version is live.
+* **Levels are loaded at runtime**, so adding or editing a level file on GitHub goes live as soon as Pages redeploys the branch (about a minute) — no rebuild.
+* The workflow `.github/workflows/site.yml` runs on every push: it validates all levels and runs the tests, and rebuilds and commits the site files if game/editor code under `src/` or `web/` changed. A red ❌ in the **Actions** tab means something is wrong — open it to see which level or test failed.
 * Don't edit the root `index.html`, `assets/`, `editor/index.html` or `secret-creations/index.html` by hand — they are generated. The page sources are in `web/`.
 
 ### Developer URL flags

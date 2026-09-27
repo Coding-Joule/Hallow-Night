@@ -1,12 +1,9 @@
-name: Check levels, rebuild & deploy site
+name: Check levels & rebuild site
 
-# Runs on every push to main:
-#  1. validates all levels and runs the tests
-#  2. rebuilds the site and commits the built files if the code changed
-#  3. publishes the site to GitHub Pages
-# Works with Pages source set to "GitHub Actions" (recommended) and also
-# with "Deploy from a branch" (main, / root), since the built site is
-# committed to the repository root.
+# GitHub Pages serves this branch directly ("Deploy from a branch", main, / root).
+# This workflow only checks things: it validates all levels and runs the
+# tests, and if game/editor code changed it rebuilds the site files at the
+# repository root and commits them. Pages then publishes the branch as-is.
 
 on:
   push:
@@ -15,15 +12,9 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
-  build:
+  check-and-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -47,20 +38,3 @@ jobs:
             git commit -m "Rebuild site [skip ci]"
             git push
           fi
-      - name: Collect the files to publish
-        run: |
-          mkdir _site
-          cp -r index.html assets editor secret-creations levels .nojekyll _site/
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
