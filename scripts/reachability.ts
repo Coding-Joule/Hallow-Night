@@ -134,6 +134,8 @@ export interface ReachResult {
   frontier: string;
   /** Footholds you can reach but never leave again: no way to the goal and no way to die (soft-locks). */
   traps: { x: number; y: number }[];
+  /** ids of every surface the player could stand on */
+  stoodOn: Set<string>;
 }
 
 export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates?: number } = {}): ReachResult {
@@ -167,7 +169,7 @@ export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates
   // settle at spawn
   p.placeAt(level.spawn.x, level.spawn.y);
   for (let i = 0; i < 120 && !p.grounded; i++) world.step(FIXED_STEP);
-  if (!p.grounded) return { goal: false, states: 0, relics, keys, checkpoints, maxX, frontier: 'spawn not grounded', traps: [] };
+  if (!p.grounded) return { goal: false, states: 0, relics, keys, checkpoints, maxX, frontier: 'spawn not grounded', traps: [], stoodOn: new Set() };
   push();
   const maxStates = opts.maxStates ?? 4000;
 
@@ -282,5 +284,5 @@ export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates
   }
   const complete = queue.length === 0; // only meaningful if the search finished
   const traps = complete ? [...visited].filter((k) => !escapes.has(k)).map((k) => pos.get(k)!) : [];
-  return { goal, states: visited.size, relics, keys, checkpoints, maxX: Math.round(maxX / 32), frontier: lastNear, traps };
+  return { goal, states: visited.size, relics, keys, checkpoints, maxX: Math.round(maxX / 32), frontier: lastNear, traps, stoodOn: new Set([...visited].map((k) => k.split(':')[0].split('__')[0])) };
 }
