@@ -77,21 +77,22 @@ function skeleton(frame: number, armored: boolean): string {
   const arms = frame === 0
     ? `<path d="M9.5 27 Q6 29 6.5 32" stroke="${bone}" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M20.5 27 Q24 26 24.5 23" stroke="${bone}" stroke-width="2.4" fill="none" stroke-linecap="round"/>`
     : `<path d="M9.5 27 Q6 26 5.5 23" stroke="${bone}" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M20.5 27 Q24 29 23.5 32" stroke="${bone}" stroke-width="2.4" fill="none" stroke-linecap="round"/>`;
-  const head = `<circle cx="15" cy="13" r="11" fill="${bone}"/>
-    <ellipse cx="15" cy="21.5" rx="5.5" ry="2.6" fill="${bone}"/>
-    <ellipse cx="11" cy="13.5" rx="3.1" ry="3.6" fill="${dark}"/>
-    <ellipse cx="19" cy="13.5" rx="3.1" ry="3.6" fill="${dark}"/>
-    <circle cx="12" cy="12.2" r="1.1" fill="#fff"/>
-    <circle cx="20" cy="12.2" r="1.1" fill="#fff"/>
-    <ellipse cx="7.5" cy="17.5" rx="1.8" ry="1.1" fill="#f0a6a0" opacity="0.55"/>
-    <ellipse cx="22.5" cy="17.5" rx="1.8" ry="1.1" fill="#f0a6a0" opacity="0.55"/>
-    <path d="M12.5 19 Q15 21 17.5 19" stroke="${dark}" stroke-width="1.1" fill="none" stroke-linecap="round"/>`;
+  // calm, friendly skull: modest head, dark sockets, small nose, toothy grin
+  const head = `<path d="M5.5 13 Q5.5 3.5 15 3.5 Q24.5 3.5 24.5 13 Q24.5 17.5 21 19.5 L20.5 22 L9.5 22 L9 19.5 Q5.5 17.5 5.5 13 Z" fill="${bone}"/>
+    <path d="M18 5 Q23 7 23.5 12" stroke="#fff8e8" stroke-width="1.2" fill="none" opacity="0.5" stroke-linecap="round"/>
+    <ellipse cx="11.2" cy="13" rx="2.6" ry="2.9" fill="${dark}"/>
+    <ellipse cx="18.8" cy="13" rx="2.6" ry="2.9" fill="${dark}"/>
+    <circle cx="12" cy="12.2" r="0.6" fill="#fff" opacity="0.7"/>
+    <circle cx="19.6" cy="12.2" r="0.6" fill="#fff" opacity="0.7"/>
+    <path d="M14.2 16.6 L15 15.4 L15.8 16.6 Z" fill="${dark}"/>
+    <path d="M11 19.3 H19" stroke="${dark}" stroke-width="0.9" stroke-linecap="round"/>
+    <path d="M13 18.6 V20 M15 18.6 V20 M17 18.6 V20" stroke="${dark}" stroke-width="0.7"/>`;
   let helmet = '';
   if (armored) {
-    helmet = `<path d="M3.5 12 Q3.5 1 15 1 Q26.5 1 26.5 12 L26.5 13 Q20 9.5 15 9.5 Q10 9.5 3.5 13 Z" fill="#8c95ad"/>
-      <path d="M5 8 Q15 3 25 8" stroke="#b8c0d4" stroke-width="1.2" fill="none"/>
-      <rect x="13.5" y="1" width="3" height="9" rx="1.2" fill="#6f7891"/>
-      <path d="M15 1 Q13 -4 17 -6 Q21 -4 18 0 Z" fill="#e8913a"/>
+    helmet = `<path d="M4.5 12 Q4.5 2 15 2 Q25.5 2 25.5 12 L25.5 12.5 Q20 9.5 15 9.5 Q10 9.5 4.5 12.5 Z" fill="#7d869d"/>
+      <path d="M6.5 8 Q15 4 23.5 8" stroke="#a9b1c6" stroke-width="1.1" fill="none"/>
+      <rect x="13.8" y="2" width="2.4" height="8" rx="1" fill="#626b83"/>
+      <path d="M15 2 Q13.8 -2 16.4 -3.5 Q18.8 -2 16.8 1 Z" fill="#c9793a"/>
       <path d="M9.5 25 Q15 22.5 20.5 25 L20 32 Q15 34 10 32 Z" fill="#8c95ad"/>
       <circle cx="15" cy="28" r="1.4" fill="#e8c86a"/>`;
   }
