@@ -263,9 +263,9 @@ All important movement values are in **`src/game/config/physics.ts`** (`PLAYER_S
 | 2 Graveyard | Cemetery Path, Broken Graves, Under the Headstones, Bellkeeper's Hill, Cemetery Exit | spikes, pumpkin tortoises, crumbling slabs, checkpoints |
 | 3 Dead Woods | Deadwood Trail, Hollow Trees, Raven Ridge, The Deep Woods, Witch's Crossing | wall slide & wall jump, bats, ravens, spiked balls, vertical climbs |
 | 4 Haunted Manor | Manor Entrance, West Hall, Servants' Passage, Upper Gallery, The Attic | levers, plates, timed switches, keys & doors, gates, phantom platforms, ghosts, hidden walls |
-| 5 Catacombs | Beneath the Manor, Bone Passage, Flooded Crypt, Chamber of Chains, Catacomb Escape | dash, cracked walls, falling platforms, pendulums, poison sludge, pumpkin tortoises, chase |
+| 5 Catacombs | Beneath the Manor, Bone Passage, Flooded Crypt, Chamber of Chains, Catacomb Escape | dash, cracked walls, falling platforms, pendulums, poison sludge, pumpkin tortoises |
 | 6 Clocktower | Clocktower Base, Inside the Gears, Bell Chamber, Midnight Mechanism, Above the Bells | double jump, elevators, conveyors, looping gear platforms, timed races, a tall climb |
-| 7 Black Castle | Castle Wall, Dark Courtyard, Tower of Shadows, Final Ascent, Midnight Crown | shadows, rising darkness, everything combined; level 35 has 6 checkpoints across 5 sections |
+| 7 Black Castle | Castle Wall, Dark Courtyard, Tower of Shadows, Final Ascent, Midnight Crown | shadows, everything combined; level 35 has 6 checkpoints across 5 sections |
 
 Every level hides one **moon relic** (the level-select screen tracks them).
 

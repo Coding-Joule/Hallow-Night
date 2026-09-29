@@ -105,22 +105,7 @@
       "width": 32,
       "height": 32,
       "properties": {
-        "text": "Something stirs in the dark behind you.\nDo not stop."
-      }
-    },
-    {
-      "id": "chaser-1",
-      "type": "chaser",
-      "x": -128,
-      "y": 96,
-      "width": 192,
-      "height": 864,
-      "properties": {
-        "direction": "right",
-        "speed": 115,
-        "startDistance": 400,
-        "respawnGap": 420,
-        "stopAt": 0
+        "text": "The way out is ahead. Take your time."
       }
     },
     {

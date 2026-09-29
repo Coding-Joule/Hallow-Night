@@ -214,21 +214,6 @@
       "properties": {}
     },
     {
-      "id": "chaser-1",
-      "type": "chaser",
-      "x": 2816,
-      "y": 2240,
-      "width": 192,
-      "height": 1088,
-      "properties": {
-        "direction": "right",
-        "speed": 135,
-        "startDistance": 320,
-        "respawnGap": 420,
-        "stopAt": 5280
-      }
-    },
-    {
       "id": "ground-3",
       "type": "ground",
       "x": 2688,
@@ -566,21 +551,6 @@
       }
     },
     {
-      "id": "chaser-2",
-      "type": "chaser",
-      "x": 7424,
-      "y": 3424,
-      "width": 1408,
-      "height": 96,
-      "properties": {
-        "direction": "up",
-        "speed": 60,
-        "startDistance": 64,
-        "respawnGap": 300,
-        "stopAt": 0
-      }
-    },
-    {
       "id": "sign-2",
       "type": "sign",
       "x": 7456,
@@ -588,7 +558,7 @@
       "width": 32,
       "height": 32,
       "properties": {
-        "text": "The keep is flooding with darkness. Climb!"
+        "text": "Almost there. Climb to the top of the keep!"
       }
     },
     {

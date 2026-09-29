@@ -64,22 +64,7 @@
       "width": 32,
       "height": 32,
       "properties": {
-        "text": "The darkness rises behind you. Climb!"
-      }
-    },
-    {
-      "id": "chaser-1",
-      "type": "chaser",
-      "x": 128,
-      "y": 5376,
-      "width": 1792,
-      "height": 128,
-      "properties": {
-        "direction": "up",
-        "speed": 55,
-        "startDistance": 96,
-        "respawnGap": 300,
-        "stopAt": 0
+        "text": "The tower goes up and up. Climb!"
       }
     },
     {
