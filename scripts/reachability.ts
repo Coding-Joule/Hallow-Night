@@ -57,6 +57,7 @@ export function freeze(level: LevelData, opts: { openGates: boolean }): LevelDat
       case 'ghost':
       case 'skeleton':
       case 'armoredSkeleton':
+      case 'pumpkinTortoise':
       case 'bat':
       case 'raven':
       case 'shadow':

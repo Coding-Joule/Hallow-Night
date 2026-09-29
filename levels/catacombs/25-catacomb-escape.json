@@ -214,15 +214,16 @@
       }
     },
     {
-      "id": "skeleton-1",
-      "type": "skeleton",
+      "id": "tortoise-1",
+      "type": "pumpkinTortoise",
       "x": 2052,
-      "y": 662,
-      "width": 24,
-      "height": 42,
+      "y": 682,
+      "width": 28,
+      "height": 22,
       "properties": {
-        "speed": 70,
-        "direction": "left"
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {
@@ -364,15 +365,16 @@
       }
     },
     {
-      "id": "armored-skeleton-1",
-      "type": "armoredSkeleton",
+      "id": "tortoise-2",
+      "type": "pumpkinTortoise",
       "x": 4194,
-      "y": 596,
+      "y": 618,
       "width": 28,
-      "height": 44,
+      "height": 22,
       "properties": {
-        "speed": 45,
-        "direction": "left"
+        "speed": 40,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {
@@ -792,15 +794,16 @@
       }
     },
     {
-      "id": "skeleton-2",
-      "type": "skeleton",
+      "id": "tortoise-3",
+      "type": "pumpkinTortoise",
       "x": 8772,
-      "y": 374,
-      "width": 24,
-      "height": 42,
+      "y": 394,
+      "width": 28,
+      "height": 22,
       "properties": {
-        "speed": 70,
-        "direction": "left"
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {

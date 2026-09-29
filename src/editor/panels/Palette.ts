@@ -27,7 +27,7 @@ export class Palette {
     const filter = h('input', { type: 'text', placeholder: 'Filter objects…', class: 'pal-filter' });
     const list = h('div', { class: 'pal-list' });
     for (const cat of CATEGORY_ORDER) {
-      const defs = ALL_OBJECT_DEFS.filter((d) => d.category === cat);
+      const defs = ALL_OBJECT_DEFS.filter((d) => d.category === cat && !d.hidden);
       const group = h('div', { class: 'pal-group' }, h('div', { class: 'pal-cat' }, CATEGORY_LABEL[cat]));
       for (const d of defs) {
         const btn = h(

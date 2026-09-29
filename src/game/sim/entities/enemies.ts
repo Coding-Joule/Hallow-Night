@@ -33,45 +33,6 @@ abstract class Enemy extends Entity {
   }
 }
 
-/** Skeletons: walk, turn at walls and ledges. */
-export class Walker extends Enemy {
-  private vy = 0;
-  private readonly speed: number;
-  constructor(obj: LevelObject, stompable: boolean) {
-    super(obj);
-    this.stompable = stompable;
-    this.speed = num(obj.properties.speed, 60);
-    this.facing = str(obj.properties.direction, 'left') === 'right' ? 1 : -1;
-  }
-  protected think(dt: number, world: World): void {
-    // vertical
-    this.vy = Math.min(800, this.vy + GRAVITY * dt);
-    const prevBottom = this.y + this.h;
-    this.y += this.vy * dt;
-    let grounded = false;
-    const ground = world.groundUnder(this, prevBottom);
-    if (ground !== null) {
-      this.y = ground - this.h;
-      this.vy = 0;
-      grounded = true;
-    }
-    if (!grounded) return;
-    // horizontal
-    const nx = this.x + this.facing * this.speed * dt;
-    const probe: Rect = { x: nx, y: this.y, w: this.w, h: this.h - 2 };
-    const blocked = world.solidAt(probe, this) || nx < 0 || nx + this.w > world.level.width;
-    const footX = this.facing > 0 ? nx + this.w + 1 : nx - 1;
-    const hasFloor = world.solidAt({ x: footX - 1, y: this.y + this.h, w: 2, h: 6 }, this, true);
-    if (blocked || !hasFloor) this.facing = -this.facing;
-    else this.x = nx;
-  }
-  reset(): void {
-    super.reset();
-    this.vy = 0;
-    this.facing = str(this.props.direction, 'left') === 'right' ? 1 : -1;
-  }
-}
-
 export class Ghost extends Enemy {
   private vx = 0;
   private vy = 0;
@@ -258,5 +219,114 @@ export class Shadow extends Enemy {
     this.state = 'dormant';
     this.rise = 0;
     this.cooldown = 0.5;
+  }
+}
+
+/**
+ * Pumpkin tortoise: crawls like a walker. Stomp it and it hides in its
+ * pumpkin shell; kick the shell (walk into it or stomp it again) and it
+ * slides away fast, bouncing off walls and knocking out other creatures.
+ * A sliding shell hurts the player too — stomp it to stop it.
+ */
+export class PumpkinTortoise extends Enemy {
+  state: 'walk' | 'shell' | 'slide' = 'walk';
+  /** Time spent in the current state. */
+  stateTime = 0;
+  private vy = 0;
+  private readonly speed: number;
+  private readonly shellSpeed: number;
+  static readonly HIDE_TIME = 6;
+  constructor(obj: LevelObject) {
+    super(obj);
+    this.stompable = true;
+    this.speed = num(obj.properties.speed, 45);
+    this.shellSpeed = num(obj.properties.shellSpeed, 420);
+    this.facing = str(obj.properties.direction, 'left') === 'right' ? 1 : -1;
+  }
+  private setState(s: PumpkinTortoise['state']): void {
+    this.state = s;
+    this.stateTime = 0;
+  }
+  private kick(dir: number, world: World): void {
+    this.facing = dir;
+    this.setState('slide');
+    world.emit('kick', this.x + this.w / 2, this.y + this.h / 2);
+  }
+  protected think(dt: number, world: World): void {
+    this.stateTime += dt;
+    // gravity
+    this.vy = Math.min(800, this.vy + GRAVITY * dt);
+    const prevBottom = this.y + this.h;
+    this.y += this.vy * dt;
+    let grounded = false;
+    const ground = world.groundUnder(this, prevBottom);
+    if (ground !== null) {
+      this.y = ground - this.h;
+      this.vy = 0;
+      grounded = true;
+    }
+    if (this.y > world.level.height + 64) {
+      this.dead = true;
+      this.deadTimer = 10; // fell out of the level: gone, no tumble animation
+      return;
+    }
+    if (this.state === 'shell') {
+      if (this.stateTime > PumpkinTortoise.HIDE_TIME) this.setState('walk');
+      return;
+    }
+    if (this.state === 'slide') {
+      const nx = this.x + this.facing * this.shellSpeed * dt;
+      const probe: Rect = { x: nx, y: this.y, w: this.w, h: this.h - 2 };
+      if (world.solidAt(probe, this) || nx < 0 || nx + this.w > world.level.width) {
+        this.facing = -this.facing;
+        world.emit('kick', this.facing < 0 ? this.x + this.w : this.x, this.y + this.h / 2);
+      } else this.x = nx;
+      // knock out whatever it hits
+      for (const o of world.enemies) {
+        if (o === this || o.dead || o.type === 'shadow') continue;
+        if (overlaps(this, o)) {
+          if (o instanceof PumpkinTortoise) o.dead = true;
+          else o.onStomp(world);
+          world.emit('stomp', o.x + o.w / 2, o.y);
+        }
+      }
+      return;
+    }
+    if (!grounded) return;
+    const nx = this.x + this.facing * this.speed * dt;
+    const probe: Rect = { x: nx, y: this.y, w: this.w, h: this.h - 2 };
+    const blocked = world.solidAt(probe, this) || nx < 0 || nx + this.w > world.level.width;
+    const footX = this.facing > 0 ? nx + this.w + 1 : nx - 1;
+    const hasFloor = world.solidAt({ x: footX - 1, y: this.y + this.h, w: 2, h: 6 }, this, true);
+    if (blocked || !hasFloor) this.facing = -this.facing;
+    else this.x = nx;
+  }
+  onStomp(world: World): void {
+    if (this.state === 'shell') {
+      const p = world.player;
+      this.kick(p.x + p.w / 2 < this.x + this.w / 2 ? 1 : -1, world);
+    } else this.setState('shell');
+  }
+  onBump(world: World): boolean {
+    if (this.dead) return false;
+    if (this.state === 'shell') {
+      // brief grace right after hiding so a bounce doesn't instantly kick it
+      if (this.stateTime < 0.15) return true;
+      const p = world.player;
+      this.kick(p.x + p.w / 2 < this.x + this.w / 2 ? 1 : -1, world);
+      return true;
+    }
+    // a freshly kicked shell can't hurt the kicker
+    return this.state === 'slide' && this.stateTime < 0.25;
+  }
+  hurts(p: Rect): boolean {
+    if (this.dead || this.state === 'shell') return false;
+    return overlaps(p, { x: this.x + 3, y: this.y + 4, w: this.w - 6, h: this.h - 5 });
+  }
+  reset(): void {
+    super.reset();
+    this.vy = 0;
+    this.setState('walk');
+    this.facing = str(this.props.direction, 'left') === 'right' ? 1 : -1;
   }
 }

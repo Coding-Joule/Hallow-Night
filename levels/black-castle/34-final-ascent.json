@@ -307,15 +307,16 @@
       "properties": {}
     },
     {
-      "id": "armored-skeleton-1",
-      "type": "armoredSkeleton",
+      "id": "tortoise-1",
+      "type": "pumpkinTortoise",
       "x": 3202,
-      "y": 788,
+      "y": 810,
       "width": 28,
-      "height": 44,
+      "height": 22,
       "properties": {
-        "speed": 55,
-        "direction": "left"
+        "speed": 40,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {

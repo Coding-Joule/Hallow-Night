@@ -58,6 +58,8 @@ export interface ObjectTypeDef {
   signalSource?: boolean;
   /** Reacts to signals from switches. */
   signalTarget?: boolean;
+  /** Kept only so older levels still load; not offered in the editor palette. */
+  hidden?: boolean;
 }
 
 const STYLE_TERRAIN = ['auto', 'earth', 'stone', 'brick', 'wood', 'bone', 'iron'];
@@ -547,14 +549,30 @@ const defs: ObjectTypeDef[] = [
     ],
   },
   {
-    type: 'skeleton',
-    label: 'Skeleton',
+    type: 'pumpkinTortoise',
+    label: 'Pumpkin Tortoise',
     category: 'enemies',
-    description: 'Walks back and forth, turning at walls and ledges. Can be stomped.',
+    description: 'Crawls back and forth. Stomp it to tuck it into its pumpkin shell, then kick the shell — it slides fast and knocks out other creatures.',
+    defaultWidth: 28,
+    defaultHeight: 22,
+    resize: 'none',
+    editorColor: '#d9712c',
+    props: [
+      { key: 'speed', label: 'Speed', kind: 'number', default: 45, min: 1, step: 5 },
+      { key: 'direction', label: 'Faces', kind: 'select', default: 'left', options: DIR_LR },
+      { key: 'shellSpeed', label: 'Shell speed', kind: 'number', default: 420, min: 50, step: 20 },
+    ],
+  },
+  {
+    type: 'skeleton',
+    label: 'Skeleton (retired)',
+    category: 'enemies',
+    description: 'Retired: older levels load it as a pumpkin tortoise.',
     defaultWidth: 24,
     defaultHeight: 42,
     resize: 'none',
     editorColor: '#e6dfc8',
+    hidden: true,
     props: [
       { key: 'speed', label: 'Speed', kind: 'number', default: 60, min: 1, step: 5 },
       { key: 'direction', label: 'Faces', kind: 'select', default: 'left', options: DIR_LR },
@@ -562,13 +580,14 @@ const defs: ObjectTypeDef[] = [
   },
   {
     type: 'armoredSkeleton',
-    label: 'Armored Skeleton',
+    label: 'Armored Skeleton (retired)',
     category: 'enemies',
-    description: 'A little skeleton knight. Walks like a skeleton; stomp its helmet to defeat it.',
+    description: 'Retired: older levels load it as a pumpkin tortoise.',
     defaultWidth: 28,
     defaultHeight: 44,
     resize: 'none',
     editorColor: '#a7a9b8',
+    hidden: true,
     props: [
       { key: 'speed', label: 'Speed', kind: 'number', default: 50, min: 1, step: 5 },
       { key: 'direction', label: 'Faces', kind: 'select', default: 'left', options: DIR_LR },

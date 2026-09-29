@@ -54,6 +54,7 @@ export type WorldEventType =
   | 'relic'
   | 'switch'
   | 'stomp'
+  | 'kick'
   | 'spring'
   | 'break'
   | 'door'

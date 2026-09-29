@@ -1,6 +1,6 @@
 import type { LevelObject } from '../../levels/schema';
 import type { Entity } from '../Entity';
-import { Bat, Ghost, Raven, Shadow, Walker } from './enemies';
+import { Bat, Ghost, PumpkinTortoise, Raven, Shadow } from './enemies';
 import { Chaser, FallingHazard, MovingHazard, Pendulum, Sludge, Spikes } from './hazards';
 import {
   Button,
@@ -77,10 +77,12 @@ export function createEntity(obj: LevelObject): Entity | null {
       return new Spring(obj);
     case 'ghost':
       return new Ghost(obj);
+    case 'pumpkinTortoise':
+      return new PumpkinTortoise(obj);
     case 'skeleton':
-      return new Walker(obj, true);
     case 'armoredSkeleton':
-      return new Walker(obj, true); // stompable too (friendlier), just a little tougher-looking
+      // retired enemies: older levels get a pumpkin tortoise standing on the same spot
+      return new PumpkinTortoise({ ...obj, y: obj.y + obj.height - 22, width: 28, height: 22 });
     case 'bat':
       return new Bat(obj);
     case 'raven':

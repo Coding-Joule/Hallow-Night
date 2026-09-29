@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import type { Entity } from '../sim/Entity';
-import { Bat, Ghost, Raven, Shadow, Walker } from '../sim/entities/enemies';
+import { Bat, Ghost, PumpkinTortoise, Raven, Shadow } from '../sim/entities/enemies';
 import { Chaser, FallingHazard, MovingHazard, Pendulum, Sludge, Spikes } from '../sim/entities/hazards';
 import {
   Button,
@@ -424,6 +424,37 @@ function enemyView(ctx: ViewContext, e: Entity & { facing: number; deadTimer: nu
   };
 }
 
+function tortoiseView(ctx: ViewContext, e: PumpkinTortoise): EntityView {
+  const img = sprite(ctx.scene, e.x + e.w / 2, e.y + e.h, 'tortoise-0').setOrigin(0.5, 1).setDepth(DEPTH.enemies);
+  return {
+    update() {
+      img.setPosition(e.x + e.w / 2, e.y + e.h);
+      img.setAlpha(1);
+      img.setFlipX(e.facing < 0);
+      if (e.dead) {
+        const t = e.deadTimer;
+        img.setTexture('tortoise-shell');
+        img.setPosition(e.x + e.w / 2, e.y + e.h + t * t * 900);
+        img.setAngle(t * 200);
+        img.setAlpha(Math.max(0, 1 - t * 1.5));
+        return;
+      }
+      if (e.state === 'walk') {
+        img.setTexture(`tortoise-${Math.floor(e.anim * 5) % 2}`);
+        img.setAngle(0);
+      } else if (e.state === 'slide') {
+        img.setTexture(`tortoise-spin-${Math.floor(e.anim * 16) % 2}`);
+        img.setAngle(0);
+      } else {
+        img.setTexture('tortoise-shell');
+        // wobble when it's about to pop back out
+        const left = PumpkinTortoise.HIDE_TIME - e.stateTime;
+        img.setAngle(left < 1.5 ? Math.sin(e.anim * 30) * 8 : 0);
+      }
+    },
+  };
+}
+
 function shadowView(ctx: ViewContext, e: Shadow): EntityView {
   const pool = sprite(ctx.scene, e.obj.x + e.w / 2, e.obj.y + e.h, 'shadow-pool').setDepth(DEPTH.objects).setOrigin(0.5, 0.6);
   const body = sprite(ctx.scene, e.x + e.w / 2, e.y + e.h, 'shadow').setOrigin(0.5, 1).setDepth(DEPTH.enemies);
@@ -470,7 +501,7 @@ export function createView(ctx: ViewContext, e: Entity): EntityView | null {
     sprite(ctx.scene, e.x + e.w / 2, e.y + e.h, 'sign').setOrigin(0.5, 1).setDepth(DEPTH.objects);
     return null;
   }
-  if (e instanceof Walker) return enemyView(ctx, e, e.type === 'armoredSkeleton' ? 'armored' : 'skeleton', 4);
+  if (e instanceof PumpkinTortoise) return tortoiseView(ctx, e);
   if (e instanceof Ghost) return enemyView(ctx, e, 'ghost', 2.5, () => 0.8 + Math.sin(e.anim * 2) * 0.12);
   if (e instanceof Bat) return enemyView(ctx, e, 'bat', 8);
   if (e instanceof Raven) return enemyView(ctx, e, 'raven', 7);

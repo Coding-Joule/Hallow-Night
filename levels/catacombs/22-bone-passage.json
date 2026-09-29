@@ -140,7 +140,7 @@
       "width": 32,
       "height": 32,
       "properties": {
-        "text": "Skeleton knights march these halls. Stomp their helmets!"
+        "text": "Tortoises crawl these halls. A kicked shell clears the way!"
       }
     },
     {
@@ -155,15 +155,16 @@
       }
     },
     {
-      "id": "armored-skeleton-1",
-      "type": "armoredSkeleton",
+      "id": "tortoise-1",
+      "type": "pumpkinTortoise",
       "x": 1666,
-      "y": 724,
+      "y": 746,
       "width": 28,
-      "height": 44,
+      "height": 22,
       "properties": {
-        "speed": 50,
-        "direction": "left"
+        "speed": 40,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {
@@ -303,27 +304,29 @@
       "properties": {}
     },
     {
-      "id": "skeleton-1",
-      "type": "skeleton",
+      "id": "tortoise-2",
+      "type": "pumpkinTortoise",
       "x": 3204,
-      "y": 726,
-      "width": 24,
-      "height": 42,
+      "y": 746,
+      "width": 28,
+      "height": 22,
       "properties": {
-        "speed": 60,
-        "direction": "left"
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {
-      "id": "armored-skeleton-2",
-      "type": "armoredSkeleton",
+      "id": "tortoise-3",
+      "type": "pumpkinTortoise",
       "x": 3330,
-      "y": 724,
+      "y": 746,
       "width": 28,
-      "height": 44,
+      "height": 22,
       "properties": {
-        "speed": 50,
-        "direction": "right"
+        "speed": 40,
+        "direction": "right",
+        "shellSpeed": 420
       }
     },
     {
@@ -389,15 +392,16 @@
       "properties": {}
     },
     {
-      "id": "skeleton-2",
-      "type": "skeleton",
+      "id": "tortoise-4",
+      "type": "pumpkinTortoise",
       "x": 3748,
-      "y": 662,
-      "width": 24,
-      "height": 42,
+      "y": 682,
+      "width": 28,
+      "height": 22,
       "properties": {
-        "speed": 60,
-        "direction": "left"
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {
@@ -613,15 +617,16 @@
       }
     },
     {
-      "id": "armored-skeleton-3",
-      "type": "armoredSkeleton",
+      "id": "tortoise-5",
+      "type": "pumpkinTortoise",
       "x": 6210,
-      "y": 660,
+      "y": 682,
       "width": 28,
-      "height": 44,
+      "height": 22,
       "properties": {
-        "speed": 50,
-        "direction": "left"
+        "speed": 40,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {

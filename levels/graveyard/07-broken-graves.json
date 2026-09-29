@@ -132,15 +132,16 @@
       }
     },
     {
-      "id": "skeleton-1",
-      "type": "skeleton",
+      "id": "tortoise-1",
+      "type": "pumpkinTortoise",
       "x": 1220,
-      "y": 598,
-      "width": 24,
-      "height": 42,
+      "y": 618,
+      "width": 28,
+      "height": 22,
       "properties": {
-        "speed": 60,
-        "direction": "left"
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {
@@ -270,15 +271,16 @@
       }
     },
     {
-      "id": "skeleton-2",
-      "type": "skeleton",
+      "id": "tortoise-2",
+      "type": "pumpkinTortoise",
       "x": 2532,
-      "y": 438,
-      "width": 24,
-      "height": 42,
+      "y": 458,
+      "width": 28,
+      "height": 22,
       "properties": {
         "speed": 45,
-        "direction": "left"
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {
@@ -420,27 +422,29 @@
       }
     },
     {
-      "id": "skeleton-3",
-      "type": "skeleton",
+      "id": "tortoise-3",
+      "type": "pumpkinTortoise",
       "x": 4228,
-      "y": 662,
-      "width": 24,
-      "height": 42,
+      "y": 682,
+      "width": 28,
+      "height": 22,
       "properties": {
-        "speed": 60,
-        "direction": "left"
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {
-      "id": "skeleton-4",
-      "type": "skeleton",
+      "id": "tortoise-4",
+      "type": "pumpkinTortoise",
       "x": 4484,
-      "y": 662,
-      "width": 24,
-      "height": 42,
+      "y": 682,
+      "width": 28,
+      "height": 22,
       "properties": {
-        "speed": 60,
-        "direction": "right"
+        "speed": 45,
+        "direction": "right",
+        "shellSpeed": 420
       }
     },
     {

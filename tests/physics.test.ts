@@ -134,3 +134,33 @@ describe('gates', () => {
     expect(w.player.x).toBeGreaterThanOrEqual(432); // shoved out to the right side
   });
 });
+
+describe('pumpkin tortoise', () => {
+  it('stomp hides it in its shell; walking into the shell kicks it fast and it knocks out other creatures', async () => {
+    const { PumpkinTortoise } = await import('../src/game/sim/entities/enemies');
+    const w = new World(
+      makeLevel([
+        floor,
+        { id: 't1', type: 'pumpkinTortoise', x: 400, y: 778, width: 28, height: 22, properties: { speed: 1, direction: 'right' } },
+        { id: 't2', type: 'pumpkinTortoise', x: 1200, y: 778, width: 28, height: 22, properties: { speed: 1 } },
+      ]),
+    );
+    const t1 = w.entities.find((e) => e.id === 't1') as InstanceType<typeof PumpkinTortoise>;
+    const t2 = w.entities.find((e) => e.id === 't2') as InstanceType<typeof PumpkinTortoise>;
+    run(w, 0.2, {});
+    w.player.placeAt(t1.x + t1.w / 2, 700);
+    run(w, 0.3, {});
+    expect(t1.state).toBe('shell');
+    expect(t1.dead).toBe(false);
+    // step back to the left, wait, then walk into the shell
+    w.player.placeAt(t1.x - 60, 800);
+    run(w, 0.5, {});
+    const startX = t1.x;
+    run(w, 0.9, (_t) => (t1.state === 'shell' ? { right: true } : {}));
+    expect(t1.state).toBe('slide');
+    expect(t1.x - startX).toBeGreaterThan(150);
+    run(w, 2, {});
+    expect(t2.dead).toBe(true);
+    expect(w.deaths).toBe(0);
+  });
+});

@@ -191,15 +191,16 @@
       }
     },
     {
-      "id": "skeleton-1",
-      "type": "skeleton",
+      "id": "tortoise-1",
+      "type": "pumpkinTortoise",
       "x": 2436,
-      "y": 598,
-      "width": 24,
-      "height": 42,
+      "y": 618,
+      "width": 28,
+      "height": 22,
       "properties": {
-        "speed": 40,
-        "direction": "left"
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {
@@ -458,15 +459,16 @@
       }
     },
     {
-      "id": "armored-skeleton-1",
-      "type": "armoredSkeleton",
+      "id": "tortoise-2",
+      "type": "pumpkinTortoise",
       "x": 5282,
-      "y": 404,
+      "y": 426,
       "width": 28,
-      "height": 44,
+      "height": 22,
       "properties": {
-        "speed": 35,
-        "direction": "left"
+        "speed": 40,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {

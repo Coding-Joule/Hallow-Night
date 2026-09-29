@@ -23,7 +23,7 @@ export class World {
   readonly slopes: Slope[] = [];
   private readonly touchables: Entity[] = [];
   private readonly hazards: Entity[] = [];
-  private readonly enemies: Entity[] = [];
+  readonly enemies: Entity[] = [];
   private readonly byId = new Map<string, Entity>();
 
   time = 0;
@@ -241,6 +241,7 @@ export class World {
         this.emit('stomp', e.x + e.w / 2, e.y);
         continue;
       }
+      if (overlaps(hurt, e) && e.onBump(this)) continue;
       if (e.hurts(hurt)) {
         this.kill(e.type);
         return;

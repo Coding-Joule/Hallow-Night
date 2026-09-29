@@ -72,6 +72,11 @@ export abstract class Entity implements Rect {
   /** Player overlaps this entity (touchable only). `entered` on first frame. */
   onTouch(_world: World, _entered: boolean): void {}
 
+  /** Player walked into this enemy (not a stomp). Return true if that is harmless (e.g. kicking a shell). */
+  onBump(_world: World): boolean {
+    return false;
+  }
+
   /** Player stomped this enemy. */
   onStomp(_world: World): void {
     this.dead = true;

@@ -134,15 +134,16 @@
       }
     },
     {
-      "id": "skeleton-1",
-      "type": "skeleton",
+      "id": "tortoise-1",
+      "type": "pumpkinTortoise",
       "x": 1284,
-      "y": 1622,
-      "width": 24,
-      "height": 42,
+      "y": 1642,
+      "width": 28,
+      "height": 22,
       "properties": {
-        "speed": 60,
-        "direction": "left"
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {
@@ -271,15 +272,16 @@
       }
     },
     {
-      "id": "skeleton-2",
-      "type": "skeleton",
+      "id": "tortoise-2",
+      "type": "pumpkinTortoise",
       "x": 836,
-      "y": 1174,
-      "width": 24,
-      "height": 42,
+      "y": 1194,
+      "width": 28,
+      "height": 22,
       "properties": {
         "speed": 45,
-        "direction": "right"
+        "direction": "right",
+        "shellSpeed": 420
       }
     },
     {
@@ -431,15 +433,16 @@
       }
     },
     {
-      "id": "skeleton-3",
-      "type": "skeleton",
+      "id": "tortoise-3",
+      "type": "pumpkinTortoise",
       "x": 2116,
-      "y": 918,
-      "width": 24,
-      "height": 42,
+      "y": 938,
+      "width": 28,
+      "height": 22,
       "properties": {
-        "speed": 60,
-        "direction": "left"
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {
@@ -561,27 +564,29 @@
       }
     },
     {
-      "id": "skeleton-4",
-      "type": "skeleton",
+      "id": "tortoise-4",
+      "type": "pumpkinTortoise",
       "x": 3652,
-      "y": 342,
-      "width": 24,
-      "height": 42,
+      "y": 362,
+      "width": 28,
+      "height": 22,
       "properties": {
-        "speed": 60,
-        "direction": "left"
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
       }
     },
     {
-      "id": "skeleton-5",
-      "type": "skeleton",
+      "id": "tortoise-5",
+      "type": "pumpkinTortoise",
       "x": 3972,
-      "y": 342,
-      "width": 24,
-      "height": 42,
+      "y": 362,
+      "width": 28,
+      "height": 22,
       "properties": {
-        "speed": 60,
-        "direction": "right"
+        "speed": 45,
+        "direction": "right",
+        "shellSpeed": 420
       }
     },
     {

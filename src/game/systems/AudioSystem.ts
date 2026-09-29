@@ -19,6 +19,7 @@ export type SfxName =
   | 'relic'
   | 'switch'
   | 'stomp'
+  | 'kick'
   | 'spring'
   | 'break'
   | 'door'
@@ -178,6 +179,10 @@ class AudioSystemImpl {
       case 'stomp':
         this.tone(180, 0.12, 'square', 0.12, 60);
         this.noise(0.1, 0.18, 1200);
+        break;
+      case 'kick':
+        this.tone(520, 0.08, 'square', 0.1, 260);
+        this.noise(0.06, 0.12, 3000, 'highpass');
         break;
       case 'spring':
         this.tone(200, 0.3, 'triangle', 0.14, 900);

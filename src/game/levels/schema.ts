@@ -92,6 +92,7 @@ export const OBJECT_TYPES = [
   'ghost',
   'skeleton',
   'armoredSkeleton',
+  'pumpkinTortoise',
   'bat',
   'raven',
   'shadow',

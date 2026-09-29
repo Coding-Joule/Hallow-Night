@@ -167,8 +167,8 @@ An abbreviated example:
 | `hiddenWall` | switches | Looks solid but can be walked through. Great for secrets. | `style`="auto" (auto / earth / stone / brick / wood / bone / iron) |
 | `spring` | switches | Launches the player upward. | `power`=1000 |
 | `ghost` | enemies | Drifts slowly toward the player when nearby. Cannot be stomped. | `range`=260, `speed`=55, `leash`=360 |
-| `skeleton` | enemies | Walks back and forth, turning at walls and ledges. Can be stomped. | `speed`=60, `direction`="left" (right / left) |
-| `armoredSkeleton` | enemies | Helmeted and spiked. Cannot be stomped; avoid it. | `speed`=50, `direction`="left" (right / left) |
+| `pumpkinTortoise` | enemies | Crawls back and forth. Stomp it to tuck it into its pumpkin shell, then kick the shell (walk into it or stomp it again): it slides fast, bounces off walls and knocks out other creatures. A sliding shell hurts you too; stomp it to stop it. Pops back out after ~6 s. | `speed`=45, `direction`="left" (right / left), `shellSpeed`=420 |
+| `skeleton`, `armoredSkeleton` | enemies | Retired. Still accepted so older levels load, but they play as pumpkin tortoises and are hidden from the editor palette. | `speed`, `direction` |
 | `bat` | enemies | Flies a repeating patrol. Can be stomped. | `axis`="horizontal" (horizontal / vertical), `distance`=160, `speed`=90, `startOffset`=0 |
 | `raven` | enemies | Fast horizontal flyer that sweeps across its range. Can be stomped. | `range`=640, `speed`=230, `direction`="left" (right / left), `pause`=0.8 |
 | `shadow` | enemies | Rises from a dark pool when the player comes close and gives chase briefly. | `triggerRange`=200, `speed`=150, `duration`=2.2, `cooldown`=2.5 |
@@ -260,10 +260,10 @@ All important movement values are in **`src/game/config/physics.ts`** (`PLAYER_S
 | World | Levels | Introduces |
 | --- | --- | --- |
 | 1 Old Town | Halloween Street, Back Alley, Iron Fence, Rooftop Run, Town Gate | running & jumping, one-way ledges, pits, moving & path platforms |
-| 2 Graveyard | Cemetery Path, Broken Graves, Under the Headstones, Bellkeeper's Hill, Cemetery Exit | spikes, skeletons, crumbling slabs, checkpoints |
+| 2 Graveyard | Cemetery Path, Broken Graves, Under the Headstones, Bellkeeper's Hill, Cemetery Exit | spikes, pumpkin tortoises, crumbling slabs, checkpoints |
 | 3 Dead Woods | Deadwood Trail, Hollow Trees, Raven Ridge, The Deep Woods, Witch's Crossing | wall slide & wall jump, bats, ravens, spiked balls, vertical climbs |
 | 4 Haunted Manor | Manor Entrance, West Hall, Servants' Passage, Upper Gallery, The Attic | levers, plates, timed switches, keys & doors, gates, phantom platforms, ghosts, hidden walls |
-| 5 Catacombs | Beneath the Manor, Bone Passage, Flooded Crypt, Chamber of Chains, Catacomb Escape | dash, cracked walls, falling platforms, pendulums, poison sludge, armoured skeletons, chase |
+| 5 Catacombs | Beneath the Manor, Bone Passage, Flooded Crypt, Chamber of Chains, Catacomb Escape | dash, cracked walls, falling platforms, pendulums, poison sludge, pumpkin tortoises, chase |
 | 6 Clocktower | Clocktower Base, Inside the Gears, Bell Chamber, Midnight Mechanism, Above the Bells | double jump, elevators, conveyors, looping gear platforms, timed races, a tall climb |
 | 7 Black Castle | Castle Wall, Dark Courtyard, Tower of Shadows, Final Ascent, Midnight Crown | shadows, rising darkness, everything combined; level 35 has 6 checkpoints across 5 sections |
 

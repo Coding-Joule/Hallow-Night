@@ -64,39 +64,42 @@ export function playerTextures(): SvgTexture[] {
 
 // ───────────────────────────── enemies
 
-/** Cute chibi skeleton (and a little knight version). Canvas 30×40, feet at the bottom. */
-function skeleton(frame: number, armored: boolean): string {
-  const bone = '#efe6cf';
-  const shade = '#cfc3a4';
-  const dark = '#2a2230';
-  const step = frame === 0 ? 1.5 : -1.5;
-  const legs = `<rect x="${10 + step}" y="33" width="4" height="7" rx="2" fill="${shade}"/>
-    <rect x="${16 - step}" y="33" width="4" height="7" rx="2" fill="${bone}"/>`;
-  const body = `<ellipse cx="15" cy="29" rx="6" ry="5.5" fill="${bone}"/>
-    <path d="M11 27.5 H19 M11.5 30.5 H18.5" stroke="${shade}" stroke-width="1.3" stroke-linecap="round"/>`;
-  const arms = frame === 0
-    ? `<path d="M9.5 27 Q6 29 6.5 32" stroke="${bone}" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M20.5 27 Q24 26 24.5 23" stroke="${bone}" stroke-width="2.4" fill="none" stroke-linecap="round"/>`
-    : `<path d="M9.5 27 Q6 26 5.5 23" stroke="${bone}" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M20.5 27 Q24 29 23.5 32" stroke="${bone}" stroke-width="2.4" fill="none" stroke-linecap="round"/>`;
-  // calm, friendly skull: modest head, dark sockets, small nose, toothy grin
-  const head = `<path d="M5.5 13 Q5.5 3.5 15 3.5 Q24.5 3.5 24.5 13 Q24.5 17.5 21 19.5 L20.5 22 L9.5 22 L9 19.5 Q5.5 17.5 5.5 13 Z" fill="${bone}"/>
-    <path d="M18 5 Q23 7 23.5 12" stroke="#fff8e8" stroke-width="1.2" fill="none" opacity="0.5" stroke-linecap="round"/>
-    <ellipse cx="11.2" cy="13" rx="2.6" ry="2.9" fill="${dark}"/>
-    <ellipse cx="18.8" cy="13" rx="2.6" ry="2.9" fill="${dark}"/>
-    <circle cx="12" cy="12.2" r="0.6" fill="#fff" opacity="0.7"/>
-    <circle cx="19.6" cy="12.2" r="0.6" fill="#fff" opacity="0.7"/>
-    <path d="M14.2 16.6 L15 15.4 L15.8 16.6 Z" fill="${dark}"/>
-    <path d="M11 19.3 H19" stroke="${dark}" stroke-width="0.9" stroke-linecap="round"/>
-    <path d="M13 18.6 V20 M15 18.6 V20 M17 18.6 V20" stroke="${dark}" stroke-width="0.7"/>`;
-  let helmet = '';
-  if (armored) {
-    helmet = `<path d="M4.5 12 Q4.5 2 15 2 Q25.5 2 25.5 12 L25.5 12.5 Q20 9.5 15 9.5 Q10 9.5 4.5 12.5 Z" fill="#7d869d"/>
-      <path d="M6.5 8 Q15 4 23.5 8" stroke="#a9b1c6" stroke-width="1.1" fill="none"/>
-      <rect x="13.8" y="2" width="2.4" height="8" rx="1" fill="#626b83"/>
-      <path d="M15 2 Q13.8 -2 16.4 -3.5 Q18.8 -2 16.8 1 Z" fill="#c9793a"/>
-      <path d="M9.5 25 Q15 22.5 20.5 25 L20 32 Q15 34 10 32 Z" fill="#8c95ad"/>
-      <circle cx="15" cy="28" r="1.4" fill="#e8c86a"/>`;
-  }
-  return svg(30, 46, `<g transform="translate(0 6)">${legs}${arms}${body}${head}${helmet}</g>`);
+/** Pumpkin shell (shared by the walking and hiding tortoise). `spin` shifts the ribs for the sliding look. */
+function pumpkinShell(cx: number, bottom: number, spin: number): string {
+  const top = bottom - 15;
+  const ribs = [-7, 0, 7].map((o) => o + spin * 3.5).map((o) => (o > 10.5 ? o - 21 : o)).filter((o) => Math.abs(o) < 8.5);
+  return `<path d="M${cx - 12} ${bottom - 5} Q${cx - 12} ${top} ${cx} ${top} Q${cx + 12} ${top} ${cx + 12} ${bottom - 5} Q${cx + 12} ${bottom} ${cx} ${bottom} Q${cx - 12} ${bottom} ${cx - 12} ${bottom - 5} Z" fill="#d9712c"/>
+    ${ribs.map((o) => `<path d="M${cx + o} ${top + 1} Q${cx + o * 1.5} ${bottom - 7} ${cx + o} ${bottom - 0.5}" stroke="#b4561f" stroke-width="1.3" fill="none" stroke-linecap="round"/>`).join('')}
+    <path d="M${cx - 8} ${top + 4} Q${cx - 5} ${top + 1.5} ${cx - 1} ${top + 1.5}" stroke="#f2a35c" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.8"/>
+    <path d="M${cx - 0.5} ${top + 1} Q${cx - 1} ${top - 3} ${cx + 1.5} ${top - 4}" stroke="#6d7a3a" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+    <path d="M${cx + 1} ${top - 2} Q${cx + 5} ${top - 5} ${cx + 5.5} ${top - 1.5}" stroke="#7f9a4a" stroke-width="1" fill="none" stroke-linecap="round"/>`;
+}
+
+/** Pumpkin tortoise walking, facing right. Canvas 36×26, feet at the bottom. */
+function tortoise(frame: number): string {
+  const skin = '#7fa35e';
+  const skinDark = '#5f8546';
+  const a = frame === 0 ? 1.5 : -1.5;
+  const legs = `<rect x="${9 + a}" y="20" width="5" height="6" rx="2.2" fill="${skinDark}"/>
+    <rect x="${21 - a}" y="20" width="5" height="6" rx="2.2" fill="${skinDark}"/>
+    <rect x="${12 - a}" y="20" width="5" height="6" rx="2.2" fill="${skin}"/>
+    <rect x="${24 + a}" y="20" width="5" height="6" rx="2.2" fill="${skin}"/>`;
+  const tail = `<path d="M6 19 L2.5 20.5 L6 21.5 Z" fill="${skinDark}"/>`;
+  const head = `<path d="M26 15 Q28 12 30 12" stroke="${skin}" stroke-width="5" fill="none" stroke-linecap="round"/>
+    <circle cx="30.5" cy="12" r="4.6" fill="${skin}"/>
+    <circle cx="31.6" cy="11" r="1.4" fill="#1d1a24"/>
+    <circle cx="32" cy="10.5" r="0.5" fill="#fff"/>
+    <path d="M30.5 14.2 Q32.2 15.4 34 14" stroke="#2f3a24" stroke-width="0.8" fill="none" stroke-linecap="round"/>`;
+  const rim = `<path d="M6 20 Q17.5 23.5 29 20" stroke="#6b4a2b" stroke-width="2" fill="none" stroke-linecap="round"/>`;
+  return svg(36, 26, `${legs}${tail}${head}${pumpkinShell(17.5, 21.5, 0)}${rim}`);
+}
+
+/** Tortoise hiding in its shell. Two sleepy eyes peek out while resting; none while spinning. */
+function tortoiseShell(spin: number, peek: boolean): string {
+  const eyes = peek
+    ? `<path d="M22 20 Q25.5 18 29 20 L29 22.5 Q25.5 23.5 22 22.5 Z" fill="#2a1a14"/><circle cx="24.2" cy="21" r="0.8" fill="#f6d27a"/><circle cx="27" cy="21" r="0.8" fill="#f6d27a"/>`
+    : '';
+  return svg(36, 26, `<ellipse cx="17.5" cy="25" rx="11" ry="1.6" fill="#000" opacity="0.25"/>${pumpkinShell(17.5, 25.5, spin)}${eyes}`);
 }
 
 function ghost(frame: number): string {
@@ -158,10 +161,11 @@ function shadowPool(): string {
 
 export function enemyTextures(): SvgTexture[] {
   return [
-    { key: 'skeleton-0', svg: skeleton(0, false) },
-    { key: 'skeleton-1', svg: skeleton(1, false) },
-    { key: 'armored-0', svg: skeleton(0, true) },
-    { key: 'armored-1', svg: skeleton(1, true) },
+    { key: 'tortoise-0', svg: tortoise(0) },
+    { key: 'tortoise-1', svg: tortoise(1) },
+    { key: 'tortoise-shell', svg: tortoiseShell(0, true) },
+    { key: 'tortoise-spin-0', svg: tortoiseShell(0, false) },
+    { key: 'tortoise-spin-1', svg: tortoiseShell(1, false) },
     { key: 'ghost-0', svg: ghost(0) },
     { key: 'ghost-1', svg: ghost(1) },
     { key: 'bat-0', svg: bat(0) },
