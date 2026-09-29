@@ -80,7 +80,7 @@ export function createEntity(obj: LevelObject): Entity | null {
     case 'skeleton':
       return new Walker(obj, true);
     case 'armoredSkeleton':
-      return new Walker(obj, false);
+      return new Walker(obj, true); // stompable too (friendlier), just a little tougher-looking
     case 'bat':
       return new Bat(obj);
     case 'raven':

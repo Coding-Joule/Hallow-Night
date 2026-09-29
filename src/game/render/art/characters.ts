@@ -64,38 +64,38 @@ export function playerTextures(): SvgTexture[] {
 
 // ───────────────────────────── enemies
 
+/** Cute chibi skeleton (and a little knight version). Canvas 30×40, feet at the bottom. */
 function skeleton(frame: number, armored: boolean): string {
-  const w = armored ? 28 : 24;
-  const cx = w / 2;
-  const legA = frame === 0 ? [cx - 5, cx + 2] : [cx - 3, cx];
-  const bone = PAL.bone;
-  const legs = `<rect x="${legA[0]}" y="30" width="3" height="${armored ? 14 : 12}" fill="${bone}"/><rect x="${legA[1]}" y="30" width="3" height="${armored ? 14 : 12}" fill="${PAL.boneDark}"/>`;
-  const ribs = `<rect x="${cx - 1}" y="14" width="2" height="17" fill="${bone}"/>
-    <path d="M${cx - 6} 17 H${cx + 6} M${cx - 6} 21 H${cx + 6} M${cx - 5} 25 H${cx + 5}" stroke="${bone}" stroke-width="1.6"/>
-    <rect x="${cx - 6}" y="29" width="12" height="3" rx="1" fill="${PAL.boneDark}"/>`;
-  const arm = frame === 0
-    ? `<path d="M${cx + 5} 16 L${cx + 9} 23 L${cx + 10} 28" stroke="${bone}" stroke-width="2" fill="none"/>`
-    : `<path d="M${cx + 5} 16 L${cx + 8} 24 L${cx + 11} 26" stroke="${bone}" stroke-width="2" fill="none"/>`;
-  const armBack = `<path d="M${cx - 5} 16 L${cx - 8} 23 L${cx - 7} 28" stroke="${PAL.boneDark}" stroke-width="2" fill="none"/>`;
-  const skull = `<path d="M${cx - 6} 8 Q${cx - 6} 1 ${cx} 1 Q${cx + 7} 1 ${cx + 7} 8 L${cx + 6} 12 L${cx - 4} 12 Z" fill="${bone}"/>
-    <rect x="${cx - 2}" y="11" width="7" height="3" fill="${PAL.boneDark}"/>
-    <ellipse cx="${cx + 3.5}" cy="7" rx="1.8" ry="2" fill="#140f18"/>
-    <ellipse cx="${cx - 1}" cy="7" rx="1.6" ry="2" fill="#140f18"/>`;
-  let armor = '';
+  const bone = '#efe6cf';
+  const shade = '#cfc3a4';
+  const dark = '#2a2230';
+  const step = frame === 0 ? 1.5 : -1.5;
+  const legs = `<rect x="${10 + step}" y="33" width="4" height="7" rx="2" fill="${shade}"/>
+    <rect x="${16 - step}" y="33" width="4" height="7" rx="2" fill="${bone}"/>`;
+  const body = `<ellipse cx="15" cy="29" rx="6" ry="5.5" fill="${bone}"/>
+    <path d="M11 27.5 H19 M11.5 30.5 H18.5" stroke="${shade}" stroke-width="1.3" stroke-linecap="round"/>`;
+  const arms = frame === 0
+    ? `<path d="M9.5 27 Q6 29 6.5 32" stroke="${bone}" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M20.5 27 Q24 26 24.5 23" stroke="${bone}" stroke-width="2.4" fill="none" stroke-linecap="round"/>`
+    : `<path d="M9.5 27 Q6 26 5.5 23" stroke="${bone}" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M20.5 27 Q24 29 23.5 32" stroke="${bone}" stroke-width="2.4" fill="none" stroke-linecap="round"/>`;
+  const head = `<circle cx="15" cy="13" r="11" fill="${bone}"/>
+    <ellipse cx="15" cy="21.5" rx="5.5" ry="2.6" fill="${bone}"/>
+    <ellipse cx="11" cy="13.5" rx="3.1" ry="3.6" fill="${dark}"/>
+    <ellipse cx="19" cy="13.5" rx="3.1" ry="3.6" fill="${dark}"/>
+    <circle cx="12" cy="12.2" r="1.1" fill="#fff"/>
+    <circle cx="20" cy="12.2" r="1.1" fill="#fff"/>
+    <ellipse cx="7.5" cy="17.5" rx="1.8" ry="1.1" fill="#f0a6a0" opacity="0.55"/>
+    <ellipse cx="22.5" cy="17.5" rx="1.8" ry="1.1" fill="#f0a6a0" opacity="0.55"/>
+    <path d="M12.5 19 Q15 21 17.5 19" stroke="${dark}" stroke-width="1.1" fill="none" stroke-linecap="round"/>`;
+  let helmet = '';
   if (armored) {
-    armor = `<path d="M${cx - 7} 7 Q${cx - 7} -1 ${cx} -1 Q${cx + 8} -1 ${cx + 8} 7 L${cx + 8} 9 L${cx - 7} 9 Z" fill="${PAL.iron}"/>
-      <path d="M${cx} -1 L${cx + 1} -6 L${cx + 2} -1 Z" fill="${PAL.ironLight}"/>
-      <rect x="${cx - 7}" y="6" width="15" height="2" fill="${PAL.ironLight}"/>
-      <circle cx="${cx + 3.5}" cy="7.5" r="1" fill="#e0523f"/>
-      <path d="M${cx - 8} 14 H${cx + 8} L${cx + 7} 29 H${cx - 7} Z" fill="${PAL.iron}"/>
-      <path d="M${cx - 8} 14 H${cx + 8}" stroke="${PAL.ironLight}" stroke-width="1.5"/>
-      <path d="M${cx - 4} 18 L${cx} 16 L${cx + 4} 18 M${cx - 4} 23 L${cx} 21 L${cx + 4} 23" stroke="${PAL.ironLight}" stroke-width="1" fill="none"/>
-      <path d="M${cx + 8} 15 l4 -3 l-1 5 Z M${cx - 8} 15 l-4 -3 l1 5 Z" fill="${PAL.ironLight}"/>
-      <rect x="${cx + 8}" y="17" width="6" height="12" rx="1" fill="#383b46" stroke="${PAL.ironLight}" stroke-width="1"/>`;
+    helmet = `<path d="M3.5 12 Q3.5 1 15 1 Q26.5 1 26.5 12 L26.5 13 Q20 9.5 15 9.5 Q10 9.5 3.5 13 Z" fill="#8c95ad"/>
+      <path d="M5 8 Q15 3 25 8" stroke="#b8c0d4" stroke-width="1.2" fill="none"/>
+      <rect x="13.5" y="1" width="3" height="9" rx="1.2" fill="#6f7891"/>
+      <path d="M15 1 Q13 -4 17 -6 Q21 -4 18 0 Z" fill="#e8913a"/>
+      <path d="M9.5 25 Q15 22.5 20.5 25 L20 32 Q15 34 10 32 Z" fill="#8c95ad"/>
+      <circle cx="15" cy="28" r="1.4" fill="#e8c86a"/>`;
   }
-  const h = armored ? 44 : 42;
-  const yShift = armored ? 6 : 0;
-  return svg(w + (armored ? 6 : 0), h + yShift, `<g transform="translate(0 ${yShift})">${legs}${armBack}${ribs}${arm}${skull}${armor}</g>`);
+  return svg(30, 46, `<g transform="translate(0 6)">${legs}${arms}${body}${head}${helmet}</g>`);
 }
 
 function ghost(frame: number): string {

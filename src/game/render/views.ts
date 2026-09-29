@@ -470,7 +470,7 @@ export function createView(ctx: ViewContext, e: Entity): EntityView | null {
     sprite(ctx.scene, e.x + e.w / 2, e.y + e.h, 'sign').setOrigin(0.5, 1).setDepth(DEPTH.objects);
     return null;
   }
-  if (e instanceof Walker) return enemyView(ctx, e, e.stompable ? 'skeleton' : 'armored', 5);
+  if (e instanceof Walker) return enemyView(ctx, e, e.type === 'armoredSkeleton' ? 'armored' : 'skeleton', 4);
   if (e instanceof Ghost) return enemyView(ctx, e, 'ghost', 2.5, () => 0.8 + Math.sin(e.anim * 2) * 0.12);
   if (e instanceof Bat) return enemyView(ctx, e, 'bat', 8);
   if (e instanceof Raven) return enemyView(ctx, e, 'raven', 7);

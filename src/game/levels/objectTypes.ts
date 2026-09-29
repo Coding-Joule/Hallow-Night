@@ -564,7 +564,7 @@ const defs: ObjectTypeDef[] = [
     type: 'armoredSkeleton',
     label: 'Armored Skeleton',
     category: 'enemies',
-    description: 'Helmeted and spiked. Cannot be stomped; avoid it.',
+    description: 'A little skeleton knight. Walks like a skeleton; stomp its helmet to defeat it.',
     defaultWidth: 28,
     defaultHeight: 44,
     resize: 'none',
