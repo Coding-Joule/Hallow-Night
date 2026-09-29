@@ -80,6 +80,17 @@ export class Ghost extends Enemy {
     this.stompable = false;
   }
   protected think(dt: number, world: World): void {
+    if (str(this.props.mode, 'drift') !== 'chase') {
+      // calm drift: sway gently side to side around home, never follow the player
+      const speed = num(this.props.speed, 55);
+      const sway = 64;
+      const t = this.anim * (speed / sway);
+      const nx = this.obj.x + Math.sin(t) * sway;
+      this.facing = Math.cos(t) >= 0 ? 1 : -1;
+      this.x = nx;
+      this.y = this.obj.y + Math.sin(this.anim * 1.7) * 10;
+      return;
+    }
     const p = world.player;
     const range = num(this.props.range, 260);
     const leash = num(this.props.leash, 360);

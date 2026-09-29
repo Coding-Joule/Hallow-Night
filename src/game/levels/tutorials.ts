@@ -30,7 +30,7 @@ export const OBJECT_TUTORIALS: Partial<Record<ObjectType, string>> = {
   checkpoint: 'Touch the lantern post.\nIf you fall, you return here.',
   breakableWall: 'Cracked wall: Dash into it to break it.',
   spring: 'Springs launch you high into the air.',
-  ghost: 'Ghosts drift toward you and can’t be stomped. Keep away.',
+  ghost: 'Ghosts drift back and forth and can’t be stomped. Slip past them.',
   skeleton: 'Jump on a skeleton’s skull to defeat it.',
   armoredSkeleton: 'Armored skeletons can’t be stomped. Avoid them.',
   bat: 'Bats fly back and forth. Stomp them or dodge.',

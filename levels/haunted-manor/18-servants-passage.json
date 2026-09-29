@@ -115,6 +115,7 @@
       "width": 30,
       "height": 32,
       "properties": {
+        "mode": "drift",
         "range": 150,
         "speed": 35,
         "leash": 360
@@ -394,6 +395,7 @@
       "width": 30,
       "height": 32,
       "properties": {
+        "mode": "drift",
         "range": 180,
         "speed": 45,
         "leash": 360
@@ -495,6 +497,7 @@
       "width": 30,
       "height": 32,
       "properties": {
+        "mode": "drift",
         "range": 150,
         "speed": 40,
         "leash": 360
@@ -630,6 +633,7 @@
       "width": 30,
       "height": 32,
       "properties": {
+        "mode": "drift",
         "range": 120,
         "speed": 30,
         "leash": 360
@@ -724,6 +728,7 @@
       "width": 30,
       "height": 32,
       "properties": {
+        "mode": "drift",
         "range": 200,
         "speed": 50,
         "leash": 360

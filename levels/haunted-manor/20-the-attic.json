@@ -92,6 +92,7 @@
       "width": 30,
       "height": 32,
       "properties": {
+        "mode": "drift",
         "range": 200,
         "speed": 45,
         "leash": 360
@@ -337,6 +338,7 @@
       "width": 30,
       "height": 32,
       "properties": {
+        "mode": "drift",
         "range": 180,
         "speed": 45,
         "leash": 360
@@ -616,6 +618,7 @@
       "width": 30,
       "height": 32,
       "properties": {
+        "mode": "drift",
         "range": 200,
         "speed": 50,
         "leash": 360
