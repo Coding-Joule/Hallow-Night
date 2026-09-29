@@ -119,6 +119,17 @@
       }
     },
     {
+      "id": "one-way-gear",
+      "type": "oneWay",
+      "x": 992,
+      "y": 1184,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
       "id": "path-platform-2",
       "type": "pathPlatform",
       "x": 1088,
