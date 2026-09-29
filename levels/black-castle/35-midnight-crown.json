@@ -642,9 +642,9 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.3,
+        "onTime": 2,
         "offTime": 0.9,
-        "offset": 0,
+        "offset": 2,
         "signalMode": "none"
       }
     },
@@ -656,9 +656,9 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.3,
+        "onTime": 2,
         "offTime": 0.9,
-        "offset": 0.9,
+        "offset": 0,
         "signalMode": "none"
       }
     },
@@ -814,7 +814,7 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.2,
+        "onTime": 2,
         "offTime": 0.8,
         "offset": 0,
         "signalMode": "none"

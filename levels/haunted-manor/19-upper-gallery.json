@@ -101,8 +101,8 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.6,
-        "offTime": 1.6,
+        "onTime": 2.6,
+        "offTime": 1.2,
         "offset": 0,
         "signalMode": "none"
       }
@@ -115,9 +115,9 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.6,
-        "offTime": 1.6,
-        "offset": 1.6,
+        "onTime": 2.6,
+        "offTime": 1.2,
+        "offset": 2.7,
         "signalMode": "none"
       }
     },
@@ -129,9 +129,9 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.6,
-        "offTime": 1.6,
-        "offset": 0,
+        "onTime": 2.6,
+        "offTime": 1.2,
+        "offset": 1.6,
         "signalMode": "none"
       }
     },
@@ -143,9 +143,9 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.6,
-        "offTime": 1.6,
-        "offset": 1.6,
+        "onTime": 2.6,
+        "offTime": 1.2,
+        "offset": 0.5,
         "signalMode": "none"
       }
     },
@@ -181,9 +181,9 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.4,
-        "offTime": 1.4,
-        "offset": 0.7,
+        "onTime": 2.6,
+        "offTime": 1.2,
+        "offset": 0,
         "signalMode": "none"
       }
     },
@@ -195,9 +195,9 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.4,
-        "offTime": 1.4,
-        "offset": 1.4,
+        "onTime": 2.6,
+        "offTime": 1.2,
+        "offset": 2.7,
         "signalMode": "none"
       }
     },
@@ -372,7 +372,7 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 2,
+        "onTime": 2.6,
         "offTime": 1,
         "offset": 0,
         "signalMode": "none"
@@ -452,8 +452,8 @@
       "width": 64,
       "height": 24,
       "properties": {
-        "onTime": 1.5,
-        "offTime": 1.5,
+        "onTime": 2.6,
+        "offTime": 1.2,
         "offset": 0,
         "signalMode": "none"
       }
@@ -466,9 +466,9 @@
       "width": 64,
       "height": 24,
       "properties": {
-        "onTime": 1.5,
-        "offTime": 1.5,
-        "offset": 1.5,
+        "onTime": 2.6,
+        "offTime": 1.2,
+        "offset": 2.7,
         "signalMode": "none"
       }
     },
@@ -662,7 +662,7 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.2,
+        "onTime": 2.6,
         "offTime": 1.2,
         "offset": 0,
         "signalMode": "none"
@@ -676,9 +676,9 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.2,
+        "onTime": 2.6,
         "offTime": 1.2,
-        "offset": 1.2,
+        "offset": 2.7,
         "signalMode": "none"
       }
     },
@@ -690,9 +690,9 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.2,
+        "onTime": 2.6,
         "offTime": 1.2,
-        "offset": 0,
+        "offset": 1.6,
         "signalMode": "none"
       }
     },
@@ -704,9 +704,9 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.2,
+        "onTime": 2.6,
         "offTime": 1.2,
-        "offset": 1.2,
+        "offset": 0.5,
         "signalMode": "none"
       }
     },
@@ -718,9 +718,9 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.2,
+        "onTime": 2.6,
         "offTime": 1.2,
-        "offset": 0,
+        "offset": 3.2,
         "signalMode": "none"
       }
     },

@@ -206,7 +206,7 @@ function crumblingView(ctx: ViewContext, e: CrumblingPlatform): EntityView {
 function timedView(ctx: ViewContext, e: TimedPlatform): EntityView {
   const ts = platformSprite(ctx, e, 'plat-phantom');
   const outline = ctx.scene.add.graphics().setDepth(DEPTH.terrain - 1);
-  outline.lineStyle(1, 0x8f7dd0, 0.5);
+  outline.lineStyle(1.5, 0xbfb0ff, 0.7);
   outline.strokeRect(e.x + 0.5, e.y + 0.5, e.w - 1, e.h - 1);
   return {
     update() {

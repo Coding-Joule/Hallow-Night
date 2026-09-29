@@ -311,7 +311,7 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.4,
+        "onTime": 2,
         "offTime": 1,
         "offset": 0,
         "signalMode": "none"
@@ -325,9 +325,9 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.4,
+        "onTime": 2,
         "offTime": 1,
-        "offset": 0.8,
+        "offset": 2.1,
         "signalMode": "none"
       }
     },
@@ -339,9 +339,9 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.4,
+        "onTime": 2,
         "offTime": 1,
-        "offset": 1.6,
+        "offset": 1.2,
         "signalMode": "none"
       }
     },
@@ -353,9 +353,9 @@
       "width": 96,
       "height": 24,
       "properties": {
-        "onTime": 1.4,
+        "onTime": 2,
         "offTime": 1,
-        "offset": 0.4,
+        "offset": 0.3,
         "signalMode": "none"
       }
     },

@@ -254,11 +254,11 @@ export class TimedPlatform extends Entity {
       const cycle = this.onTime + this.offTime;
       const t = (((world.time + this.offset) % cycle) + cycle) % cycle;
       want = t < this.onTime;
-      this.warning = want && t > this.onTime - 0.5;
+      this.warning = want && t > this.onTime - 0.8; // blink before vanishing
     }
     if (want && !this.solid && overlaps(this, world.player)) want = false;
     this.solid = want;
-    this.visibility = want ? (this.warning ? 0.55 + 0.45 * Math.abs(Math.sin(world.time * 20)) : 1) : 0.12;
+    this.visibility = want ? (this.warning ? 0.5 + 0.5 * Math.abs(Math.sin(world.time * 14)) : 1) : 0.2;
   }
   onSignal(active: boolean): void {
     this.signal = active;
