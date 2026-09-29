@@ -115,3 +115,22 @@ describe('player physics', () => {
     expect(w.player.x).toBeLessThan(600);
   });
 });
+
+describe('gates', () => {
+  it('a closing gate pushes the player out instead of being held open', () => {
+    const w = new World(
+      makeLevel([
+        { id: 'g', type: 'ground', x: 0, y: 800, width: 4000, height: 200 },
+        { id: 'plate', type: 'pressurePlate', x: 100, y: 790, properties: { targets: ['gate'] } },
+        { id: 'gate', type: 'gate', x: 400, y: 704, width: 32, height: 96, properties: { speed: 60 } },
+      ], { spawn: { x: 124, y: 800 } }),
+    );
+    for (let i = 0; i < 120; i++) w.step(FIXED_STEP); // stand on the plate: gate opens
+    w.player.placeAt(424, 800); // step off, under the gate (mostly on its right half)
+    for (let i = 0; i < 600; i++) w.step(FIXED_STEP);
+    const gate = w.getEntity('gate') as unknown as { openness: number };
+    expect(gate.openness).toBe(0); // fully closed
+    expect(w.player.dead).toBe(false);
+    expect(w.player.x).toBeGreaterThanOrEqual(432); // shoved out to the right side
+  });
+});

@@ -116,12 +116,26 @@ export class Gate extends Entity {
     const prev = this.openness;
     this.openness = target > prev ? Math.min(1, prev + step) : Math.max(0, prev - step);
     this.place();
-    // never crush the player with a closing gate: hold it open instead
-    if (this.openness < prev && overlaps(this, world.player) && !world.player.dead) {
-      this.dx = this.dy = 0;
-      this.openness = prev;
-      this.place();
-      this.dx = this.dy = 0;
+    // a closing gate shoves the player out of its way (never crushes, and
+    // standing underneath cannot hold it open); only if both sides are
+    // blocked does it wait
+    const p = world.player;
+    if (this.openness < prev && overlaps(this, p) && !p.dead) {
+      const leftX = this.x - p.w - 0.01;
+      const rightX = this.x + this.w + 0.01;
+      const preferRight = p.x + p.w / 2 >= this.x + this.w / 2;
+      const fits = (x: number) => !world.solidAt({ x, y: p.y, w: p.w, h: p.h }, this);
+      const order = preferRight ? [rightX, leftX] : [leftX, rightX];
+      const target = order.find(fits);
+      if (target !== undefined) {
+        p.x = target;
+        p.vx = 0;
+      } else {
+        this.dx = this.dy = 0;
+        this.openness = prev;
+        this.place();
+        this.dx = this.dy = 0;
+      }
     }
     this.solid = this.openness < 0.98;
   }
