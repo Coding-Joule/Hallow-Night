@@ -52,18 +52,7 @@
       "type": "ground",
       "x": 640,
       "y": 960,
-      "width": 160,
-      "height": 320,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-3",
-      "type": "ground",
-      "x": 800,
-      "y": 960,
-      "width": 96,
+      "width": 256,
       "height": 320,
       "properties": {
         "style": "auto"
@@ -118,18 +107,7 @@
       "type": "ground",
       "x": 1888,
       "y": 992,
-      "width": 128,
-      "height": 288,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-9",
-      "type": "ground",
-      "x": 2016,
-      "y": 992,
-      "width": 128,
+      "width": 256,
       "height": 288,
       "properties": {
         "style": "auto"
@@ -182,7 +160,7 @@
       "type": "ground",
       "x": 2720,
       "y": 992,
-      "width": 224,
+      "width": 832,
       "height": 288,
       "properties": {
         "style": "auto"
@@ -202,28 +180,6 @@
       }
     },
     {
-      "id": "ground-11",
-      "type": "ground",
-      "x": 2944,
-      "y": 992,
-      "width": 128,
-      "height": 288,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-12",
-      "type": "ground",
-      "x": 3072,
-      "y": 992,
-      "width": 256,
-      "height": 288,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "breakable-wall-1",
       "type": "breakableWall",
       "x": 3232,
@@ -233,33 +189,11 @@
       "properties": {}
     },
     {
-      "id": "ground-13",
-      "type": "ground",
-      "x": 3328,
-      "y": 992,
-      "width": 128,
-      "height": 288,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-14",
-      "type": "ground",
-      "x": 3456,
-      "y": 992,
-      "width": 96,
-      "height": 288,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "ground-15",
       "type": "ground",
       "x": 3648,
       "y": 992,
-      "width": 192,
+      "width": 320,
       "height": 288,
       "properties": {
         "style": "auto"
@@ -279,17 +213,6 @@
       }
     },
     {
-      "id": "ground-16",
-      "type": "ground",
-      "x": 3840,
-      "y": 992,
-      "width": 128,
-      "height": 288,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "spring-1",
       "type": "spring",
       "x": 3872,
@@ -305,7 +228,7 @@
       "type": "ground",
       "x": 3968,
       "y": 800,
-      "width": 224,
+      "width": 448,
       "height": 480,
       "properties": {
         "style": "auto"
@@ -325,28 +248,6 @@
       }
     },
     {
-      "id": "ground-18",
-      "type": "ground",
-      "x": 4192,
-      "y": 800,
-      "width": 96,
-      "height": 480,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-19",
-      "type": "ground",
-      "x": 4288,
-      "y": 800,
-      "width": 128,
-      "height": 480,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "spring-2",
       "type": "spring",
       "x": 4320,
@@ -362,7 +263,7 @@
       "type": "ground",
       "x": 4416,
       "y": 544,
-      "width": 192,
+      "width": 992,
       "height": 736,
       "properties": {
         "style": "auto"
@@ -379,28 +280,6 @@
         "kind": "bones",
         "layer": "back",
         "flip": true
-      }
-    },
-    {
-      "id": "ground-21",
-      "type": "ground",
-      "x": 4608,
-      "y": 544,
-      "width": 64,
-      "height": 736,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-22",
-      "type": "ground",
-      "x": 4672,
-      "y": 544,
-      "width": 192,
-      "height": 736,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -424,17 +303,6 @@
       "width": 32,
       "height": 64,
       "properties": {}
-    },
-    {
-      "id": "ground-23",
-      "type": "ground",
-      "x": 4864,
-      "y": 544,
-      "width": 480,
-      "height": 736,
-      "properties": {
-        "style": "auto"
-      }
     },
     {
       "id": "decoration-7",
@@ -477,17 +345,6 @@
       }
     },
     {
-      "id": "ground-24",
-      "type": "ground",
-      "x": 5344,
-      "y": 544,
-      "width": 64,
-      "height": 736,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "moving-platform-1",
       "type": "movingPlatform",
       "x": 5424,
@@ -508,7 +365,7 @@
       "type": "ground",
       "x": 5792,
       "y": 544,
-      "width": 192,
+      "width": 800,
       "height": 736,
       "properties": {
         "style": "auto"
@@ -528,28 +385,6 @@
       }
     },
     {
-      "id": "ground-26",
-      "type": "ground",
-      "x": 5984,
-      "y": 544,
-      "width": 96,
-      "height": 736,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-27",
-      "type": "ground",
-      "x": 6080,
-      "y": 544,
-      "width": 256,
-      "height": 736,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "breakable-wall-2",
       "type": "breakableWall",
       "x": 6240,
@@ -557,28 +392,6 @@
       "width": 32,
       "height": 384,
       "properties": {}
-    },
-    {
-      "id": "ground-28",
-      "type": "ground",
-      "x": 6336,
-      "y": 544,
-      "width": 128,
-      "height": 736,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-29",
-      "type": "ground",
-      "x": 6464,
-      "y": 544,
-      "width": 128,
-      "height": 736,
-      "properties": {
-        "style": "auto"
-      }
     },
     {
       "id": "spring-3",
@@ -596,18 +409,7 @@
       "type": "ground",
       "x": 6592,
       "y": 384,
-      "width": 160,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-31",
-      "type": "ground",
-      "x": 6752,
-      "y": 384,
-      "width": 128,
+      "width": 288,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -618,7 +420,7 @@
       "type": "ground",
       "x": 7168,
       "y": 384,
-      "width": 224,
+      "width": 352,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -638,22 +440,11 @@
       }
     },
     {
-      "id": "ground-33",
-      "type": "ground",
-      "x": 7392,
-      "y": 384,
-      "width": 128,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "ground-34",
       "type": "ground",
       "x": 7840,
       "y": 384,
-      "width": 192,
+      "width": 768,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -673,17 +464,6 @@
       }
     },
     {
-      "id": "ground-35",
-      "type": "ground",
-      "x": 8032,
-      "y": 384,
-      "width": 256,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "breakable-wall-3",
       "type": "breakableWall",
       "x": 8192,
@@ -691,28 +471,6 @@
       "width": 32,
       "height": 384,
       "properties": {}
-    },
-    {
-      "id": "ground-36",
-      "type": "ground",
-      "x": 8288,
-      "y": 384,
-      "width": 128,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-37",
-      "type": "ground",
-      "x": 8416,
-      "y": 384,
-      "width": 192,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
     },
     {
       "id": "decoration-12",
@@ -774,7 +532,7 @@
       "type": "ground",
       "x": 9120,
       "y": 384,
-      "width": 224,
+      "width": 320,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -791,17 +549,6 @@
         "kind": "coffin",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-42",
-      "type": "ground",
-      "x": 9344,
-      "y": 384,
-      "width": 96,
-      "height": 896,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -844,29 +591,7 @@
       "type": "ground",
       "x": 9984,
       "y": 448,
-      "width": 160,
-      "height": 832,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-46",
-      "type": "ground",
-      "x": 10144,
-      "y": 448,
-      "width": 64,
-      "height": 832,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-47",
-      "type": "ground",
-      "x": 10208,
-      "y": 448,
-      "width": 256,
+      "width": 608,
       "height": 832,
       "properties": {
         "style": "auto"
@@ -880,17 +605,6 @@
       "width": 32,
       "height": 384,
       "properties": {}
-    },
-    {
-      "id": "ground-48",
-      "type": "ground",
-      "x": 10464,
-      "y": 448,
-      "width": 128,
-      "height": 832,
-      "properties": {
-        "style": "auto"
-      }
     },
     {
       "id": "ground-49",
@@ -919,7 +633,7 @@
       "type": "ground",
       "x": 10688,
       "y": 480,
-      "width": 192,
+      "width": 960,
       "height": 800,
       "properties": {
         "style": "auto"
@@ -939,17 +653,6 @@
       }
     },
     {
-      "id": "ground-51",
-      "type": "ground",
-      "x": 10880,
-      "y": 480,
-      "width": 256,
-      "height": 800,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "breakable-wall-5",
       "type": "breakableWall",
       "x": 11040,
@@ -957,28 +660,6 @@
       "width": 32,
       "height": 384,
       "properties": {}
-    },
-    {
-      "id": "ground-52",
-      "type": "ground",
-      "x": 11136,
-      "y": 480,
-      "width": 128,
-      "height": 800,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-53",
-      "type": "ground",
-      "x": 11264,
-      "y": 480,
-      "width": 384,
-      "height": 800,
-      "properties": {
-        "style": "auto"
-      }
     },
     {
       "id": "decoration-16",
