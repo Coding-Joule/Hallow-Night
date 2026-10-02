@@ -1,6 +1,6 @@
 # HALLOW NIGHT
 
-An atmospheric Halloween 2D platformer for the browser — 35 hand-authored levels across 7 worlds, a public level editor, and a separate (unlinked) built-in level creator. Everything is data-driven: **every level is a JSON file** interpreted by one game engine.
+An atmospheric Halloween 2D platformer for the browser — 84 levels across 7 worlds (each world ends in a boss fight), a public level editor, and a separate (unlinked) built-in level creator. Everything is data-driven: **every level is a JSON file** interpreted by one game engine.
 
 Built with **TypeScript + Vite + Phaser 3**. No backend, no database, no accounts, no external services. All art is original vector (SVG) generated in code; all sound is synthesised with the Web Audio API.
 
@@ -54,7 +54,7 @@ Movement uses coyote time, jump buffering, variable jump height, corner correcti
 ## Project structure
 
 ```
-levels/                     the 35 built-in levels (<world>/<NN-name>.json) + manifest.json
+levels/                     the 84 built-in levels (<world>/<NN-name>.json) + manifest.json
 index.html, assets/,        the BUILT site served by GitHub Pages (generated — don't edit)
 editor/, secret-creations/
 web/                        page sources (index.html, editor/, secret-creations/)
@@ -125,7 +125,7 @@ An abbreviated example:
 | `name` | Display name |
 | `world` | `old-town`, `graveyard`, `dead-woods`, `haunted-manor`, `catacombs`, `clocktower`, `black-castle` |
 | `order` | Position inside its world (1–5) |
-| `number` | Global level number (1–35); optional for user levels |
+| `number` | Global level number (1–84); optional for user levels |
 | `width`, `height` | Level size in pixels (one tile = 32 px; the screen shows 960 × 540) |
 | `spawn`, `goal` | **Bottom-centre** points (player's feet / exit door threshold) |
 | `background`, `music` | Which world's backdrop and music to use (defaults to `world`) |
@@ -165,10 +165,11 @@ An abbreviated example:
 | `checkpoint` | switches | A lantern post. Respawn here after lighting it. | — |
 | `breakableWall` | switches | Breaks when the player dashes into it. | — |
 | `hiddenWall` | switches | Looks solid but can be walked through. Great for secrets. | `style`="auto" (auto / earth / stone / brick / wood / bone / iron) |
-| `spring` | switches | Launches the player upward. | `power`=1000 |
+| `spring` | switches | Launches the player upward. | `power`=1200 |
 | `ghost` | enemies | Drifts slowly toward the player when nearby. Cannot be stomped. | `range`=260, `speed`=55, `leash`=360 |
 | `pumpkinTortoise` | enemies | Crawls back and forth. Stomp it to tuck it into its pumpkin shell, then kick the shell (walk into it or stomp it again): it slides fast, bounces off walls and knocks out other creatures. A sliding shell hurts you too; stomp it to stop it. Pops back out after ~6 s. | `speed`=45, `direction`="left" (right / left), `shellSpeed`=420 |
 | `skeleton`, `armoredSkeleton` | enemies | Retired. Still accepted so older levels load, but they play as pumpkin tortoises and are hidden from the editor palette. | `speed`, `direction` |
+| `boss` | enemies | A big end-of-world boss with a health bar. Stomp it until its health runs out; the exit door stays locked (greyed out) until every boss in the level is defeated. Hoppers leap at you, chargers rush across the arena and get dizzy when they hit a wall, flyers swoop down from above. It gets faster each time it is hit. | `kind`="pumpkinKing" (pumpkinKing / graveGolem / batQueen / gloomGhost / slimeKing / clockOwl / midnightKing), `hp`=3, `speed`=1, `jump`=720, `range`=320, `dive`=160 |
 | `bat` | enemies | Flies a repeating patrol. Can be stomped. | `axis`="horizontal" (horizontal / vertical), `distance`=160, `speed`=90, `startOffset`=0 |
 | `raven` | enemies | Fast horizontal flyer that sweeps across its range. Can be stomped. | `range`=640, `speed`=230, `direction`="left" (right / left), `pause`=0.8 |
 | `shadow` | enemies | Rises from a dark pool when the player comes close and gives chase briefly. | `triggerRange`=200, `speed`=150, `duration`=2.2, `cooldown`=2.5 |
@@ -243,7 +244,7 @@ All keys are defined in `src/game/config/storageKeys.ts`:
 
 | Key | Contents |
 | --- | --- |
-| `hallow-night-progress` | cleared levels, best times, relics found, deaths, tutorial hints already shown |
+| `hallow-night-progress-v2` | cleared levels, best times, relics found, deaths, tutorial hints already shown |
 | `hallow-night-settings` | volumes, screen shake, reduced motion, timer, sharp rendering, on-screen controls |
 | `hallow-night-user-levels` | public editor levels |
 | `hallow-night-creator-drafts` | creator drafts |
@@ -253,25 +254,27 @@ Completing a level unlocks the next. Settings → *Reset progress* clears the ca
 
 ## Tuning movement
 
-All important movement values are in **`src/game/config/physics.ts`** (`PLAYER_SPEED`, `PLAYER_ACCELERATION`, `PLAYER_DRAG`, `JUMP_VELOCITY`, `COYOTE_TIME`, `JUMP_BUFFER_TIME`, `WALL_SLIDE_SPEED`, `WALL_JUMP_X`, `WALL_JUMP_Y`, `DASH_SPEED`, `DASH_DURATION`, …). The comment at the top lists what the defaults allow (≈3 tiles of jump height, ≈5 tiles of running jump, ≈8 tiles with a dash). The built-in levels were verified against these values, so big changes may make some jumps impossible.
+All important movement values are in **`src/game/config/physics.ts`** (`PLAYER_SPEED`, `PLAYER_ACCELERATION`, `PLAYER_DRAG`, `JUMP_VELOCITY`, `COYOTE_TIME`, `JUMP_BUFFER_TIME`, `WALL_SLIDE_SPEED`, `WALL_JUMP_X`, `WALL_JUMP_Y`, `DASH_SPEED`, `DASH_DURATION`, …). The comment at the top lists what the defaults allow (≈4 tiles of jump height, ≈7.5 tiles of running jump, ≈12 tiles with a dash). The built-in levels were verified against these values, so after changing them run the level generator again (see below).
 
 ## The levels
 
-| World | Levels | Introduces |
-| --- | --- | --- |
-| 1 Old Town | Halloween Street, Back Alley, Iron Fence, Rooftop Run, Town Gate | running & jumping, one-way ledges, pits, moving & path platforms |
-| 2 Graveyard | Cemetery Path, Broken Graves, Under the Headstones, Bellkeeper's Hill, Cemetery Exit | spikes, pumpkin tortoises, crumbling slabs, checkpoints |
-| 3 Dead Woods | Deadwood Trail, Hollow Trees, Raven Ridge, The Deep Woods, Witch's Crossing | wall slide & wall jump, bats, ravens, spiked balls, vertical climbs |
-| 4 Haunted Manor | Manor Entrance, West Hall, Servants' Passage, Upper Gallery, The Attic | levers, plates, timed switches, keys & doors, gates, phantom platforms, ghosts, hidden walls |
-| 5 Catacombs | Beneath the Manor, Bone Passage, Flooded Crypt, Chamber of Chains, Catacomb Escape | dash, cracked walls, falling platforms, pendulums, poison sludge, pumpkin tortoises |
-| 6 Clocktower | Clocktower Base, Inside the Gears, Bell Chamber, Midnight Mechanism, Above the Bells | double jump, elevators, conveyors, looping gear platforms, timed races, a tall climb |
-| 7 Black Castle | Castle Wall, Dark Courtyard, Tower of Shadows, Final Ascent, Midnight Crown | shadows, everything combined; level 35 has 6 checkpoints across 5 sections |
+The campaign is **84 levels: 7 worlds × 12**. Levels 1–11 of each world are stages; level 12 is a boss arena.
 
-Every level hides one **moon relic** (the level-select screen tracks them).
+| World | Boss | New things |
+| --- | --- | --- |
+| 1 Old Town | The Pumpkin King (leaps at you) | running & jumping, springs, one-way ledges, pits, moving platforms, pumpkin tortoises |
+| 2 Graveyard | The Grave Golem (charges, gets dizzy at walls) | spike pits, crumbling slabs, ghosts, falling hazards |
+| 3 Dead Woods | The Bat Queen (swoops) | wall jump, bats, ravens, spiked balls |
+| 4 Haunted Manor | Lady Gloom (swoops) | buttons, levers & gates, keys & doors, phantom platforms |
+| 5 Catacombs | The Slime King (big leaps) | dash, cracked walls, falling platforms, pendulums, poison sludge |
+| 6 Clocktower | The Clockwork Owl (fast swoops) | double jump, conveyors, elevators, path platforms |
+| 7 Black Castle | The Midnight King (6 hits: leaps, then charges, then swoops) | shadows, everything combined |
+
+The levels are built by **`scripts/generate-levels.ts`** from hand-tuned pieces (gaps, spring walls, island hops, chimneys, moving bridges, gates, …) and every one is checked with the reachability bot before it is written: the exit, the relic and any key must be reachable and there must be no spot you can get stuck in. Re-run it with `npx tsx scripts/generate-levels.ts` (or `… <world> <level>` for one level) after changing movement values. Every level hides one **moon relic**, usually on a high ledge with a spring nearby.
 
 ## Tests
 
-The deploy workflow runs Vitest suites for JSON validation, the object schema registry, serialisation round-trips and official file naming, storage/progress utilities, core physics (jump height, one-way platforms, moving platforms, checkpoints, switches) and all built-in levels (strict validation, numbering, safe spawn, ability progression).
+The deploy workflow runs Vitest suites for JSON validation, the object schema registry, serialisation round-trips and official file naming, storage/progress utilities, core physics (jump height, one-way platforms, moving platforms, checkpoints, switches) and all built-in levels (strict validation, numbering, a boss at the end of each world, safe spawn, ability progression), plus pumpkin tortoise shells and boss fights.
 
 ## Known limitations
 

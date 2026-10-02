@@ -1,7 +1,7 @@
 import type Phaser from 'phaser';
 import type { WorldId } from '../levels/worlds';
 import { backgroundTheme, fogTexture } from './art/backgrounds';
-import { enemyTextures, playerTextures } from './art/characters';
+import { bossTextures, enemyTextures, playerTextures } from './art/characters';
 import { decorationTextures } from './art/decorations';
 import { objectTextures } from './art/objects';
 import { ART_SCALE, dataUri, type SvgTexture } from './art/svg';
@@ -9,7 +9,7 @@ import { terrainTextures } from './art/terrain';
 
 /** All sprite textures (loaded once at boot). */
 export function coreTextures(): SvgTexture[] {
-  return [...playerTextures(), ...enemyTextures(), ...objectTextures(), ...terrainTextures(), ...decorationTextures()];
+  return [...playerTextures(), ...enemyTextures(), ...bossTextures(), ...objectTextures(), ...terrainTextures(), ...decorationTextures()];
 }
 
 export function queueCoreTextures(loader: Phaser.Loader.LoaderPlugin): void {

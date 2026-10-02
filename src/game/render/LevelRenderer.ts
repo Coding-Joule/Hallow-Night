@@ -99,9 +99,11 @@ export class LevelRenderer {
     }
   }
 
+  private goalImg?: Phaser.GameObjects.Image;
+
   private addGoal(): void {
     const g = this.world.level.goal;
-    sprite(this.scene, g.x, g.y, 'goal').setOrigin(0.5, 1).setDepth(DEPTH.objects - 1);
+    this.goalImg = sprite(this.scene, g.x, g.y, 'goal').setOrigin(0.5, 1).setDepth(DEPTH.objects - 1);
     const glow = this.addGlow(g.x, g.y - 40, 90, 0x8f7dd0, 0.45);
     this.flickers.push({ img: glow, base: 0.45, seed: 3 });
   }
@@ -146,6 +148,13 @@ export class LevelRenderer {
       this.applyCamera();
     }
     for (const v of this.views) v.update(this.world, time);
+    if (this.goalImg) {
+      // a boss keeps the exit shut
+      const locked = this.world.goalLocked;
+      this.goalImg.setAlpha(locked ? 0.35 : 1);
+      if (locked) this.goalImg.setTint(0x777777);
+      else this.goalImg.clearTint();
+    }
     this.playerView.update(dt, time);
     for (const f of this.flickers) f.img.setAlpha(f.base * (0.9 + Math.sin(time * 9 + f.seed) * 0.06 + Math.sin(time * 23 + f.seed) * 0.04));
     this.background.update(this.camX, this.camY, time);

@@ -31,6 +31,7 @@ export const OBJECT_TUTORIALS: Partial<Record<ObjectType, string>> = {
   breakableWall: 'Cracked wall: Dash into it to break it.',
   spring: 'Springs launch you high into the air.',
   ghost: 'Ghosts drift back and forth and can’t be stomped. Slip past them.',
+  boss: 'A BOSS! Stomp it on the head until its health runs out. The exit opens when it is beaten.',
   pumpkinTortoise: 'Stomp a pumpkin tortoise to tuck it in its shell, then kick the shell!',
   bat: 'Bats fly back and forth. Stomp them or dodge.',
   raven: 'Ravens swoop fast. Time your move.',

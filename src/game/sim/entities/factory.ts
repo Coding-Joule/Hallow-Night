@@ -1,6 +1,6 @@
 import type { LevelObject } from '../../levels/schema';
 import type { Entity } from '../Entity';
-import { Bat, Ghost, PumpkinTortoise, Raven, Shadow } from './enemies';
+import { Bat, Boss, Ghost, PumpkinTortoise, Raven, Shadow } from './enemies';
 import { Chaser, FallingHazard, MovingHazard, Pendulum, Sludge, Spikes } from './hazards';
 import {
   Button,
@@ -77,6 +77,8 @@ export function createEntity(obj: LevelObject): Entity | null {
       return new Spring(obj);
     case 'ghost':
       return new Ghost(obj);
+    case 'boss':
+      return new Boss(obj);
     case 'pumpkinTortoise':
       return new PumpkinTortoise(obj);
     case 'skeleton':

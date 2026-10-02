@@ -170,6 +170,9 @@ export class GameApp {
       onPauseRequest: () => this.pause(),
       onComplete: (info) => this.complete(entry, info),
       onReady: () => this.introBanner(entry),
+      onWorldEvent: (e) => {
+        if (e.type === 'bossDefeated') this.hud?.banner('Boss defeated!', 'The exit door is open', '', 2600);
+      },
       tutorials: {
         seen: (key) => this.progress.seenTutorials.includes(key),
         markSeen: (key) => {

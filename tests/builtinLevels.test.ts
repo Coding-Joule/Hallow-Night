@@ -15,13 +15,20 @@ describe('built-in levels', () => {
     expect(levels.length).toBe(manifest.levels.length);
   });
 
-  it('the original campaign has 35 levels, 5 per world, numbered 1..35', () => {
-    expect(levels.length).toBeGreaterThanOrEqual(35);
-    levels.slice(0, 35).forEach((e, i) => {
+  it('the campaign has 84 levels, 12 per world, numbered 1..84', () => {
+    expect(levels.length).toBe(84);
+    levels.forEach((e, i) => {
       expect(e.level.number).toBe(i + 1);
-      expect(e.level.world).toBe(WORLDS[Math.floor(i / 5)].id);
-      expect(e.level.order).toBe((i % 5) + 1);
+      expect(e.level.world).toBe(WORLDS[Math.floor(i / 12)].id);
+      expect(e.level.order).toBe((i % 12) + 1);
     });
+  });
+
+  it('every world ends with a boss, and only boss levels have one', () => {
+    for (const e of levels) {
+      const bosses = e.level.objects.filter((o) => o.type === 'boss');
+      expect(bosses.length, e.path).toBe(e.level.order === 12 ? 1 : 0);
+    }
   });
 
   it('ids are unique and files follow the naming convention', () => {
@@ -55,11 +62,11 @@ describe('built-in levels', () => {
   });
 
   it('abilities unlock progressively', () => {
-    for (const e of levels.slice(0, 35)) {
+    for (const e of levels) {
       const n = e.level.number!;
-      expect(e.level.abilities.wallJump, e.path).toBe(n >= 11);
-      expect(e.level.abilities.dash, e.path).toBe(n >= 21);
-      expect(e.level.abilities.doubleJump, e.path).toBe(n >= 26);
+      expect(e.level.abilities.wallJump, e.path).toBe(n >= 25);
+      expect(e.level.abilities.dash, e.path).toBe(n >= 49);
+      expect(e.level.abilities.doubleJump, e.path).toBe(n >= 61);
     }
   });
 });

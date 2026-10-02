@@ -330,3 +330,194 @@ export class PumpkinTortoise extends Enemy {
     this.facing = str(this.props.direction, 'left') === 'right' ? 1 : -1;
   }
 }
+
+export type BossKind = 'pumpkinKing' | 'graveGolem' | 'batQueen' | 'gloomGhost' | 'slimeKing' | 'clockOwl' | 'midnightKing';
+export const BOSS_KINDS: BossKind[] = ['pumpkinKing', 'graveGolem', 'batQueen', 'gloomGhost', 'slimeKing', 'clockOwl', 'midnightKing'];
+type BossMove = 'hopper' | 'charger' | 'flyer';
+
+const BOSS_MOVES: Record<BossKind, BossMove> = {
+  pumpkinKing: 'hopper',
+  graveGolem: 'charger',
+  batQueen: 'flyer',
+  gloomGhost: 'flyer',
+  slimeKing: 'hopper',
+  clockOwl: 'flyer',
+  midnightKing: 'hopper', // switches style as it loses health
+};
+
+/**
+ * End-of-world boss. Stomp it `hp` times; after each hit it flashes (harmless)
+ * for a moment and gets a little faster. The exit opens when it is defeated.
+ *  - hopper: crouches, then leaps toward the player
+ *  - charger: stalks, then rushes across the arena and is dizzy after hitting a wall
+ *  - flyer: sweeps above the arena and swoops down at the player now and then
+ */
+export class Boss extends Enemy {
+  readonly kind: BossKind;
+  readonly maxHp: number;
+  hp: number;
+  /** Seconds of flashing invulnerability left after a hit. */
+  invuln = 0;
+  /** Current action, for the renderer. */
+  action: 'idle' | 'crouch' | 'air' | 'charge' | 'dizzy' | 'swoop' = 'idle';
+  private timer = 1.2;
+  private vx = 0;
+  private vy = 0;
+  private swoopT = 0;
+  constructor(obj: LevelObject) {
+    super(obj);
+    this.boss = true;
+    this.stompable = true;
+    const k = str(obj.properties.kind, 'pumpkinKing') as BossKind;
+    this.kind = BOSS_KINDS.includes(k) ? k : 'pumpkinKing';
+    this.maxHp = Math.max(1, Math.round(num(obj.properties.hp, 3)));
+    this.hp = this.maxHp;
+  }
+  get move(): BossMove {
+    if (this.kind !== 'midnightKing') return BOSS_MOVES[this.kind];
+    const lost = this.maxHp - this.hp;
+    return lost < 2 ? 'hopper' : lost < 4 ? 'charger' : 'flyer';
+  }
+  /** Gets faster as it gets hurt. */
+  private get rage(): number {
+    return num(this.props.speed, 1) * (1 + 0.18 * (this.maxHp - this.hp));
+  }
+  private physics(dt: number, world: World): boolean {
+    this.vy = Math.min(900, this.vy + GRAVITY * dt);
+    const prevBottom = this.y + this.h;
+    this.y += this.vy * dt;
+    const ground = world.groundUnder(this, prevBottom);
+    let grounded = false;
+    if (ground !== null) {
+      this.y = ground - this.h;
+      this.vy = 0;
+      grounded = true;
+    }
+    if (this.vx !== 0) {
+      const nx = this.x + this.vx * dt;
+      if (world.solidAt({ x: nx, y: this.y, w: this.w, h: this.h - 4 }, this) || nx < 0 || nx + this.w > world.level.width) {
+        this.vx = 0;
+        if (this.action === 'charge') {
+          this.action = 'dizzy';
+          this.timer = 1.6;
+          world.emit('break', this.facing > 0 ? this.x + this.w : this.x, this.y + this.h / 2);
+        }
+      } else this.x = nx;
+    }
+    return grounded;
+  }
+  protected think(dt: number, world: World): void {
+    this.invuln = Math.max(0, this.invuln - dt);
+    this.timer -= dt;
+    const p = world.player;
+    const toPlayer = p.x + p.w / 2 - (this.x + this.w / 2);
+    switch (this.move) {
+      case 'hopper': {
+        const grounded = this.physics(dt, world);
+        if (grounded && this.action === 'air') {
+          this.action = 'idle';
+          this.vx = 0;
+          this.timer = 0.9 / this.rage;
+          world.emit('land', this.x + this.w / 2, this.y + this.h);
+        }
+        if (!grounded) break;
+        if (this.action !== 'crouch') {
+          this.action = this.timer < 0.35 ? 'crouch' : 'idle';
+          this.facing = toPlayer >= 0 ? 1 : -1;
+        }
+        if (this.timer <= 0) {
+          this.action = 'air';
+          this.vy = -num(this.props.jump, 720);
+          this.vx = Math.max(-330, Math.min(330, toPlayer * 0.9)) * Math.min(1.4, this.rage);
+        }
+        break;
+      }
+      case 'charger': {
+        const grounded = this.physics(dt, world);
+        if (!grounded) break;
+        if (this.action === 'dizzy') {
+          this.vx = 0;
+          if (this.timer <= 0) {
+            this.action = 'idle';
+            this.timer = 0.8;
+          }
+        } else if (this.action === 'charge') {
+          this.vx = this.facing * 340 * this.rage;
+        } else {
+          this.facing = toPlayer >= 0 ? 1 : -1;
+          this.vx = this.facing * 50;
+          this.action = this.timer < 0.5 ? 'crouch' : 'idle';
+          if (this.action === 'crouch') this.vx = 0;
+          if (this.timer <= 0) {
+            this.action = 'charge';
+            world.emit('kick', this.x + this.w / 2, this.y + this.h);
+          }
+        }
+        break;
+      }
+      case 'flyer': {
+        const range = num(this.props.range, 320);
+        const homeY = this.obj.y;
+        const low = homeY + num(this.props.dive, 160);
+        if (this.action === 'swoop') {
+          this.swoopT += dt * 0.85 * Math.min(1.5, this.rage);
+          const s = Math.sin(Math.min(1, this.swoopT) * Math.PI);
+          this.y = homeY + (low - homeY) * s;
+          this.x += this.facing * 150 * this.rage * dt;
+          if (this.swoopT >= 1) {
+            this.action = 'idle';
+            this.timer = 2.4 / this.rage;
+          }
+        } else {
+          // drift toward the player's side above the arena
+          const target = Math.max(this.obj.x - range, Math.min(this.obj.x + range, p.x + p.w / 2 - this.w / 2));
+          const d = target - this.x;
+          this.x += Math.sign(d) * Math.min(Math.abs(d), 110 * this.rage * dt);
+          if (Math.abs(d) > 4) this.facing = d > 0 ? 1 : -1;
+          this.y += (homeY + Math.sin(this.anim * 2.2) * 10 - this.y) * Math.min(1, dt * 4);
+          this.action = 'idle';
+          if (this.timer <= 0) {
+            this.action = 'swoop';
+            this.swoopT = 0;
+            this.facing = toPlayer >= 0 ? 1 : -1;
+          }
+        }
+        this.x = Math.max(this.obj.x - range - 64, Math.min(this.obj.x + range + 64, this.x));
+        break;
+      }
+    }
+  }
+  onStomp(world: World): void {
+    if (this.invuln > 0) return; // still flashing: just bounce off
+    this.hp--;
+    this.invuln = 1.1;
+    world.emit('bossHit', this.x + this.w / 2, this.y);
+    if (this.hp <= 0) {
+      this.dead = true;
+      world.emit('bossDefeated', this.x + this.w / 2, this.y + this.h / 2);
+      return;
+    }
+    // get away from the player a bit
+    if (this.move !== 'flyer') {
+      this.action = 'air';
+      this.vy = -420;
+      this.vx = (world.player.x < this.x ? 1 : -1) * 220;
+    } else {
+      this.action = 'idle';
+      this.timer = 1.6;
+    }
+  }
+  hurts(p: Rect): boolean {
+    if (this.dead || this.invuln > 0.5) return false;
+    return overlaps(p, { x: this.x + 8, y: this.y + 14, w: this.w - 16, h: this.h - 16 });
+  }
+  reset(): void {
+    super.reset();
+    this.hp = this.maxHp;
+    this.invuln = 0;
+    this.action = 'idle';
+    this.timer = 1.2;
+    this.vx = this.vy = 0;
+    this.swoopT = 0;
+  }
+}

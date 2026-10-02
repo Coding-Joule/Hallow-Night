@@ -529,7 +529,7 @@ const defs: ObjectTypeDef[] = [
     defaultHeight: 16,
     resize: 'none',
     editorColor: '#c0703a',
-    props: [{ key: 'power', label: 'Power', kind: 'number', default: 1000, min: 200, step: 50 }],
+    props: [{ key: 'power', label: 'Power', kind: 'number', default: 1200, min: 200, step: 50 }],
   },
   // ───────────── enemies
   {
@@ -561,6 +561,24 @@ const defs: ObjectTypeDef[] = [
       { key: 'speed', label: 'Speed', kind: 'number', default: 45, min: 1, step: 5 },
       { key: 'direction', label: 'Faces', kind: 'select', default: 'left', options: DIR_LR },
       { key: 'shellSpeed', label: 'Shell speed', kind: 'number', default: 420, min: 50, step: 20 },
+    ],
+  },
+  {
+    type: 'boss',
+    label: 'Boss',
+    category: 'enemies',
+    description: 'A big end-of-world boss. Stomp it until its health runs out; the exit door stays locked until it is defeated.',
+    defaultWidth: 80,
+    defaultHeight: 72,
+    resize: 'none',
+    editorColor: '#e05a3a',
+    props: [
+      { key: 'kind', label: 'Boss', kind: 'select', default: 'pumpkinKing', options: ['pumpkinKing', 'graveGolem', 'batQueen', 'gloomGhost', 'slimeKing', 'clockOwl', 'midnightKing'] },
+      { key: 'hp', label: 'Stomps to defeat', kind: 'number', default: 3, min: 1, max: 9, step: 1 },
+      { key: 'speed', label: 'Speed multiplier', kind: 'number', default: 1, min: 0.3, max: 3, step: 0.1 },
+      { key: 'jump', label: 'Leap power (hoppers)', kind: 'number', default: 720, min: 200, step: 20 },
+      { key: 'range', label: 'Sweep range (flyers)', kind: 'number', default: 320, min: 32, step: 16 },
+      { key: 'dive', label: 'Swoop depth (flyers)', kind: 'number', default: 160, min: 32, step: 16 },
     ],
   },
   {

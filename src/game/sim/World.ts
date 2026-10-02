@@ -71,6 +71,11 @@ export class World {
     return { x: g.x - GOAL_WIDTH / 2, y: g.y - GOAL_HEIGHT, w: GOAL_WIDTH, h: GOAL_HEIGHT };
   }
 
+  /** The exit door stays shut while a boss is still standing. */
+  get goalLocked(): boolean {
+    return this.enemies.some((e) => e.boss && !e.dead);
+  }
+
   get relicTotal(): number {
     return this.level.objects.filter((o) => o.type === 'relic').length;
   }
@@ -235,7 +240,7 @@ export class World {
     }
     for (const e of this.enemies) {
       if (e.dead) continue;
-      if (e.stompable && p.vy > 0 && p.prevBottom <= e.y + 10 && overlaps(p, { x: e.x, y: e.y - 2, w: e.w, h: e.h * 0.6 })) {
+      if (e.stompable && p.vy > 0 && p.prevBottom <= e.y + (e.boss ? 22 : 10) && overlaps(p, { x: e.x, y: e.y - 2, w: e.w, h: e.h * 0.6 })) {
         e.onStomp(this);
         p.bounce(true);
         this.emit('stomp', e.x + e.w / 2, e.y);
@@ -258,7 +263,7 @@ export class World {
       } else e.touching = false;
     }
     // goal
-    if (!this.finished && overlaps(p, this.goalRect)) {
+    if (!this.finished && !this.goalLocked && overlaps(p, this.goalRect)) {
       const g = this.goalRect;
       if (p.centerX > g.x + 8 && p.centerX < g.x + g.w - 8) {
         this.finished = true;

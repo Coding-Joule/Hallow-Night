@@ -29,6 +29,8 @@ export abstract class Entity implements Rect {
   /** Enemy flags. */
   enemy = false;
   stompable = false;
+  /** A boss: the exit stays locked until every boss is defeated. */
+  boss = false;
   dead = false;
   /** Receives touch callbacks while the player overlaps it. */
   touchable = false;

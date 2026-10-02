@@ -41,9 +41,9 @@ export interface LevelData {
   id: string;
   name: string;
   world: WorldId;
-  /** Position within its world (1-5 for built-in levels). */
+  /** Position within its world (1-12 for built-in levels; 12 is the boss). */
   order: number;
-  /** Global level number (1-35 for built-in levels). Optional for user levels. */
+  /** Global level number (1-84 for built-in levels). Optional for user levels. */
   number?: number;
   width: number;
   height: number;
@@ -93,6 +93,7 @@ export const OBJECT_TYPES = [
   'skeleton',
   'armoredSkeleton',
   'pumpkinTortoise',
+  'boss',
   'bat',
   'raven',
   'shadow',

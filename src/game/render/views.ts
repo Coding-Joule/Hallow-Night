@@ -1,6 +1,6 @@
 import Phaser from 'phaser';
 import type { Entity } from '../sim/Entity';
-import { Bat, Ghost, PumpkinTortoise, Raven, Shadow } from '../sim/entities/enemies';
+import { Bat, Boss, Ghost, PumpkinTortoise, Raven, Shadow } from '../sim/entities/enemies';
 import { Chaser, FallingHazard, MovingHazard, Pendulum, Sludge, Spikes } from '../sim/entities/hazards';
 import {
   Button,
@@ -455,6 +455,47 @@ function tortoiseView(ctx: ViewContext, e: PumpkinTortoise): EntityView {
   };
 }
 
+function bossView(ctx: ViewContext, e: Boss): EntityView {
+  const img = sprite(ctx.scene, e.x + e.w / 2, e.y + e.h, `boss-${e.kind}-0`).setOrigin(0.5, 1).setDepth(DEPTH.enemies);
+  const g = ctx.scene.add.graphics().setDepth(DEPTH.enemies + 1);
+  return {
+    update(_w, time) {
+      g.clear();
+      img.setFlipX(e.facing < 0);
+      if (e.dead) {
+        const t = e.deadTimer;
+        img.setPosition(e.x + e.w / 2, e.y + e.h + t * t * 500);
+        img.setAngle(t * 120);
+        img.setAlpha(Math.max(0, 1 - t * 0.8));
+        img.setScale(SPRITE_SCALE);
+        return;
+      }
+      const flap = e.move === 'flyer' ? 7 : e.action === 'charge' ? 10 : 3;
+      img.setTexture(`boss-${e.kind}-${Math.floor(e.anim * flap) % 2}`);
+      img.setPosition(e.x + e.w / 2, e.y + e.h);
+      img.setAngle(e.action === 'dizzy' ? Math.sin(time * 12) * 6 : e.action === 'charge' ? e.facing * 6 : 0);
+      const squash = e.action === 'crouch' ? 0.85 : e.action === 'air' ? 1.08 : 1;
+      img.setScale(SPRITE_SCALE * (2 - squash), SPRITE_SCALE * squash);
+      img.setAlpha(e.invuln > 0 ? (Math.floor(time * 16) % 2 ? 0.35 : 1) : 1);
+      // health pips
+      const pip = 10;
+      const total = e.maxHp * (pip + 4) - 4;
+      const x0 = e.x + e.w / 2 - total / 2;
+      const y0 = e.y - 18;
+      for (let i = 0; i < e.maxHp; i++) {
+        g.fillStyle(0x15101f, 0.8).fillRoundedRect(x0 + i * (pip + 4) - 1, y0 - 1, pip + 2, pip / 2 + 4, 3);
+        g.fillStyle(i < e.hp ? 0xe0504a : 0x4a3a52, 1).fillRoundedRect(x0 + i * (pip + 4), y0, pip, pip / 2 + 2, 2);
+      }
+      if (e.action === 'dizzy') {
+        for (let i = 0; i < 3; i++) {
+          const a = time * 5 + (i * Math.PI * 2) / 3;
+          g.fillStyle(0xffe27a, 1).fillCircle(e.x + e.w / 2 + Math.cos(a) * 26, e.y + 6 + Math.sin(a) * 6, 3.5);
+        }
+      }
+    },
+  };
+}
+
 function shadowView(ctx: ViewContext, e: Shadow): EntityView {
   const pool = sprite(ctx.scene, e.obj.x + e.w / 2, e.obj.y + e.h, 'shadow-pool').setDepth(DEPTH.objects).setOrigin(0.5, 0.6);
   const body = sprite(ctx.scene, e.x + e.w / 2, e.y + e.h, 'shadow').setOrigin(0.5, 1).setDepth(DEPTH.enemies);
@@ -502,6 +543,7 @@ export function createView(ctx: ViewContext, e: Entity): EntityView | null {
     return null;
   }
   if (e instanceof PumpkinTortoise) return tortoiseView(ctx, e);
+  if (e instanceof Boss) return bossView(ctx, e);
   if (e instanceof Ghost) return enemyView(ctx, e, 'ghost', 2.5, () => 0.8 + Math.sin(e.anim * 2) * 0.12);
   if (e instanceof Bat) return enemyView(ctx, e, 'bat', 8);
   if (e instanceof Raven) return enemyView(ctx, e, 'raven', 7);

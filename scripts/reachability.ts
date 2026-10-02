@@ -1,4 +1,4 @@
-import { FIXED_STEP } from '../src/game/config/physics';
+import { FIXED_STEP, PLAYER_SPEED } from '../src/game/config/physics';
 import type { LevelData, LevelObject } from '../src/game/levels/schema';
 import { parseLevel } from '../src/game/levels/validate';
 import type { InputState } from '../src/game/sim/types';
@@ -58,6 +58,7 @@ export function freeze(level: LevelData, opts: { openGates: boolean }): LevelDat
       case 'skeleton':
       case 'armoredSkeleton':
       case 'pumpkinTortoise':
+      case 'boss':
       case 'bat':
       case 'raven':
       case 'shadow':
@@ -137,6 +138,8 @@ export interface ReachResult {
   traps: { x: number; y: number }[];
   /** ids of every surface the player could stand on */
   stoodOn: Set<string>;
+  /** false if the search hit maxStates (traps are then not checked) */
+  complete: boolean;
 }
 
 export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates?: number } = {}): ReachResult {
@@ -170,7 +173,7 @@ export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates
   // settle at spawn
   p.placeAt(level.spawn.x, level.spawn.y);
   for (let i = 0; i < 120 && !p.grounded; i++) world.step(FIXED_STEP);
-  if (!p.grounded) return { goal: false, states: 0, relics, keys, checkpoints, maxX, frontier: 'spawn not grounded', traps: [], stoodOn: new Set() };
+  if (!p.grounded) return { goal: false, states: 0, relics, keys, checkpoints, maxX, frontier: 'spawn not grounded', traps: [], stoodOn: new Set(), complete: false };
   push();
   const maxStates = opts.maxStates ?? 4000;
 
@@ -185,7 +188,7 @@ export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates
       world.step(FIXED_STEP);
       if (!p.grounded) continue;
       if (m.drop && !p.groundEntity?.oneWay) continue;
-      if (m.run) p.vx = m.d * 250;
+      if (m.run) p.vx = m.d * PLAYER_SPEED;
       let t = 0;
       let dir = m.d;
       let left = false;
@@ -285,5 +288,5 @@ export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates
   }
   const complete = queue.length === 0; // only meaningful if the search finished
   const traps = complete ? [...visited].filter((k) => !escapes.has(k)).map((k) => pos.get(k)!) : [];
-  return { goal, states: visited.size, relics, keys, checkpoints, maxX: Math.round(maxX / 32), frontier: lastNear, traps, stoodOn: new Set([...visited].map((k) => k.split(':')[0].split('__')[0])) };
+  return { goal, states: visited.size, relics, keys, checkpoints, maxX: Math.round(maxX / 32), frontier: lastNear, traps, complete, stoodOn: new Set([...visited].map((k) => k.split(':')[0].split('__')[0])) };
 }

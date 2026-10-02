@@ -30,6 +30,8 @@ const EVENT_SFX: Partial<Record<WorldEvent['type'], SfxName>> = {
   switch: 'switch',
   stomp: 'stomp',
   kick: 'kick',
+  bossHit: 'bossHit',
+  bossDefeated: 'bossDefeated',
   spring: 'spring',
   break: 'break',
   door: 'door',
@@ -208,6 +210,16 @@ export class GameScene extends Phaser.Scene {
       case 'key':
       case 'relic':
         fx.sparksAt(e.x, e.y, 18);
+        break;
+      case 'bossHit':
+        fx.debrisAt(e.x, e.y, 18);
+        fx.shake(160, 0.006);
+        break;
+      case 'bossDefeated':
+        fx.sparksAt(e.x, e.y, 40);
+        fx.soulsAt(e.x, e.y, 40);
+        fx.flash(0x6a4a2a, 300);
+        fx.shake(300, 0.008);
         break;
       case 'kick':
         fx.sparksAt(e.x, e.y, 8);

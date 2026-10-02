@@ -55,6 +55,8 @@ export type WorldEventType =
   | 'switch'
   | 'stomp'
   | 'kick'
+  | 'bossHit'
+  | 'bossDefeated'
   | 'spring'
   | 'break'
   | 'door'

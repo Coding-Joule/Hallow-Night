@@ -20,6 +20,8 @@ export type SfxName =
   | 'switch'
   | 'stomp'
   | 'kick'
+  | 'bossHit'
+  | 'bossDefeated'
   | 'spring'
   | 'break'
   | 'door'
@@ -179,6 +181,14 @@ class AudioSystemImpl {
       case 'stomp':
         this.tone(180, 0.12, 'square', 0.12, 60);
         this.noise(0.1, 0.18, 1200);
+        break;
+      case 'bossHit':
+        this.tone(140, 0.25, 'square', 0.14, 50);
+        this.noise(0.2, 0.25, 900);
+        break;
+      case 'bossDefeated':
+        [0, 4, 7, 12, 16, 19, 24].forEach((s, i) => this.tone(midiToFreq(60 + s), 0.5, 'square', 0.07, undefined, i * 0.08));
+        this.noise(0.5, 0.2, 1800, 'lowpass');
         break;
       case 'kick':
         this.tone(520, 0.08, 'square', 0.1, 260);

@@ -242,6 +242,9 @@ export function drawObject(ctx: CanvasRenderingContext2D, art: EditorArt, o: Lev
       if (selected) dashed(ctx, 'rgba(207,214,230,0.4)', zoom, () => ctx.arc(x + w / 2, y + h / 2, n(p.range, 260), 0, Math.PI * 2));
       image(ctx, art, 'ghost-0', x, y, w, h);
       break;
+    case 'boss':
+      sprite(ctx, art, `boss-${String(p.kind ?? 'pumpkinKing')}-0`, x + w / 2, y + h, false);
+      break;
     case 'pumpkinTortoise':
     case 'skeleton':
     case 'armoredSkeleton':

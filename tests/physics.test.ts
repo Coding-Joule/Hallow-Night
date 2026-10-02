@@ -22,7 +22,7 @@ describe('player physics', () => {
     expect(w.player.bottom).toBeCloseTo(800, 3);
   });
 
-  it('full jump reaches ~3 tiles', () => {
+  it('full jump reaches ~4 tiles', () => {
     const w = new World(makeLevel([floor]));
     run(w, 0.2, {});
     let minY = Infinity;
@@ -31,8 +31,8 @@ describe('player physics', () => {
       return { jump: true, jumpPressed: t === 0 };
     });
     const height = 800 - minY;
-    expect(height).toBeGreaterThan(95);
-    expect(height).toBeLessThan(120);
+    expect(height).toBeGreaterThan(125);
+    expect(height).toBeLessThan(150);
   });
 
   it('short hop is lower than a full jump', () => {
@@ -163,4 +163,34 @@ describe('pumpkin tortoise', () => {
     expect(t2.dead).toBe(true);
     expect(w.deaths).toBe(0);
   });
+});
+
+describe('bosses', () => {
+  for (const kind of ['pumpkinKing', 'graveGolem', 'batQueen', 'midnightKing']) {
+    it(`${kind}: the exit is locked until it has been stomped enough times`, async () => {
+      const { Boss } = await import('../src/game/sim/entities/enemies');
+      const w = new World(
+        makeLevel([floor, { id: 'b', type: 'boss', x: 600, y: 560, width: 80, height: 72, properties: { kind, hp: 3, speed: 0.3, range: 32, dive: 160 } }], {
+          goal: { x: 300, y: 800 },
+          spawn: { x: 100, y: 800 },
+        }),
+      );
+      const b = w.entities.find((e) => e.id === 'b') as InstanceType<typeof Boss>;
+      run(w, 1, {});
+      expect(w.goalLocked).toBe(true);
+      for (let i = 0; i < 3; i++) {
+        for (let k = 0; k < 400 && b.action === 'air'; k++) run(w, FIXED_STEP, {});
+        // drop the player onto its head
+        w.player.placeAt(b.x + b.w / 2, b.y - 40);
+        w.player.vy = 300;
+        run(w, 0.1, {});
+        // step well away while it flashes
+        w.player.placeAt(2400, 800);
+        run(w, 1.4, {});
+      }
+      expect(b.dead).toBe(true);
+      expect(w.goalLocked).toBe(false);
+      expect(w.deaths).toBe(0);
+    });
+  }
 });
