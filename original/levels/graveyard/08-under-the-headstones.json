@@ -1,0 +1,698 @@
+{
+  "version": 1,
+  "id": "graveyard-08",
+  "name": "Under the Headstones",
+  "world": "graveyard",
+  "order": 3,
+  "number": 8,
+  "width": 6400,
+  "height": 960,
+  "spawn": {
+    "x": 80,
+    "y": 320
+  },
+  "goal": {
+    "x": 6224,
+    "y": 256
+  },
+  "background": "graveyard",
+  "music": "graveyard",
+  "abilities": {
+    "wallJump": false,
+    "dash": false,
+    "doubleJump": false
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 320,
+      "width": 640,
+      "height": 640,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 128,
+      "y": 288,
+      "width": 26,
+      "height": 32,
+      "properties": {
+        "kind": "gravestone",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 256,
+      "y": 272,
+      "width": 28,
+      "height": 48,
+      "properties": {
+        "kind": "cross",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 384,
+      "y": 288,
+      "width": 26,
+      "height": 32,
+      "properties": {
+        "kind": "gravestone",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 512,
+      "y": 280,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "kind": "gravestone",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "sign-1",
+      "type": "sign",
+      "x": 480,
+      "y": 288,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "The ground here is hollow..."
+      }
+    },
+    {
+      "id": "crumbling-platform-1",
+      "type": "crumblingPlatform",
+      "x": 640,
+      "y": 320,
+      "width": 128,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 768,
+      "y": 0,
+      "width": 256,
+      "height": 320,
+      "properties": {
+        "style": "earth"
+      }
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 0,
+      "y": 416,
+      "width": 576,
+      "height": 32,
+      "properties": {
+        "style": "earth"
+      }
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 512,
+      "y": 704,
+      "width": 960,
+      "height": 256,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 640,
+      "y": 688,
+      "width": 40,
+      "height": 16,
+      "properties": {
+        "kind": "bones",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "spikes-1",
+      "type": "spikes",
+      "x": 832,
+      "y": 320,
+      "width": 192,
+      "height": 16,
+      "properties": {
+        "direction": "down"
+      }
+    },
+    {
+      "id": "tortoise-1",
+      "type": "pumpkinTortoise",
+      "x": 964,
+      "y": 682,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
+      }
+    },
+    {
+      "id": "one-way-1",
+      "type": "oneWay",
+      "x": 1088,
+      "y": 608,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "one-way-2",
+      "type": "oneWay",
+      "x": 1216,
+      "y": 512,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 1024,
+      "y": 320,
+      "width": 640,
+      "height": 96,
+      "properties": {
+        "style": "earth"
+      }
+    },
+    {
+      "id": "spikes-2",
+      "type": "spikes",
+      "x": 1152,
+      "y": 416,
+      "width": 384,
+      "height": 16,
+      "properties": {
+        "direction": "down"
+      }
+    },
+    {
+      "id": "decoration-6",
+      "type": "decoration",
+      "x": 1344,
+      "y": 646,
+      "width": 29,
+      "height": 58,
+      "properties": {
+        "kind": "coffin",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 1472,
+      "y": 704,
+      "width": 192,
+      "height": 256,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 1664,
+      "y": 416,
+      "width": 960,
+      "height": 160,
+      "properties": {
+        "style": "earth"
+      }
+    },
+    {
+      "id": "ground-8",
+      "type": "ground",
+      "x": 1664,
+      "y": 736,
+      "width": 960,
+      "height": 224,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spikes-3",
+      "type": "spikes",
+      "x": 1760,
+      "y": 576,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "direction": "down"
+      }
+    },
+    {
+      "id": "spikes-4",
+      "type": "spikes",
+      "x": 1920,
+      "y": 720,
+      "width": 64,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "spikes-5",
+      "type": "spikes",
+      "x": 2048,
+      "y": 576,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "direction": "down"
+      }
+    },
+    {
+      "id": "spikes-6",
+      "type": "spikes",
+      "x": 2208,
+      "y": 720,
+      "width": 64,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "spikes-7",
+      "type": "spikes",
+      "x": 2336,
+      "y": 576,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "direction": "down"
+      }
+    },
+    {
+      "id": "tortoise-2",
+      "type": "pumpkinTortoise",
+      "x": 2436,
+      "y": 714,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 1696,
+      "y": 672,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-9",
+      "type": "ground",
+      "x": 2624,
+      "y": 640,
+      "width": 320,
+      "height": 64,
+      "properties": {
+        "style": "earth"
+      }
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 2624,
+      "y": 320,
+      "width": 960,
+      "height": 128,
+      "properties": {
+        "style": "earth"
+      }
+    },
+    {
+      "id": "crumbling-platform-2",
+      "type": "crumblingPlatform",
+      "x": 2944,
+      "y": 640,
+      "width": 128,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 3072,
+      "y": 640,
+      "width": 192,
+      "height": 64,
+      "properties": {
+        "style": "earth"
+      }
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 2688,
+      "y": 864,
+      "width": 960,
+      "height": 96,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-7",
+      "type": "decoration",
+      "x": 2880,
+      "y": 848,
+      "width": 40,
+      "height": 16,
+      "properties": {
+        "kind": "bones",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 2822,
+      "y": 806,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "tortoise-3",
+      "type": "pumpkinTortoise",
+      "x": 3204,
+      "y": 842,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
+      }
+    },
+    {
+      "id": "one-way-3",
+      "type": "oneWay",
+      "x": 3392,
+      "y": 768,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "one-way-4",
+      "type": "oneWay",
+      "x": 3488,
+      "y": 672,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 3264,
+      "y": 448,
+      "width": 320,
+      "height": 128,
+      "properties": {
+        "style": "earth"
+      }
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 3584,
+      "y": 640,
+      "width": 640,
+      "height": 320,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 3648,
+      "y": 576,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-15",
+      "type": "ground",
+      "x": 4224,
+      "y": 832,
+      "width": 576,
+      "height": 128,
+      "properties": {
+        "style": "earth"
+      }
+    },
+    {
+      "id": "spikes-8",
+      "type": "spikes",
+      "x": 4224,
+      "y": 816,
+      "width": 576,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "crumbling-platform-3",
+      "type": "crumblingPlatform",
+      "x": 4256,
+      "y": 608,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-4",
+      "type": "crumblingPlatform",
+      "x": 4416,
+      "y": 544,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "platform-1",
+      "type": "platform",
+      "x": 4576,
+      "y": 480,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "crumbling-platform-5",
+      "type": "crumblingPlatform",
+      "x": 4736,
+      "y": 416,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-16",
+      "type": "ground",
+      "x": 4864,
+      "y": 352,
+      "width": 256,
+      "height": 608,
+      "properties": {
+        "style": "earth"
+      }
+    },
+    {
+      "id": "ground-17",
+      "type": "ground",
+      "x": 3584,
+      "y": 0,
+      "width": 1280,
+      "height": 256,
+      "properties": {
+        "style": "earth"
+      }
+    },
+    {
+      "id": "tortoise-4",
+      "type": "pumpkinTortoise",
+      "x": 4964,
+      "y": 330,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
+      }
+    },
+    {
+      "id": "one-way-5",
+      "type": "oneWay",
+      "x": 5120,
+      "y": 256,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-18",
+      "type": "ground",
+      "x": 5248,
+      "y": 256,
+      "width": 1152,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-8",
+      "type": "decoration",
+      "x": 5312,
+      "y": 224,
+      "width": 26,
+      "height": 32,
+      "properties": {
+        "kind": "gravestone",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-9",
+      "type": "decoration",
+      "x": 5472,
+      "y": 208,
+      "width": 28,
+      "height": 48,
+      "properties": {
+        "kind": "cross",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-10",
+      "type": "decoration",
+      "x": 5632,
+      "y": 224,
+      "width": 26,
+      "height": 32,
+      "properties": {
+        "kind": "gravestone",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-11",
+      "type": "decoration",
+      "x": 5792,
+      "y": 216,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "kind": "gravestone",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-12",
+      "type": "decoration",
+      "x": 5952,
+      "y": 218,
+      "width": 22,
+      "height": 38,
+      "properties": {
+        "kind": "cross",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-13",
+      "type": "decoration",
+      "x": 5376,
+      "y": 144,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": false
+      }
+    }
+  ]
+}

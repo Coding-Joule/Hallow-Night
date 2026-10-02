@@ -1,0 +1,568 @@
+{
+  "version": 1,
+  "id": "graveyard-07",
+  "name": "Broken Graves",
+  "world": "graveyard",
+  "order": 2,
+  "number": 7,
+  "width": 6080,
+  "height": 768,
+  "spawn": {
+    "x": 80,
+    "y": 640
+  },
+  "goal": {
+    "x": 5936,
+    "y": 384
+  },
+  "background": "graveyard",
+  "music": "graveyard",
+  "abilities": {
+    "wallJump": false,
+    "dash": false,
+    "doubleJump": false
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 640,
+      "width": 512,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 128,
+      "y": 528,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 224,
+      "y": 608,
+      "width": 26,
+      "height": 32,
+      "properties": {
+        "kind": "gravestone",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 352,
+      "y": 592,
+      "width": 28,
+      "height": 48,
+      "properties": {
+        "kind": "cross",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "sign-1",
+      "type": "sign",
+      "x": 384,
+      "y": 608,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "Old grave slabs crumble under your weight. Keep moving."
+      }
+    },
+    {
+      "id": "crumbling-platform-1",
+      "type": "crumblingPlatform",
+      "x": 544,
+      "y": 608,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-2",
+      "type": "crumblingPlatform",
+      "x": 704,
+      "y": 576,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-3",
+      "type": "crumblingPlatform",
+      "x": 864,
+      "y": 576,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 1024,
+      "y": 640,
+      "width": 384,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "tortoise-1",
+      "type": "pumpkinTortoise",
+      "x": 1220,
+      "y": 618,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
+      }
+    },
+    {
+      "id": "crumbling-platform-4",
+      "type": "crumblingPlatform",
+      "x": 1408,
+      "y": 544,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-5",
+      "type": "crumblingPlatform",
+      "x": 1536,
+      "y": 448,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-6",
+      "type": "crumblingPlatform",
+      "x": 1664,
+      "y": 352,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 1792,
+      "y": 352,
+      "width": 320,
+      "height": 416,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 1920,
+      "y": 294,
+      "width": 29,
+      "height": 58,
+      "properties": {
+        "kind": "statue",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 1824,
+      "y": 288,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 2112,
+      "y": 704,
+      "width": 1152,
+      "height": 64,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spikes-1",
+      "type": "spikes",
+      "x": 2112,
+      "y": 688,
+      "width": 1152,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "crumbling-platform-7",
+      "type": "crumblingPlatform",
+      "x": 2144,
+      "y": 416,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-8",
+      "type": "crumblingPlatform",
+      "x": 2304,
+      "y": 448,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "platform-1",
+      "type": "platform",
+      "x": 2464,
+      "y": 480,
+      "width": 192,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "tortoise-2",
+      "type": "pumpkinTortoise",
+      "x": 2532,
+      "y": 458,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
+      }
+    },
+    {
+      "id": "crumbling-platform-9",
+      "type": "crumblingPlatform",
+      "x": 2720,
+      "y": 448,
+      "width": 64,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-10",
+      "type": "crumblingPlatform",
+      "x": 2848,
+      "y": 416,
+      "width": 64,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-11",
+      "type": "crumblingPlatform",
+      "x": 2976,
+      "y": 448,
+      "width": 64,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 3014,
+      "y": 358,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "crumbling-platform-12",
+      "type": "crumblingPlatform",
+      "x": 3104,
+      "y": 480,
+      "width": 64,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 3264,
+      "y": 576,
+      "width": 512,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 3296,
+      "y": 512,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 3456,
+      "y": 544,
+      "width": 26,
+      "height": 32,
+      "properties": {
+        "kind": "gravestone",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-6",
+      "type": "decoration",
+      "x": 3584,
+      "y": 528,
+      "width": 28,
+      "height": 48,
+      "properties": {
+        "kind": "cross",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "crumbling-platform-13",
+      "type": "crumblingPlatform",
+      "x": 3776,
+      "y": 608,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-14",
+      "type": "crumblingPlatform",
+      "x": 3904,
+      "y": 640,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 4032,
+      "y": 704,
+      "width": 704,
+      "height": 64,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "tortoise-3",
+      "type": "pumpkinTortoise",
+      "x": 4228,
+      "y": 682,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
+      }
+    },
+    {
+      "id": "tortoise-4",
+      "type": "pumpkinTortoise",
+      "x": 4484,
+      "y": 682,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 45,
+        "direction": "right",
+        "shellSpeed": 420
+      }
+    },
+    {
+      "id": "platform-2",
+      "type": "platform",
+      "x": 4320,
+      "y": 608,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "spikes-2",
+      "type": "spikes",
+      "x": 4352,
+      "y": 688,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "platform-3",
+      "type": "platform",
+      "x": 4736,
+      "y": 608,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "crumbling-platform-15",
+      "type": "crumblingPlatform",
+      "x": 4864,
+      "y": 512,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "platform-4",
+      "type": "platform",
+      "x": 4992,
+      "y": 416,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "crumbling-platform-16",
+      "type": "crumblingPlatform",
+      "x": 5120,
+      "y": 352,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-17",
+      "type": "crumblingPlatform",
+      "x": 5280,
+      "y": 352,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 5440,
+      "y": 384,
+      "width": 640,
+      "height": 384,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-7",
+      "type": "decoration",
+      "x": 5504,
+      "y": 272,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-8",
+      "type": "decoration",
+      "x": 5632,
+      "y": 336,
+      "width": 128,
+      "height": 48,
+      "properties": {
+        "kind": "fence",
+        "layer": "back",
+        "flip": false
+      }
+    }
+  ]
+}

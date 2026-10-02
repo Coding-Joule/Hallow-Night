@@ -6,6 +6,9 @@ Built with **TypeScript + Vite + Phaser 3**. No backend, no database, no account
 
 ---
 
+The original 35-level version is kept, playable, in **`original/`**
+(https://coding-joule.github.io/Hallow-Night/original/); see `original/README.md`.
+
 ## Hosting on GitHub Pages
 
 The repository **is** the website: the built game sits at the repository root (`index.html`, `assets/`, `editor/`, `secret-creations/`) and the levels are plain JSON files in `levels/`. Nothing needs to be installed or run locally.

@@ -1,0 +1,668 @@
+{
+  "version": 1,
+  "id": "black-castle-33",
+  "name": "Tower of Shadows",
+  "world": "black-castle",
+  "order": 3,
+  "number": 33,
+  "width": 2048,
+  "height": 5440,
+  "spawn": {
+    "x": 272,
+    "y": 5312
+  },
+  "goal": {
+    "x": 1744,
+    "y": 512
+  },
+  "background": "black-castle",
+  "music": "black-castle",
+  "abilities": {
+    "wallJump": true,
+    "dash": true,
+    "doubleJump": true
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 0,
+      "width": 128,
+      "height": 5440,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 1920,
+      "y": 0,
+      "width": 128,
+      "height": 5440,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 0,
+      "y": 5312,
+      "width": 2048,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "sign-1",
+      "type": "sign",
+      "x": 384,
+      "y": 5280,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "The tower goes up and up. Climb!"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 512,
+      "y": 5216,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 832,
+      "y": 5056,
+      "width": 32,
+      "height": 77,
+      "properties": {
+        "kind": "banner",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 1152,
+      "y": 5216,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 1472,
+      "y": 5245,
+      "width": 34,
+      "height": 67,
+      "properties": {
+        "kind": "statue",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "platform-1",
+      "type": "platform",
+      "x": 640,
+      "y": 5184,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "platform-2",
+      "type": "platform",
+      "x": 896,
+      "y": 5056,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "shadow-1",
+      "type": "shadow",
+      "x": 1218,
+      "y": 5016,
+      "width": 28,
+      "height": 40,
+      "properties": {
+        "triggerRange": 200,
+        "speed": 150,
+        "duration": 2.2,
+        "cooldown": 2.5
+      }
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 1088,
+      "y": 5056,
+      "width": 384,
+      "height": 64,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "platform-3",
+      "type": "platform",
+      "x": 1600,
+      "y": 4928,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 1280,
+      "y": 4736,
+      "width": 512,
+      "height": 64,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 1408,
+      "y": 4672,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "timed-platform-1",
+      "type": "timedPlatform",
+      "x": 1088,
+      "y": 4640,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2,
+        "offTime": 0.9,
+        "offset": 1.1,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "timed-platform-2",
+      "type": "timedPlatform",
+      "x": 896,
+      "y": 4512,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2,
+        "offTime": 0.9,
+        "offset": 2,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "ghost-1",
+      "type": "ghost",
+      "x": 640,
+      "y": 4352,
+      "width": 30,
+      "height": 32,
+      "properties": {
+        "mode": "drift",
+        "range": 200,
+        "speed": 55,
+        "leash": 360
+      }
+    },
+    {
+      "id": "timed-platform-3",
+      "type": "timedPlatform",
+      "x": 704,
+      "y": 4384,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2,
+        "offTime": 0.9,
+        "offset": 0,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 192,
+      "y": 4224,
+      "width": 448,
+      "height": 64,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 256,
+      "y": 4160,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 640,
+      "y": 3456,
+      "width": 96,
+      "height": 640,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-8",
+      "type": "ground",
+      "x": 864,
+      "y": 3328,
+      "width": 96,
+      "height": 832,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "spikes-1",
+      "type": "spikes",
+      "x": 848,
+      "y": 3712,
+      "width": 16,
+      "height": 96,
+      "properties": {
+        "direction": "left"
+      }
+    },
+    {
+      "id": "ground-9",
+      "type": "ground",
+      "x": 960,
+      "y": 3328,
+      "width": 448,
+      "height": 64,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "shadow-2",
+      "type": "shadow",
+      "x": 1218,
+      "y": 3288,
+      "width": 28,
+      "height": 40,
+      "properties": {
+        "triggerRange": 200,
+        "speed": 150,
+        "duration": 2.2,
+        "cooldown": 2.5
+      }
+    },
+    {
+      "id": "checkpoint-3",
+      "type": "checkpoint",
+      "x": 1024,
+      "y": 3264,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "elevator-1",
+      "type": "elevator",
+      "x": 1472,
+      "y": 3328,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "direction": "up",
+        "distance": 576,
+        "speed": 140,
+        "mode": "ride",
+        "returnDelay": 1
+      }
+    },
+    {
+      "id": "pendulum-1",
+      "type": "pendulum",
+      "x": 1280,
+      "y": 2240,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "length": 110,
+        "angle": 45,
+        "period": 1.8,
+        "phase": 0
+      }
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 1600,
+      "y": 2752,
+      "width": 320,
+      "height": 64,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 1798,
+      "y": 2630,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 960,
+      "y": 2688,
+      "width": 384,
+      "height": 64,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "checkpoint-4",
+      "type": "checkpoint",
+      "x": 1024,
+      "y": 2624,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "platform-4",
+      "type": "platform",
+      "x": 640,
+      "y": 2560,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "platform-5",
+      "type": "platform",
+      "x": 320,
+      "y": 2400,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 128,
+      "y": 2240,
+      "width": 320,
+      "height": 64,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "shadow-3",
+      "type": "shadow",
+      "x": 290,
+      "y": 2200,
+      "width": 28,
+      "height": 40,
+      "properties": {
+        "triggerRange": 140,
+        "speed": 150,
+        "duration": 2.2,
+        "cooldown": 2.5
+      }
+    },
+    {
+      "id": "platform-6",
+      "type": "platform",
+      "x": 576,
+      "y": 2112,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "platform-7",
+      "type": "platform",
+      "x": 896,
+      "y": 1984,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 1152,
+      "y": 1856,
+      "width": 512,
+      "height": 64,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "checkpoint-5",
+      "type": "checkpoint",
+      "x": 1216,
+      "y": 1792,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "conveyor-1",
+      "type": "conveyor",
+      "x": 896,
+      "y": 1760,
+      "width": 192,
+      "height": 24,
+      "properties": {
+        "speed": -120
+      }
+    },
+    {
+      "id": "conveyor-2",
+      "type": "conveyor",
+      "x": 576,
+      "y": 1664,
+      "width": 192,
+      "height": 24,
+      "properties": {
+        "speed": -120
+      }
+    },
+    {
+      "id": "moving-hazard-1",
+      "type": "movingHazard",
+      "x": 352,
+      "y": 1376,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "axis": "vertical",
+        "distance": 160,
+        "speed": 100,
+        "wait": 0.2,
+        "startOffset": 0,
+        "triggered": false
+      }
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 128,
+      "y": 1568,
+      "width": 384,
+      "height": 64,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "checkpoint-6",
+      "type": "checkpoint",
+      "x": 384,
+      "y": 1504,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-15",
+      "type": "ground",
+      "x": 256,
+      "y": 768,
+      "width": 96,
+      "height": 672,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-16",
+      "type": "ground",
+      "x": 352,
+      "y": 768,
+      "width": 256,
+      "height": 64,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "platform-8",
+      "type": "platform",
+      "x": 672,
+      "y": 672,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "platform-9",
+      "type": "platform",
+      "x": 800,
+      "y": 576,
+      "width": 64,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "ground-17",
+      "type": "ground",
+      "x": 864,
+      "y": 512,
+      "width": 1056,
+      "height": 64,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "shadow-4",
+      "type": "shadow",
+      "x": 1410,
+      "y": 472,
+      "width": 28,
+      "height": 40,
+      "properties": {
+        "triggerRange": 200,
+        "speed": 170,
+        "duration": 2.2,
+        "cooldown": 2.5
+      }
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 1088,
+      "y": 416,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-6",
+      "type": "decoration",
+      "x": 1344,
+      "y": 256,
+      "width": 32,
+      "height": 77,
+      "properties": {
+        "kind": "banner",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-7",
+      "type": "decoration",
+      "x": 1600,
+      "y": 416,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,716 @@
+{
+  "version": 1,
+  "id": "haunted-manor-17",
+  "name": "West Hall",
+  "world": "haunted-manor",
+  "order": 2,
+  "number": 17,
+  "width": 6400,
+  "height": 896,
+  "spawn": {
+    "x": 80,
+    "y": 768
+  },
+  "goal": {
+    "x": 6224,
+    "y": 704
+  },
+  "background": "haunted-manor",
+  "music": "haunted-manor",
+  "abilities": {
+    "wallJump": true,
+    "dash": false,
+    "doubleJump": false
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 0,
+      "width": 6400,
+      "height": 64,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 0,
+      "y": 768,
+      "width": 832,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 128,
+      "y": 608,
+      "width": 48,
+      "height": 64,
+      "properties": {
+        "kind": "portrait",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 448,
+      "y": 712,
+      "width": 32,
+      "height": 56,
+      "properties": {
+        "kind": "candelabra",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "sign-1",
+      "type": "sign",
+      "x": 288,
+      "y": 736,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "Pressure plates hold the gates open only while pressed.\nThe old gates close slowly — run!"
+      }
+    },
+    {
+      "id": "gate-1",
+      "type": "gate",
+      "x": 640,
+      "y": 576,
+      "width": 32,
+      "height": 192,
+      "properties": {
+        "initiallyOpen": false,
+        "openDirection": "up",
+        "speed": 70
+      }
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 640,
+      "y": 64,
+      "width": 32,
+      "height": 512,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "pressure-plate-1",
+      "type": "pressurePlate",
+      "x": 472,
+      "y": 758,
+      "width": 48,
+      "height": 10,
+      "properties": {
+        "targets": [
+          "gate-1"
+        ]
+      }
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 672,
+      "y": 768,
+      "width": 384,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ghost-1",
+      "type": "ghost",
+      "x": 960,
+      "y": 576,
+      "width": 30,
+      "height": 32,
+      "properties": {
+        "mode": "drift",
+        "range": 200,
+        "speed": 50,
+        "leash": 360
+      }
+    },
+    {
+      "id": "timed-platform-1",
+      "type": "timedPlatform",
+      "x": 1088,
+      "y": 704,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2.6,
+        "offTime": 1.2,
+        "offset": 0,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "timed-platform-2",
+      "type": "timedPlatform",
+      "x": 1248,
+      "y": 672,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2.6,
+        "offTime": 1.2,
+        "offset": 2.7,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "timed-platform-3",
+      "type": "timedPlatform",
+      "x": 1408,
+      "y": 704,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2.6,
+        "offTime": 1.2,
+        "offset": 1.6,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 1056,
+      "y": 864,
+      "width": 480,
+      "height": 32,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spikes-1",
+      "type": "spikes",
+      "x": 1056,
+      "y": 848,
+      "width": 480,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 1536,
+      "y": 768,
+      "width": 448,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 1568,
+      "y": 704,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "gate-2",
+      "type": "gate",
+      "x": 2112,
+      "y": 576,
+      "width": 32,
+      "height": 192,
+      "properties": {
+        "initiallyOpen": false,
+        "openDirection": "up",
+        "speed": 45
+      }
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 2112,
+      "y": 64,
+      "width": 32,
+      "height": 512,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "pressure-plate-2",
+      "type": "pressurePlate",
+      "x": 1656,
+      "y": 758,
+      "width": 48,
+      "height": 10,
+      "properties": {
+        "targets": [
+          "gate-2"
+        ]
+      }
+    },
+    {
+      "id": "ground-8",
+      "type": "ground",
+      "x": 1984,
+      "y": 768,
+      "width": 640,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 2176,
+      "y": 608,
+      "width": 48,
+      "height": 64,
+      "properties": {
+        "kind": "portrait",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 2400,
+      "y": 712,
+      "width": 32,
+      "height": 56,
+      "properties": {
+        "kind": "candelabra",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "elevator-1",
+      "type": "elevator",
+      "x": 2688,
+      "y": 736,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "direction": "up",
+        "distance": 320,
+        "speed": 90,
+        "mode": "ride",
+        "returnDelay": 1
+      }
+    },
+    {
+      "id": "ground-9",
+      "type": "ground",
+      "x": 2624,
+      "y": 864,
+      "width": 192,
+      "height": 32,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spikes-2",
+      "type": "spikes",
+      "x": 2624,
+      "y": 848,
+      "width": 192,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 2816,
+      "y": 416,
+      "width": 448,
+      "height": 480,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 2848,
+      "y": 352,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ghost-2",
+      "type": "ghost",
+      "x": 3072,
+      "y": 256,
+      "width": 30,
+      "height": 32,
+      "properties": {
+        "mode": "drift",
+        "range": 200,
+        "speed": 55,
+        "leash": 360
+      }
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 3264,
+      "y": 416,
+      "width": 960,
+      "height": 480,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 3456,
+      "y": 160,
+      "width": 64,
+      "height": 192,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 3648,
+      "y": 160,
+      "width": 64,
+      "height": 256,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "key-1",
+      "type": "key",
+      "x": 3460,
+      "y": 100,
+      "width": 24,
+      "height": 24,
+      "properties": {
+        "color": "silver"
+      }
+    },
+    {
+      "id": "sign-2",
+      "type": "sign",
+      "x": 3328,
+      "y": 384,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "A silver key glints atop the shelves."
+      }
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 3328,
+      "y": 320,
+      "width": 64,
+      "height": 96,
+      "properties": {
+        "kind": "bookshelf",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-6",
+      "type": "decoration",
+      "x": 3840,
+      "y": 320,
+      "width": 64,
+      "height": 96,
+      "properties": {
+        "kind": "bookshelf",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-7",
+      "type": "decoration",
+      "x": 3968,
+      "y": 320,
+      "width": 64,
+      "height": 96,
+      "properties": {
+        "kind": "bookshelf",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "locked-door-1",
+      "type": "lockedDoor",
+      "x": 4192,
+      "y": 224,
+      "width": 32,
+      "height": 192,
+      "properties": {
+        "color": "silver"
+      }
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 4192,
+      "y": 64,
+      "width": 32,
+      "height": 160,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 3878,
+      "y": 134,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "one-way-1",
+      "type": "oneWay",
+      "x": 3808,
+      "y": 192,
+      "width": 64,
+      "height": 16,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-15",
+      "type": "ground",
+      "x": 4224,
+      "y": 416,
+      "width": 768,
+      "height": 480,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "checkpoint-3",
+      "type": "checkpoint",
+      "x": 4256,
+      "y": 352,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "gate-3",
+      "type": "gate",
+      "x": 4608,
+      "y": 224,
+      "width": 32,
+      "height": 192,
+      "properties": {
+        "initiallyOpen": false,
+        "openDirection": "up",
+        "speed": 60
+      }
+    },
+    {
+      "id": "ground-16",
+      "type": "ground",
+      "x": 4608,
+      "y": 64,
+      "width": 32,
+      "height": 160,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "gate-4",
+      "type": "gate",
+      "x": 4800,
+      "y": 224,
+      "width": 32,
+      "height": 192,
+      "properties": {
+        "initiallyOpen": false,
+        "openDirection": "up",
+        "speed": 60
+      }
+    },
+    {
+      "id": "ground-17",
+      "type": "ground",
+      "x": 4800,
+      "y": 64,
+      "width": 32,
+      "height": 160,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "pressure-plate-3",
+      "type": "pressurePlate",
+      "x": 4472,
+      "y": 406,
+      "width": 48,
+      "height": 10,
+      "properties": {
+        "targets": [
+          "gate-3",
+          "gate-4"
+        ]
+      }
+    },
+    {
+      "id": "ghost-3",
+      "type": "ghost",
+      "x": 4896,
+      "y": 288,
+      "width": 30,
+      "height": 32,
+      "properties": {
+        "mode": "drift",
+        "range": 160,
+        "speed": 40,
+        "leash": 360
+      }
+    },
+    {
+      "id": "one-way-2",
+      "type": "oneWay",
+      "x": 5024,
+      "y": 512,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "one-way-3",
+      "type": "oneWay",
+      "x": 5184,
+      "y": 608,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-18",
+      "type": "ground",
+      "x": 4992,
+      "y": 864,
+      "width": 1408,
+      "height": 32,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spikes-3",
+      "type": "spikes",
+      "x": 4992,
+      "y": 848,
+      "width": 320,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "ground-19",
+      "type": "ground",
+      "x": 5312,
+      "y": 704,
+      "width": 1088,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-8",
+      "type": "decoration",
+      "x": 5376,
+      "y": 544,
+      "width": 48,
+      "height": 64,
+      "properties": {
+        "kind": "portrait",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-9",
+      "type": "decoration",
+      "x": 5632,
+      "y": 648,
+      "width": 32,
+      "height": 56,
+      "properties": {
+        "kind": "candelabra",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-10",
+      "type": "decoration",
+      "x": 5888,
+      "y": 608,
+      "width": 64,
+      "height": 96,
+      "properties": {
+        "kind": "bookshelf",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-11",
+      "type": "decoration",
+      "x": 6144,
+      "y": 544,
+      "width": 40,
+      "height": 56,
+      "properties": {
+        "kind": "window",
+        "layer": "back",
+        "flip": false
+      }
+    }
+  ]
+}

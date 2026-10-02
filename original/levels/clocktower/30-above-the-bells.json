@@ -1,0 +1,593 @@
+{
+  "version": 1,
+  "id": "clocktower-30",
+  "name": "Above the Bells",
+  "world": "clocktower",
+  "order": 5,
+  "number": 30,
+  "width": 1920,
+  "height": 4800,
+  "spawn": {
+    "x": 144,
+    "y": 4672
+  },
+  "goal": {
+    "x": 976,
+    "y": 128
+  },
+  "background": "clocktower",
+  "music": "clocktower",
+  "abilities": {
+    "wallJump": true,
+    "dash": true,
+    "doubleJump": true
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 4672,
+      "width": 1920,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 0,
+      "y": 0,
+      "width": 96,
+      "height": 4672,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 1824,
+      "y": 0,
+      "width": 96,
+      "height": 4672,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 640,
+      "y": 3840,
+      "width": 134,
+      "height": 134,
+      "properties": {
+        "kind": "gear",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 960,
+      "y": 2560,
+      "width": 173,
+      "height": 173,
+      "properties": {
+        "kind": "gear",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 384,
+      "y": 1280,
+      "width": 134,
+      "height": 134,
+      "properties": {
+        "kind": "gear",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "sign-1",
+      "type": "sign",
+      "x": 224,
+      "y": 4640,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "Midnight is near. Climb."
+      }
+    },
+    {
+      "id": "platform-1",
+      "type": "platform",
+      "x": 320,
+      "y": 4512,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "platform-2",
+      "type": "platform",
+      "x": 576,
+      "y": 4352,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "platform-3",
+      "type": "platform",
+      "x": 832,
+      "y": 4192,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "platform-4",
+      "type": "platform",
+      "x": 1152,
+      "y": 4096,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "platform-5",
+      "type": "platform",
+      "x": 1472,
+      "y": 3968,
+      "width": 256,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 1600,
+      "y": 3904,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 1280,
+      "y": 3200,
+      "width": 96,
+      "height": 640,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 1504,
+      "y": 3072,
+      "width": 96,
+      "height": 768,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "spikes-1",
+      "type": "spikes",
+      "x": 1488,
+      "y": 3520,
+      "width": 16,
+      "height": 96,
+      "properties": {
+        "direction": "left"
+      }
+    },
+    {
+      "id": "spikes-2",
+      "type": "spikes",
+      "x": 1376,
+      "y": 3328,
+      "width": 16,
+      "height": 64,
+      "properties": {
+        "direction": "right"
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 896,
+      "y": 3072,
+      "width": 384,
+      "height": 64,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 960,
+      "y": 3008,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "elevator-1",
+      "type": "elevator",
+      "x": 704,
+      "y": 3040,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "direction": "up",
+        "distance": 512,
+        "speed": 120,
+        "mode": "ride",
+        "returnDelay": 1
+      }
+    },
+    {
+      "id": "pendulum-1",
+      "type": "pendulum",
+      "x": 512,
+      "y": 2240,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "length": 90,
+        "angle": 50,
+        "period": 2,
+        "phase": 0
+      }
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 192,
+      "y": 2528,
+      "width": 384,
+      "height": 64,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 134,
+      "y": 2406,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "platform-6",
+      "type": "platform",
+      "x": 96,
+      "y": 2464,
+      "width": 64,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "checkpoint-3",
+      "type": "checkpoint",
+      "x": 256,
+      "y": 2464,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "timed-platform-1",
+      "type": "timedPlatform",
+      "x": 448,
+      "y": 2400,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2,
+        "offTime": 1,
+        "offset": 0,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "timed-platform-2",
+      "type": "timedPlatform",
+      "x": 640,
+      "y": 2272,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2,
+        "offTime": 1,
+        "offset": 2.1,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "timed-platform-3",
+      "type": "timedPlatform",
+      "x": 832,
+      "y": 2144,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2,
+        "offTime": 1,
+        "offset": 1.2,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "timed-platform-4",
+      "type": "timedPlatform",
+      "x": 1024,
+      "y": 2016,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2,
+        "offTime": 1,
+        "offset": 0.3,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "ground-8",
+      "type": "ground",
+      "x": 1216,
+      "y": 1920,
+      "width": 512,
+      "height": 64,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "checkpoint-4",
+      "type": "checkpoint",
+      "x": 1280,
+      "y": 1856,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "path-platform-1",
+      "type": "pathPlatform",
+      "x": 1472,
+      "y": 1824,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 0,
+            "y": -320
+          }
+        ],
+        "speed": 70,
+        "wait": 0.5,
+        "loop": "pingpong",
+        "triggered": false
+      }
+    },
+    {
+      "id": "moving-hazard-1",
+      "type": "movingHazard",
+      "x": 1280,
+      "y": 1600,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "axis": "horizontal",
+        "distance": 192,
+        "speed": 110,
+        "wait": 0.2,
+        "startOffset": 0,
+        "triggered": false
+      }
+    },
+    {
+      "id": "ground-9",
+      "type": "ground",
+      "x": 960,
+      "y": 1472,
+      "width": 384,
+      "height": 64,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "path-platform-2",
+      "type": "pathPlatform",
+      "x": 640,
+      "y": 1408,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": -320,
+            "y": -192
+          }
+        ],
+        "speed": 80,
+        "wait": 0.4,
+        "loop": "pingpong",
+        "triggered": false
+      }
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 128,
+      "y": 1152,
+      "width": 320,
+      "height": 64,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "checkpoint-5",
+      "type": "checkpoint",
+      "x": 192,
+      "y": 1088,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "platform-7",
+      "type": "platform",
+      "x": 640,
+      "y": 1056,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "moving-hazard-2",
+      "type": "movingHazard",
+      "x": 896,
+      "y": 832,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "axis": "vertical",
+        "distance": 160,
+        "speed": 90,
+        "wait": 0.2,
+        "startOffset": 0,
+        "triggered": false
+      }
+    },
+    {
+      "id": "platform-8",
+      "type": "platform",
+      "x": 1024,
+      "y": 960,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "platform-9",
+      "type": "platform",
+      "x": 1408,
+      "y": 864,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 1600,
+      "y": 704,
+      "width": 224,
+      "height": 64,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "checkpoint-6",
+      "type": "checkpoint",
+      "x": 1664,
+      "y": 640,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 1280,
+      "y": 128,
+      "width": 96,
+      "height": 448,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 1472,
+      "y": 320,
+      "width": 96,
+      "height": 384,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 896,
+      "y": 128,
+      "width": 384,
+      "height": 64,
+      "properties": {
+        "style": "brick"
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 1024,
+      "y": 70,
+      "width": 58,
+      "height": 58,
+      "properties": {
+        "kind": "bell",
+        "layer": "back",
+        "flip": false
+      }
+    }
+  ]
+}

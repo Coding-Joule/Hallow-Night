@@ -1,0 +1,641 @@
+{
+  "version": 1,
+  "id": "haunted-manor-16",
+  "name": "Manor Entrance",
+  "world": "haunted-manor",
+  "order": 1,
+  "number": 16,
+  "width": 5760,
+  "height": 832,
+  "spawn": {
+    "x": 208,
+    "y": 704
+  },
+  "goal": {
+    "x": 5520,
+    "y": 704
+  },
+  "background": "haunted-manor",
+  "music": "haunted-manor",
+  "abilities": {
+    "wallJump": true,
+    "dash": false,
+    "doubleJump": false
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 0,
+      "width": 5760,
+      "height": 64,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 0,
+      "y": 704,
+      "width": 960,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 0,
+      "y": 64,
+      "width": 128,
+      "height": 448,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "hidden-wall-1",
+      "type": "hiddenWall",
+      "x": 0,
+      "y": 512,
+      "width": 128,
+      "height": 192,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 38,
+      "y": 646,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 256,
+      "y": 544,
+      "width": 48,
+      "height": 64,
+      "properties": {
+        "kind": "portrait",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "sign-1",
+      "type": "sign",
+      "x": 256,
+      "y": 672,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "Levers work the old mechanisms.\nTouch one to flip it."
+      }
+    },
+    {
+      "id": "gate-1",
+      "type": "gate",
+      "x": 640,
+      "y": 512,
+      "width": 32,
+      "height": 192,
+      "properties": {
+        "initiallyOpen": false,
+        "openDirection": "up",
+        "speed": 260
+      }
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 640,
+      "y": 64,
+      "width": 32,
+      "height": 448,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "lever-1",
+      "type": "lever",
+      "x": 452,
+      "y": 672,
+      "width": 24,
+      "height": 32,
+      "properties": {
+        "targets": [
+          "gate-1"
+        ],
+        "startOn": false
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 704,
+      "y": 544,
+      "width": 48,
+      "height": 64,
+      "properties": {
+        "kind": "portrait",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "sign-2",
+      "type": "sign",
+      "x": 864,
+      "y": 672,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "Phantom stones fade in and out. Watch their rhythm."
+      }
+    },
+    {
+      "id": "timed-platform-1",
+      "type": "timedPlatform",
+      "x": 992,
+      "y": 640,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2.6,
+        "offTime": 1.2,
+        "offset": 0,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "timed-platform-2",
+      "type": "timedPlatform",
+      "x": 1152,
+      "y": 608,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2.6,
+        "offTime": 1.2,
+        "offset": 2.7,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "timed-platform-3",
+      "type": "timedPlatform",
+      "x": 1312,
+      "y": 640,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2.6,
+        "offTime": 1.2,
+        "offset": 1.6,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 960,
+      "y": 800,
+      "width": 512,
+      "height": 32,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spikes-1",
+      "type": "spikes",
+      "x": 960,
+      "y": 784,
+      "width": 512,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 1472,
+      "y": 704,
+      "width": 512,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 1504,
+      "y": 640,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "sign-3",
+      "type": "sign",
+      "x": 1632,
+      "y": 672,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "Ghosts cannot be harmed. Keep your distance."
+      }
+    },
+    {
+      "id": "ghost-1",
+      "type": "ghost",
+      "x": 1856,
+      "y": 512,
+      "width": 30,
+      "height": 32,
+      "properties": {
+        "mode": "drift",
+        "range": 220,
+        "speed": 45,
+        "leash": 360
+      }
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 1984,
+      "y": 64,
+      "width": 640,
+      "height": 384,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-8",
+      "type": "ground",
+      "x": 1984,
+      "y": 704,
+      "width": 640,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 2016,
+      "y": 544,
+      "width": 48,
+      "height": 64,
+      "properties": {
+        "kind": "portrait",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 2272,
+      "y": 648,
+      "width": 32,
+      "height": 56,
+      "properties": {
+        "kind": "candelabra",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 2528,
+      "y": 608,
+      "width": 64,
+      "height": 96,
+      "properties": {
+        "kind": "bookshelf",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ghost-2",
+      "type": "ghost",
+      "x": 2304,
+      "y": 544,
+      "width": 30,
+      "height": 32,
+      "properties": {
+        "mode": "drift",
+        "range": 200,
+        "speed": 45,
+        "leash": 360
+      }
+    },
+    {
+      "id": "ground-9",
+      "type": "ground",
+      "x": 2624,
+      "y": 704,
+      "width": 704,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 2752,
+      "y": 320,
+      "width": 64,
+      "height": 288,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 2912,
+      "y": 416,
+      "width": 64,
+      "height": 288,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "key-1",
+      "type": "key",
+      "x": 2756,
+      "y": 260,
+      "width": 24,
+      "height": 24,
+      "properties": {
+        "color": "gold"
+      }
+    },
+    {
+      "id": "sign-4",
+      "type": "sign",
+      "x": 2656,
+      "y": 672,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "The key rests high on the old shelves."
+      }
+    },
+    {
+      "id": "locked-door-1",
+      "type": "lockedDoor",
+      "x": 3200,
+      "y": 512,
+      "width": 32,
+      "height": 192,
+      "properties": {
+        "color": "gold"
+      }
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 3200,
+      "y": 64,
+      "width": 32,
+      "height": 448,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 2592,
+      "y": 640,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "decoration-6",
+      "type": "decoration",
+      "x": 3328,
+      "y": 16,
+      "width": 48,
+      "height": 48,
+      "properties": {
+        "kind": "cobweb",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 3328,
+      "y": 704,
+      "width": 576,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "timed-platform-4",
+      "type": "timedPlatform",
+      "x": 3904,
+      "y": 608,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2.6,
+        "offTime": 1.2,
+        "offset": 0,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "platform-1",
+      "type": "platform",
+      "x": 4032,
+      "y": 512,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "timed-platform-5",
+      "type": "timedPlatform",
+      "x": 4160,
+      "y": 416,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 2.6,
+        "offTime": 1.2,
+        "offset": 2.7,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 4288,
+      "y": 384,
+      "width": 384,
+      "height": 448,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-15",
+      "type": "ground",
+      "x": 3904,
+      "y": 800,
+      "width": 384,
+      "height": 32,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spikes-2",
+      "type": "spikes",
+      "x": 3904,
+      "y": 784,
+      "width": 384,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "checkpoint-3",
+      "type": "checkpoint",
+      "x": 4320,
+      "y": 320,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ghost-3",
+      "type": "ghost",
+      "x": 4512,
+      "y": 224,
+      "width": 30,
+      "height": 32,
+      "properties": {
+        "mode": "drift",
+        "range": 180,
+        "speed": 50,
+        "leash": 360
+      }
+    },
+    {
+      "id": "gate-2",
+      "type": "gate",
+      "x": 5056,
+      "y": 512,
+      "width": 32,
+      "height": 192,
+      "properties": {
+        "initiallyOpen": false,
+        "openDirection": "up",
+        "speed": 260
+      }
+    },
+    {
+      "id": "ground-16",
+      "type": "ground",
+      "x": 5056,
+      "y": 64,
+      "width": 32,
+      "height": 448,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "ground-17",
+      "type": "ground",
+      "x": 4672,
+      "y": 704,
+      "width": 1088,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "one-way-1",
+      "type": "oneWay",
+      "x": 4736,
+      "y": 576,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "lever-2",
+      "type": "lever",
+      "x": 4772,
+      "y": 544,
+      "width": 24,
+      "height": 32,
+      "properties": {
+        "targets": [
+          "gate-2"
+        ],
+        "startOn": false
+      }
+    },
+    {
+      "id": "decoration-7",
+      "type": "decoration",
+      "x": 5120,
+      "y": 544,
+      "width": 48,
+      "height": 64,
+      "properties": {
+        "kind": "portrait",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-8",
+      "type": "decoration",
+      "x": 5376,
+      "y": 648,
+      "width": 32,
+      "height": 56,
+      "properties": {
+        "kind": "candelabra",
+        "layer": "back",
+        "flip": false
+      }
+    }
+  ]
+}

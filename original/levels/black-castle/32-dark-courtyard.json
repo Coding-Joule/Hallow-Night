@@ -1,0 +1,729 @@
+{
+  "version": 1,
+  "id": "black-castle-32",
+  "name": "Dark Courtyard",
+  "world": "black-castle",
+  "order": 2,
+  "number": 32,
+  "width": 7680,
+  "height": 1152,
+  "spawn": {
+    "x": 80,
+    "y": 960
+  },
+  "goal": {
+    "x": 7504,
+    "y": 896
+  },
+  "background": "black-castle",
+  "music": "black-castle",
+  "abilities": {
+    "wallJump": true,
+    "dash": true,
+    "doubleJump": true
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 960,
+      "width": 768,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 128,
+      "y": 864,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 320,
+      "y": 704,
+      "width": 32,
+      "height": 77,
+      "properties": {
+        "kind": "banner",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 512,
+      "y": 864,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "sign-1",
+      "type": "sign",
+      "x": 448,
+      "y": 928,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "Shadows lurk in dark pools. Get close and they will rise."
+      }
+    },
+    {
+      "id": "shadow-1",
+      "type": "shadow",
+      "x": 962,
+      "y": 920,
+      "width": 28,
+      "height": 40,
+      "properties": {
+        "triggerRange": 200,
+        "speed": 150,
+        "duration": 2.2,
+        "cooldown": 2.5
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 768,
+      "y": 960,
+      "width": 768,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "platform-1",
+      "type": "platform",
+      "x": 1088,
+      "y": 832,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "shadow-2",
+      "type": "shadow",
+      "x": 1282,
+      "y": 920,
+      "width": 28,
+      "height": 40,
+      "properties": {
+        "triggerRange": 200,
+        "speed": 160,
+        "duration": 2.2,
+        "cooldown": 2.5
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 1504,
+      "y": 896,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 1536,
+      "y": 1120,
+      "width": 1280,
+      "height": 32,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spikes-1",
+      "type": "spikes",
+      "x": 1536,
+      "y": 1104,
+      "width": 1280,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 1600,
+      "y": 896,
+      "width": 96,
+      "height": 224,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "pendulum-1",
+      "type": "pendulum",
+      "x": 1760,
+      "y": 384,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "length": 130,
+        "angle": 50,
+        "period": 1.8,
+        "phase": 0
+      }
+    },
+    {
+      "id": "falling-platform-1",
+      "type": "fallingPlatform",
+      "x": 1824,
+      "y": 864,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.3,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 1984,
+      "y": 832,
+      "width": 96,
+      "height": 288,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "pendulum-2",
+      "type": "pendulum",
+      "x": 2144,
+      "y": 384,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "length": 130,
+        "angle": 50,
+        "period": 1.8,
+        "phase": 0.5
+      }
+    },
+    {
+      "id": "falling-platform-2",
+      "type": "fallingPlatform",
+      "x": 2208,
+      "y": 800,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.3,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 2368,
+      "y": 768,
+      "width": 96,
+      "height": 352,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ghost-1",
+      "type": "ghost",
+      "x": 2496,
+      "y": 576,
+      "width": 30,
+      "height": 32,
+      "properties": {
+        "mode": "drift",
+        "range": 240,
+        "speed": 60,
+        "leash": 360
+      }
+    },
+    {
+      "id": "falling-platform-3",
+      "type": "fallingPlatform",
+      "x": 2528,
+      "y": 800,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.3,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 2688,
+      "y": 832,
+      "width": 256,
+      "height": 288,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 2720,
+      "y": 768,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "gate-1",
+      "type": "gate",
+      "x": 3776,
+      "y": 768,
+      "width": 32,
+      "height": 192,
+      "properties": {
+        "initiallyOpen": false,
+        "openDirection": "up",
+        "speed": 300
+      }
+    },
+    {
+      "id": "ground-8",
+      "type": "ground",
+      "x": 3776,
+      "y": 0,
+      "width": 32,
+      "height": 768,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-9",
+      "type": "ground",
+      "x": 2944,
+      "y": 960,
+      "width": 832,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 3136,
+      "y": 704,
+      "width": 192,
+      "height": 64,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "lever-1",
+      "type": "lever",
+      "x": 3204,
+      "y": 672,
+      "width": 24,
+      "height": 32,
+      "properties": {
+        "targets": [
+          "gate-1"
+        ],
+        "startOn": false
+      }
+    },
+    {
+      "id": "shadow-3",
+      "type": "shadow",
+      "x": 3330,
+      "y": 920,
+      "width": 28,
+      "height": 40,
+      "properties": {
+        "triggerRange": 200,
+        "speed": 170,
+        "duration": 2.5,
+        "cooldown": 2.5
+      }
+    },
+    {
+      "id": "one-way-1",
+      "type": "oneWay",
+      "x": 3008,
+      "y": 832,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "shadow-4",
+      "type": "shadow",
+      "x": 3586,
+      "y": 920,
+      "width": 28,
+      "height": 40,
+      "properties": {
+        "triggerRange": 200,
+        "speed": 170,
+        "duration": 2.2,
+        "cooldown": 2.5
+      }
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 3776,
+      "y": 960,
+      "width": 704,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "checkpoint-3",
+      "type": "checkpoint",
+      "x": 3840,
+      "y": 896,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 4480,
+      "y": 576,
+      "width": 96,
+      "height": 384,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 4480,
+      "y": 960,
+      "width": 128,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 4672,
+      "y": 640,
+      "width": 96,
+      "height": 320,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "key-1",
+      "type": "key",
+      "x": 4516,
+      "y": 868,
+      "width": 24,
+      "height": 24,
+      "properties": {
+        "color": "silver"
+      }
+    },
+    {
+      "id": "one-way-2",
+      "type": "oneWay",
+      "x": 4576,
+      "y": 832,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "ground-15",
+      "type": "ground",
+      "x": 4576,
+      "y": 1088,
+      "width": 96,
+      "height": 64,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-16",
+      "type": "ground",
+      "x": 4768,
+      "y": 960,
+      "width": 320,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "locked-door-1",
+      "type": "lockedDoor",
+      "x": 5056,
+      "y": 768,
+      "width": 32,
+      "height": 192,
+      "properties": {
+        "color": "silver"
+      }
+    },
+    {
+      "id": "ground-17",
+      "type": "ground",
+      "x": 5056,
+      "y": 0,
+      "width": 32,
+      "height": 768,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 4614,
+      "y": 454,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "platform-2",
+      "type": "platform",
+      "x": 4576,
+      "y": 512,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "ground-18",
+      "type": "ground",
+      "x": 5088,
+      "y": 960,
+      "width": 384,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "checkpoint-4",
+      "type": "checkpoint",
+      "x": 5120,
+      "y": 896,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "crumbling-platform-1",
+      "type": "crumblingPlatform",
+      "x": 5504,
+      "y": 896,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "raven-1",
+      "type": "raven",
+      "x": 6272,
+      "y": 704,
+      "width": 34,
+      "height": 20,
+      "properties": {
+        "range": 704,
+        "speed": 280,
+        "direction": "left",
+        "pause": 0.8
+      }
+    },
+    {
+      "id": "crumbling-platform-2",
+      "type": "crumblingPlatform",
+      "x": 5696,
+      "y": 832,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-3",
+      "type": "crumblingPlatform",
+      "x": 5888,
+      "y": 864,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "platform-3",
+      "type": "platform",
+      "x": 6080,
+      "y": 800,
+      "width": 128,
+      "height": 32,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "crumbling-platform-4",
+      "type": "crumblingPlatform",
+      "x": 6304,
+      "y": 832,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-5",
+      "type": "crumblingPlatform",
+      "x": 6496,
+      "y": 864,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.35,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-19",
+      "type": "ground",
+      "x": 5472,
+      "y": 1120,
+      "width": 1216,
+      "height": 32,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spikes-2",
+      "type": "spikes",
+      "x": 5472,
+      "y": 1104,
+      "width": 1216,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "ground-20",
+      "type": "ground",
+      "x": 6688,
+      "y": 896,
+      "width": 992,
+      "height": 256,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "shadow-5",
+      "type": "shadow",
+      "x": 6914,
+      "y": 856,
+      "width": 28,
+      "height": 40,
+      "properties": {
+        "triggerRange": 200,
+        "speed": 180,
+        "duration": 2.2,
+        "cooldown": 2.5
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 7040,
+      "y": 800,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 7232,
+      "y": 640,
+      "width": 32,
+      "height": 77,
+      "properties": {
+        "kind": "banner",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-6",
+      "type": "decoration",
+      "x": 7424,
+      "y": 800,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    }
+  ]
+}

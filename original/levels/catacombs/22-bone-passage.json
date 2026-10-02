@@ -1,0 +1,672 @@
+{
+  "version": 1,
+  "id": "catacombs-22",
+  "name": "Bone Passage",
+  "world": "catacombs",
+  "order": 2,
+  "number": 22,
+  "width": 7040,
+  "height": 960,
+  "spawn": {
+    "x": 80,
+    "y": 768
+  },
+  "goal": {
+    "x": 6864,
+    "y": 704
+  },
+  "background": "catacombs",
+  "music": "catacombs",
+  "abilities": {
+    "wallJump": true,
+    "dash": true,
+    "doubleJump": false
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 0,
+      "width": 7040,
+      "height": 96,
+      "properties": {
+        "style": "bone"
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 0,
+      "y": 768,
+      "width": 640,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 128,
+      "y": 672,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 416,
+      "y": 752,
+      "width": 40,
+      "height": 16,
+      "properties": {
+        "kind": "bones",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "sign-1",
+      "type": "sign",
+      "x": 320,
+      "y": 736,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "Blades swing on old chains. Wait for the gap."
+      }
+    },
+    {
+      "id": "pendulum-1",
+      "type": "pendulum",
+      "x": 768,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "length": 170,
+        "angle": 50,
+        "period": 2.2,
+        "phase": 0
+      }
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 640,
+      "y": 768,
+      "width": 384,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "pendulum-2",
+      "type": "pendulum",
+      "x": 1152,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "length": 170,
+        "angle": 50,
+        "period": 2.2,
+        "phase": 0.5
+      }
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 1024,
+      "y": 768,
+      "width": 320,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "sign-2",
+      "type": "sign",
+      "x": 1344,
+      "y": 736,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "text": "Tortoises crawl these halls. A kicked shell clears the way!"
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 1344,
+      "y": 768,
+      "width": 768,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "tortoise-1",
+      "type": "pumpkinTortoise",
+      "x": 1666,
+      "y": 746,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 40,
+        "direction": "left",
+        "shellSpeed": 420
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 1376,
+      "y": 704,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "platform-1",
+      "type": "platform",
+      "x": 1760,
+      "y": 640,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "bone"
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 2112,
+      "y": 928,
+      "width": 832,
+      "height": 32,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spikes-1",
+      "type": "spikes",
+      "x": 2112,
+      "y": 912,
+      "width": 832,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "falling-platform-1",
+      "type": "fallingPlatform",
+      "x": 2144,
+      "y": 736,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-platform-2",
+      "type": "fallingPlatform",
+      "x": 2304,
+      "y": 704,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "pendulum-3",
+      "type": "pendulum",
+      "x": 2496,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "length": 150,
+        "angle": 45,
+        "period": 2.6,
+        "phase": 0
+      }
+    },
+    {
+      "id": "falling-platform-3",
+      "type": "fallingPlatform",
+      "x": 2464,
+      "y": 672,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-platform-4",
+      "type": "fallingPlatform",
+      "x": 2656,
+      "y": 704,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-platform-5",
+      "type": "fallingPlatform",
+      "x": 2816,
+      "y": 736,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 2944,
+      "y": 768,
+      "width": 512,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 2976,
+      "y": 704,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "tortoise-2",
+      "type": "pumpkinTortoise",
+      "x": 3204,
+      "y": 746,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
+      }
+    },
+    {
+      "id": "tortoise-3",
+      "type": "pumpkinTortoise",
+      "x": 3330,
+      "y": 746,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 40,
+        "direction": "right",
+        "shellSpeed": 420
+      }
+    },
+    {
+      "id": "ground-8",
+      "type": "ground",
+      "x": 3456,
+      "y": 96,
+      "width": 832,
+      "height": 480,
+      "properties": {
+        "style": "bone"
+      }
+    },
+    {
+      "id": "ground-9",
+      "type": "ground",
+      "x": 4288,
+      "y": 96,
+      "width": 96,
+      "height": 352,
+      "properties": {
+        "style": "bone"
+      }
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 4384,
+      "y": 96,
+      "width": 32,
+      "height": 480,
+      "properties": {
+        "style": "bone"
+      }
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 3456,
+      "y": 704,
+      "width": 960,
+      "height": 256,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "breakable-wall-1",
+      "type": "breakableWall",
+      "x": 3648,
+      "y": 576,
+      "width": 32,
+      "height": 128,
+      "properties": {}
+    },
+    {
+      "id": "breakable-wall-2",
+      "type": "breakableWall",
+      "x": 3904,
+      "y": 576,
+      "width": 32,
+      "height": 128,
+      "properties": {}
+    },
+    {
+      "id": "tortoise-4",
+      "type": "pumpkinTortoise",
+      "x": 3748,
+      "y": 682,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 45,
+        "direction": "left",
+        "shellSpeed": 420
+      }
+    },
+    {
+      "id": "breakable-wall-3",
+      "type": "breakableWall",
+      "x": 4160,
+      "y": 576,
+      "width": 32,
+      "height": 128,
+      "properties": {}
+    },
+    {
+      "id": "spikes-2",
+      "type": "spikes",
+      "x": 4000,
+      "y": 576,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "direction": "down"
+      }
+    },
+    {
+      "id": "hidden-wall-1",
+      "type": "hiddenWall",
+      "x": 4288,
+      "y": 448,
+      "width": 96,
+      "height": 128,
+      "properties": {
+        "style": "bone"
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 4326,
+      "y": 486,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "one-way-1",
+      "type": "oneWay",
+      "x": 4288,
+      "y": 608,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "stone"
+      }
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 4416,
+      "y": 768,
+      "width": 256,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "checkpoint-3",
+      "type": "checkpoint",
+      "x": 4448,
+      "y": 704,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "sludge-1",
+      "type": "sludge",
+      "x": 4672,
+      "y": 832,
+      "width": 1280,
+      "height": 128,
+      "properties": {}
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 4672,
+      "y": 928,
+      "width": 1280,
+      "height": 32,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "platform-2",
+      "type": "platform",
+      "x": 4736,
+      "y": 704,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "bone"
+      }
+    },
+    {
+      "id": "pendulum-4",
+      "type": "pendulum",
+      "x": 4896,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "length": 180,
+        "angle": 40,
+        "period": 2,
+        "phase": 0
+      }
+    },
+    {
+      "id": "platform-3",
+      "type": "platform",
+      "x": 4960,
+      "y": 672,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "bone"
+      }
+    },
+    {
+      "id": "pendulum-5",
+      "type": "pendulum",
+      "x": 5120,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "length": 180,
+        "angle": 40,
+        "period": 2,
+        "phase": 0.33
+      }
+    },
+    {
+      "id": "platform-4",
+      "type": "platform",
+      "x": 5184,
+      "y": 704,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "bone"
+      }
+    },
+    {
+      "id": "pendulum-6",
+      "type": "pendulum",
+      "x": 5344,
+      "y": 96,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "length": 180,
+        "angle": 40,
+        "period": 2,
+        "phase": 0.66
+      }
+    },
+    {
+      "id": "falling-platform-6",
+      "type": "fallingPlatform",
+      "x": 5408,
+      "y": 672,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "platform-5",
+      "type": "platform",
+      "x": 5600,
+      "y": 640,
+      "width": 96,
+      "height": 32,
+      "properties": {
+        "style": "bone"
+      }
+    },
+    {
+      "id": "falling-platform-7",
+      "type": "fallingPlatform",
+      "x": 5792,
+      "y": 672,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 5952,
+      "y": 704,
+      "width": 1088,
+      "height": 256,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "tortoise-5",
+      "type": "pumpkinTortoise",
+      "x": 6210,
+      "y": 682,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 40,
+        "direction": "left",
+        "shellSpeed": 420
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 6400,
+      "y": 608,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 6592,
+      "y": 688,
+      "width": 40,
+      "height": 16,
+      "properties": {
+        "kind": "bones",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 6784,
+      "y": 680,
+      "width": 32,
+      "height": 24,
+      "properties": {
+        "kind": "candles",
+        "layer": "back",
+        "flip": false
+      }
+    }
+  ]
+}
