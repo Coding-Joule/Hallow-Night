@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { manifest, registry } from './loadLevels';
 import { manifestEntry } from '../src/game/levels/serialize';
 import { parseLevel } from '../src/game/levels/validate';
-import { WORLDS } from '../src/game/levels/worlds';
+import { EXAM_CHAPTER, WORLDS } from '../src/game/levels/worlds';
 import { FIXED_STEP } from '../src/game/config/physics';
 import { overlaps } from '../src/game/sim/types';
 import { World } from '../src/game/sim/World';
@@ -15,8 +15,9 @@ describe('built-in levels', () => {
     expect(levels.length).toBe(manifest.levels.length);
   });
 
-  it('the campaign has 84 levels, 12 per world, numbered 1..84', () => {
-    expect(levels.length).toBe(84);
+  it('the campaign has 12 levels in every world, numbered in order (the placement exam is the first 84)', () => {
+    expect(levels.length).toBe(WORLDS.length * 12);
+    expect(WORLDS.filter((w) => w.chapter === EXAM_CHAPTER).length * 12).toBe(84);
     levels.forEach((e, i) => {
       expect(e.level.number).toBe(i + 1);
       expect(e.level.world).toBe(WORLDS[Math.floor(i / 12)].id);

@@ -579,6 +579,7 @@ const defs: ObjectTypeDef[] = [
       { key: 'jump', label: 'Leap power (hoppers)', kind: 'number', default: 720, min: 200, step: 20 },
       { key: 'range', label: 'Sweep range (flyers)', kind: 'number', default: 320, min: 32, step: 16 },
       { key: 'dive', label: 'Swoop depth (flyers)', kind: 'number', default: 160, min: 32, step: 16 },
+      { key: 'tint', label: 'Colour tint (#rrggbb, empty = none)', kind: 'string', default: '' },
     ],
   },
   {

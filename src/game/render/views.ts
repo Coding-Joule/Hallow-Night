@@ -458,6 +458,8 @@ function tortoiseView(ctx: ViewContext, e: PumpkinTortoise): EntityView {
 function bossView(ctx: ViewContext, e: Boss): EntityView {
   const img = sprite(ctx.scene, e.x + e.w / 2, e.y + e.h, `boss-${e.kind}-0`).setOrigin(0.5, 1).setDepth(DEPTH.enemies);
   const g = ctx.scene.add.graphics().setDepth(DEPTH.enemies + 1);
+  const tint = /^#[0-9a-f]{6}$/i.test(String(e.props.tint ?? '')) ? parseInt(String(e.props.tint).slice(1), 16) : null;
+  if (tint !== null) img.setTint(tint);
   return {
     update(_w, time) {
       g.clear();

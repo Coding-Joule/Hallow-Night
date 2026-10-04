@@ -43,7 +43,7 @@ export interface LevelData {
   world: WorldId;
   /** Position within its world (1-12 for built-in levels; 12 is the boss). */
   order: number;
-  /** Global level number (1-84 for built-in levels). Optional for user levels. */
+  /** Global level number (1-204 for built-in levels). Optional for user levels. */
   number?: number;
   width: number;
   height: number;

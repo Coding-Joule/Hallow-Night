@@ -191,6 +191,8 @@ function layer(key: string, height: number, body: string, factor: number, factor
 }
 
 export function backgroundTheme(world: WorldId): BgTheme {
+  const extra = EXTRA_THEMES[world];
+  if (extra) return extra();
   switch (world) {
     case 'old-town':
       return {
@@ -284,7 +286,214 @@ export function backgroundTheme(world: WorldId): BgTheme {
         ],
       };
   }
+  return backgroundTheme('old-town');
 }
+
+/** A few extra shapes for the worlds after the placement exam. */
+function snowCaps(seed: number, h: number, color: string): string {
+  const r = rng(seed);
+  let s = '';
+  for (let i = 0; i < 60; i++) s += `<circle cx="${r() * W}" cy="${r() * h}" r="${1 + r() * 2}" fill="${color}" opacity="${0.3 + r() * 0.5}"/>`;
+  return s;
+}
+
+function tents(seed: number, h: number, color: string, stripe: string): string {
+  const r = rng(seed);
+  let s = '';
+  let x = 20;
+  while (x < W - 60) {
+    const w = 90 + r() * 80;
+    const th = 90 + r() * 90;
+    s += `<path d="M${x} ${h} V${h - th * 0.5} L${x + w / 2} ${h - th} L${x + w} ${h - th * 0.5} V${h} Z" fill="${color}"/>`;
+    for (let k = 1; k < 4; k++) s += `<path d="M${x + (w * k) / 4} ${h} V${h - th * 0.5} L${x + w / 2} ${h - th}" stroke="${stripe}" stroke-width="6" opacity="0.5"/>`;
+    s += `<path d="M${x + w / 2} ${h - th} V${h - th - 20} L${x + w / 2 + 14} ${h - th - 14} L${x + w / 2} ${h - th - 8}" fill="${stripe}"/>`;
+    x += w + 30 + r() * 80;
+  }
+  return s + `<circle cx="760" cy="${h - 150}" r="120" fill="none" stroke="${color}" stroke-width="8"/>` + Array.from({ length: 12 }, (_, i) => `<path d="M760 ${h - 150} L${760 + Math.cos((i * Math.PI) / 6) * 120} ${h - 150 + Math.sin((i * Math.PI) / 6) * 120}" stroke="${color}" stroke-width="3"/>`).join('');
+}
+
+function masts(seed: number, h: number, color: string, sail: string): string {
+  const r = rng(seed);
+  let s = '';
+  for (let x = 60; x < W; x += 260 + r() * 120) {
+    const mh = 200 + r() * 120;
+    s += `<path d="M${x - 80} ${h - 40} L${x + 120} ${h - 40} L${x + 90} ${h} L${x - 50} ${h} Z" fill="${color}"/><rect x="${x}" y="${h - 40 - mh}" width="8" height="${mh}" fill="${color}"/>`;
+    s += `<path d="M${x + 8} ${h - 30 - mh} Q${x + 80} ${h - mh + 30} ${x + 8} ${h - 90} Z" fill="${sail}" opacity="0.6"/>`;
+  }
+  return s;
+}
+
+function clouds(seed: number, h: number, color: string): string {
+  const r = rng(seed);
+  let s = '';
+  for (let i = 0; i < 9; i++) {
+    const cx = r() * W;
+    const cy = 40 + r() * (h - 80);
+    s += wrap(cx - 90, 180, (xx) => `<ellipse cx="${xx + 90}" cy="${cy}" rx="${70 + r() * 40}" ry="${18 + r() * 10}" fill="${color}"/><ellipse cx="${xx + 60}" cy="${cy - 12}" rx="40" ry="18" fill="${color}"/>`);
+  }
+  return s;
+}
+
+function pillars(seed: number, h: number, color: string): string {
+  const r = rng(seed);
+  let s = '';
+  for (let x = 30; x < W; x += 120 + r() * 140) {
+    const ph = 120 + r() * (h - 160);
+    const broken = r() > 0.5;
+    s += `<rect x="${x}" y="${h - ph}" width="34" height="${ph}" fill="${color}"/><rect x="${x - 6}" y="${h - ph}" width="46" height="10" fill="${color}"/>`;
+    if (broken) s += `<path d="M${x} ${h - ph} L${x + 10} ${h - ph - 16} L${x + 20} ${h - ph - 4} L${x + 34} ${h - ph - 20} V${h - ph} Z" fill="${color}"/>`;
+  }
+  return s;
+}
+
+function blocks(seed: number, h: number, colors: string[]): string {
+  const r = rng(seed);
+  let s = '';
+  let x = 0;
+  while (x < W) {
+    const stack = 1 + Math.floor(r() * 4);
+    for (let k = 0; k < stack; k++) {
+      const c = colors[Math.floor(r() * colors.length)];
+      s += `<rect x="${x}" y="${h - (k + 1) * 46}" width="44" height="44" rx="4" fill="${c}"/><circle cx="${x + 12}" cy="${h - (k + 1) * 46 + 4}" r="5" fill="${c}"/><circle cx="${x + 32}" cy="${h - (k + 1) * 46 + 4}" r="5" fill="${c}"/>`;
+    }
+    x += 50 + r() * 70;
+  }
+  return s;
+}
+
+function flowers(seed: number, h: number, stem: string, petal: string): string {
+  const r = rng(seed);
+  let s = '';
+  for (let i = 0; i < 26; i++) {
+    const x = r() * W;
+    const fh = 40 + r() * 160;
+    s += wrap(x - 20, 40, (xx) => `<path d="M${xx + 20} ${h} Q${xx + 10 + r() * 20} ${h - fh / 2} ${xx + 20} ${h - fh}" stroke="${stem}" stroke-width="3" fill="none"/><circle cx="${xx + 20}" cy="${h - fh}" r="${7 + r() * 8}" fill="${petal}"/>`);
+  }
+  return s;
+}
+
+const EXTRA_THEMES: Partial<Record<WorldId, () => BgTheme>> = {
+  'frozen-hollow': () => ({
+    skyTop: 0x0b1424,
+    skyBottom: 0x3a5a7a,
+    moon: { x: 300, y: 100, r: 50, color: '#eef6ff', glow: 0xcfe6ff },
+    stars: true,
+    fogColor: 0xb8d8f0,
+    darkness: 0.25,
+    layers: [
+      layer('bg-frozen-hollow-far', 300, hills(31, 300, '#2a4058', 80, 210) + snowCaps(2, 300, '#e8f4ff'), 0.1, 0.05, 80),
+      layer('bg-frozen-hollow-mid', 380, trees(43, 380, '#1a2a3c', 10, 220, 360) + snowCaps(5, 380, '#ffffff'), 0.3, 0.12, 0),
+    ],
+  }),
+  'candy-carnival': () => ({
+    skyTop: 0x1a0c24,
+    skyBottom: 0x5a2a5a,
+    moon: { x: 160, y: 90, r: 44, color: '#ffe8f4', glow: 0xffb8e0 },
+    stars: true,
+    fogColor: 0xd890c8,
+    darkness: 0.25,
+    layers: [
+      layer('bg-candy-carnival-far', 320, tents(7, 320, '#3a1a40', '#7a3a70'), 0.12, 0.05, 60),
+      layer('bg-candy-carnival-mid', 160, hills(13, 160, '#2a0f2e', 30, 110) + snowCaps(9, 160, '#ff9ad6'), 0.32, 0.12, 0),
+    ],
+  }),
+  'witch-swamp': () => ({
+    skyTop: 0x080e08,
+    skyBottom: 0x2a3a1c,
+    moon: { x: 620, y: 120, r: 36, color: '#e8f0b0', glow: 0xb8d070 },
+    stars: false,
+    fogColor: 0x6a8a40,
+    darkness: 0.5,
+    layers: [
+      layer('bg-witch-swamp-far', 360, trees(91, 360, '#142012', 12, 180, 340), 0.12, 0.06, 40),
+      layer('bg-witch-swamp-mid', 260, hills(19, 260, '#0c140a', 40, 200) + trees(23, 260, '#0c140a', 5, 140, 250) + snowCaps(3, 200, '#c8f070'), 0.32, 0.14, 0),
+    ],
+  }),
+  'ghost-harbor': () => ({
+    skyTop: 0x060c14,
+    skyBottom: 0x1e3444,
+    moon: { x: 780, y: 100, r: 58, color: '#e0f0f4', glow: 0xa8d8e8 },
+    stars: true,
+    fogColor: 0x7aa8b8,
+    darkness: 0.4,
+    layers: [
+      layer('bg-ghost-harbor-far', 380, masts(17, 380, '#16242e', '#4a7a88'), 0.12, 0.05, 40),
+      layer('bg-ghost-harbor-mid', 140, hills(29, 140, '#0a141a', 18, 100), 0.32, 0.1, 0),
+    ],
+  }),
+  'lava-crypt': () => ({
+    skyTop: 0x140404,
+    skyBottom: 0x5a1a08,
+    moon: null,
+    stars: false,
+    fogColor: 0xe0602a,
+    darkness: 0.35,
+    layers: [
+      layer('bg-lava-crypt-far', 540, arches(12, 540, '#2a0c08', '#ff7a2a'), 0.18, 0.18, 0),
+      layer('bg-lava-crypt-mid', 300, pillars(14, 300, '#180604') + snowCaps(21, 300, '#ff9a3a'), 0.4, 0.3, 0),
+    ],
+  }),
+  'sky-ruins': () => ({
+    skyTop: 0x141a3a,
+    skyBottom: 0x6a6aa8,
+    moon: { x: 480, y: 90, r: 62, color: '#fff8e0', glow: 0xfff0c0 },
+    stars: true,
+    fogColor: 0xc8c8f0,
+    darkness: 0.15,
+    layers: [
+      layer('bg-sky-ruins-far', 540, clouds(3, 540, '#3a3a6a'), 0.08, 0.1, 0, 0.8),
+      layer('bg-sky-ruins-mid', 320, pillars(27, 320, '#2a2a4a') + clouds(8, 200, '#4a4a7a'), 0.3, 0.15, 0),
+    ],
+  }),
+  'toy-factory': () => ({
+    skyTop: 0x0c0a18,
+    skyBottom: 0x3a2a20,
+    moon: null,
+    stars: false,
+    fogColor: 0xd0a060,
+    darkness: 0.3,
+    layers: [
+      layer('bg-toy-factory-far', 540, gears(11, 540, '#2a2020'), 0.15, 0.15, 0, 0.9),
+      layer('bg-toy-factory-mid', 230, blocks(5, 230, ['#3a1a2a', '#1a2a3a', '#3a321a', '#1a3a2a']), 0.35, 0.15, 0),
+    ],
+  }),
+  'mirror-manor': () => ({
+    skyTop: 0x0c1418,
+    skyBottom: 0x1a3036,
+    moon: null,
+    stars: false,
+    fogColor: 0x8ad0d0,
+    darkness: 0.35,
+    layers: [
+      layer('bg-mirror-manor-far', 540, interiorWall(9, 540, '#142a30', '#0c1c20', '#8ae0e0'), 0.2, 0.2, 0),
+      layer('bg-mirror-manor-mid', 540, `<rect x="0" y="0" width="${W}" height="30" fill="#0a1418"/>` + [0, 320, 640].map((x) => `<rect x="${x + 20}" y="0" width="48" height="540" fill="#0a1418"/><ellipse cx="${x + 200}" cy="200" rx="50" ry="80" fill="none" stroke="#3a6a70" stroke-width="8"/>`).join(''), 0.45, 0.35, 0),
+    ],
+  }),
+  'moon-garden': () => ({
+    skyTop: 0x0a0a1e,
+    skyBottom: 0x2a2a4e,
+    moon: { x: 640, y: 150, r: 110, color: '#f4f4ff', glow: 0xe0e0ff },
+    stars: true,
+    fogColor: 0xb0b0e0,
+    darkness: 0.2,
+    layers: [
+      layer('bg-moon-garden-far', 300, hills(37, 300, '#1c1c38', 60, 220) + snowCaps(13, 300, '#e0e0ff'), 0.1, 0.05, 60),
+      layer('bg-moon-garden-mid', 260, flowers(15, 260, '#12122a', '#4a4a80'), 0.32, 0.12, 0),
+    ],
+  }),
+  'nightmare-realm': () => ({
+    skyTop: 0x0a0010,
+    skyBottom: 0x30083a,
+    moon: { x: 480, y: 130, r: 90, color: '#f0a0ff', glow: 0xc040e0 },
+    stars: true,
+    fogColor: 0x8a2aa0,
+    darkness: 0.5,
+    layers: [
+      layer('bg-nightmare-realm-far', 420, castle(88, 420, '#1a0622', '#d040ff'), 0.1, 0.05, 40),
+      layer('bg-nightmare-realm-mid', 420, trees(66, 420, '#0e0214', 8, 260, 410), 0.32, 0.14, 0),
+    ],
+  }),
+};
 
 export function fogTexture(world: WorldId): { key: string; svg: string } {
   const t = backgroundTheme(world);

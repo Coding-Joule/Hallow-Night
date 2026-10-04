@@ -50,6 +50,16 @@ const THEMES: Record<WorldId, MusicTheme> = {
   catacombs: { root: 48, scale: [0, 1, 3, 5, 6, 8, 10], tempo: 66, pad: 'sawtooth', lead: 'sine', pattern: [0, null, null, 1, null, null, 0, null, 4, null, null, 3, null, null, 1, null], bassEvery: 8 },
   clocktower: { root: 57, scale: [0, 2, 3, 5, 7, 8, 10], tempo: 112, pad: 'triangle', lead: 'square', pattern: [0, 4, 7, 4, 2, 4, 7, 4, 1, 4, 6, 4, 2, 5, 7, 5], bassEvery: 4 },
   'black-castle': { root: 50, scale: [0, 1, 3, 5, 6, 8, 10], tempo: 96, pad: 'sawtooth', lead: 'triangle', pattern: [0, 0, 3, null, 1, null, 0, null, 4, 4, 5, null, 3, null, 1, null], bassEvery: 2 },
+  'frozen-hollow': { root: 62, scale: [0, 2, 4, 7, 9, 11, 12], tempo: 80, pad: 'sine', lead: 'sine', pattern: [4, null, 2, null, 0, null, 2, 4, 5, null, 4, null, 2, null, null, null], bassEvery: 8 },
+  'candy-carnival': { root: 60, scale: [0, 2, 4, 5, 7, 9, 11], tempo: 132, pad: 'triangle', lead: 'square', pattern: [0, 2, 4, 2, 5, 4, 2, null, 0, 2, 4, 6, 5, null, 4, null], bassEvery: 2 },
+  'witch-swamp': { root: 50, scale: [0, 1, 3, 5, 7, 8, 10], tempo: 88, pad: 'sawtooth', lead: 'triangle', pattern: [0, null, 1, 0, null, 4, null, 3, 0, null, 1, 0, null, 5, 4, null], bassEvery: 4 },
+  'ghost-harbor': { root: 55, scale: [0, 2, 3, 5, 7, 9, 10], tempo: 100, pad: 'triangle', lead: 'triangle', pattern: [0, null, 0, 2, 4, null, 2, null, 3, null, 3, 4, 5, null, 4, null], bassEvery: 4 },
+  'lava-crypt': { root: 45, scale: [0, 1, 4, 5, 7, 8, 10], tempo: 118, pad: 'sawtooth', lead: 'square', pattern: [0, 1, 0, null, 4, 3, 1, null, 0, 1, 0, null, 5, 4, 1, null], bassEvery: 2 },
+  'sky-ruins': { root: 64, scale: [0, 2, 4, 6, 7, 9, 11], tempo: 92, pad: 'sine', lead: 'triangle', pattern: [0, 4, 6, null, 5, 4, 2, null, 0, 4, 7, null, 6, 4, 5, null], bassEvery: 8 },
+  'toy-factory': { root: 60, scale: [0, 2, 3, 5, 7, 8, 10], tempo: 140, pad: 'square', lead: 'triangle', pattern: [0, 2, 0, 4, 0, 2, 0, 5, 0, 2, 0, 4, 3, 2, 1, null], bassEvery: 2 },
+  'mirror-manor': { root: 57, scale: [0, 2, 3, 6, 7, 8, 11], tempo: 84, pad: 'sine', lead: 'sine', pattern: [6, 5, 4, null, 3, null, 4, null, 2, 1, 0, null, 1, null, 2, null], bassEvery: 4 },
+  'moon-garden': { root: 64, scale: [0, 2, 4, 5, 7, 9, 11], tempo: 70, pad: 'sine', lead: 'triangle', pattern: [0, null, 4, null, 7, null, 5, null, 4, null, 2, null, 0, null, null, null], bassEvery: 8 },
+  'nightmare-realm': { root: 46, scale: [0, 1, 3, 4, 6, 7, 9], tempo: 104, pad: 'sawtooth', lead: 'square', pattern: [0, 0, 6, null, 3, null, 0, 1, 0, 0, 6, null, 4, 3, 1, null], bassEvery: 2 },
 };
 
 function midiToFreq(m: number): number {

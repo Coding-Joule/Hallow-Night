@@ -17,6 +17,16 @@ const AMBIENT_COLORS: Record<string, number> = {
   catacombs: 0x8fd060,
   clocktower: 0xe8c86a,
   'black-castle': 0xd9534f,
+  'frozen-hollow': 0x8fd3f0,
+  'candy-carnival': 0xf08fc8,
+  'witch-swamp': 0x9fd060,
+  'ghost-harbor': 0x7fc4d8,
+  'lava-crypt': 0xff7a3a,
+  'sky-ruins': 0xc8c0ff,
+  'toy-factory': 0xf0c050,
+  'mirror-manor': 0xa0f0f0,
+  'moon-garden': 0xe0e0ff,
+  'nightmare-realm': 0xc050e0,
 };
 
 export interface RenderOptions {

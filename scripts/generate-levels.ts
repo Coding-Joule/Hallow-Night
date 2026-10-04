@@ -35,9 +35,19 @@ const NAMES: Record<WorldId, string[]> = {
   catacombs: ['Bone Stairs', 'Ossuary Run', 'Slime Pools', 'Rattling Halls', 'Torchlit Tunnels', 'Sunken Shrine', 'Chain Bridge', 'Crypt Crossing', 'Drip Caverns', 'Sludge Falls', 'Deep Vault', 'The Slime King'],
   clocktower: ['Tick Tock Stairs', 'Cogwheel Climb', 'Pendulum Hall', 'Spring Loaded', 'Belt Drive', 'Chime Chamber', 'Gear Garden', 'Clockface Ledge', 'Escapement', 'Minute Hand Run', 'The Last Second', 'The Clockwork Owl'],
   'black-castle': ['Drawbridge Dash', 'Ramparts', 'Shadow Moat', 'Iron Halls', 'Throne Approach', 'Dungeon Break', 'Banner Walk', 'Spire Bounce', 'Dark Chapel', 'Crown Tower', 'Midnight Stair', 'The Midnight King'],
+  'frozen-hollow': ['Snowdrift Start', 'Icicle Alley', 'Frostbite Hop', 'Pine Needle Peaks', 'Shiver Bridge', 'Snowman Square', 'Glacier Gap', 'Blizzard Bounce', 'Frozen Falls', 'Polar Plunge', 'Hailstone Heights', 'The Frost King'],
+  'candy-carnival': ['Ticket Booth', 'Cotton Candy Clouds', 'Gumdrop Gardens', 'Lollipop Lane', 'Taffy Twister', 'Funhouse Floors', 'Caramel Canyon', 'Ferris Wheel Climb', 'Sprinkle Slopes', 'Licorice Loop', 'Big Top Bounce', 'The Gumdrop Golem'],
+  'witch-swamp': ['Muddy Welcome', 'Cauldron Crossing', 'Toadstool Steps', 'Bog Lantern Path', 'Firefly Thicket', 'Hag Hut Hollow', 'Sinking Stones', 'Newt Nook', 'Mossy Mire', 'Brew Bubbles', "Witch's Doorstep", 'The Bog King'],
+  'ghost-harbor': ['Foggy Pier', 'Barnacle Boardwalk', 'Lighthouse Leap', 'Crow\'s Nest Climb', 'Anchor Drop', 'Shipwreck Shallows', 'Plank Run', 'Rope Ladder Rally', 'Sunken Deck', 'Cannonball Cove', 'Phantom Fleet', 'The Storm Bat'],
+  'lava-crypt': ['Warm Welcome', 'Ember Steps', 'Magma Moat', 'Smoldering Halls', 'Cinder Bridge', 'Furnace Floor', 'Ash Falls', 'Scorch Tunnel', 'Molten Maze', 'Fire Fang Pass', 'Inferno Gate', 'The Magma Golem'],
+  'sky-ruins': ['Cloud Gate', 'Floating Steps', 'Windy Walkway', 'Broken Bridge', 'Sky Lantern Field', 'Feather Fall', 'Storm Pillars', 'Thunder Ledge', 'Rainbow Ruins', 'Gale Gauntlet', 'Starlight Stair', 'The Storm Owl'],
+  'toy-factory': ['Assembly Line', 'Building Blocks', 'Jack-in-the-Box Jump', 'Marble Run', 'Wind-up Walk', 'Spring Coil Corner', 'Puppet Theater', 'Conveyor Chaos', 'Toy Soldier March', 'Spinning Tops', 'Gift Wrap Gallery', 'The Wind-up King'],
+  'mirror-manor': ['Looking Glass Lobby', 'Silver Stairs', 'Reflection Hall', 'Crystal Corridor', 'Shattered Salon', 'Gilded Gallery', 'Twin Towers', 'Chandelier Climb', 'Echo Chamber', 'Prism Passage', 'Hall of a Hundred Doors', 'The Mirror Lady'],
+  'moon-garden': ['Silver Gate', 'Moonflower Meadow', 'Hedge Maze Hop', 'Fountain Steps', 'Lunar Lilies', 'Moth Wing Walk', 'Crescent Bridge', 'Night Bloom Bounce', 'Stardust Terrace', 'Orchard of Owls', 'The Glass Greenhouse', 'The Moth Queen'],
+  'nightmare-realm': ['First Nightmare', 'Upside-Down Hall', 'Shadow Stairs', 'Falling Dreams', 'Endless Corridor', 'Teeth Gate', 'Whisper Woods', 'Spiral Abyss', 'Clock of Dread', 'The Last Lantern', 'Nightmare Spire', 'The Nightmare King'],
 };
 
-const BOSSES: Record<WorldId, { kind: string; hp: number; speed: number; flyer: boolean; title: string }> = {
+const BOSSES: Record<WorldId, { kind: string; hp: number; speed: number; flyer: boolean; title: string; tint?: string }> = {
   'old-town': { kind: 'pumpkinKing', hp: 3, speed: 0.9, flyer: false, title: 'the Pumpkin King' },
   graveyard: { kind: 'graveGolem', hp: 3, speed: 0.9, flyer: false, title: 'the Grave Golem' },
   'dead-woods': { kind: 'batQueen', hp: 4, speed: 1, flyer: true, title: 'the Bat Queen' },
@@ -45,6 +55,16 @@ const BOSSES: Record<WorldId, { kind: string; hp: number; speed: number; flyer: 
   catacombs: { kind: 'slimeKing', hp: 4, speed: 1.1, flyer: false, title: 'the Slime King' },
   clocktower: { kind: 'clockOwl', hp: 4, speed: 1.2, flyer: true, title: 'the Clockwork Owl' },
   'black-castle': { kind: 'midnightKing', hp: 6, speed: 1.1, flyer: true, title: 'the Midnight King' },
+  'frozen-hollow': { kind: 'pumpkinKing', hp: 5, speed: 1.3, flyer: false, title: 'the Frost King', tint: '#a8dcff' },
+  'candy-carnival': { kind: 'graveGolem', hp: 5, speed: 1.3, flyer: false, title: 'the Gumdrop Golem', tint: '#ff9ad6' },
+  'witch-swamp': { kind: 'slimeKing', hp: 5, speed: 1.35, flyer: false, title: 'the Bog King', tint: '#9fc86a' },
+  'ghost-harbor': { kind: 'batQueen', hp: 5, speed: 1.35, flyer: true, title: 'the Storm Bat', tint: '#9ad8e8' },
+  'lava-crypt': { kind: 'graveGolem', hp: 6, speed: 1.45, flyer: false, title: 'the Magma Golem', tint: '#ff8a5a' },
+  'sky-ruins': { kind: 'clockOwl', hp: 6, speed: 1.45, flyer: true, title: 'the Storm Owl', tint: '#c8c0ff' },
+  'toy-factory': { kind: 'pumpkinKing', hp: 6, speed: 1.55, flyer: false, title: 'the Wind-up King', tint: '#ffd36a' },
+  'mirror-manor': { kind: 'gloomGhost', hp: 7, speed: 1.55, flyer: true, title: 'the Mirror Lady', tint: '#b8fff4' },
+  'moon-garden': { kind: 'batQueen', hp: 7, speed: 1.65, flyer: true, title: 'the Moth Queen', tint: '#f0f0ff' },
+  'nightmare-realm': { kind: 'midnightKing', hp: 9, speed: 1.6, flyer: true, title: 'the Nightmare King', tint: '#e070ff' },
 };
 
 const DECOR: Record<WorldId, string[]> = {
@@ -55,6 +75,16 @@ const DECOR: Record<WorldId, string[]> = {
   catacombs: ['bones', 'coffin', 'candles', 'torch', 'pillar', 'bones'],
   clocktower: ['gear', 'bell', 'crate', 'barrel', 'candles', 'torch'],
   'black-castle': ['statue', 'torch', 'pillar', 'candelabra', 'banner', 'jackOLantern'],
+  'frozen-hollow': ['deadTree', 'bush', 'pumpkin', 'jackOLantern', 'fence', 'lamp'],
+  'candy-carnival': ['jackOLantern', 'lamp', 'banner', 'crate', 'barrel', 'pumpkin'],
+  'witch-swamp': ['deadTree', 'bush', 'bones', 'candles', 'jackOLantern', 'deadTree'],
+  'ghost-harbor': ['barrel', 'crate', 'lamp', 'chain', 'barrel', 'bell'],
+  'lava-crypt': ['torch', 'pillar', 'bones', 'coffin', 'statue', 'torch'],
+  'sky-ruins': ['pillar', 'statue', 'bell', 'banner', 'pillar', 'torch'],
+  'toy-factory': ['gear', 'crate', 'barrel', 'clockFace', 'bell', 'jackOLantern'],
+  'mirror-manor': ['candelabra', 'portrait', 'bookshelf', 'statue', 'candles', 'banner'],
+  'moon-garden': ['bush', 'statue', 'lamp', 'fence', 'pumpkin', 'bush'],
+  'nightmare-realm': ['deadTree', 'statue', 'candelabra', 'bones', 'torch', 'jackOLantern'],
 };
 
 /** One sign at the start of each world's first stage. */
@@ -65,7 +95,17 @@ const WORLD_SIGNS: Record<WorldId, string> = {
   'haunted-manor': 'Press buttons to open gates. Purple platforms come and go.',
   catacombs: 'You can DASH now! Smash cracked walls and fly over wide pits.',
   clocktower: 'You can DOUBLE JUMP now! Jump again in mid-air.',
-  'black-castle': 'The last world. Everything you have learned, all at once!',
+  'black-castle': 'The last world of the exam. Everything you have learned, all at once!',
+  'frozen-hollow': 'You passed the placement exam! From here on, things get REAL.',
+  'candy-carnival': 'Step right up! Mind the gaps between the rides.',
+  'witch-swamp': 'The bog is full of things that bite. Keep moving.',
+  'ghost-harbor': 'Old ships, rotten planks. Jump light!',
+  'lava-crypt': 'It gets hot down here. Do not stop for long.',
+  'sky-ruins': 'Far above the clouds. Do not look down!',
+  'toy-factory': 'The toys are awake, and everything moves.',
+  'mirror-manor': 'Nothing here is quite what it seems.',
+  'moon-garden': 'So quiet. So pretty. So dangerous.',
+  'nightmare-realm': 'The final realm. Only the bravest get through.',
 };
 
 // ───────────────────────────── random
@@ -163,7 +203,14 @@ function flat(b: Builder, len: number, opts: { enemies?: boolean } = {}): void {
   b.flats.push({ c0, c1: c0 + len, gy: b.gy });
   b.deco(c0, c0 + len, b.gy, Math.floor(len / 6));
   b.x += len;
-  if (opts.enemies && len >= 8) placeThreat(b, c0 + 2, c0 + len - 2, b.gy);
+  if (opts.enemies && len >= 8) {
+    if (b.d > 1.15 && len >= 16) {
+      // after the exam: two different things to deal with on one stretch
+      const mid = c0 + Math.floor(len / 2);
+      placeThreat(b, c0 + 2, mid - 1, b.gy);
+      placeThreat(b, mid + 1, c0 + len - 2, b.gy);
+    } else placeThreat(b, c0 + 2, c0 + len - 2, b.gy);
+  }
 }
 
 /** Something to deal with on a flat stretch, chosen from what this world has. */
@@ -445,7 +492,7 @@ const segKeyDoor: Seg = (b) => {
   flat(b, 4);
 };
 
-const segThreat: Seg = (b) => flat(b, b.ri(10, 16), { enemies: true });
+const segThreat: Seg = (b) => flat(b, b.d > 1.15 ? b.ri(16, 22) : b.ri(10, 16), { enemies: true });
 
 interface SegDef {
   fn: Seg;
@@ -505,6 +552,7 @@ function placeRelic(b: Builder, variant: number): void {
 // ───────────────────────────── levels
 
 function abilitiesFor(wi: number): LevelAbilities {
+  // everything is unlocked after the exam
   return { wallJump: wi >= 2, dash: wi >= 4, doubleJump: wi >= 5 };
 }
 
@@ -531,14 +579,16 @@ function finish(b: Builder, name: string, number: number, order: number): LevelD
 
 function buildStage(wi: number, li: number, seed: number): LevelData {
   const world = WORLDS[wi].id;
-  const d = Math.min(1, (wi * 11 + li) / 76);
+  // the placement exam ramps 0 → 1; the worlds after it keep climbing to 1.6
+  const d = wi < 7 ? Math.min(1, (wi * 11 + li) / 76) : 1 + (((wi - 7) * 11 + li) / 109) * 0.6;
   const b = new Builder(world, wi, li, d, abilitiesFor(wi), seed);
   b.gy = 30;
   flat(b, 10);
   const spawnRow = b.gy;
   if (li === 0) b.add('sign', 6 * T, spawnRow * T - 32, 32, 32, { text: WORLD_SIGNS[world] });
-  const segCount = 12 + Math.round(d * 10) + b.ri(0, 3);
-  const cps = [Math.floor(segCount / 3), Math.floor((2 * segCount) / 3)];
+  const segCount = Math.min(24, 12 + Math.round(d * 10)) + b.ri(0, 3);
+  // longer, harder levels after the exam get an extra checkpoint
+  const cps = d > 1 ? [1, 2, 3].map((k) => Math.floor((k * segCount) / 4)) : [Math.floor(segCount / 3), Math.floor((2 * segCount) / 3)];
   for (let i = 0; i < segCount; i++) {
     if (cps.includes(i)) {
       const c0 = b.x;
@@ -549,7 +599,7 @@ function buildStage(wi: number, li: number, seed: number): LevelData {
     if (wi === 0 && li < 2) [segGap, segStep, segSpringWall, segThreat, segIslands][b.ri(0, 4)](b);
     else pickSegment(b)(b);
     // a breather between pieces
-    if (b.chance(0.5)) flat(b, b.ri(2, 4));
+    if (b.chance(d > 1 ? 0.55 - (d - 1) * 0.5 : 0.5)) flat(b, b.ri(2, 4));
   }
   flat(b, 12);
   const lv = finish(b, NAMES[world][li], wi * LEVELS_PER_WORLD + li + 1, li + 1);
@@ -581,6 +631,7 @@ function buildBoss(wi: number, seed: number): LevelData {
   b.add('boss', cx - 40 + (boss.flyer ? 0 : 6 * T), boss.flyer ? homeY : (floor * T) - 72, 80, 72, {
     kind: boss.kind,
     hp: boss.hp,
+    tint: boss.tint ?? '',
     speed: boss.speed,
     jump: wi === 4 ? 780 : 720,
     range: (aw / 2 - 5) * T,

@@ -1,6 +1,6 @@
 # HALLOW NIGHT
 
-An atmospheric Halloween 2D platformer for the browser — 84 levels across 7 worlds (each world ends in a boss fight), a public level editor, and a separate (unlinked) built-in level creator. Everything is data-driven: **every level is a JSON file** interpreted by one game engine.
+An atmospheric Halloween 2D platformer for the browser — 204 levels across 17 worlds on a zoomable world map (the first 84 form *The Placement Exam*; every world ends in a boss fight), a public level editor, and a separate (unlinked) built-in level creator. Everything is data-driven: **every level is a JSON file** interpreted by one game engine.
 
 Built with **TypeScript + Vite + Phaser 3**. No backend, no database, no accounts, no external services. All art is original vector (SVG) generated in code; all sound is synthesised with the Web Audio API.
 
@@ -57,7 +57,7 @@ Movement uses coyote time, jump buffering, variable jump height, corner correcti
 ## Project structure
 
 ```
-levels/                     the 84 built-in levels (<world>/<NN-name>.json) + manifest.json
+levels/                     the 204 built-in levels (<world>/<NN-name>.json) + manifest.json
 index.html, assets/,        the BUILT site served by GitHub Pages (generated — don't edit)
 editor/, secret-creations/
 web/                        page sources (index.html, editor/, secret-creations/)
@@ -128,7 +128,7 @@ An abbreviated example:
 | `name` | Display name |
 | `world` | `old-town`, `graveyard`, `dead-woods`, `haunted-manor`, `catacombs`, `clocktower`, `black-castle` |
 | `order` | Position inside its world (1–5) |
-| `number` | Global level number (1–84); optional for user levels |
+| `number` | Global level number (1–204); optional for user levels |
 | `width`, `height` | Level size in pixels (one tile = 32 px; the screen shows 960 × 540) |
 | `spawn`, `goal` | **Bottom-centre** points (player's feet / exit door threshold) |
 | `background`, `music` | Which world's backdrop and music to use (defaults to `world`) |
@@ -259,9 +259,22 @@ Completing a level unlocks the next. Settings → *Reset progress* clears the ca
 
 All important movement values are in **`src/game/config/physics.ts`** (`PLAYER_SPEED`, `PLAYER_ACCELERATION`, `PLAYER_DRAG`, `JUMP_VELOCITY`, `COYOTE_TIME`, `JUMP_BUFFER_TIME`, `WALL_SLIDE_SPEED`, `WALL_JUMP_X`, `WALL_JUMP_Y`, `DASH_SPEED`, `DASH_DURATION`, …). The comment at the top lists what the defaults allow (≈4 tiles of jump height, ≈7.5 tiles of running jump, ≈12 tiles with a dash). The built-in levels were verified against these values, so after changing them run the level generator again (see below).
 
+## The world map
+
+**World Map** on the title screen (and *Level select* in the pause / results screens) opens a map of the whole game: every level is a stop on one long road.
+
+* **Drag** to look around, **scroll / pinch / − +** to zoom, **◎** to jump back to your character.
+* **Click a level** to walk there; click it again (or press **Play**, Enter or Space) to play it.
+* **Arrow keys / WASD** walk the lantern-bearer along the road; **Page Up / Page Down** jump between worlds; **Esc** goes back.
+* Gold stops are cleared, a blue diamond means you found the relic, 💀 marks a boss (👑 once beaten). **☰** opens the old list view.
+
+The map lives in `src/ui/MapScreen.ts` and is laid out automatically from the worlds in `src/game/levels/worlds.ts`.
+
 ## The levels
 
-The campaign is **84 levels: 7 worlds × 12**. Levels 1–11 of each world are stages; level 12 is a boss arena.
+**204 levels: 17 worlds × 12.** Levels 1–11 of each world are stages; level 12 is a boss arena.
+
+**The Placement Exam** (levels 1–84) teaches everything:
 
 | World | Boss | New things |
 | --- | --- | --- |
@@ -272,6 +285,21 @@ The campaign is **84 levels: 7 worlds × 12**. Levels 1–11 of each world are s
 | 5 Catacombs | The Slime King (big leaps) | dash, cracked walls, falling platforms, pendulums, poison sludge |
 | 6 Clocktower | The Clockwork Owl (fast swoops) | double jump, conveyors, elevators, path platforms |
 | 7 Black Castle | The Midnight King (6 hits: leaps, then charges, then swoops) | shadows, everything combined |
+
+**After the exam** (levels 85–204) every ability is unlocked and each world is harder than the last: longer levels, wider pits, faster enemies, two threats per stretch, fewer breathers, three checkpoints per level, and tougher bosses:
+
+| World | Boss |
+| --- | --- |
+| 8 Frozen Hollow | The Frost King |
+| 9 Candy Carnival | The Gumdrop Golem |
+| 10 Witch Swamp | The Bog King |
+| 11 Ghost Harbor | The Storm Bat |
+| 12 Lava Crypt | The Magma Golem |
+| 13 Sky Ruins | The Storm Owl |
+| 14 Toy Factory | The Wind-up King |
+| 15 Mirror Manor | The Mirror Lady |
+| 16 Moon Garden | The Moth Queen |
+| 17 Nightmare Realm | The Nightmare King (9 hits) |
 
 The levels are built by **`scripts/generate-levels.ts`** from hand-tuned pieces (gaps, spring walls, island hops, chimneys, moving bridges, gates, …) and every one is checked with the reachability bot before it is written: the exit, the relic and any key must be reachable and there must be no spot you can get stuck in. Re-run it with `npx tsx scripts/generate-levels.ts` (or `… <world> <level>` for one level) after changing movement values. Every level hides one **moon relic**, usually on a high ledge with a spring nearby.
 

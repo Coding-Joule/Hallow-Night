@@ -3,6 +3,7 @@ import { Hud } from '../ui/Hud';
 import { TouchControls, touchControlsWanted } from '../ui/TouchControls';
 import { enableArrowNav, h } from '../ui/dom';
 import { completeScreen, levelSelectScreen, pauseScreen, settingsScreen, titleScreen } from '../ui/screens';
+import { mapScreen } from '../ui/MapScreen';
 import { createPhaserGame } from './createGame';
 import { getBuiltinLevels, loadBuiltinLevels, type BuiltinLevelEntry } from './levels/registry';
 import { getWorld } from './levels/worlds';
@@ -27,6 +28,7 @@ export class GameApp {
   private readonly unlockAll = devUnlockAll();
   private current: BuiltinLevelEntry | null = null;
   private lastWorld: string | undefined;
+  private lastLevelId: string | undefined;
 
   constructor(root: HTMLElement) {
     const gameRoot = h('div', { id: 'game-root' });
@@ -66,7 +68,8 @@ export class GameApp {
     this.screen = el;
     if (el) {
       this.frame.append(el);
-      requestAnimationFrame(() => (el.querySelector('button, a.menu-btn') as HTMLElement | null)?.focus());
+      // the map handles the keyboard itself
+      if (!el.classList.contains('map-screen')) requestAnimationFrame(() => (el.querySelector('button, a.menu-btn') as HTMLElement | null)?.focus());
     }
   }
 
@@ -119,8 +122,24 @@ export class GameApp {
     );
   }
 
+  /** The world map (the main way to pick a level). */
   showLevelSelect(): void {
     this.startMenuBackdrop();
+    this.setScreen(
+      mapScreen({
+        levels: getBuiltinLevels(),
+        progress: this.progress,
+        unlockAll: this.unlockAll,
+        startLevelId: this.lastLevelId,
+        onPlay: (e) => this.playLevel(e),
+        onList: () => this.showLevelList(),
+        onBack: () => this.showTitle(),
+      }),
+    );
+  }
+
+  /** The plain list of levels, one world at a time. */
+  private showLevelList(): void {
     this.setScreen(
       levelSelectScreen({
         levels: getBuiltinLevels(),
@@ -128,7 +147,7 @@ export class GameApp {
         unlockAll: this.unlockAll,
         initialWorld: this.lastWorld,
         onPlay: (e) => this.playLevel(e),
-        onBack: () => this.showTitle(),
+        onBack: () => this.showLevelSelect(),
       }),
     );
   }
@@ -151,6 +170,7 @@ export class GameApp {
   playLevel(entry: BuiltinLevelEntry): void {
     this.current = entry;
     this.lastWorld = entry.level.world;
+    this.lastLevelId = entry.level.id;
     this.setScreen(null);
     this.clearHud();
     const sm = this.game.scene;

@@ -31,7 +31,7 @@ export function clear(el: HTMLElement): void {
 /** Up/down (and left/right) arrow keys move focus between buttons in a container. */
 export function enableArrowNav(container: HTMLElement, selector = 'button:not([disabled]), a.menu-btn'): () => void {
   const onKey = (ev: KeyboardEvent) => {
-    if (!container.isConnected || container.closest('.hidden')) return;
+    if (!container.isConnected || container.closest('.hidden') || container.querySelector('.map-screen')) return;
     const items = Array.from(container.querySelectorAll<HTMLElement>(selector)).filter((e) => e.offsetParent !== null);
     if (items.length === 0) return;
     const idx = items.indexOf(document.activeElement as HTMLElement);

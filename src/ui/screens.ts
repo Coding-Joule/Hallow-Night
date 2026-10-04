@@ -43,7 +43,7 @@ export function titleScreen(a: TitleActions): HTMLElement {
       'div',
       { class: 'menu-list' },
       menuButton(a.playLabel, a.play),
-      menuButton('Level Select', a.levelSelect),
+      menuButton('World Map', a.levelSelect),
       h('a', { class: 'menu-btn', href: './editor/', onmouseenter: () => Audio.playSfx('ui') }, 'Level Editor'),
       menuButton('Settings', a.settings),
     ),
