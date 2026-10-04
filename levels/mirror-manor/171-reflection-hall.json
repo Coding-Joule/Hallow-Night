@@ -1,0 +1,1770 @@
+{
+  "version": 1,
+  "id": "mirror-manor-03",
+  "name": "Reflection Hall",
+  "world": "mirror-manor",
+  "order": 3,
+  "number": 171,
+  "width": 15456,
+  "height": 1280,
+  "spawn": {
+    "x": 96,
+    "y": 960
+  },
+  "goal": {
+    "x": 15328,
+    "y": 576
+  },
+  "background": "mirror-manor",
+  "music": "mirror-manor",
+  "abilities": {
+    "wallJump": true,
+    "dash": true,
+    "doubleJump": true
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 960,
+      "width": 320,
+      "height": 320,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 217,
+      "y": 864,
+      "width": 64,
+      "height": 96,
+      "properties": {
+        "kind": "bookshelf",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 320,
+      "y": 960,
+      "width": 576,
+      "height": 320,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 769,
+      "y": 936,
+      "width": 32,
+      "height": 24,
+      "properties": {
+        "kind": "candles",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 819,
+      "y": 904,
+      "width": 32,
+      "height": 56,
+      "properties": {
+        "kind": "candelabra",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 753,
+      "y": 896,
+      "width": 48,
+      "height": 64,
+      "properties": {
+        "kind": "portrait",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "moving-hazard-1",
+      "type": "movingHazard",
+      "x": 464,
+      "y": 800,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "axis": "vertical",
+        "distance": 128,
+        "speed": 206.09174311926606,
+        "wait": 0.5,
+        "startOffset": 0.8912667057011276,
+        "triggered": false
+      }
+    },
+    {
+      "id": "moving-hazard-2",
+      "type": "movingHazard",
+      "x": 496,
+      "y": 800,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "axis": "vertical",
+        "distance": 128,
+        "speed": 206.09174311926606,
+        "wait": 0.5,
+        "startOffset": 0.6424706152174622,
+        "triggered": false
+      }
+    },
+    {
+      "id": "pendulum-1",
+      "type": "pendulum",
+      "x": 720,
+      "y": 764,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "length": 160,
+        "angle": 60,
+        "period": 1.7390825688073397,
+        "phase": 0.7963806227780879
+      }
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 896,
+      "y": 960,
+      "width": 192,
+      "height": 320,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 1088,
+      "y": 0,
+      "width": 64,
+      "height": 1280,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "portal-1",
+      "type": "portal",
+      "x": 988,
+      "y": 896,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-2",
+        "color": "teal"
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 1152,
+      "y": 960,
+      "width": 256,
+      "height": 320,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 1340,
+      "y": 896,
+      "width": 48,
+      "height": 64,
+      "properties": {
+        "kind": "portrait",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "portal-2",
+      "type": "portal",
+      "x": 1212,
+      "y": 896,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-1",
+        "color": "teal"
+      }
+    },
+    {
+      "id": "one-way-1",
+      "type": "oneWay",
+      "x": 1440,
+      "y": 864,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "one-way-2",
+      "type": "oneWay",
+      "x": 1632,
+      "y": 800,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 1792,
+      "y": 736,
+      "width": 160,
+      "height": 544,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 1952,
+      "y": 736,
+      "width": 192,
+      "height": 544,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-8",
+      "type": "ground",
+      "x": 2144,
+      "y": 0,
+      "width": 64,
+      "height": 1280,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "portal-3",
+      "type": "portal",
+      "x": 2044,
+      "y": 672,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-4",
+        "color": "amber"
+      }
+    },
+    {
+      "id": "ground-9",
+      "type": "ground",
+      "x": 2208,
+      "y": 640,
+      "width": 256,
+      "height": 640,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-6",
+      "type": "decoration",
+      "x": 2262,
+      "y": 544,
+      "width": 48,
+      "height": 96,
+      "properties": {
+        "kind": "statue",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "portal-4",
+      "type": "portal",
+      "x": 2268,
+      "y": 576,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-3",
+        "color": "amber"
+      }
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 2464,
+      "y": 640,
+      "width": 192,
+      "height": 640,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 2656,
+      "y": 0,
+      "width": 64,
+      "height": 1280,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "portal-5",
+      "type": "portal",
+      "x": 2556,
+      "y": 576,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-6",
+        "color": "teal"
+      }
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 2720,
+      "y": 608,
+      "width": 192,
+      "height": 672,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-7",
+      "type": "decoration",
+      "x": 2779,
+      "y": 512,
+      "width": 64,
+      "height": 96,
+      "properties": {
+        "kind": "bookshelf",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "portal-6",
+      "type": "portal",
+      "x": 2780,
+      "y": 544,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-5",
+        "color": "teal"
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 2912,
+      "y": 608,
+      "width": 128,
+      "height": 672,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 3040,
+      "y": 608,
+      "width": 64,
+      "height": 672,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "platform-1",
+      "type": "platform",
+      "x": 3040,
+      "y": 384,
+      "width": 64,
+      "height": 128,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-15",
+      "type": "ground",
+      "x": 3104,
+      "y": 608,
+      "width": 96,
+      "height": 672,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-16",
+      "type": "ground",
+      "x": 3200,
+      "y": 384,
+      "width": 256,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-8",
+      "type": "decoration",
+      "x": 3243,
+      "y": 320,
+      "width": 48,
+      "height": 64,
+      "properties": {
+        "kind": "portrait",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-17",
+      "type": "ground",
+      "x": 3456,
+      "y": 384,
+      "width": 192,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-9",
+      "type": "decoration",
+      "x": 3526,
+      "y": 288,
+      "width": 64,
+      "height": 96,
+      "properties": {
+        "kind": "bookshelf",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 3552,
+      "y": 320,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "conveyor-1",
+      "type": "conveyor",
+      "x": 3648,
+      "y": 384,
+      "width": 384,
+      "height": 24,
+      "properties": {
+        "speed": 160
+      }
+    },
+    {
+      "id": "ground-18",
+      "type": "ground",
+      "x": 3648,
+      "y": 408,
+      "width": 384,
+      "height": 872,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-19",
+      "type": "ground",
+      "x": 4096,
+      "y": 416,
+      "width": 128,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-20",
+      "type": "ground",
+      "x": 4224,
+      "y": 416,
+      "width": 192,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-21",
+      "type": "ground",
+      "x": 4416,
+      "y": 0,
+      "width": 64,
+      "height": 1280,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "portal-7",
+      "type": "portal",
+      "x": 4316,
+      "y": 352,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-8",
+        "color": "violet"
+      }
+    },
+    {
+      "id": "ground-22",
+      "type": "ground",
+      "x": 4480,
+      "y": 480,
+      "width": 288,
+      "height": 800,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-10",
+      "type": "decoration",
+      "x": 4553,
+      "y": 384,
+      "width": 40,
+      "height": 96,
+      "properties": {
+        "kind": "banner",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "portal-8",
+      "type": "portal",
+      "x": 4540,
+      "y": 416,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-7",
+        "color": "violet"
+      }
+    },
+    {
+      "id": "ground-23",
+      "type": "ground",
+      "x": 4768,
+      "y": 416,
+      "width": 256,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-11",
+      "type": "decoration",
+      "x": 4813,
+      "y": 392,
+      "width": 32,
+      "height": 24,
+      "properties": {
+        "kind": "candles",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-24",
+      "type": "ground",
+      "x": 5024,
+      "y": 416,
+      "width": 128,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-25",
+      "type": "ground",
+      "x": 5152,
+      "y": 576,
+      "width": 224,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-12",
+      "type": "decoration",
+      "x": 5257,
+      "y": 552,
+      "width": 32,
+      "height": 24,
+      "properties": {
+        "kind": "candles",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-26",
+      "type": "ground",
+      "x": 5376,
+      "y": 576,
+      "width": 192,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-27",
+      "type": "ground",
+      "x": 5568,
+      "y": 0,
+      "width": 64,
+      "height": 1280,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "portal-9",
+      "type": "portal",
+      "x": 5468,
+      "y": 512,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-10",
+        "color": "teal"
+      }
+    },
+    {
+      "id": "ground-28",
+      "type": "ground",
+      "x": 5632,
+      "y": 640,
+      "width": 256,
+      "height": 640,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-13",
+      "type": "decoration",
+      "x": 5830,
+      "y": 584,
+      "width": 32,
+      "height": 56,
+      "properties": {
+        "kind": "candelabra",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "portal-10",
+      "type": "portal",
+      "x": 5692,
+      "y": 576,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-9",
+        "color": "teal"
+      }
+    },
+    {
+      "id": "ground-29",
+      "type": "ground",
+      "x": 5888,
+      "y": 640,
+      "width": 64,
+      "height": 640,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "elevator-1",
+      "type": "elevator",
+      "x": 5952,
+      "y": 640,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "direction": "up",
+        "distance": 256,
+        "speed": 130,
+        "mode": "ride",
+        "returnDelay": 1
+      }
+    },
+    {
+      "id": "ground-30",
+      "type": "ground",
+      "x": 5952,
+      "y": 672,
+      "width": 96,
+      "height": 608,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-31",
+      "type": "ground",
+      "x": 6048,
+      "y": 384,
+      "width": 192,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-14",
+      "type": "decoration",
+      "x": 6147,
+      "y": 360,
+      "width": 32,
+      "height": 24,
+      "properties": {
+        "kind": "candles",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "path-platform-1",
+      "type": "pathPlatform",
+      "x": 6256,
+      "y": 384,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 112,
+            "y": -64
+          },
+          {
+            "x": 224,
+            "y": 0
+          }
+        ],
+        "speed": 157.39449541284404,
+        "wait": 0.3,
+        "loop": "pingpong",
+        "triggered": false
+      }
+    },
+    {
+      "id": "ground-32",
+      "type": "ground",
+      "x": 6592,
+      "y": 384,
+      "width": 224,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-15",
+      "type": "decoration",
+      "x": 6602,
+      "y": 288,
+      "width": 48,
+      "height": 96,
+      "properties": {
+        "kind": "statue",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-33",
+      "type": "ground",
+      "x": 6816,
+      "y": 384,
+      "width": 192,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-16",
+      "type": "decoration",
+      "x": 6855,
+      "y": 288,
+      "width": 40,
+      "height": 96,
+      "properties": {
+        "kind": "banner",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 6912,
+      "y": 320,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-34",
+      "type": "ground",
+      "x": 7008,
+      "y": 384,
+      "width": 192,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-35",
+      "type": "ground",
+      "x": 7200,
+      "y": 0,
+      "width": 64,
+      "height": 1280,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "portal-11",
+      "type": "portal",
+      "x": 7100,
+      "y": 320,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-12",
+        "color": "teal"
+      }
+    },
+    {
+      "id": "ground-36",
+      "type": "ground",
+      "x": 7264,
+      "y": 384,
+      "width": 224,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-17",
+      "type": "decoration",
+      "x": 7319,
+      "y": 288,
+      "width": 64,
+      "height": 96,
+      "properties": {
+        "kind": "bookshelf",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "portal-12",
+      "type": "portal",
+      "x": 7324,
+      "y": 320,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-11",
+        "color": "teal"
+      }
+    },
+    {
+      "id": "crumbling-platform-1",
+      "type": "crumblingPlatform",
+      "x": 7584,
+      "y": 384,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.4,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-2",
+      "type": "crumblingPlatform",
+      "x": 7776,
+      "y": 384,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.4,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-37",
+      "type": "ground",
+      "x": 7904,
+      "y": 384,
+      "width": 160,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-38",
+      "type": "ground",
+      "x": 8064,
+      "y": 384,
+      "width": 672,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-18",
+      "type": "decoration",
+      "x": 8357,
+      "y": 320,
+      "width": 48,
+      "height": 64,
+      "properties": {
+        "kind": "portrait",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-19",
+      "type": "decoration",
+      "x": 8108,
+      "y": 328,
+      "width": 32,
+      "height": 56,
+      "properties": {
+        "kind": "candelabra",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-20",
+      "type": "decoration",
+      "x": 8491,
+      "y": 288,
+      "width": 48,
+      "height": 96,
+      "properties": {
+        "kind": "statue",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "pumpkin-tortoise-1",
+      "type": "pumpkinTortoise",
+      "x": 8240,
+      "y": 362,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 88,
+        "direction": "right",
+        "shellSpeed": 460
+      }
+    },
+    {
+      "id": "ghost-1",
+      "type": "ghost",
+      "x": 8529,
+      "y": 306,
+      "width": 30,
+      "height": 32,
+      "properties": {
+        "mode": "drift",
+        "range": 260,
+        "speed": 93.04587155963303,
+        "leash": 360
+      }
+    },
+    {
+      "id": "ground-39",
+      "type": "ground",
+      "x": 8736,
+      "y": 384,
+      "width": 128,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-40",
+      "type": "ground",
+      "x": 8864,
+      "y": 384,
+      "width": 192,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-41",
+      "type": "ground",
+      "x": 9056,
+      "y": 0,
+      "width": 64,
+      "height": 1280,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "portal-13",
+      "type": "portal",
+      "x": 8956,
+      "y": 320,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-14",
+        "color": "amber"
+      }
+    },
+    {
+      "id": "ground-42",
+      "type": "ground",
+      "x": 9120,
+      "y": 384,
+      "width": 224,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-21",
+      "type": "decoration",
+      "x": 9144,
+      "y": 288,
+      "width": 64,
+      "height": 96,
+      "properties": {
+        "kind": "bookshelf",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "portal-14",
+      "type": "portal",
+      "x": 9180,
+      "y": 320,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-13",
+        "color": "amber"
+      }
+    },
+    {
+      "id": "ground-43",
+      "type": "ground",
+      "x": 9344,
+      "y": 384,
+      "width": 64,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-44",
+      "type": "ground",
+      "x": 9536,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-45",
+      "type": "ground",
+      "x": 9696,
+      "y": 416,
+      "width": 96,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-46",
+      "type": "ground",
+      "x": 9856,
+      "y": 384,
+      "width": 64,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-47",
+      "type": "ground",
+      "x": 10080,
+      "y": 384,
+      "width": 64,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-48",
+      "type": "ground",
+      "x": 10240,
+      "y": 384,
+      "width": 224,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-22",
+      "type": "decoration",
+      "x": 10313,
+      "y": 360,
+      "width": 32,
+      "height": 24,
+      "properties": {
+        "kind": "candles",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-49",
+      "type": "ground",
+      "x": 10464,
+      "y": 384,
+      "width": 64,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-50",
+      "type": "ground",
+      "x": 10528,
+      "y": 384,
+      "width": 192,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-51",
+      "type": "ground",
+      "x": 10720,
+      "y": 0,
+      "width": 64,
+      "height": 1280,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "portal-15",
+      "type": "portal",
+      "x": 10620,
+      "y": 320,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-16",
+        "color": "amber"
+      }
+    },
+    {
+      "id": "ground-52",
+      "type": "ground",
+      "x": 10784,
+      "y": 416,
+      "width": 224,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-23",
+      "type": "decoration",
+      "x": 10918,
+      "y": 320,
+      "width": 40,
+      "height": 96,
+      "properties": {
+        "kind": "banner",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "portal-16",
+      "type": "portal",
+      "x": 10844,
+      "y": 352,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-15",
+        "color": "amber"
+      }
+    },
+    {
+      "id": "ground-53",
+      "type": "ground",
+      "x": 11008,
+      "y": 416,
+      "width": 192,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-24",
+      "type": "decoration",
+      "x": 11140,
+      "y": 360,
+      "width": 32,
+      "height": 56,
+      "properties": {
+        "kind": "candelabra",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "checkpoint-3",
+      "type": "checkpoint",
+      "x": 11104,
+      "y": 352,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-54",
+      "type": "ground",
+      "x": 11200,
+      "y": 416,
+      "width": 192,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-55",
+      "type": "ground",
+      "x": 11392,
+      "y": 0,
+      "width": 64,
+      "height": 1280,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "portal-17",
+      "type": "portal",
+      "x": 11292,
+      "y": 352,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-18",
+        "color": "amber"
+      }
+    },
+    {
+      "id": "ground-56",
+      "type": "ground",
+      "x": 11456,
+      "y": 512,
+      "width": 256,
+      "height": 768,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-25",
+      "type": "decoration",
+      "x": 11639,
+      "y": 416,
+      "width": 48,
+      "height": 96,
+      "properties": {
+        "kind": "statue",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "portal-18",
+      "type": "portal",
+      "x": 11516,
+      "y": 448,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-17",
+        "color": "amber"
+      }
+    },
+    {
+      "id": "path-platform-2",
+      "type": "pathPlatform",
+      "x": 11728,
+      "y": 512,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "points": [
+          {
+            "x": 0,
+            "y": 0
+          },
+          {
+            "x": 128,
+            "y": -128
+          },
+          {
+            "x": 256,
+            "y": 0
+          }
+        ],
+        "speed": 157.39449541284404,
+        "wait": 0.3,
+        "loop": "pingpong",
+        "triggered": false
+      }
+    },
+    {
+      "id": "ground-57",
+      "type": "ground",
+      "x": 12096,
+      "y": 512,
+      "width": 192,
+      "height": 768,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-26",
+      "type": "decoration",
+      "x": 12190,
+      "y": 456,
+      "width": 32,
+      "height": 56,
+      "properties": {
+        "kind": "candelabra",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-58",
+      "type": "ground",
+      "x": 12480,
+      "y": 544,
+      "width": 224,
+      "height": 736,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-27",
+      "type": "decoration",
+      "x": 12651,
+      "y": 448,
+      "width": 48,
+      "height": 96,
+      "properties": {
+        "kind": "statue",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-59",
+      "type": "ground",
+      "x": 12704,
+      "y": 544,
+      "width": 192,
+      "height": 736,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-60",
+      "type": "ground",
+      "x": 12896,
+      "y": 0,
+      "width": 64,
+      "height": 1280,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "portal-19",
+      "type": "portal",
+      "x": 12796,
+      "y": 480,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-20",
+        "color": "violet"
+      }
+    },
+    {
+      "id": "ground-61",
+      "type": "ground",
+      "x": 12960,
+      "y": 608,
+      "width": 288,
+      "height": 672,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-28",
+      "type": "decoration",
+      "x": 13204,
+      "y": 552,
+      "width": 32,
+      "height": 56,
+      "properties": {
+        "kind": "candelabra",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "portal-20",
+      "type": "portal",
+      "x": 13020,
+      "y": 544,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-19",
+        "color": "violet"
+      }
+    },
+    {
+      "id": "ground-62",
+      "type": "ground",
+      "x": 13248,
+      "y": 608,
+      "width": 128,
+      "height": 672,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-63",
+      "type": "ground",
+      "x": 13472,
+      "y": 640,
+      "width": 96,
+      "height": 640,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-64",
+      "type": "ground",
+      "x": 13664,
+      "y": 576,
+      "width": 64,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-65",
+      "type": "ground",
+      "x": 13824,
+      "y": 544,
+      "width": 160,
+      "height": 736,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "falling-platform-1",
+      "type": "fallingPlatform",
+      "x": 14016,
+      "y": 544,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-platform-2",
+      "type": "fallingPlatform",
+      "x": 14144,
+      "y": 512,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-platform-3",
+      "type": "fallingPlatform",
+      "x": 14304,
+      "y": 544,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-66",
+      "type": "ground",
+      "x": 14464,
+      "y": 576,
+      "width": 160,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-67",
+      "type": "ground",
+      "x": 14624,
+      "y": 576,
+      "width": 192,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-68",
+      "type": "ground",
+      "x": 14816,
+      "y": 0,
+      "width": 64,
+      "height": 1280,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "portal-21",
+      "type": "portal",
+      "x": 14716,
+      "y": 512,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-22",
+        "color": "violet"
+      }
+    },
+    {
+      "id": "ground-69",
+      "type": "ground",
+      "x": 14880,
+      "y": 576,
+      "width": 192,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-29",
+      "type": "decoration",
+      "x": 14933,
+      "y": 480,
+      "width": 48,
+      "height": 96,
+      "properties": {
+        "kind": "statue",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "portal-22",
+      "type": "portal",
+      "x": 14940,
+      "y": 512,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-21",
+        "color": "violet"
+      }
+    },
+    {
+      "id": "ground-70",
+      "type": "ground",
+      "x": 15072,
+      "y": 576,
+      "width": 384,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-30",
+      "type": "decoration",
+      "x": 15255,
+      "y": 480,
+      "width": 40,
+      "height": 96,
+      "properties": {
+        "kind": "banner",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-31",
+      "type": "decoration",
+      "x": 15407,
+      "y": 520,
+      "width": 32,
+      "height": 56,
+      "properties": {
+        "kind": "candelabra",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "one-way-3",
+      "type": "oneWay",
+      "x": 4864,
+      "y": 160,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 4902,
+      "y": 134,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "spring-1",
+      "type": "spring",
+      "x": 4800,
+      "y": 400,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "power": 1200
+      }
+    }
+  ]
+}

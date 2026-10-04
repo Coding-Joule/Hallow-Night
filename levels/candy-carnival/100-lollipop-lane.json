@@ -1,0 +1,1461 @@
+{
+  "version": 1,
+  "id": "candy-carnival-04",
+  "name": "Lollipop Lane",
+  "world": "candy-carnival",
+  "order": 4,
+  "number": 100,
+  "width": 17600,
+  "height": 1280,
+  "spawn": {
+    "x": 96,
+    "y": 960
+  },
+  "goal": {
+    "x": 17472,
+    "y": 384
+  },
+  "background": "candy-carnival",
+  "music": "candy-carnival",
+  "abilities": {
+    "wallJump": true,
+    "dash": true,
+    "doubleJump": true
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 960,
+      "width": 320,
+      "height": 320,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 145,
+      "y": 848,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 448,
+      "y": 960,
+      "width": 64,
+      "height": 320,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 576,
+      "y": 960,
+      "width": 96,
+      "height": 320,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 832,
+      "y": 928,
+      "width": 96,
+      "height": 352,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 992,
+      "y": 896,
+      "width": 64,
+      "height": 384,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 1120,
+      "y": 928,
+      "width": 96,
+      "height": 352,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 1312,
+      "y": 896,
+      "width": 224,
+      "height": 384,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 1381,
+      "y": 864,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "kind": "crate",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-8",
+      "type": "ground",
+      "x": 1536,
+      "y": 896,
+      "width": 64,
+      "height": 384,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "balloon-1",
+      "type": "balloon",
+      "x": 1728,
+      "y": 896,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "orange"
+      }
+    },
+    {
+      "id": "balloon-2",
+      "type": "balloon",
+      "x": 1920,
+      "y": 928,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "green"
+      }
+    },
+    {
+      "id": "ground-9",
+      "type": "ground",
+      "x": 2112,
+      "y": 832,
+      "width": 160,
+      "height": 448,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 2272,
+      "y": 832,
+      "width": 64,
+      "height": 448,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "moving-platform-1",
+      "type": "movingPlatform",
+      "x": 2344,
+      "y": 832,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "axis": "vertical",
+        "distance": -128,
+        "speed": 123.08256880733944,
+        "wait": 0.6,
+        "startOffset": 0,
+        "triggered": false
+      }
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 2464,
+      "y": 704,
+      "width": 160,
+      "height": 576,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 2624,
+      "y": 704,
+      "width": 96,
+      "height": 576,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 2816,
+      "y": 768,
+      "width": 128,
+      "height": 512,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 2944,
+      "y": 768,
+      "width": 96,
+      "height": 512,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "balloon-3",
+      "type": "balloon",
+      "x": 3200,
+      "y": 768,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "green"
+      }
+    },
+    {
+      "id": "balloon-4",
+      "type": "balloon",
+      "x": 3360,
+      "y": 768,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "orange"
+      }
+    },
+    {
+      "id": "balloon-5",
+      "type": "balloon",
+      "x": 3520,
+      "y": 832,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "orange"
+      }
+    },
+    {
+      "id": "ground-15",
+      "type": "ground",
+      "x": 3680,
+      "y": 736,
+      "width": 192,
+      "height": 544,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 3823,
+      "y": 708,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "jackOLantern",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-16",
+      "type": "ground",
+      "x": 3872,
+      "y": 736,
+      "width": 384,
+      "height": 544,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "gate-1",
+      "type": "gate",
+      "x": 4160,
+      "y": 352,
+      "width": 32,
+      "height": 384,
+      "properties": {
+        "initiallyOpen": false,
+        "openDirection": "up",
+        "speed": 300
+      }
+    },
+    {
+      "id": "lever-1",
+      "type": "lever",
+      "x": 3968,
+      "y": 704,
+      "width": 24,
+      "height": 32,
+      "properties": {
+        "targets": [
+          "gate-1"
+        ],
+        "startOn": false
+      }
+    },
+    {
+      "id": "ground-17",
+      "type": "ground",
+      "x": 4256,
+      "y": 736,
+      "width": 128,
+      "height": 544,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-18",
+      "type": "ground",
+      "x": 4384,
+      "y": 736,
+      "width": 192,
+      "height": 544,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 4535,
+      "y": 708,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "pumpkin",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 4480,
+      "y": 672,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-19",
+      "type": "ground",
+      "x": 4576,
+      "y": 736,
+      "width": 64,
+      "height": 544,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "platform-1",
+      "type": "platform",
+      "x": 4576,
+      "y": 480,
+      "width": 64,
+      "height": 160,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-20",
+      "type": "ground",
+      "x": 4640,
+      "y": 736,
+      "width": 96,
+      "height": 544,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-21",
+      "type": "ground",
+      "x": 4736,
+      "y": 480,
+      "width": 192,
+      "height": 800,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 4832,
+      "y": 452,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "jackOLantern",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "balloon-6",
+      "type": "balloon",
+      "x": 5056,
+      "y": 544,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "purple"
+      }
+    },
+    {
+      "id": "balloon-7",
+      "type": "balloon",
+      "x": 5216,
+      "y": 512,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "pink"
+      }
+    },
+    {
+      "id": "balloon-8",
+      "type": "balloon",
+      "x": 5376,
+      "y": 480,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "pink"
+      }
+    },
+    {
+      "id": "ground-22",
+      "type": "ground",
+      "x": 5568,
+      "y": 384,
+      "width": 192,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-6",
+      "type": "decoration",
+      "x": 5606,
+      "y": 348,
+      "width": 28,
+      "height": 36,
+      "properties": {
+        "kind": "barrel",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-23",
+      "type": "ground",
+      "x": 5760,
+      "y": 384,
+      "width": 320,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-7",
+      "type": "decoration",
+      "x": 5835,
+      "y": 272,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "shadow-1",
+      "type": "shadow",
+      "x": 5920,
+      "y": 344,
+      "width": 28,
+      "height": 40,
+      "properties": {
+        "triggerRange": 180,
+        "speed": 140,
+        "duration": 2,
+        "cooldown": 2.5
+      }
+    },
+    {
+      "id": "ground-24",
+      "type": "ground",
+      "x": 6240,
+      "y": 384,
+      "width": 192,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-8",
+      "type": "decoration",
+      "x": 6283,
+      "y": 272,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-25",
+      "type": "ground",
+      "x": 6432,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "balloon-9",
+      "type": "balloon",
+      "x": 6688,
+      "y": 416,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "orange"
+      }
+    },
+    {
+      "id": "balloon-10",
+      "type": "balloon",
+      "x": 6880,
+      "y": 384,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "purple"
+      }
+    },
+    {
+      "id": "balloon-11",
+      "type": "balloon",
+      "x": 7072,
+      "y": 448,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "pink"
+      }
+    },
+    {
+      "id": "ground-26",
+      "type": "ground",
+      "x": 7264,
+      "y": 384,
+      "width": 160,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-27",
+      "type": "ground",
+      "x": 7456,
+      "y": 384,
+      "width": 224,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-9",
+      "type": "decoration",
+      "x": 7461,
+      "y": 272,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-28",
+      "type": "ground",
+      "x": 7680,
+      "y": 384,
+      "width": 192,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-10",
+      "type": "decoration",
+      "x": 7797,
+      "y": 352,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "kind": "crate",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 7776,
+      "y": 320,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "balloon-12",
+      "type": "balloon",
+      "x": 8000,
+      "y": 416,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "pink"
+      }
+    },
+    {
+      "id": "balloon-13",
+      "type": "balloon",
+      "x": 8192,
+      "y": 448,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "green"
+      }
+    },
+    {
+      "id": "ground-29",
+      "type": "ground",
+      "x": 8352,
+      "y": 384,
+      "width": 128,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-30",
+      "type": "ground",
+      "x": 8480,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "balloon-14",
+      "type": "balloon",
+      "x": 8704,
+      "y": 448,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "green"
+      }
+    },
+    {
+      "id": "balloon-15",
+      "type": "balloon",
+      "x": 8896,
+      "y": 384,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "green"
+      }
+    },
+    {
+      "id": "balloon-16",
+      "type": "balloon",
+      "x": 9056,
+      "y": 384,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "orange"
+      }
+    },
+    {
+      "id": "ground-31",
+      "type": "ground",
+      "x": 9216,
+      "y": 384,
+      "width": 192,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-11",
+      "type": "decoration",
+      "x": 9333,
+      "y": 288,
+      "width": 40,
+      "height": 96,
+      "properties": {
+        "kind": "banner",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-32",
+      "type": "ground",
+      "x": 9504,
+      "y": 416,
+      "width": 64,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-33",
+      "type": "ground",
+      "x": 9728,
+      "y": 384,
+      "width": 64,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-34",
+      "type": "ground",
+      "x": 9888,
+      "y": 384,
+      "width": 192,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-12",
+      "type": "decoration",
+      "x": 9969,
+      "y": 272,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-35",
+      "type": "ground",
+      "x": 10080,
+      "y": 384,
+      "width": 64,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "crumbling-platform-1",
+      "type": "crumblingPlatform",
+      "x": 10208,
+      "y": 416,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.4,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-2",
+      "type": "crumblingPlatform",
+      "x": 10336,
+      "y": 384,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.4,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-36",
+      "type": "ground",
+      "x": 10464,
+      "y": 384,
+      "width": 160,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-37",
+      "type": "ground",
+      "x": 10624,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "balloon-17",
+      "type": "balloon",
+      "x": 10880,
+      "y": 448,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "pink"
+      }
+    },
+    {
+      "id": "balloon-18",
+      "type": "balloon",
+      "x": 11072,
+      "y": 448,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "green"
+      }
+    },
+    {
+      "id": "balloon-19",
+      "type": "balloon",
+      "x": 11232,
+      "y": 416,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "green"
+      }
+    },
+    {
+      "id": "ground-38",
+      "type": "ground",
+      "x": 11392,
+      "y": 384,
+      "width": 160,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-39",
+      "type": "ground",
+      "x": 11552,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "balloon-20",
+      "type": "balloon",
+      "x": 11808,
+      "y": 416,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "green"
+      }
+    },
+    {
+      "id": "balloon-21",
+      "type": "balloon",
+      "x": 12000,
+      "y": 416,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "pink"
+      }
+    },
+    {
+      "id": "balloon-22",
+      "type": "balloon",
+      "x": 12160,
+      "y": 416,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "pink"
+      }
+    },
+    {
+      "id": "ground-40",
+      "type": "ground",
+      "x": 12352,
+      "y": 384,
+      "width": 160,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-41",
+      "type": "ground",
+      "x": 12512,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-42",
+      "type": "ground",
+      "x": 12608,
+      "y": 384,
+      "width": 192,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-13",
+      "type": "decoration",
+      "x": 12654,
+      "y": 352,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "kind": "crate",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "checkpoint-3",
+      "type": "checkpoint",
+      "x": 12704,
+      "y": 320,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-43",
+      "type": "ground",
+      "x": 12800,
+      "y": 448,
+      "width": 256,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spikes-1",
+      "type": "spikes",
+      "x": 12800,
+      "y": 432,
+      "width": 256,
+      "height": 16,
+      "properties": {
+        "direction": "up"
+      }
+    },
+    {
+      "id": "ground-44",
+      "type": "ground",
+      "x": 13056,
+      "y": 384,
+      "width": 160,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "balloon-23",
+      "type": "balloon",
+      "x": 13344,
+      "y": 384,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "purple"
+      }
+    },
+    {
+      "id": "balloon-24",
+      "type": "balloon",
+      "x": 13504,
+      "y": 384,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "pink"
+      }
+    },
+    {
+      "id": "balloon-25",
+      "type": "balloon",
+      "x": 13696,
+      "y": 416,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "pink"
+      }
+    },
+    {
+      "id": "ground-45",
+      "type": "ground",
+      "x": 13856,
+      "y": 384,
+      "width": 160,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "balloon-26",
+      "type": "balloon",
+      "x": 14144,
+      "y": 416,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "purple"
+      }
+    },
+    {
+      "id": "balloon-27",
+      "type": "balloon",
+      "x": 14336,
+      "y": 416,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "purple"
+      }
+    },
+    {
+      "id": "balloon-28",
+      "type": "balloon",
+      "x": 14496,
+      "y": 448,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "orange"
+      }
+    },
+    {
+      "id": "ground-46",
+      "type": "ground",
+      "x": 14656,
+      "y": 384,
+      "width": 160,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-47",
+      "type": "ground",
+      "x": 14816,
+      "y": 384,
+      "width": 64,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "balloon-29",
+      "type": "balloon",
+      "x": 15008,
+      "y": 384,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "purple"
+      }
+    },
+    {
+      "id": "balloon-30",
+      "type": "balloon",
+      "x": 15200,
+      "y": 384,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "pink"
+      }
+    },
+    {
+      "id": "balloon-31",
+      "type": "balloon",
+      "x": 15392,
+      "y": 448,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "purple"
+      }
+    },
+    {
+      "id": "ground-48",
+      "type": "ground",
+      "x": 15552,
+      "y": 384,
+      "width": 192,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-14",
+      "type": "decoration",
+      "x": 15663,
+      "y": 348,
+      "width": 28,
+      "height": 36,
+      "properties": {
+        "kind": "barrel",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-49",
+      "type": "ground",
+      "x": 15744,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "balloon-32",
+      "type": "balloon",
+      "x": 16000,
+      "y": 416,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "pink"
+      }
+    },
+    {
+      "id": "balloon-33",
+      "type": "balloon",
+      "x": 16160,
+      "y": 416,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "purple"
+      }
+    },
+    {
+      "id": "balloon-34",
+      "type": "balloon",
+      "x": 16320,
+      "y": 448,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "pink"
+      }
+    },
+    {
+      "id": "ground-50",
+      "type": "ground",
+      "x": 16480,
+      "y": 384,
+      "width": 160,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-51",
+      "type": "ground",
+      "x": 16640,
+      "y": 384,
+      "width": 128,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-52",
+      "type": "ground",
+      "x": 16768,
+      "y": 384,
+      "width": 448,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-15",
+      "type": "decoration",
+      "x": 17019,
+      "y": 288,
+      "width": 40,
+      "height": 96,
+      "properties": {
+        "kind": "banner",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-16",
+      "type": "decoration",
+      "x": 17119,
+      "y": 352,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "kind": "crate",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "bat-1",
+      "type": "bat",
+      "x": 16848,
+      "y": 310,
+      "width": 28,
+      "height": 18,
+      "properties": {
+        "axis": "horizontal",
+        "distance": 256,
+        "speed": 154.62385321100916,
+        "startOffset": 0.4977634227834642
+      }
+    },
+    {
+      "id": "ground-53",
+      "type": "ground",
+      "x": 17216,
+      "y": 384,
+      "width": 384,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-17",
+      "type": "decoration",
+      "x": 17263,
+      "y": 348,
+      "width": 28,
+      "height": 36,
+      "properties": {
+        "kind": "barrel",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-18",
+      "type": "decoration",
+      "x": 17376,
+      "y": 348,
+      "width": 28,
+      "height": 36,
+      "properties": {
+        "kind": "barrel",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "one-way-1",
+      "type": "oneWay",
+      "x": 17376,
+      "y": 128,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 17414,
+      "y": 102,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "spring-1",
+      "type": "spring",
+      "x": 17312,
+      "y": 368,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "power": 1200
+      }
+    }
+  ]
+}
