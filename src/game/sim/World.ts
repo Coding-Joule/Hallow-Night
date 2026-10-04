@@ -4,6 +4,7 @@ import type { Entity } from './Entity';
 import { createEntity } from './entities/factory';
 import { Checkpoint, Lever, Sign } from './entities/interactive';
 import { Slope } from './entities/terrain';
+import { Wind } from './entities/mechanics';
 import { Player } from './Player';
 import { EMPTY_INPUT, overlaps, type InputState, type Rect, type WorldEvent, type WorldEventType } from './types';
 
@@ -21,6 +22,7 @@ export class World {
   /** Entities that may block movement (solids, one-ways, moving platforms...). */
   readonly solids: Entity[] = [];
   readonly slopes: Slope[] = [];
+  private readonly winds: Wind[] = [];
   private readonly touchables: Entity[] = [];
   private readonly hazards: Entity[] = [];
   readonly enemies: Entity[] = [];
@@ -50,6 +52,7 @@ export class World {
       if (!e) continue;
       this.entities.push(e);
       this.byId.set(e.id, e);
+      if (e instanceof Wind) this.winds.push(e);
       if (e instanceof Slope) this.slopes.push(e);
       else if (
         e.solid ||
@@ -191,6 +194,15 @@ export class World {
         p.y += g.dy;
       }
       this.pushOut();
+      // wind and updrafts
+      p.windVx = 0;
+      p.windAy = 0;
+      for (const wd of this.winds) {
+        if (!overlaps(p, wd)) continue;
+        const f = wd.push();
+        p.windVx += f.vx;
+        p.windAy += f.ay;
+      }
       if (!p.dead) p.update(dt, input, this);
       if (!p.dead) this.interact();
     } else if (this.finished) {

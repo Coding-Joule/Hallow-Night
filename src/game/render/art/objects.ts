@@ -304,3 +304,69 @@ export function objectTextures(): SvgTexture[] {
     t.push({ key: `plat-${k}`, svg: platTile(k) });
   return t;
 }
+
+// ───────────────────────────── mechanics after the placement exam
+
+function iceTile(): string {
+  return svg(32, 32, `<rect width="32" height="32" fill="#9fd4ee"/><path d="M0 22 L10 14 L18 20 L32 8 V32 H0 Z" fill="#86c2e2"/><path d="M4 6 L12 2 M18 26 L28 18" stroke="#e8f8ff" stroke-width="2" stroke-linecap="round" opacity="0.8"/><rect width="32" height="2" fill="#e8f8ff" opacity="0.5"/>`);
+}
+
+function cannon(): string {
+  return svg(48, 40, `<rect x="6" y="30" width="32" height="10" rx="3" fill="#4a3424"/><circle cx="14" cy="34" r="6" fill="#2a1d14" stroke="#7a5a3a" stroke-width="2"/><circle cx="32" cy="34" r="6" fill="#2a1d14" stroke="#7a5a3a" stroke-width="2"/>
+    <rect x="4" y="10" width="40" height="18" rx="8" fill="#3c3f4a"/><rect x="38" y="8" width="10" height="22" rx="3" fill="#2c2f38"/><rect x="8" y="12" width="26" height="4" rx="2" fill="#6a6e7c"/><circle cx="8" cy="19" r="4" fill="#2c2f38"/>`);
+}
+
+function cannonball(): string {
+  return svg(24, 24, `<circle cx="12" cy="12" r="10" fill="#22232a"/><circle cx="8.5" cy="8.5" r="3" fill="#5a5c68"/><path d="M18 7 Q21 4 23 6" stroke="#ff9a3a" stroke-width="2" fill="none"/>`);
+}
+
+function nozzle(): string {
+  return svg(32, 16, `<rect x="2" y="4" width="28" height="12" rx="2" fill="#3a2a24"/><rect x="8" y="0" width="16" height="6" rx="2" fill="#5a3a2a"/><rect x="11" y="0" width="10" height="3" fill="#1a0e0a"/>`);
+}
+
+function flame(frame: number): string {
+  const w = frame ? 2 : -2;
+  return svg(32, 128, `<path d="M4 128 Q${2 + w} 70 12 ${30 + w * 2} Q16 0 20 ${30 - w * 2} Q${30 - w} 70 28 128 Z" fill="#ff6a1a" opacity="0.9"/>
+    <path d="M9 128 Q${8 - w} 84 15 ${54 + w * 2} Q17 30 19 ${54 - w} Q${24 + w} 84 23 128 Z" fill="#ffb23a"/>
+    <path d="M13 128 Q12 100 16 82 Q20 100 19 128 Z" fill="#fff0b0"/>`);
+}
+
+function portal(color: string, glow: string): string {
+  return svg(40, 64, `<ellipse cx="20" cy="32" rx="19" ry="31" fill="${color}" opacity="0.35"/><ellipse cx="20" cy="32" rx="16" ry="28" fill="none" stroke="${glow}" stroke-width="3"/><ellipse cx="20" cy="32" rx="11" ry="21" fill="#140a24" opacity="0.85"/>`);
+}
+
+function swirl(glow: string): string {
+  return svg(40, 40, `<path d="M20 20 m-12 0 a12 12 0 0 1 12 -12 a8 8 0 0 1 8 8 a5 5 0 0 1 -5 5" stroke="${glow}" stroke-width="2.5" fill="none" stroke-linecap="round"/><path d="M20 20 m12 0 a12 12 0 0 1 -12 12 a8 8 0 0 1 -8 -8 a5 5 0 0 1 5 -5" stroke="${glow}" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.7"/>`);
+}
+
+function balloon(color: string, light: string): string {
+  return svg(32, 56, `<path d="M16 38 Q12 46 16 50 Q20 54 16 56" stroke="#d8d0c0" stroke-width="1" fill="none"/>
+    <path d="M16 2 Q30 2 30 18 Q30 32 16 38 Q2 32 2 18 Q2 2 16 2 Z" fill="${color}"/><path d="M14 38 L18 38 L16 41 Z" fill="${color}"/>
+    <ellipse cx="10" cy="12" rx="3.5" ry="6" fill="${light}" opacity="0.7" transform="rotate(-20 10 12)"/>`);
+}
+
+function lilyPad(): string {
+  return svg(32, 16, `<ellipse cx="16" cy="8" rx="16" ry="7" fill="#4f8a3a"/><ellipse cx="16" cy="6" rx="15" ry="5" fill="#6aa84a"/><path d="M16 6 L22 1" stroke="#3a6a2a" stroke-width="1.5"/><circle cx="9" cy="5" r="2" fill="#f0b8d8"/>`);
+}
+
+export function mechanicTextures(): SvgTexture[] {
+  return [
+    { key: 'ice-tile', svg: iceTile() },
+    { key: 'cannon', svg: cannon() },
+    { key: 'cannonball', svg: cannonball() },
+    { key: 'nozzle', svg: nozzle() },
+    { key: 'flame-0', svg: flame(0) },
+    { key: 'flame-1', svg: flame(1) },
+    { key: 'portal-violet', svg: portal('#7a4ad0', '#c8a8ff') },
+    { key: 'portal-teal', svg: portal('#2a9a9a', '#9af0f0') },
+    { key: 'portal-amber', svg: portal('#c07a1a', '#ffd88a') },
+    { key: 'swirl-violet', svg: swirl('#e0d0ff') },
+    { key: 'swirl-teal', svg: swirl('#d0ffff') },
+    { key: 'swirl-amber', svg: swirl('#fff0c8') },
+    { key: 'balloon-pink', svg: balloon('#ff6aa8', '#ffd0e4') },
+    { key: 'balloon-orange', svg: balloon('#ff9a3a', '#ffe0b8') },
+    { key: 'balloon-purple', svg: balloon('#9a6aff', '#e0d0ff') },
+    { key: 'balloon-green', svg: balloon('#6ad06a', '#d0ffd0') },
+    { key: 'lily', svg: lilyPad() },
+  ];
+}

@@ -22,6 +22,8 @@ export abstract class Entity implements Rect {
   solid = false;
   /** Only solid from above. */
   oneWay = false;
+  /** Ice: the player slides on it. */
+  slippery = false;
   /** Horizontal surface speed (conveyors). */
   surfaceVx = 0;
   /** Receives `hurts()` checks against the player. */

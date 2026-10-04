@@ -242,6 +242,42 @@ export function drawObject(ctx: CanvasRenderingContext2D, art: EditorArt, o: Lev
       if (selected) dashed(ctx, 'rgba(207,214,230,0.4)', zoom, () => ctx.arc(x + w / 2, y + h / 2, n(p.range, 260), 0, Math.PI * 2));
       image(ctx, art, 'ghost-0', x, y, w, h);
       break;
+    case 'ice':
+      fillPattern(ctx, art, 'ice-tile', x, y, w, h, '#9fd4ee');
+      break;
+    case 'wind':
+      ctx.fillStyle = 'rgba(200,232,255,0.15)';
+      ctx.fillRect(x, y, w, h);
+      dashed(ctx, 'rgba(200,232,255,0.7)', zoom, () => ctx.rect(x, y, w, h));
+      ctx.fillStyle = 'rgba(230,245,255,0.9)';
+      ctx.font = `${Math.max(12, Math.min(w, h) * 0.4)}px sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(({ up: '↑', down: '↓', left: '←', right: '→' } as Record<string, string>)[String(p.direction)] ?? '↑', x + w / 2, y + h / 2);
+      break;
+    case 'cannon':
+      image(ctx, art, 'cannon', x, y, w, h, p.direction === 'left');
+      if (selected) dashed(ctx, 'rgba(255,154,58,0.6)', zoom, () => {
+        const r = n(p.range, 640);
+        ctx.moveTo(p.direction === 'left' ? x : x + w, y + h / 2);
+        ctx.lineTo(p.direction === 'left' ? x - r : x + w + r, y + h / 2);
+      });
+      break;
+    case 'flameJet':
+      image(ctx, art, 'nozzle', x, y, w, h);
+      ctx.globalAlpha = 0.45;
+      image(ctx, art, 'flame-0', x, y - n(p.height, 128), w, n(p.height, 128));
+      ctx.globalAlpha = 1;
+      break;
+    case 'portal':
+      image(ctx, art, `portal-${String(p.color ?? 'violet')}`, x, y, w, h);
+      break;
+    case 'balloon':
+      image(ctx, art, `balloon-${String(p.color ?? 'pink')}`, x, y, w, h + 16);
+      break;
+    case 'sinkingPlatform':
+      fillPattern(ctx, art, 'lily', x, y, w, h, '#5fa04a');
+      break;
     case 'boss':
       sprite(ctx, art, `boss-${String(p.kind ?? 'pumpkinKing')}-0`, x + w / 2, y + h, false);
       break;

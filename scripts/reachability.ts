@@ -43,6 +43,7 @@ export function freeze(level: LevelData, opts: { openGates: boolean }): LevelDat
         for (const f of [0, 0.33, 0.66, 1]) plat(o, o.x, o.y + d * f);
         break;
       }
+      case 'sinkingPlatform':
       case 'fallingPlatform':
       case 'crumblingPlatform':
       case 'timedPlatform':
@@ -58,6 +59,8 @@ export function freeze(level: LevelData, opts: { openGates: boolean }): LevelDat
       case 'skeleton':
       case 'armoredSkeleton':
       case 'pumpkinTortoise':
+      case 'cannon':
+      case 'flameJet':
       case 'boss':
       case 'bat':
       case 'raven':

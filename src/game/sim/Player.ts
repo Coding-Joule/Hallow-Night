@@ -27,6 +27,9 @@ export class Player implements Rect {
 
   grounded = false;
   groundEntity: Entity | null = null;
+  /** Set by the world each step while inside wind: sideways speed and vertical acceleration. */
+  windVx = 0;
+  windAy = 0;
   groundSlope: Slope | null = null;
   private coyote = 0;
   private jumpBuffer = 0;
@@ -170,21 +173,30 @@ export class Player implements Rect {
       const maxSpeed = this.crouching ? C.PLAYER_SPEED * 0.35 : C.PLAYER_SPEED;
       let accel = this.grounded ? C.PLAYER_ACCELERATION : C.PLAYER_AIR_ACCELERATION;
       if (this.controlLock > 0) accel *= 0.25;
+      const onIce = this.grounded && !!this.groundEntity?.slippery;
+      if (onIce) accel *= 0.22;
+      const drag = this.grounded ? C.PLAYER_DRAG * (onIce ? 0.07 : 1) : C.PLAYER_AIR_DRAG;
       if (dir !== 0) {
         if (Math.sign(this.vx) === dir && Math.abs(this.vx) > maxSpeed) {
           // keep extra momentum (after dash/wall jump) but bleed it off
-          this.vx = approach(this.vx, dir * maxSpeed, (this.grounded ? C.PLAYER_DRAG : C.PLAYER_AIR_DRAG) * dt);
+          this.vx = approach(this.vx, dir * maxSpeed, drag * dt);
         } else {
           this.vx = approach(this.vx, dir * maxSpeed, accel * dt);
         }
         this.facing = dir;
       } else {
-        this.vx = approach(this.vx, 0, (this.grounded ? C.PLAYER_DRAG : C.PLAYER_AIR_DRAG) * dt);
+        this.vx = approach(this.vx, 0, drag * dt);
       }
 
       // gravity
       const g = C.GRAVITY * (this.vy > 0 ? C.FALL_GRAVITY_MULTIPLIER : 1);
       this.vy = Math.min(C.MAX_FALL_SPEED, this.vy + g * dt);
+      // updrafts lift you (up to a limit); downdrafts push you down
+      if (this.windAy !== 0) {
+        this.vy += this.windAy * dt;
+        if (this.windAy < 0) this.vy = Math.max(this.vy, -460);
+        this.launched = true; // releasing Jump must not cut the lift
+      }
 
       // wall slide
       if (ab.wallJump && !this.grounded && this.wallDir !== 0 && dir === this.wallDir && this.vy > 0) {
@@ -230,7 +242,7 @@ export class Player implements Rect {
     const surface = this.grounded && this.groundEntity ? this.groundEntity.surfaceVx : 0;
 
     const wasGrounded = this.grounded;
-    this.moveX((this.vx + surface) * dt, world, wasGrounded);
+    this.moveX((this.vx + surface + this.windVx) * dt, world, wasGrounded);
     this.moveY(this.vy * dt, world, wasGrounded);
 
     // wall probe

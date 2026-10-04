@@ -1,5 +1,6 @@
 import type { LevelObject } from '../../levels/schema';
 import type { Entity } from '../Entity';
+import { Balloon, Cannon, FlameJet, IceBlock, Portal, SinkingPlatform, Wind } from './mechanics';
 import { Bat, Boss, Ghost, PumpkinTortoise, Raven, Shadow } from './enemies';
 import { Chaser, FallingHazard, MovingHazard, Pendulum, Sludge, Spikes } from './hazards';
 import {
@@ -77,6 +78,20 @@ export function createEntity(obj: LevelObject): Entity | null {
       return new Spring(obj);
     case 'ghost':
       return new Ghost(obj);
+    case 'ice':
+      return new IceBlock(obj);
+    case 'wind':
+      return new Wind(obj);
+    case 'cannon':
+      return new Cannon(obj);
+    case 'flameJet':
+      return new FlameJet(obj);
+    case 'portal':
+      return new Portal(obj);
+    case 'balloon':
+      return new Balloon(obj);
+    case 'sinkingPlatform':
+      return new SinkingPlatform(obj);
     case 'boss':
       return new Boss(obj);
     case 'pumpkinTortoise':

@@ -194,3 +194,62 @@ describe('bosses', () => {
     });
   }
 });
+
+describe('mechanics after the placement exam', () => {
+  it('ice: you slide much further after letting go', () => {
+    const slide = (type: string) => {
+      const w = new World(makeLevel([{ id: 'g', type, x: 0, y: 800, width: 4000, height: 200, properties: type === 'ground' ? {} : {} }]));
+      run(w, 0.2, {});
+      run(w, 1, { right: true });
+      const x0 = w.player.x;
+      run(w, 1.5, {});
+      return w.player.x - x0;
+    };
+    expect(slide('ice')).toBeGreaterThan(slide('ground') * 4);
+  });
+
+  it('an updraft carries you up', () => {
+    const w = new World(makeLevel([floor, { id: 'w', type: 'wind', x: 60, y: 300, width: 96, height: 500, properties: { direction: 'up', strength: 1 } }]));
+    run(w, 1.2, {});
+    expect(w.player.bottom).toBeLessThan(500);
+  });
+
+  it('a balloon bounces you high and pops', () => {
+    const w = new World(makeLevel([floor, { id: 'b', type: 'balloon', x: 400, y: 700, width: 32, height: 40, properties: {} }]));
+    w.player.placeAt(416, 640);
+    let minY = Infinity;
+    for (let i = 0; i < 120; i++) {
+      run(w, FIXED_STEP, {});
+      minY = Math.min(minY, w.player.bottom);
+    }
+    expect(minY).toBeLessThan(500);
+  });
+
+  it('a portal sends you to its partner', () => {
+    const w = new World(
+      makeLevel([
+        floor,
+        { id: 'p1', type: 'portal', x: 200, y: 736, width: 40, height: 64, properties: { target: 'p2' } },
+        { id: 'p2', type: 'portal', x: 3000, y: 736, width: 40, height: 64, properties: { target: 'p1' } },
+      ]),
+    );
+    run(w, 1.2, { right: true });
+    expect(w.player.x).toBeGreaterThan(2900);
+  });
+
+  it('a lily pad sinks while you stand on it', () => {
+    const w = new World(makeLevel([{ id: 'pad', type: 'sinkingPlatform', x: 60, y: 600, width: 96, height: 16, properties: { speed: 45, distance: 96 } }], { spawn: { x: 100, y: 600 } }));
+    run(w, 1, {});
+    expect(w.player.bottom).toBeGreaterThan(630);
+    expect(w.deaths).toBe(0);
+  });
+
+  it('flame jets and cannonballs hurt', () => {
+    const fire = new World(makeLevel([floor, { id: 'f', type: 'flameJet', x: 90, y: 784, width: 32, height: 16, properties: { onTime: 5, offTime: 1, offset: 0, height: 128 } }]));
+    run(fire, 0.5, {});
+    expect(fire.deaths).toBeGreaterThan(0);
+    const boom = new World(makeLevel([floor, { id: 'c', type: 'cannon', x: 600, y: 760, width: 48, height: 40, properties: { direction: 'left', interval: 0.6, speed: 400 } }]));
+    run(boom, 3, {});
+    expect(boom.deaths).toBeGreaterThan(0);
+  });
+});

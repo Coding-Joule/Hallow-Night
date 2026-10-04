@@ -96,16 +96,16 @@ const WORLD_SIGNS: Record<WorldId, string> = {
   catacombs: 'You can DASH now! Smash cracked walls and fly over wide pits.',
   clocktower: 'You can DOUBLE JUMP now! Jump again in mid-air.',
   'black-castle': 'The last world of the exam. Everything you have learned, all at once!',
-  'frozen-hollow': 'You passed the placement exam! From here on, things get REAL.',
-  'candy-carnival': 'Step right up! Mind the gaps between the rides.',
-  'witch-swamp': 'The bog is full of things that bite. Keep moving.',
-  'ghost-harbor': 'Old ships, rotten planks. Jump light!',
-  'lava-crypt': 'It gets hot down here. Do not stop for long.',
-  'sky-ruins': 'Far above the clouds. Do not look down!',
+  'frozen-hollow': 'You passed the placement exam! Now it gets REAL. Careful: ICE is slippery!',
+  'candy-carnival': 'Step right up! Land on BALLOONS to bounce over the gaps.',
+  'witch-swamp': 'LILY PADS sink while you stand on them. Keep hopping!',
+  'ghost-harbor': 'CANNONS fire along the decks. Jump the cannonballs!',
+  'lava-crypt': 'FLAME JETS sputter, then blast. Cross while they are quiet.',
+  'sky-ruins': 'Ride the UPDRAFTS and let the WIND carry you over the gaps.',
   'toy-factory': 'The toys are awake, and everything moves.',
-  'mirror-manor': 'Nothing here is quite what it seems.',
+  'mirror-manor': 'Step into a PORTAL to come out somewhere else.',
   'moon-garden': 'So quiet. So pretty. So dangerous.',
-  'nightmare-realm': 'The final realm. Only the bravest get through.',
+  'nightmare-realm': 'The final realm: ice, wind, fire, portals… everything at once.',
 };
 
 // ───────────────────────────── random
@@ -494,6 +494,127 @@ const segKeyDoor: Seg = (b) => {
 
 const segThreat: Seg = (b) => flat(b, b.d > 1.15 ? b.ri(16, 22) : b.ri(10, 16), { enemies: true });
 
+// ── mechanics after the placement exam
+
+const FROZEN = 7, CANDY = 8, SWAMP = 9, HARBOR = 10, LAVA = 11, SKY = 12, TOY = 13, MIRROR = 14, MOON = 15, NIGHTMARE = 16;
+
+const segIce: Seg = (b) => {
+  // a long icy run that ends in a pit: start braking early!
+  const len = b.ri(12, 18);
+  b.add('ice', b.x * T, b.gy * T, len * T, (H - b.gy) * T);
+  b.x += len;
+  if (b.chance(0.6)) {
+    b.x += b.ri(3, 5);
+    landing(b, b.gy + b.ri(-2, 1));
+  } else {
+    // icy islands
+    for (let i = 0; i < b.ri(2, 3); i++) {
+      b.x += b.ri(3, 4);
+      const row = b.clampRow(b.gy + b.ri(-1, 1));
+      b.gy = row;
+      b.add('ice', b.x * T, row * T, 3 * T, (H - row) * T);
+      b.x += 3;
+    }
+    b.x += b.ri(3, 4);
+    landing(b, b.gy);
+  }
+};
+
+const segBalloons: Seg = (b) => {
+  // a wide pit crossed by bouncing on balloons
+  const n = b.ri(2, 3);
+  const colors = ['pink', 'orange', 'purple', 'green'];
+  for (let i = 0; i < n; i++) {
+    b.x += b.ri(4, 5);
+    const y = (b.gy + b.ri(0, 2)) * T;
+    b.add('balloon', b.x * T, y, 32, 40, { power: 980, respawn: 2.2, color: b.pick(colors) });
+    b.x += 1;
+  }
+  b.x += b.ri(4, 5);
+  landing(b, b.gy - b.ri(1, 4));
+};
+
+const segLilyPads: Seg = (b) => {
+  // a bog of poison with sinking lily pads: keep hopping
+  const n = b.ri(3, 4);
+  const c0 = b.x;
+  let c = c0;
+  const pads: number[] = [];
+  for (let i = 0; i < n; i++) {
+    c += b.ri(2, 3);
+    pads.push(c);
+    c += 3;
+  }
+  c += b.ri(2, 3);
+  const w = c - c0;
+  b.ground(c0, w, b.gy + 4);
+  b.add('sludge', c0 * T, (b.gy + 1.5) * T, w * T, 2.5 * T);
+  for (const pc of pads) b.add('sinkingPlatform', pc * T, b.gy * T, 3 * T, 16, { speed: 38 + Math.round((b.d - 1) * 20), distance: 96 });
+  b.x = c;
+  landing(b, b.gy + b.ri(-1, 1));
+};
+
+const segCannon: Seg = (b) => {
+  const len = b.ri(14, 18);
+  const c0 = b.x;
+  b.ground(c0, len, b.gy);
+  b.add('cannon', (c0 + len - 3) * T, b.gy * T - 40, 48, 40, { direction: 'left', interval: 2.6 - (b.d - 1) * 1.2, speed: 200 + (b.d - 1) * 150, range: (len - 4) * T, startOffset: b.r(0, 1) });
+  b.deco(c0, c0 + len - 4, b.gy, 2);
+  b.x += len;
+  flat(b, 3);
+};
+
+const segFlameJets: Seg = (b) => {
+  const n = b.ri(2, 4);
+  const len = n * 4 + 4;
+  const c0 = b.x;
+  b.ground(c0, len, b.gy);
+  for (let i = 0; i < n; i++) {
+    b.add('flameJet', (c0 + 3 + i * 4) * T, b.gy * T - 16, 32, 16, { height: 128, onTime: 1.1, offTime: 1.7 - (b.d - 1) * 0.6, offset: i * 0.45 });
+  }
+  b.x += len;
+  flat(b, 3);
+};
+
+const segUpdraft: Seg = (b) => {
+  // jump into the column of rising air and float up to a high ledge
+  const rise = b.ri(7, 11);
+  const top = b.clampRow(b.gy - rise);
+  if (b.gy - top < 6) {
+    landing(b, b.gy + b.ri(3, 5));
+    return;
+  }
+  const w = b.ri(4, 5);
+  b.add('wind', b.x * T, (top - 4) * T, w * T, (H - top + 4) * T, { direction: 'up', strength: 1 });
+  b.x += w;
+  landing(b, top, b.ri(5, 8));
+};
+
+const segTailwind: Seg = (b) => {
+  // a strong tailwind over a gap too wide to jump without it
+  const w = b.ri(9, 11);
+  b.add('wind', (b.x - 6) * T, (b.gy - 10) * T, (w + 9) * T, 10 * T, { direction: 'right', strength: 1.2 });
+  b.x += w;
+  landing(b, b.gy, b.ri(5, 7));
+};
+
+const segPortal: Seg = (b) => {
+  // a wall nobody can climb; the portal is the only way through
+  const c0 = b.x;
+  const color = b.pick(['violet', 'teal', 'amber']);
+  b.ground(c0, 6, b.gy);
+  b.add('ground', (c0 + 6) * T, 0, 2 * T, H * T, { style: 'auto' });
+  const row = b.clampRow(b.gy + b.ri(-3, 3));
+  const p1 = b.add('portal', (c0 + 3) * T - 4, b.gy * T - 64, 40, 64, { color });
+  b.x = c0 + 8;
+  b.gy = row;
+  const c1 = b.x;
+  flat(b, b.ri(6, 9));
+  const p2 = b.add('portal', (c1 + 2) * T - 4, row * T - 64, 40, 64, { color });
+  p1.properties.target = p2.id;
+  p2.properties.target = p1.id;
+};
+
 interface SegDef {
   fn: Seg;
   from: number; // first world index
@@ -501,6 +622,8 @@ interface SegDef {
   boost?: number; // extra weight in the world that introduces it
   ability?: keyof LevelAbilities;
   minD?: number;
+  /** only in these worlds (mechanics after the exam) */
+  worlds?: number[];
 }
 
 const SEGMENTS: SegDef[] = [
@@ -524,10 +647,18 @@ const SEGMENTS: SegDef[] = [
   { fn: segConveyor, from: 5, w: 2, boost: 2 },
   { fn: segElevator, from: 5, w: 1, boost: 2 },
   { fn: segPathPlatform, from: 5, w: 1, boost: 2 },
+  { fn: segIce, from: FROZEN, w: 6, worlds: [FROZEN, NIGHTMARE] },
+  { fn: segBalloons, from: CANDY, w: 6, worlds: [CANDY, TOY, MOON, NIGHTMARE] },
+  { fn: segLilyPads, from: SWAMP, w: 6, worlds: [SWAMP, NIGHTMARE] },
+  { fn: segCannon, from: HARBOR, w: 6, worlds: [HARBOR, TOY, NIGHTMARE] },
+  { fn: segFlameJets, from: LAVA, w: 6, worlds: [LAVA, NIGHTMARE] },
+  { fn: segUpdraft, from: SKY, w: 5, worlds: [SKY, MOON, NIGHTMARE] },
+  { fn: segTailwind, from: SKY, w: 3, worlds: [SKY, NIGHTMARE] },
+  { fn: segPortal, from: MIRROR, w: 5, worlds: [MIRROR, NIGHTMARE] },
 ];
 
 function pickSegment(b: Builder): Seg {
-  const avail = SEGMENTS.filter((s) => s.from <= b.wi && (!s.ability || b.abilities[s.ability]) && (s.minD ?? 0) <= b.d);
+  const avail = SEGMENTS.filter((s) => s.from <= b.wi && (!s.worlds || s.worlds.includes(b.wi)) && (!s.ability || b.abilities[s.ability]) && (s.minD ?? 0) <= b.d);
   const weights = avail.map((s) => s.w + (s.from === b.wi ? (s.boost ?? 0) : 0));
   let k = b.rnd() * weights.reduce((a, c) => a + c, 0);
   for (let i = 0; i < avail.length; i++) if ((k -= weights[i]) <= 0) return avail[i].fn;

@@ -88,6 +88,14 @@ export const OBJECT_TYPES = [
   'breakableWall',
   'hiddenWall',
   'spring',
+  // mechanics after the placement exam
+  'ice',
+  'wind',
+  'cannon',
+  'flameJet',
+  'portal',
+  'balloon',
+  'sinkingPlatform',
   // enemies
   'ghost',
   'skeleton',

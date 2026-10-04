@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import type { Entity } from '../sim/Entity';
 import { Bat, Boss, Ghost, PumpkinTortoise, Raven, Shadow } from '../sim/entities/enemies';
+import { Balloon, Cannon, FlameJet, IceBlock, Portal, SinkingPlatform, Wind } from '../sim/entities/mechanics';
 import { Chaser, FallingHazard, MovingHazard, Pendulum, Sludge, Spikes } from '../sim/entities/hazards';
 import {
   Button,
@@ -498,6 +499,106 @@ function bossView(ctx: ViewContext, e: Boss): EntityView {
   };
 }
 
+function iceView(ctx: ViewContext, e: IceBlock): null {
+  tiled(ctx.scene, e.x, e.y, e.w, e.h, 'ice-tile').setDepth(DEPTH.terrain);
+  const g = ctx.scene.add.graphics().setDepth(DEPTH.terrain + 1);
+  g.fillStyle(0xf0fbff, 0.85).fillRect(e.x, e.y, e.w, 4);
+  g.lineStyle(1, 0x5a8aa8, 0.8).strokeRect(e.x + 0.5, e.y + 0.5, e.w - 1, e.h - 1);
+  return null;
+}
+
+function windView(ctx: ViewContext, e: Wind): EntityView {
+  const g = ctx.scene.add.graphics().setDepth(DEPTH.behind);
+  const n = Math.max(4, Math.round((e.w * e.h) / 2600));
+  const seeds = Array.from({ length: n }, (_, i) => ({ a: (i * 0.618) % 1, b: (i * 0.377 + 0.13) % 1, l: 14 + ((i * 7) % 18) }));
+  return {
+    update(_w, time) {
+      g.clear();
+      g.fillStyle(0xc8e8ff, 0.06).fillRect(e.x, e.y, e.w, e.h);
+      const speed = 160 * e.strength;
+      for (const s of seeds) {
+        g.lineStyle(2, 0xe0f4ff, 0.35);
+        if (e.dir === 'up' || e.dir === 'down') {
+          const x = e.x + 6 + s.a * (e.w - 12);
+          const span = e.h + s.l;
+          let y = (s.b * span + time * speed) % span;
+          y = e.dir === 'up' ? e.y + e.h - y : e.y + y - s.l;
+          g.lineBetween(x, Math.max(e.y, y), x, Math.min(e.y + e.h, y + s.l));
+        } else {
+          const y = e.y + 6 + s.a * (e.h - 12);
+          const span = e.w + s.l;
+          let x = (s.b * span + time * speed) % span;
+          x = e.dir === 'right' ? e.x + x - s.l : e.x + e.w - x;
+          g.lineBetween(Math.max(e.x, x), y, Math.min(e.x + e.w, x + s.l), y);
+        }
+      }
+    },
+  };
+}
+
+function cannonView(ctx: ViewContext, e: Cannon): EntityView {
+  const img = sprite(ctx.scene, e.x + e.w / 2, e.y + e.h, 'cannon').setOrigin(0.5, 1).setDepth(DEPTH.hazards).setFlipX(e.dir < 0);
+  const balls: Phaser.GameObjects.Image[] = [];
+  return {
+    update() {
+      img.setScale(SPRITE_SCALE * (1 + e.anim * 0.08), SPRITE_SCALE * (1 - e.anim * 0.06));
+      while (balls.length < e.balls.length) balls.push(sprite(ctx.scene, 0, 0, 'cannonball').setOrigin(0, 0).setDepth(DEPTH.hazards));
+      balls.forEach((b, i) => {
+        const ball = e.balls[i];
+        b.setVisible(!!ball);
+        if (ball) b.setPosition(ball.x, ball.y).setFlipX(e.dir < 0);
+      });
+    },
+  };
+}
+
+function flameJetView(ctx: ViewContext, e: FlameJet): EntityView {
+  sprite(ctx.scene, e.x + e.w / 2, e.y + e.h, 'nozzle').setOrigin(0.5, 1).setDepth(DEPTH.hazards + 1);
+  const fire = sprite(ctx.scene, e.x + e.w / 2, e.y + 2, 'flame-0').setOrigin(0.5, 1).setDepth(DEPTH.hazards);
+  return {
+    update(_w, time) {
+      const h = e.flameHeight * e.flame;
+      fire.setTexture(`flame-${Math.floor(time * 14) % 2}`);
+      if (e.flame > 0) fire.setVisible(true).setDisplaySize(e.w, Math.max(1, h)).setAlpha(1);
+      else if (e.warning) fire.setVisible(true).setDisplaySize(e.w * 0.6, 14 + Math.sin(time * 40) * 6).setAlpha(0.7);
+      else fire.setVisible(false);
+    },
+  };
+}
+
+function portalView(ctx: ViewContext, e: Portal): EntityView {
+  const color = String(e.props.color ?? 'violet');
+  const ring = sprite(ctx.scene, e.x + e.w / 2, e.y + e.h / 2, `portal-${color}`).setDepth(DEPTH.objects);
+  const sw = sprite(ctx.scene, e.x + e.w / 2, e.y + e.h / 2, `swirl-${color}`).setDepth(DEPTH.objects + 1);
+  return {
+    update(_w, time) {
+      sw.setAngle(time * 220);
+      sw.setScale(SPRITE_SCALE * 0.9, SPRITE_SCALE * 1.4);
+      ring.setAlpha(0.85 + Math.sin(time * 4) * 0.15);
+    },
+  };
+}
+
+function balloonView(ctx: ViewContext, e: Balloon): EntityView {
+  const img = sprite(ctx.scene, e.x + e.w / 2, e.y, `balloon-${String(e.props.color ?? 'pink')}`).setOrigin(0.5, 0).setDepth(DEPTH.objects);
+  return {
+    update() {
+      img.setPosition(e.x + e.w / 2, e.y + Math.sin(e.anim * 2.4) * 3);
+      img.setAlpha(e.popped > 0 ? (e.popped < 0.6 ? 0.4 : 0) : 1);
+    },
+  };
+}
+
+function lilyView(ctx: ViewContext, e: SinkingPlatform): EntityView {
+  const ts = tiled(ctx.scene, e.x, e.y, e.w, 16, 'lily').setDepth(DEPTH.terrain);
+  return {
+    update() {
+      ts.setPosition(e.x, e.y);
+      ts.setTint(e.anim > 0.6 ? 0x9ab88a : 0xffffff);
+    },
+  };
+}
+
 function shadowView(ctx: ViewContext, e: Shadow): EntityView {
   const pool = sprite(ctx.scene, e.obj.x + e.w / 2, e.obj.y + e.h, 'shadow-pool').setDepth(DEPTH.objects).setOrigin(0.5, 0.6);
   const body = sprite(ctx.scene, e.x + e.w / 2, e.y + e.h, 'shadow').setOrigin(0.5, 1).setDepth(DEPTH.enemies);
@@ -544,6 +645,13 @@ export function createView(ctx: ViewContext, e: Entity): EntityView | null {
     sprite(ctx.scene, e.x + e.w / 2, e.y + e.h, 'sign').setOrigin(0.5, 1).setDepth(DEPTH.objects);
     return null;
   }
+  if (e instanceof IceBlock) return iceView(ctx, e);
+  if (e instanceof Wind) return windView(ctx, e);
+  if (e instanceof Cannon) return cannonView(ctx, e);
+  if (e instanceof FlameJet) return flameJetView(ctx, e);
+  if (e instanceof Portal) return portalView(ctx, e);
+  if (e instanceof Balloon) return balloonView(ctx, e);
+  if (e instanceof SinkingPlatform) return lilyView(ctx, e);
   if (e instanceof PumpkinTortoise) return tortoiseView(ctx, e);
   if (e instanceof Boss) return bossView(ctx, e);
   if (e instanceof Ghost) return enemyView(ctx, e, 'ghost', 2.5, () => 0.8 + Math.sin(e.anim * 2) * 0.12);
