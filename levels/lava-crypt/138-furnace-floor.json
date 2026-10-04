@@ -1,0 +1,1821 @@
+{
+  "version": 1,
+  "id": "lava-crypt-06",
+  "name": "Furnace Floor",
+  "world": "lava-crypt",
+  "order": 6,
+  "number": 138,
+  "width": 17856,
+  "height": 1280,
+  "spawn": {
+    "x": 96,
+    "y": 960
+  },
+  "goal": {
+    "x": 17728,
+    "y": 384
+  },
+  "background": "lava-crypt",
+  "music": "lava-crypt",
+  "abilities": {
+    "wallJump": true,
+    "dash": true,
+    "doubleJump": true
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 960,
+      "width": 320,
+      "height": 320,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 120,
+      "y": 888,
+      "width": 36,
+      "height": 72,
+      "properties": {
+        "kind": "coffin",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "one-way-1",
+      "type": "oneWay",
+      "x": 384,
+      "y": 896,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "one-way-2",
+      "type": "oneWay",
+      "x": 544,
+      "y": 800,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "one-way-3",
+      "type": "oneWay",
+      "x": 736,
+      "y": 704,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "one-way-4",
+      "type": "oneWay",
+      "x": 896,
+      "y": 640,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "iron"
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 1024,
+      "y": 608,
+      "width": 192,
+      "height": 672,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 1039,
+      "y": 512,
+      "width": 48,
+      "height": 96,
+      "properties": {
+        "kind": "statue",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 1216,
+      "y": 608,
+      "width": 128,
+      "height": 672,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 1344,
+      "y": 608,
+      "width": 512,
+      "height": 672,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "flame-jet-1",
+      "type": "flameJet",
+      "x": 1440,
+      "y": 592,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0
+      }
+    },
+    {
+      "id": "flame-jet-2",
+      "type": "flameJet",
+      "x": 1568,
+      "y": 592,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.45
+      }
+    },
+    {
+      "id": "flame-jet-3",
+      "type": "flameJet",
+      "x": 1696,
+      "y": 592,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.9
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 1856,
+      "y": 608,
+      "width": 96,
+      "height": 672,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 1984,
+      "y": 448,
+      "width": 192,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 2046,
+      "y": 408,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 2176,
+      "y": 448,
+      "width": 512,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "one-way-5",
+      "type": "oneWay",
+      "x": 2272,
+      "y": 352,
+      "width": 128,
+      "height": 16,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "key-1",
+      "type": "key",
+      "x": 2324,
+      "y": 322,
+      "width": 24,
+      "height": 24,
+      "properties": {
+        "color": "bone"
+      }
+    },
+    {
+      "id": "locked-door-1",
+      "type": "lockedDoor",
+      "x": 2560,
+      "y": 64,
+      "width": 32,
+      "height": 384,
+      "properties": {
+        "color": "bone"
+      }
+    },
+    {
+      "id": "ground-8",
+      "type": "ground",
+      "x": 2688,
+      "y": 448,
+      "width": 128,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-9",
+      "type": "ground",
+      "x": 2816,
+      "y": 448,
+      "width": 512,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "flame-jet-4",
+      "type": "flameJet",
+      "x": 2912,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0
+      }
+    },
+    {
+      "id": "flame-jet-5",
+      "type": "flameJet",
+      "x": 3040,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.45
+      }
+    },
+    {
+      "id": "flame-jet-6",
+      "type": "flameJet",
+      "x": 3168,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.9
+      }
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 3328,
+      "y": 448,
+      "width": 96,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 3424,
+      "y": 448,
+      "width": 128,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 3552,
+      "y": 448,
+      "width": 512,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "flame-jet-7",
+      "type": "flameJet",
+      "x": 3648,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0
+      }
+    },
+    {
+      "id": "flame-jet-8",
+      "type": "flameJet",
+      "x": 3776,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.45
+      }
+    },
+    {
+      "id": "flame-jet-9",
+      "type": "flameJet",
+      "x": 3904,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.9
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 4064,
+      "y": 448,
+      "width": 96,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 4160,
+      "y": 448,
+      "width": 96,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-15",
+      "type": "ground",
+      "x": 4256,
+      "y": 448,
+      "width": 192,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 4383,
+      "y": 408,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 4352,
+      "y": 384,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-16",
+      "type": "ground",
+      "x": 4448,
+      "y": 448,
+      "width": 512,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "flame-jet-10",
+      "type": "flameJet",
+      "x": 4544,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0
+      }
+    },
+    {
+      "id": "flame-jet-11",
+      "type": "flameJet",
+      "x": 4672,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.45
+      }
+    },
+    {
+      "id": "flame-jet-12",
+      "type": "flameJet",
+      "x": 4800,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.9
+      }
+    },
+    {
+      "id": "ground-17",
+      "type": "ground",
+      "x": 4960,
+      "y": 448,
+      "width": 96,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-18",
+      "type": "ground",
+      "x": 5056,
+      "y": 448,
+      "width": 96,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-19",
+      "type": "ground",
+      "x": 5152,
+      "y": 448,
+      "width": 384,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "flame-jet-13",
+      "type": "flameJet",
+      "x": 5248,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0
+      }
+    },
+    {
+      "id": "flame-jet-14",
+      "type": "flameJet",
+      "x": 5376,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.45
+      }
+    },
+    {
+      "id": "ground-20",
+      "type": "ground",
+      "x": 5536,
+      "y": 448,
+      "width": 96,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-21",
+      "type": "ground",
+      "x": 5632,
+      "y": 448,
+      "width": 96,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-22",
+      "type": "ground",
+      "x": 5728,
+      "y": 448,
+      "width": 672,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 6289,
+      "y": 408,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-6",
+      "type": "decoration",
+      "x": 5845,
+      "y": 408,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-7",
+      "type": "decoration",
+      "x": 6291,
+      "y": 256,
+      "width": 48,
+      "height": 192,
+      "properties": {
+        "kind": "pillar",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "pendulum-1",
+      "type": "pendulum",
+      "x": 5888,
+      "y": 252,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "length": 160,
+        "angle": 60,
+        "period": 1.8381651376146788,
+        "phase": 0.4594929877202958
+      }
+    },
+    {
+      "id": "pendulum-2",
+      "type": "pendulum",
+      "x": 6192,
+      "y": 252,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "length": 160,
+        "angle": 60,
+        "period": 1.8381651376146788,
+        "phase": 0.8943691595923156
+      }
+    },
+    {
+      "id": "ground-23",
+      "type": "ground",
+      "x": 6400,
+      "y": 448,
+      "width": 128,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-24",
+      "type": "ground",
+      "x": 6816,
+      "y": 448,
+      "width": 160,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-25",
+      "type": "ground",
+      "x": 6976,
+      "y": 448,
+      "width": 384,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "flame-jet-15",
+      "type": "flameJet",
+      "x": 7072,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0
+      }
+    },
+    {
+      "id": "flame-jet-16",
+      "type": "flameJet",
+      "x": 7200,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.45
+      }
+    },
+    {
+      "id": "ground-26",
+      "type": "ground",
+      "x": 7360,
+      "y": 448,
+      "width": 96,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "conveyor-1",
+      "type": "conveyor",
+      "x": 7456,
+      "y": 448,
+      "width": 256,
+      "height": 24,
+      "properties": {
+        "speed": -160
+      }
+    },
+    {
+      "id": "ground-27",
+      "type": "ground",
+      "x": 7456,
+      "y": 472,
+      "width": 256,
+      "height": 808,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-28",
+      "type": "ground",
+      "x": 7808,
+      "y": 448,
+      "width": 224,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-8",
+      "type": "decoration",
+      "x": 7960,
+      "y": 408,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-29",
+      "type": "ground",
+      "x": 8032,
+      "y": 448,
+      "width": 64,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-30",
+      "type": "ground",
+      "x": 8096,
+      "y": 448,
+      "width": 384,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "gate-1",
+      "type": "gate",
+      "x": 8384,
+      "y": 64,
+      "width": 32,
+      "height": 384,
+      "properties": {
+        "initiallyOpen": false,
+        "openDirection": "up",
+        "speed": 300
+      }
+    },
+    {
+      "id": "button-1",
+      "type": "button",
+      "x": 8192,
+      "y": 436,
+      "width": 32,
+      "height": 12,
+      "properties": {
+        "targets": [
+          "gate-1"
+        ]
+      }
+    },
+    {
+      "id": "ground-31",
+      "type": "ground",
+      "x": 8480,
+      "y": 448,
+      "width": 128,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-32",
+      "type": "ground",
+      "x": 8608,
+      "y": 448,
+      "width": 96,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-33",
+      "type": "ground",
+      "x": 8704,
+      "y": 448,
+      "width": 192,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-9",
+      "type": "decoration",
+      "x": 8757,
+      "y": 408,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 8800,
+      "y": 384,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-34",
+      "type": "ground",
+      "x": 8896,
+      "y": 448,
+      "width": 384,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "flame-jet-17",
+      "type": "flameJet",
+      "x": 8992,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0
+      }
+    },
+    {
+      "id": "flame-jet-18",
+      "type": "flameJet",
+      "x": 9120,
+      "y": 432,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.45
+      }
+    },
+    {
+      "id": "ground-35",
+      "type": "ground",
+      "x": 9280,
+      "y": 448,
+      "width": 96,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-36",
+      "type": "ground",
+      "x": 9376,
+      "y": 448,
+      "width": 64,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "elevator-1",
+      "type": "elevator",
+      "x": 9440,
+      "y": 448,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "direction": "up",
+        "distance": 320,
+        "speed": 130,
+        "mode": "ride",
+        "returnDelay": 1
+      }
+    },
+    {
+      "id": "ground-37",
+      "type": "ground",
+      "x": 9440,
+      "y": 480,
+      "width": 96,
+      "height": 800,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-38",
+      "type": "ground",
+      "x": 9536,
+      "y": 384,
+      "width": 256,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-10",
+      "type": "decoration",
+      "x": 9579,
+      "y": 288,
+      "width": 48,
+      "height": 96,
+      "properties": {
+        "kind": "statue",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-39",
+      "type": "ground",
+      "x": 9792,
+      "y": 384,
+      "width": 384,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "gate-2",
+      "type": "gate",
+      "x": 10080,
+      "y": 0,
+      "width": 32,
+      "height": 384,
+      "properties": {
+        "initiallyOpen": false,
+        "openDirection": "up",
+        "speed": 300
+      }
+    },
+    {
+      "id": "button-2",
+      "type": "button",
+      "x": 9888,
+      "y": 372,
+      "width": 32,
+      "height": 12,
+      "properties": {
+        "targets": [
+          "gate-2"
+        ]
+      }
+    },
+    {
+      "id": "ground-40",
+      "type": "ground",
+      "x": 10176,
+      "y": 384,
+      "width": 128,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-41",
+      "type": "ground",
+      "x": 10304,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-42",
+      "type": "ground",
+      "x": 10400,
+      "y": 384,
+      "width": 512,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "flame-jet-19",
+      "type": "flameJet",
+      "x": 10496,
+      "y": 368,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0
+      }
+    },
+    {
+      "id": "flame-jet-20",
+      "type": "flameJet",
+      "x": 10624,
+      "y": 368,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.45
+      }
+    },
+    {
+      "id": "flame-jet-21",
+      "type": "flameJet",
+      "x": 10752,
+      "y": 368,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.9
+      }
+    },
+    {
+      "id": "ground-43",
+      "type": "ground",
+      "x": 10912,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "conveyor-2",
+      "type": "conveyor",
+      "x": 11008,
+      "y": 384,
+      "width": 256,
+      "height": 24,
+      "properties": {
+        "speed": -120
+      }
+    },
+    {
+      "id": "ground-44",
+      "type": "ground",
+      "x": 11008,
+      "y": 408,
+      "width": 256,
+      "height": 872,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-45",
+      "type": "ground",
+      "x": 11392,
+      "y": 416,
+      "width": 192,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-11",
+      "type": "decoration",
+      "x": 11402,
+      "y": 224,
+      "width": 48,
+      "height": 192,
+      "properties": {
+        "kind": "pillar",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-46",
+      "type": "ground",
+      "x": 11584,
+      "y": 416,
+      "width": 64,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-47",
+      "type": "ground",
+      "x": 11840,
+      "y": 416,
+      "width": 128,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-48",
+      "type": "ground",
+      "x": 11968,
+      "y": 416,
+      "width": 96,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-49",
+      "type": "ground",
+      "x": 12064,
+      "y": 416,
+      "width": 640,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "flame-jet-22",
+      "type": "flameJet",
+      "x": 12160,
+      "y": 400,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0
+      }
+    },
+    {
+      "id": "flame-jet-23",
+      "type": "flameJet",
+      "x": 12288,
+      "y": 400,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.45
+      }
+    },
+    {
+      "id": "flame-jet-24",
+      "type": "flameJet",
+      "x": 12416,
+      "y": 400,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.9
+      }
+    },
+    {
+      "id": "flame-jet-25",
+      "type": "flameJet",
+      "x": 12544,
+      "y": 400,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 1.35
+      }
+    },
+    {
+      "id": "ground-50",
+      "type": "ground",
+      "x": 12704,
+      "y": 416,
+      "width": 96,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-51",
+      "type": "ground",
+      "x": 12800,
+      "y": 416,
+      "width": 192,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-12",
+      "type": "decoration",
+      "x": 12878,
+      "y": 344,
+      "width": 36,
+      "height": 72,
+      "properties": {
+        "kind": "coffin",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "checkpoint-3",
+      "type": "checkpoint",
+      "x": 12896,
+      "y": 352,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-52",
+      "type": "ground",
+      "x": 12992,
+      "y": 384,
+      "width": 288,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-13",
+      "type": "decoration",
+      "x": 13153,
+      "y": 344,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-53",
+      "type": "ground",
+      "x": 13280,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-54",
+      "type": "ground",
+      "x": 13376,
+      "y": 384,
+      "width": 672,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-14",
+      "type": "decoration",
+      "x": 13560,
+      "y": 192,
+      "width": 48,
+      "height": 192,
+      "properties": {
+        "kind": "pillar",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-15",
+      "type": "decoration",
+      "x": 14007,
+      "y": 312,
+      "width": 36,
+      "height": 72,
+      "properties": {
+        "kind": "coffin",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-16",
+      "type": "decoration",
+      "x": 13561,
+      "y": 192,
+      "width": 48,
+      "height": 192,
+      "properties": {
+        "kind": "pillar",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "pumpkin-tortoise-1",
+      "type": "pumpkinTortoise",
+      "x": 13552,
+      "y": 362,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 83,
+        "direction": "left",
+        "shellSpeed": 460
+      }
+    },
+    {
+      "id": "moving-hazard-1",
+      "type": "movingHazard",
+      "x": 13856,
+      "y": 224,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "axis": "vertical",
+        "distance": 128,
+        "speed": 196.1834862385321,
+        "wait": 0.5,
+        "startOffset": 0.19748131535016,
+        "triggered": false
+      }
+    },
+    {
+      "id": "ground-55",
+      "type": "ground",
+      "x": 14048,
+      "y": 384,
+      "width": 384,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "flame-jet-26",
+      "type": "flameJet",
+      "x": 14144,
+      "y": 368,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0
+      }
+    },
+    {
+      "id": "flame-jet-27",
+      "type": "flameJet",
+      "x": 14272,
+      "y": 368,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.45
+      }
+    },
+    {
+      "id": "ground-56",
+      "type": "ground",
+      "x": 14432,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-57",
+      "type": "ground",
+      "x": 14528,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-58",
+      "type": "ground",
+      "x": 14720,
+      "y": 384,
+      "width": 64,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-59",
+      "type": "ground",
+      "x": 14880,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-60",
+      "type": "ground",
+      "x": 15072,
+      "y": 384,
+      "width": 64,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-61",
+      "type": "ground",
+      "x": 15296,
+      "y": 448,
+      "width": 96,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-62",
+      "type": "ground",
+      "x": 15488,
+      "y": 384,
+      "width": 64,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-63",
+      "type": "ground",
+      "x": 15616,
+      "y": 384,
+      "width": 128,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-64",
+      "type": "ground",
+      "x": 15744,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-65",
+      "type": "ground",
+      "x": 15872,
+      "y": 384,
+      "width": 224,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-17",
+      "type": "decoration",
+      "x": 15923,
+      "y": 344,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-66",
+      "type": "ground",
+      "x": 16096,
+      "y": 384,
+      "width": 64,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-67",
+      "type": "ground",
+      "x": 16160,
+      "y": 384,
+      "width": 512,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "flame-jet-28",
+      "type": "flameJet",
+      "x": 16256,
+      "y": 368,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0
+      }
+    },
+    {
+      "id": "flame-jet-29",
+      "type": "flameJet",
+      "x": 16384,
+      "y": 368,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.45
+      }
+    },
+    {
+      "id": "flame-jet-30",
+      "type": "flameJet",
+      "x": 16512,
+      "y": 368,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "height": 128,
+        "onTime": 1.1,
+        "offTime": 1.5381651376146788,
+        "offset": 0.9
+      }
+    },
+    {
+      "id": "ground-68",
+      "type": "ground",
+      "x": 16672,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-69",
+      "type": "ground",
+      "x": 16768,
+      "y": 384,
+      "width": 64,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-70",
+      "type": "ground",
+      "x": 16832,
+      "y": 384,
+      "width": 544,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-18",
+      "type": "decoration",
+      "x": 17286,
+      "y": 312,
+      "width": 36,
+      "height": 72,
+      "properties": {
+        "kind": "coffin",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-19",
+      "type": "decoration",
+      "x": 17264,
+      "y": 344,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "shadow-1",
+      "type": "shadow",
+      "x": 16976,
+      "y": 344,
+      "width": 28,
+      "height": 40,
+      "properties": {
+        "triggerRange": 180,
+        "speed": 140,
+        "duration": 2,
+        "cooldown": 2.5
+      }
+    },
+    {
+      "id": "bat-1",
+      "type": "bat",
+      "x": 17136,
+      "y": 310,
+      "width": 28,
+      "height": 18,
+      "properties": {
+        "axis": "horizontal",
+        "distance": 128,
+        "speed": 166.1834862385321,
+        "startOffset": 0.4694790218491107
+      }
+    },
+    {
+      "id": "ground-71",
+      "type": "ground",
+      "x": 17376,
+      "y": 384,
+      "width": 96,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-72",
+      "type": "ground",
+      "x": 17472,
+      "y": 384,
+      "width": 384,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-20",
+      "type": "decoration",
+      "x": 17673,
+      "y": 344,
+      "width": 16,
+      "height": 40,
+      "properties": {
+        "kind": "torch",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-21",
+      "type": "decoration",
+      "x": 17521,
+      "y": 288,
+      "width": 48,
+      "height": 96,
+      "properties": {
+        "kind": "statue",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "one-way-6",
+      "type": "oneWay",
+      "x": 13088,
+      "y": 128,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 13126,
+      "y": 102,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "spring-1",
+      "type": "spring",
+      "x": 13024,
+      "y": 368,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "power": 1200
+      }
+    }
+  ]
+}
