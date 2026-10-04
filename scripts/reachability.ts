@@ -3,6 +3,7 @@ import type { LevelData, LevelObject } from '../src/game/levels/schema';
 import { parseLevel } from '../src/game/levels/validate';
 import type { InputState } from '../src/game/sim/types';
 import { World } from '../src/game/sim/World';
+import { overlaps } from '../src/game/sim/types';
 
 /**
  * Optimistic reachability check using the REAL player physics on a
@@ -189,7 +190,8 @@ export function reach(levelIn: LevelData, opts: { openGates?: boolean; maxStates
       p.dead = false;
       // settle one step to establish grounding
       world.step(FIXED_STEP);
-      if (!p.grounded) continue;
+      // standing at the edge of an updraft lifts you right away: carry on from the air
+      if (!p.grounded && !world.entities.some((e) => e.type === 'wind' && overlaps(p, e))) continue;
       if (m.drop && !p.groundEntity?.oneWay) continue;
       if (m.run) p.vx = m.d * PLAYER_SPEED;
       let t = 0;
