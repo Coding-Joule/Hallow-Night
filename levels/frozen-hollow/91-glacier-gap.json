@@ -5,15 +5,15 @@
   "world": "frozen-hollow",
   "order": 7,
   "number": 91,
-  "width": 12576,
+  "width": 16064,
   "height": 1280,
   "spawn": {
     "x": 96,
     "y": 960
   },
   "goal": {
-    "x": 12448,
-    "y": 384
+    "x": 15936,
+    "y": 416
   },
   "background": "frozen-hollow",
   "music": "frozen-hollow",
@@ -48,86 +48,88 @@
       }
     },
     {
-      "id": "path-platform-1",
-      "type": "pathPlatform",
-      "x": 336,
+      "id": "ice-1",
+      "type": "ice",
+      "x": 320,
       "y": 960,
-      "width": 96,
-      "height": 24,
-      "properties": {
-        "points": [
-          {
-            "x": 0,
-            "y": 0
-          },
-          {
-            "x": 144,
-            "y": -64
-          },
-          {
-            "x": 288,
-            "y": 0
-          }
-        ],
-        "speed": 141.32110091743118,
-        "wait": 0.3,
-        "loop": "pingpong",
-        "triggered": false
-      }
+      "width": 544,
+      "height": 320,
+      "properties": {}
     },
     {
       "id": "ground-2",
       "type": "ground",
-      "x": 736,
+      "x": 992,
       "y": 960,
-      "width": 192,
+      "width": 160,
       "height": 320,
       "properties": {
         "style": "auto"
       }
     },
     {
-      "id": "decoration-2",
-      "type": "decoration",
-      "x": 828,
-      "y": 928,
-      "width": 64,
-      "height": 32,
-      "properties": {
-        "kind": "bush",
-        "layer": "back",
-        "flip": true
-      }
+      "id": "ice-2",
+      "type": "ice",
+      "x": 1152,
+      "y": 960,
+      "width": 384,
+      "height": 320,
+      "properties": {}
     },
     {
       "id": "ground-3",
       "type": "ground",
-      "x": 928,
-      "y": 960,
-      "width": 96,
-      "height": 320,
+      "x": 1664,
+      "y": 928,
+      "width": 160,
+      "height": 352,
       "properties": {
         "style": "auto"
+      }
+    },
+    {
+      "id": "falling-platform-1",
+      "type": "fallingPlatform",
+      "x": 1888,
+      "y": 928,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-platform-2",
+      "type": "fallingPlatform",
+      "x": 2016,
+      "y": 896,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-platform-3",
+      "type": "fallingPlatform",
+      "x": 2208,
+      "y": 864,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
       }
     },
     {
       "id": "ground-4",
       "type": "ground",
-      "x": 1024,
-      "y": 960,
-      "width": 64,
-      "height": 320,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "platform-1",
-      "type": "platform",
-      "x": 1024,
-      "y": 672,
-      "width": 64,
-      "height": 192,
+      "x": 2400,
+      "y": 896,
+      "width": 160,
+      "height": 384,
       "properties": {
         "style": "auto"
       }
@@ -135,10 +137,10 @@
     {
       "id": "ground-5",
       "type": "ground",
-      "x": 1088,
-      "y": 960,
-      "width": 96,
-      "height": 320,
+      "x": 2560,
+      "y": 896,
+      "width": 64,
+      "height": 384,
       "properties": {
         "style": "auto"
       }
@@ -146,67 +148,78 @@
     {
       "id": "ground-6",
       "type": "ground",
-      "x": 1184,
-      "y": 672,
-      "width": 192,
-      "height": 608,
+      "x": 2624,
+      "y": 896,
+      "width": 384,
+      "height": 384,
       "properties": {
         "style": "auto"
       }
     },
     {
-      "id": "decoration-3",
-      "type": "decoration",
-      "x": 1273,
-      "y": 560,
-      "width": 24,
-      "height": 112,
+      "id": "gate-1",
+      "type": "gate",
+      "x": 2912,
+      "y": 512,
+      "width": 32,
+      "height": 384,
       "properties": {
-        "kind": "lamp",
-        "layer": "back",
-        "flip": true
+        "initiallyOpen": false,
+        "openDirection": "up",
+        "speed": 300
+      }
+    },
+    {
+      "id": "button-1",
+      "type": "button",
+      "x": 2720,
+      "y": 884,
+      "width": 32,
+      "height": 12,
+      "properties": {
+        "targets": [
+          "gate-1"
+        ]
       }
     },
     {
       "id": "ground-7",
       "type": "ground",
-      "x": 1376,
-      "y": 672,
-      "width": 96,
-      "height": 608,
+      "x": 3008,
+      "y": 896,
+      "width": 128,
+      "height": 384,
       "properties": {
         "style": "auto"
       }
+    },
+    {
+      "id": "ice-3",
+      "type": "ice",
+      "x": 3136,
+      "y": 896,
+      "width": 384,
+      "height": 384,
+      "properties": {}
     },
     {
       "id": "ground-8",
       "type": "ground",
-      "x": 1472,
-      "y": 672,
+      "x": 3616,
+      "y": 832,
       "width": 128,
-      "height": 608,
+      "height": 448,
       "properties": {
         "style": "auto"
-      }
-    },
-    {
-      "id": "spring-1",
-      "type": "spring",
-      "x": 1504,
-      "y": 656,
-      "width": 32,
-      "height": 16,
-      "properties": {
-        "power": 1200
       }
     },
     {
       "id": "ground-9",
       "type": "ground",
-      "x": 1600,
-      "y": 480,
-      "width": 160,
-      "height": 800,
+      "x": 3744,
+      "y": 832,
+      "width": 128,
+      "height": 448,
       "properties": {
         "style": "auto"
       }
@@ -214,107 +227,19 @@
     {
       "id": "ground-10",
       "type": "ground",
-      "x": 1920,
-      "y": 512,
-      "width": 160,
-      "height": 768,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-11",
-      "type": "ground",
-      "x": 2080,
-      "y": 512,
-      "width": 64,
-      "height": 768,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-12",
-      "type": "ground",
-      "x": 2144,
-      "y": 672,
-      "width": 128,
-      "height": 608,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-13",
-      "type": "ground",
-      "x": 2272,
-      "y": 672,
-      "width": 64,
-      "height": 608,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-14",
-      "type": "ground",
-      "x": 2336,
-      "y": 640,
+      "x": 3872,
+      "y": 832,
       "width": 192,
-      "height": 640,
+      "height": 448,
       "properties": {
         "style": "auto"
       }
     },
     {
-      "id": "decoration-4",
+      "id": "decoration-2",
       "type": "decoration",
-      "x": 2373,
-      "y": 592,
-      "width": 128,
-      "height": 48,
-      "properties": {
-        "kind": "fence",
-        "layer": "back",
-        "flip": false
-      }
-    },
-    {
-      "id": "ground-15",
-      "type": "ground",
-      "x": 2528,
-      "y": 736,
-      "width": 128,
-      "height": 544,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "sludge-1",
-      "type": "sludge",
-      "x": 2528,
-      "y": 688,
-      "width": 128,
-      "height": 48,
-      "properties": {}
-    },
-    {
-      "id": "ground-16",
-      "type": "ground",
-      "x": 2656,
-      "y": 608,
-      "width": 192,
-      "height": 672,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "decoration-5",
-      "type": "decoration",
-      "x": 2743,
-      "y": 580,
+      "x": 3992,
+      "y": 804,
       "width": 32,
       "height": 28,
       "properties": {
@@ -324,54 +249,155 @@
       }
     },
     {
-      "id": "ground-17",
-      "type": "ground",
-      "x": 2848,
-      "y": 608,
-      "width": 64,
-      "height": 672,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-18",
-      "type": "ground",
-      "x": 2912,
-      "y": 608,
-      "width": 192,
-      "height": 672,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "decoration-6",
-      "type": "decoration",
-      "x": 2945,
-      "y": 416,
-      "width": 128,
-      "height": 192,
-      "properties": {
-        "kind": "deadTree",
-        "layer": "back",
-        "flip": false
-      }
-    },
-    {
       "id": "checkpoint-1",
       "type": "checkpoint",
-      "x": 3008,
-      "y": 544,
+      "x": 3968,
+      "y": 768,
       "width": 32,
       "height": 64,
       "properties": {}
     },
     {
+      "id": "falling-platform-4",
+      "type": "fallingPlatform",
+      "x": 4096,
+      "y": 832,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "falling-platform-5",
+      "type": "fallingPlatform",
+      "x": 4256,
+      "y": 832,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.45,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 4416,
+      "y": 800,
+      "width": 128,
+      "height": 480,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 4544,
+      "y": 800,
+      "width": 96,
+      "height": 480,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "conveyor-1",
+      "type": "conveyor",
+      "x": 4640,
+      "y": 800,
+      "width": 352,
+      "height": 24,
+      "properties": {
+        "speed": 120
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 4640,
+      "y": 824,
+      "width": 352,
+      "height": 456,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 5120,
+      "y": 832,
+      "width": 224,
+      "height": 448,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 5178,
+      "y": 804,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "jackOLantern",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ice-4",
+      "type": "ice",
+      "x": 5344,
+      "y": 832,
+      "width": 384,
+      "height": 448,
+      "properties": {}
+    },
+    {
+      "id": "ground-15",
+      "type": "ground",
+      "x": 5888,
+      "y": 832,
+      "width": 224,
+      "height": 448,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 6067,
+      "y": 804,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "pumpkin",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-16",
+      "type": "ground",
+      "x": 6112,
+      "y": 832,
+      "width": 64,
+      "height": 448,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
       "id": "timed-platform-1",
       "type": "timedPlatform",
-      "x": 3168,
-      "y": 608,
+      "x": 6272,
+      "y": 832,
       "width": 96,
       "height": 24,
       "properties": {
@@ -384,8 +410,8 @@
     {
       "id": "timed-platform-2",
       "type": "timedPlatform",
-      "x": 3360,
-      "y": 608,
+      "x": 6432,
+      "y": 832,
       "width": 96,
       "height": 24,
       "properties": {
@@ -396,12 +422,113 @@
       }
     },
     {
+      "id": "ground-17",
+      "type": "ground",
+      "x": 6624,
+      "y": 832,
+      "width": 128,
+      "height": 448,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-18",
+      "type": "ground",
+      "x": 6752,
+      "y": 832,
+      "width": 64,
+      "height": 448,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
       "id": "ground-19",
       "type": "ground",
-      "x": 3552,
-      "y": 608,
+      "x": 6816,
+      "y": 832,
+      "width": 128,
+      "height": 448,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spring-1",
+      "type": "spring",
+      "x": 6848,
+      "y": 816,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "power": 1200
+      }
+    },
+    {
+      "id": "ground-20",
+      "type": "ground",
+      "x": 6944,
+      "y": 544,
       "width": 224,
-      "height": 672,
+      "height": 736,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 7013,
+      "y": 496,
+      "width": 128,
+      "height": 48,
+      "properties": {
+        "kind": "fence",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ice-5",
+      "type": "ice",
+      "x": 7168,
+      "y": 544,
+      "width": 448,
+      "height": 736,
+      "properties": {}
+    },
+    {
+      "id": "ground-21",
+      "type": "ground",
+      "x": 7712,
+      "y": 576,
+      "width": 224,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-6",
+      "type": "decoration",
+      "x": 7897,
+      "y": 548,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "jackOLantern",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-22",
+      "type": "ground",
+      "x": 7936,
+      "y": 576,
+      "width": 192,
+      "height": 704,
       "properties": {
         "style": "auto"
       }
@@ -409,294 +536,7 @@
     {
       "id": "decoration-7",
       "type": "decoration",
-      "x": 3610,
-      "y": 580,
-      "width": 32,
-      "height": 28,
-      "properties": {
-        "kind": "jackOLantern",
-        "layer": "back",
-        "flip": false
-      }
-    },
-    {
-      "id": "ground-20",
-      "type": "ground",
-      "x": 3776,
-      "y": 544,
-      "width": 256,
-      "height": 736,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "decoration-8",
-      "type": "decoration",
-      "x": 3873,
-      "y": 496,
-      "width": 128,
-      "height": 48,
-      "properties": {
-        "kind": "fence",
-        "layer": "back",
-        "flip": true
-      }
-    },
-    {
-      "id": "one-way-1",
-      "type": "oneWay",
-      "x": 4064,
-      "y": 448,
-      "width": 96,
-      "height": 16,
-      "properties": {
-        "style": "iron"
-      }
-    },
-    {
-      "id": "one-way-2",
-      "type": "oneWay",
-      "x": 4224,
-      "y": 384,
-      "width": 128,
-      "height": 16,
-      "properties": {
-        "style": "iron"
-      }
-    },
-    {
-      "id": "ground-21",
-      "type": "ground",
-      "x": 4384,
-      "y": 384,
-      "width": 128,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-22",
-      "type": "ground",
-      "x": 4512,
-      "y": 384,
-      "width": 128,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-23",
-      "type": "ground",
-      "x": 4640,
-      "y": 576,
-      "width": 224,
-      "height": 704,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "decoration-9",
-      "type": "decoration",
-      "x": 4689,
-      "y": 528,
-      "width": 128,
-      "height": 48,
-      "properties": {
-        "kind": "fence",
-        "layer": "back",
-        "flip": true
-      }
-    },
-    {
-      "id": "ground-24",
-      "type": "ground",
-      "x": 4864,
-      "y": 576,
-      "width": 64,
-      "height": 704,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "conveyor-1",
-      "type": "conveyor",
-      "x": 4928,
-      "y": 576,
-      "width": 352,
-      "height": 24,
-      "properties": {
-        "speed": 180
-      }
-    },
-    {
-      "id": "ground-25",
-      "type": "ground",
-      "x": 4928,
-      "y": 600,
-      "width": 352,
-      "height": 680,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-26",
-      "type": "ground",
-      "x": 5408,
-      "y": 608,
-      "width": 224,
-      "height": 672,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "decoration-10",
-      "type": "decoration",
-      "x": 5557,
-      "y": 576,
-      "width": 64,
-      "height": 32,
-      "properties": {
-        "kind": "bush",
-        "layer": "back",
-        "flip": false
-      }
-    },
-    {
-      "id": "ground-27",
-      "type": "ground",
-      "x": 5760,
-      "y": 608,
-      "width": 64,
-      "height": 672,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-28",
-      "type": "ground",
-      "x": 5952,
-      "y": 544,
-      "width": 96,
-      "height": 736,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-29",
-      "type": "ground",
-      "x": 6208,
-      "y": 608,
-      "width": 96,
-      "height": 672,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-30",
-      "type": "ground",
-      "x": 6400,
-      "y": 576,
-      "width": 64,
-      "height": 704,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-31",
-      "type": "ground",
-      "x": 6592,
-      "y": 576,
-      "width": 64,
-      "height": 704,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-32",
-      "type": "ground",
-      "x": 6720,
-      "y": 576,
-      "width": 192,
-      "height": 704,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "decoration-11",
-      "type": "decoration",
-      "x": 6800,
-      "y": 548,
-      "width": 32,
-      "height": 28,
-      "properties": {
-        "kind": "jackOLantern",
-        "layer": "back",
-        "flip": true
-      }
-    },
-    {
-      "id": "ground-33",
-      "type": "ground",
-      "x": 6976,
-      "y": 576,
-      "width": 192,
-      "height": 704,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "decoration-12",
-      "type": "decoration",
-      "x": 6997,
-      "y": 548,
-      "width": 32,
-      "height": 28,
-      "properties": {
-        "kind": "jackOLantern",
-        "layer": "back",
-        "flip": false
-      }
-    },
-    {
-      "id": "ground-34",
-      "type": "ground",
-      "x": 7168,
-      "y": 576,
-      "width": 128,
-      "height": 704,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-35",
-      "type": "ground",
-      "x": 7296,
-      "y": 576,
-      "width": 192,
-      "height": 704,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "decoration-13",
-      "type": "decoration",
-      "x": 7326,
+      "x": 7956,
       "y": 528,
       "width": 128,
       "height": 48,
@@ -709,17 +549,96 @@
     {
       "id": "checkpoint-2",
       "type": "checkpoint",
-      "x": 7392,
+      "x": 8032,
       "y": 512,
       "width": 32,
       "height": 64,
       "properties": {}
     },
     {
+      "id": "ground-23",
+      "type": "ground",
+      "x": 8448,
+      "y": 576,
+      "width": 160,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-24",
+      "type": "ground",
+      "x": 8928,
+      "y": 576,
+      "width": 192,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-8",
+      "type": "decoration",
+      "x": 8940,
+      "y": 528,
+      "width": 128,
+      "height": 48,
+      "properties": {
+        "kind": "fence",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ice-6",
+      "type": "ice",
+      "x": 9120,
+      "y": 576,
+      "width": 576,
+      "height": 704,
+      "properties": {}
+    },
+    {
+      "id": "ground-25",
+      "type": "ground",
+      "x": 9824,
+      "y": 512,
+      "width": 192,
+      "height": 768,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-9",
+      "type": "decoration",
+      "x": 9869,
+      "y": 484,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "jackOLantern",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-26",
+      "type": "ground",
+      "x": 10016,
+      "y": 512,
+      "width": 128,
+      "height": 768,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
       "id": "timed-platform-3",
       "type": "timedPlatform",
-      "x": 7584,
-      "y": 576,
+      "x": 10208,
+      "y": 512,
       "width": 96,
       "height": 24,
       "properties": {
@@ -732,8 +651,8 @@
     {
       "id": "timed-platform-4",
       "type": "timedPlatform",
-      "x": 7744,
-      "y": 576,
+      "x": 10400,
+      "y": 512,
       "width": 96,
       "height": 24,
       "properties": {
@@ -744,50 +663,229 @@
       }
     },
     {
-      "id": "timed-platform-5",
-      "type": "timedPlatform",
-      "x": 7904,
-      "y": 576,
-      "width": 96,
-      "height": 24,
-      "properties": {
-        "onTime": 4,
-        "offTime": 1,
-        "offset": 0,
-        "signalMode": "none"
-      }
-    },
-    {
-      "id": "ground-36",
+      "id": "ground-27",
       "type": "ground",
-      "x": 8096,
-      "y": 576,
-      "width": 192,
-      "height": 704,
+      "x": 10560,
+      "y": 512,
+      "width": 128,
+      "height": 768,
       "properties": {
         "style": "auto"
       }
     },
     {
-      "id": "decoration-14",
-      "type": "decoration",
-      "x": 8195,
-      "y": 548,
-      "width": 32,
-      "height": 28,
+      "id": "ground-28",
+      "type": "ground",
+      "x": 10688,
+      "y": 512,
+      "width": 96,
+      "height": 768,
       "properties": {
-        "kind": "jackOLantern",
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-29",
+      "type": "ground",
+      "x": 10784,
+      "y": 704,
+      "width": 160,
+      "height": 576,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-30",
+      "type": "ground",
+      "x": 10944,
+      "y": 704,
+      "width": 192,
+      "height": 576,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-10",
+      "type": "decoration",
+      "x": 10974,
+      "y": 656,
+      "width": 128,
+      "height": 48,
+      "properties": {
+        "kind": "fence",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "checkpoint-3",
+      "type": "checkpoint",
+      "x": 11040,
+      "y": 640,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ice-7",
+      "type": "ice",
+      "x": 11136,
+      "y": 704,
+      "width": 544,
+      "height": 576,
+      "properties": {}
+    },
+    {
+      "id": "ice-8",
+      "type": "ice",
+      "x": 11776,
+      "y": 704,
+      "width": 96,
+      "height": 576,
+      "properties": {}
+    },
+    {
+      "id": "ice-9",
+      "type": "ice",
+      "x": 12000,
+      "y": 704,
+      "width": 96,
+      "height": 576,
+      "properties": {}
+    },
+    {
+      "id": "ground-31",
+      "type": "ground",
+      "x": 12192,
+      "y": 704,
+      "width": 160,
+      "height": 576,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-32",
+      "type": "ground",
+      "x": 12352,
+      "y": 704,
+      "width": 64,
+      "height": 576,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-33",
+      "type": "ground",
+      "x": 12416,
+      "y": 672,
+      "width": 160,
+      "height": 608,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-34",
+      "type": "ground",
+      "x": 12576,
+      "y": 672,
+      "width": 128,
+      "height": 608,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ice-10",
+      "type": "ice",
+      "x": 12704,
+      "y": 672,
+      "width": 480,
+      "height": 608,
+      "properties": {}
+    },
+    {
+      "id": "ground-35",
+      "type": "ground",
+      "x": 13344,
+      "y": 640,
+      "width": 224,
+      "height": 640,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-11",
+      "type": "decoration",
+      "x": 13357,
+      "y": 608,
+      "width": 64,
+      "height": 32,
+      "properties": {
+        "kind": "bush",
         "layer": "back",
         "flip": true
       }
     },
     {
+      "id": "ground-36",
+      "type": "ground",
+      "x": 13568,
+      "y": 640,
+      "width": 96,
+      "height": 640,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ice-11",
+      "type": "ice",
+      "x": 13664,
+      "y": 640,
+      "width": 448,
+      "height": 640,
+      "properties": {}
+    },
+    {
+      "id": "ice-12",
+      "type": "ice",
+      "x": 14240,
+      "y": 640,
+      "width": 96,
+      "height": 640,
+      "properties": {}
+    },
+    {
+      "id": "ice-13",
+      "type": "ice",
+      "x": 14432,
+      "y": 672,
+      "width": 96,
+      "height": 608,
+      "properties": {}
+    },
+    {
+      "id": "ice-14",
+      "type": "ice",
+      "x": 14624,
+      "y": 640,
+      "width": 96,
+      "height": 640,
+      "properties": {}
+    },
+    {
       "id": "ground-37",
       "type": "ground",
-      "x": 8288,
-      "y": 576,
-      "width": 64,
-      "height": 704,
+      "x": 14816,
+      "y": 640,
+      "width": 128,
+      "height": 640,
       "properties": {
         "style": "auto"
       }
@@ -795,223 +893,87 @@
     {
       "id": "ground-38",
       "type": "ground",
-      "x": 8352,
-      "y": 576,
-      "width": 352,
-      "height": 704,
+      "x": 14944,
+      "y": 608,
+      "width": 160,
+      "height": 672,
       "properties": {
         "style": "auto"
-      }
-    },
-    {
-      "id": "decoration-15",
-      "type": "decoration",
-      "x": 8412,
-      "y": 544,
-      "width": 64,
-      "height": 32,
-      "properties": {
-        "kind": "bush",
-        "layer": "back",
-        "flip": true
-      }
-    },
-    {
-      "id": "pumpkin-tortoise-1",
-      "type": "pumpkinTortoise",
-      "x": 8528,
-      "y": 554,
-      "width": 28,
-      "height": 22,
-      "properties": {
-        "speed": 76,
-        "direction": "right",
-        "shellSpeed": 460
       }
     },
     {
       "id": "ground-39",
       "type": "ground",
-      "x": 8704,
-      "y": 576,
-      "width": 128,
-      "height": 704,
+      "x": 15104,
+      "y": 608,
+      "width": 64,
+      "height": 672,
       "properties": {
         "style": "auto"
       }
     },
     {
-      "id": "spring-2",
-      "type": "spring",
-      "x": 8736,
-      "y": 560,
-      "width": 32,
+      "id": "one-way-1",
+      "type": "oneWay",
+      "x": 15200,
+      "y": 544,
+      "width": 128,
       "height": 16,
       "properties": {
-        "power": 1200
+        "style": "iron"
+      }
+    },
+    {
+      "id": "one-way-2",
+      "type": "oneWay",
+      "x": 15392,
+      "y": 448,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "iron"
       }
     },
     {
       "id": "ground-40",
       "type": "ground",
-      "x": 8832,
-      "y": 384,
-      "width": 256,
-      "height": 896,
+      "x": 15552,
+      "y": 416,
+      "width": 128,
+      "height": 864,
       "properties": {
         "style": "auto"
-      }
-    },
-    {
-      "id": "decoration-16",
-      "type": "decoration",
-      "x": 9009,
-      "y": 352,
-      "width": 64,
-      "height": 32,
-      "properties": {
-        "kind": "bush",
-        "layer": "back",
-        "flip": true
       }
     },
     {
       "id": "ground-41",
       "type": "ground",
-      "x": 9088,
-      "y": 384,
-      "width": 64,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-42",
-      "type": "ground",
-      "x": 9248,
-      "y": 384,
-      "width": 96,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-43",
-      "type": "ground",
-      "x": 9472,
+      "x": 15680,
       "y": 416,
-      "width": 96,
+      "width": 384,
       "height": 864,
       "properties": {
         "style": "auto"
       }
     },
     {
-      "id": "ground-44",
-      "type": "ground",
-      "x": 9632,
-      "y": 384,
-      "width": 96,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-45",
-      "type": "ground",
-      "x": 9888,
-      "y": 384,
-      "width": 64,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-46",
-      "type": "ground",
-      "x": 10016,
-      "y": 384,
-      "width": 128,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-47",
-      "type": "ground",
-      "x": 10144,
-      "y": 384,
-      "width": 160,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-48",
-      "type": "ground",
-      "x": 10304,
-      "y": 384,
-      "width": 64,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-49",
-      "type": "ground",
-      "x": 10464,
-      "y": 384,
-      "width": 96,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-50",
-      "type": "ground",
-      "x": 10688,
-      "y": 416,
-      "width": 64,
-      "height": 864,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-51",
-      "type": "ground",
-      "x": 10880,
-      "y": 384,
-      "width": 128,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-52",
-      "type": "ground",
-      "x": 11008,
-      "y": 512,
-      "width": 192,
-      "height": 768,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "decoration-17",
+      "id": "decoration-12",
       "type": "decoration",
-      "x": 11017,
-      "y": 480,
+      "x": 15879,
+      "y": 384,
+      "width": 64,
+      "height": 32,
+      "properties": {
+        "kind": "bush",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-13",
+      "type": "decoration",
+      "x": 15774,
+      "y": 384,
       "width": 64,
       "height": 32,
       "properties": {
@@ -1023,111 +985,8 @@
     {
       "id": "one-way-3",
       "type": "oneWay",
-      "x": 11264,
-      "y": 448,
-      "width": 128,
-      "height": 16,
-      "properties": {
-        "style": "iron"
-      }
-    },
-    {
-      "id": "one-way-4",
-      "type": "oneWay",
-      "x": 11424,
-      "y": 384,
-      "width": 128,
-      "height": 16,
-      "properties": {
-        "style": "iron"
-      }
-    },
-    {
-      "id": "one-way-5",
-      "type": "oneWay",
-      "x": 11584,
-      "y": 384,
-      "width": 128,
-      "height": 16,
-      "properties": {
-        "style": "iron"
-      }
-    },
-    {
-      "id": "one-way-6",
-      "type": "oneWay",
-      "x": 11776,
-      "y": 384,
-      "width": 128,
-      "height": 16,
-      "properties": {
-        "style": "iron"
-      }
-    },
-    {
-      "id": "ground-53",
-      "type": "ground",
-      "x": 11936,
-      "y": 384,
-      "width": 128,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-54",
-      "type": "ground",
-      "x": 12064,
-      "y": 384,
-      "width": 128,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-55",
-      "type": "ground",
-      "x": 12192,
-      "y": 384,
-      "width": 384,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "decoration-18",
-      "type": "decoration",
-      "x": 12215,
-      "y": 352,
-      "width": 64,
-      "height": 32,
-      "properties": {
-        "kind": "bush",
-        "layer": "back",
-        "flip": true
-      }
-    },
-    {
-      "id": "decoration-19",
-      "type": "decoration",
-      "x": 12216,
-      "y": 352,
-      "width": 64,
-      "height": 32,
-      "properties": {
-        "kind": "bush",
-        "layer": "back",
-        "flip": true
-      }
-    },
-    {
-      "id": "one-way-7",
-      "type": "oneWay",
-      "x": 8928,
-      "y": 128,
+      "x": 15840,
+      "y": 160,
       "width": 96,
       "height": 16,
       "properties": {
@@ -1137,17 +996,17 @@
     {
       "id": "relic-1",
       "type": "relic",
-      "x": 8966,
-      "y": 102,
+      "x": 15878,
+      "y": 134,
       "width": 20,
       "height": 20,
       "properties": {}
     },
     {
-      "id": "spring-3",
+      "id": "spring-2",
       "type": "spring",
-      "x": 8864,
-      "y": 368,
+      "x": 15776,
+      "y": 400,
       "width": 32,
       "height": 16,
       "properties": {
