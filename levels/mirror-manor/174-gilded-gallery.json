@@ -169,9 +169,9 @@
       "id": "locked-door-1",
       "type": "lockedDoor",
       "x": 1568,
-      "y": 416,
+      "y": 0,
       "width": 32,
-      "height": 384,
+      "height": 800,
       "properties": {
         "color": "gold"
       }
@@ -948,9 +948,9 @@
       "id": "gate-1",
       "type": "gate",
       "x": 10496,
-      "y": 256,
+      "y": 0,
       "width": 32,
-      "height": 384,
+      "height": 640,
       "properties": {
         "initiallyOpen": false,
         "openDirection": "up",

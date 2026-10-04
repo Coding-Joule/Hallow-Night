@@ -472,7 +472,8 @@ const segGate: Seg = (b) => {
   const c0 = b.x;
   const len = 12;
   b.ground(c0, len, b.gy);
-  const gate = b.add('gate', (c0 + 9) * T, (b.gy - 12) * T, T, 12 * T, { initiallyOpen: false, openDirection: 'up', speed: 300 });
+  // full height, so it cannot be wall-jumped over
+  const gate = b.add('gate', (c0 + 9) * T, 0, T, b.gy * T, { initiallyOpen: false, openDirection: 'up', speed: 300 });
   if (b.chance(0.5)) b.add('button', (c0 + 3) * T, b.gy * T - 12, 32, 12, { targets: [gate.id] });
   else b.add('lever', (c0 + 3) * T, b.gy * T - 32, 24, 32, { targets: [gate.id], startOn: false });
   b.x += len;
@@ -486,7 +487,8 @@ const segKeyDoor: Seg = (b) => {
   b.ground(c0, len, b.gy);
   b.add('oneWay', (c0 + 3) * T, (b.gy - 3) * T, 4 * T, 16, { style: 'wood' });
   b.add('key', (c0 + 5) * T - 12, (b.gy - 3) * T - 30, 24, 24, { color });
-  b.add('lockedDoor', (c0 + 12) * T, (b.gy - 12) * T, T, 12 * T, { color });
+  // full height, so it cannot be wall-jumped over
+  b.add('lockedDoor', (c0 + 12) * T, 0, T, b.gy * T, { color });
   b.x += len;
   flat(b, 4);
 };

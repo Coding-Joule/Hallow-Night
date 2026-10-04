@@ -253,3 +253,15 @@ describe('mechanics after the placement exam', () => {
     expect(boom.deaths).toBeGreaterThan(0);
   });
 });
+
+describe('level edges', () => {
+  it('the top of the level is a ceiling', () => {
+    const w = new World(makeLevel([floor, { id: 's', type: 'spring', x: 84, y: 784, width: 32, height: 16, properties: { power: 3000 } }]));
+    let minY = Infinity;
+    for (let i = 0; i < 240; i++) {
+      run(w, FIXED_STEP, {});
+      minY = Math.min(minY, w.player.y);
+    }
+    expect(minY).toBeGreaterThanOrEqual(0);
+  });
+});

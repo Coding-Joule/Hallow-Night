@@ -355,9 +355,9 @@
       "id": "locked-door-1",
       "type": "lockedDoor",
       "x": 5024,
-      "y": 480,
+      "y": 0,
       "width": 32,
-      "height": 384,
+      "height": 864,
       "properties": {
         "color": "bone"
       }

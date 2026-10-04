@@ -500,9 +500,9 @@
       "id": "gate-2",
       "type": "gate",
       "x": 7616,
-      "y": 224,
+      "y": 0,
       "width": 32,
-      "height": 384,
+      "height": 608,
       "properties": {
         "initiallyOpen": false,
         "openDirection": "up",

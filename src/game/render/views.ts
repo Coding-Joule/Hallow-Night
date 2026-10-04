@@ -346,13 +346,15 @@ function gateView(ctx: ViewContext, e: Gate): EntityView {
 
 function lockedDoorView(ctx: ViewContext, e: LockedDoor): EntityView {
   const door = tiled(ctx.scene, e.x, e.y, e.w, e.h, 'door-tile').setDepth(DEPTH.objects);
-  const lock = sprite(ctx.scene, e.x + e.w / 2, e.y + e.h / 2, `lock-${e.color}`).setDepth(DEPTH.objects + 1);
+  // padlock at eye level (doors can be very tall)
+  const lockY = () => e.y + Math.max(e.h / 2, e.h - 56);
+  const lock = sprite(ctx.scene, e.x + e.w / 2, lockY(), `lock-${e.color}`).setDepth(DEPTH.objects + 1);
   return {
     update() {
       const a = 1 - e.openAnim;
       door.setAlpha(a);
       lock.setAlpha(a);
-      lock.setY(e.y + e.h / 2 - e.openAnim * 20);
+      lock.setY(lockY() - e.openAnim * 20);
       door.setVisible(a > 0);
       lock.setVisible(a > 0);
     },

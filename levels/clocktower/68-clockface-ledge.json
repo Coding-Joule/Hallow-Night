@@ -129,9 +129,9 @@
       "id": "gate-1",
       "type": "gate",
       "x": 1568,
-      "y": 608,
+      "y": 0,
       "width": 32,
-      "height": 384,
+      "height": 992,
       "properties": {
         "initiallyOpen": false,
         "openDirection": "up",
@@ -385,9 +385,9 @@
       "id": "gate-2",
       "type": "gate",
       "x": 5344,
-      "y": 160,
+      "y": 0,
       "width": 32,
-      "height": 384,
+      "height": 544,
       "properties": {
         "initiallyOpen": false,
         "openDirection": "up",
@@ -604,9 +604,9 @@
       "id": "locked-door-1",
       "type": "lockedDoor",
       "x": 8096,
-      "y": 224,
+      "y": 0,
       "width": 32,
-      "height": 384,
+      "height": 608,
       "properties": {
         "color": "bone"
       }
@@ -705,9 +705,9 @@
       "id": "gate-3",
       "type": "gate",
       "x": 10176,
-      "y": 320,
+      "y": 0,
       "width": 32,
-      "height": 384,
+      "height": 704,
       "properties": {
         "initiallyOpen": false,
         "openDirection": "up",

@@ -108,9 +108,9 @@
       "id": "gate-1",
       "type": "gate",
       "x": 2016,
-      "y": 576,
+      "y": 0,
       "width": 32,
-      "height": 384,
+      "height": 960,
       "properties": {
         "initiallyOpen": false,
         "openDirection": "up",

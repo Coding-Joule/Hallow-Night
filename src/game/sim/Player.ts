@@ -353,6 +353,11 @@ export class Player implements Rect {
     const prevBottom = this.y + this.h;
     const prevTop = this.y;
     this.y += amount;
+    // the top of the level is a ceiling: nobody climbs out over the top
+    if (this.y < 0) {
+      this.y = 0;
+      if (this.vy < 0) this.vy = 0;
+    }
     const prevGround = this.groundEntity;
     this.grounded = false;
     this.groundEntity = null;
