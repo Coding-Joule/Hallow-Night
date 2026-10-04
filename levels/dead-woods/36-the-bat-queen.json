@@ -200,7 +200,8 @@
         "speed": 1,
         "jump": 720,
         "range": 416,
-        "dive": 210
+        "dive": 210,
+        "tint": ""
       }
     }
   ]

@@ -114,7 +114,7 @@
       "type": "ground",
       "x": 1216,
       "y": 576,
-      "width": 192,
+      "width": 256,
       "height": 704,
       "properties": {
         "style": "auto"
@@ -131,17 +131,6 @@
         "kind": "pumpkin",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-4",
-      "type": "ground",
-      "x": 1408,
-      "y": 576,
-      "width": 64,
-      "height": 704,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -211,7 +200,7 @@
       "type": "ground",
       "x": 2496,
       "y": 576,
-      "width": 192,
+      "width": 288,
       "height": 704,
       "properties": {
         "style": "auto"
@@ -228,17 +217,6 @@
         "kind": "statue",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-8",
-      "type": "ground",
-      "x": 2688,
-      "y": 576,
-      "width": 96,
-      "height": 704,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -324,7 +302,7 @@
       "type": "ground",
       "x": 4000,
       "y": 544,
-      "width": 192,
+      "width": 384,
       "height": 736,
       "properties": {
         "style": "auto"
@@ -341,17 +319,6 @@
         "kind": "fence",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-11",
-      "type": "ground",
-      "x": 4192,
-      "y": 544,
-      "width": 192,
-      "height": 736,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -401,18 +368,7 @@
       "type": "ground",
       "x": 4672,
       "y": 544,
-      "width": 160,
-      "height": 736,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-14",
-      "type": "ground",
-      "x": 4832,
-      "y": 544,
-      "width": 128,
+      "width": 288,
       "height": 736,
       "properties": {
         "style": "auto"
@@ -462,18 +418,7 @@
       "type": "ground",
       "x": 5632,
       "y": 448,
-      "width": 128,
-      "height": 832,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-16",
-      "type": "ground",
-      "x": 5760,
-      "y": 448,
-      "width": 64,
+      "width": 192,
       "height": 832,
       "properties": {
         "style": "auto"
@@ -506,7 +451,7 @@
       "type": "ground",
       "x": 6272,
       "y": 416,
-      "width": 224,
+      "width": 352,
       "height": 864,
       "properties": {
         "style": "auto"
@@ -523,17 +468,6 @@
         "kind": "statue",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-19",
-      "type": "ground",
-      "x": 6496,
-      "y": 416,
-      "width": 128,
-      "height": 864,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -625,18 +559,7 @@
       "type": "ground",
       "x": 7616,
       "y": 544,
-      "width": 128,
-      "height": 736,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-23",
-      "type": "ground",
-      "x": 7744,
-      "y": 544,
-      "width": 192,
+      "width": 320,
       "height": 736,
       "properties": {
         "style": "auto"
@@ -805,7 +728,7 @@
       "type": "ground",
       "x": 9824,
       "y": 384,
-      "width": 192,
+      "width": 320,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -822,17 +745,6 @@
         "kind": "statue",
         "layer": "back",
         "flip": true
-      }
-    },
-    {
-      "id": "ground-28",
-      "type": "ground",
-      "x": 10016,
-      "y": 384,
-      "width": 128,
-      "height": 896,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -969,7 +881,7 @@
       "type": "ground",
       "x": 11680,
       "y": 384,
-      "width": 224,
+      "width": 416,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -986,17 +898,6 @@
         "kind": "bush",
         "layer": "back",
         "flip": true
-      }
-    },
-    {
-      "id": "ground-34",
-      "type": "ground",
-      "x": 11904,
-      "y": 384,
-      "width": 192,
-      "height": 896,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -1092,7 +993,7 @@
       "type": "ground",
       "x": 13408,
       "y": 480,
-      "width": 192,
+      "width": 288,
       "height": 800,
       "properties": {
         "style": "auto"
@@ -1109,17 +1010,6 @@
         "kind": "statue",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-42",
-      "type": "ground",
-      "x": 13600,
-      "y": 480,
-      "width": 96,
-      "height": 800,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -1153,7 +1043,7 @@
       "type": "ground",
       "x": 14144,
       "y": 384,
-      "width": 192,
+      "width": 1056,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -1170,17 +1060,6 @@
         "kind": "bush",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-44",
-      "type": "ground",
-      "x": 14336,
-      "y": 384,
-      "width": 544,
-      "height": 896,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -1249,17 +1128,6 @@
       }
     },
     {
-      "id": "ground-45",
-      "type": "ground",
-      "x": 14880,
-      "y": 384,
-      "width": 128,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "spring-4",
       "type": "spring",
       "x": 14912,
@@ -1268,17 +1136,6 @@
       "height": 16,
       "properties": {
         "power": 1200
-      }
-    },
-    {
-      "id": "ground-46",
-      "type": "ground",
-      "x": 15008,
-      "y": 384,
-      "width": 192,
-      "height": 896,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -1310,7 +1167,7 @@
       "type": "ground",
       "x": 15360,
       "y": 736,
-      "width": 192,
+      "width": 640,
       "height": 544,
       "properties": {
         "style": "auto"
@@ -1327,28 +1184,6 @@
         "kind": "lamp",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-49",
-      "type": "ground",
-      "x": 15552,
-      "y": 736,
-      "width": 64,
-      "height": 544,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-50",
-      "type": "ground",
-      "x": 15616,
-      "y": 736,
-      "width": 384,
-      "height": 544,
-      "properties": {
-        "style": "auto"
       }
     },
     {

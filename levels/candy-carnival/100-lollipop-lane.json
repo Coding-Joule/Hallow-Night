@@ -107,7 +107,7 @@
       "type": "ground",
       "x": 1312,
       "y": 896,
-      "width": 224,
+      "width": 288,
       "height": 384,
       "properties": {
         "style": "auto"
@@ -124,17 +124,6 @@
         "kind": "crate",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-8",
-      "type": "ground",
-      "x": 1536,
-      "y": 896,
-      "width": 64,
-      "height": 384,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -168,18 +157,7 @@
       "type": "ground",
       "x": 2112,
       "y": 832,
-      "width": 160,
-      "height": 448,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-10",
-      "type": "ground",
-      "x": 2272,
-      "y": 832,
-      "width": 64,
+      "width": 224,
       "height": 448,
       "properties": {
         "style": "auto"
@@ -206,18 +184,7 @@
       "type": "ground",
       "x": 2464,
       "y": 704,
-      "width": 160,
-      "height": 576,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-12",
-      "type": "ground",
-      "x": 2624,
-      "y": 704,
-      "width": 96,
+      "width": 256,
       "height": 576,
       "properties": {
         "style": "auto"
@@ -228,18 +195,7 @@
       "type": "ground",
       "x": 2816,
       "y": 768,
-      "width": 128,
-      "height": 512,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-14",
-      "type": "ground",
-      "x": 2944,
-      "y": 768,
-      "width": 96,
+      "width": 224,
       "height": 512,
       "properties": {
         "style": "auto"
@@ -289,7 +245,7 @@
       "type": "ground",
       "x": 3680,
       "y": 736,
-      "width": 192,
+      "width": 1056,
       "height": 544,
       "properties": {
         "style": "auto"
@@ -306,17 +262,6 @@
         "kind": "jackOLantern",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-16",
-      "type": "ground",
-      "x": 3872,
-      "y": 736,
-      "width": 384,
-      "height": 544,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -347,28 +292,6 @@
       }
     },
     {
-      "id": "ground-17",
-      "type": "ground",
-      "x": 4256,
-      "y": 736,
-      "width": 128,
-      "height": 544,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-18",
-      "type": "ground",
-      "x": 4384,
-      "y": 736,
-      "width": 192,
-      "height": 544,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "decoration-4",
       "type": "decoration",
       "x": 4535,
@@ -391,34 +314,12 @@
       "properties": {}
     },
     {
-      "id": "ground-19",
-      "type": "ground",
-      "x": 4576,
-      "y": 736,
-      "width": 64,
-      "height": 544,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "platform-1",
       "type": "platform",
       "x": 4576,
       "y": 480,
       "width": 64,
       "height": 160,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-20",
-      "type": "ground",
-      "x": 4640,
-      "y": 736,
-      "width": 96,
-      "height": 544,
       "properties": {
         "style": "auto"
       }
@@ -491,7 +392,7 @@
       "type": "ground",
       "x": 5568,
       "y": 384,
-      "width": 192,
+      "width": 512,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -508,17 +409,6 @@
         "kind": "barrel",
         "layer": "back",
         "flip": true
-      }
-    },
-    {
-      "id": "ground-23",
-      "type": "ground",
-      "x": 5760,
-      "y": 384,
-      "width": 320,
-      "height": 896,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -553,7 +443,7 @@
       "type": "ground",
       "x": 6240,
       "y": 384,
-      "width": 192,
+      "width": 288,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -570,17 +460,6 @@
         "kind": "lamp",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-25",
-      "type": "ground",
-      "x": 6432,
-      "y": 384,
-      "width": 96,
-      "height": 896,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -638,7 +517,7 @@
       "type": "ground",
       "x": 7456,
       "y": 384,
-      "width": 224,
+      "width": 416,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -655,17 +534,6 @@
         "kind": "lamp",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-28",
-      "type": "ground",
-      "x": 7680,
-      "y": 384,
-      "width": 192,
-      "height": 896,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -721,18 +589,7 @@
       "type": "ground",
       "x": 8352,
       "y": 384,
-      "width": 128,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-30",
-      "type": "ground",
-      "x": 8480,
-      "y": 384,
-      "width": 96,
+      "width": 224,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -828,7 +685,7 @@
       "type": "ground",
       "x": 9888,
       "y": 384,
-      "width": 192,
+      "width": 256,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -845,17 +702,6 @@
         "kind": "lamp",
         "layer": "back",
         "flip": true
-      }
-    },
-    {
-      "id": "ground-35",
-      "type": "ground",
-      "x": 10080,
-      "y": 384,
-      "width": 64,
-      "height": 896,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -887,18 +733,7 @@
       "type": "ground",
       "x": 10464,
       "y": 384,
-      "width": 160,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-37",
-      "type": "ground",
-      "x": 10624,
-      "y": 384,
-      "width": 96,
+      "width": 256,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -948,18 +783,7 @@
       "type": "ground",
       "x": 11392,
       "y": 384,
-      "width": 160,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-39",
-      "type": "ground",
-      "x": 11552,
-      "y": 384,
-      "width": 96,
+      "width": 256,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -1009,29 +833,7 @@
       "type": "ground",
       "x": 12352,
       "y": 384,
-      "width": 160,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-41",
-      "type": "ground",
-      "x": 12512,
-      "y": 384,
-      "width": 96,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-42",
-      "type": "ground",
-      "x": 12608,
-      "y": 384,
-      "width": 192,
+      "width": 448,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -1186,18 +988,7 @@
       "type": "ground",
       "x": 14656,
       "y": 384,
-      "width": 160,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-47",
-      "type": "ground",
-      "x": 14816,
-      "y": 384,
-      "width": 64,
+      "width": 224,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -1247,7 +1038,7 @@
       "type": "ground",
       "x": 15552,
       "y": 384,
-      "width": 192,
+      "width": 288,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -1264,17 +1055,6 @@
         "kind": "barrel",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-49",
-      "type": "ground",
-      "x": 15744,
-      "y": 384,
-      "width": 96,
-      "height": 896,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -1321,29 +1101,7 @@
       "type": "ground",
       "x": 16480,
       "y": 384,
-      "width": 160,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-51",
-      "type": "ground",
-      "x": 16640,
-      "y": 384,
-      "width": 128,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-52",
-      "type": "ground",
-      "x": 16768,
-      "y": 384,
-      "width": 448,
+      "width": 1120,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -1387,17 +1145,6 @@
         "distance": 256,
         "speed": 154.62385321100916,
         "startOffset": 0.4977634227834642
-      }
-    },
-    {
-      "id": "ground-53",
-      "type": "ground",
-      "x": 17216,
-      "y": 384,
-      "width": 384,
-      "height": 896,
-      "properties": {
-        "style": "auto"
       }
     },
     {

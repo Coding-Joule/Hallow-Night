@@ -28,7 +28,7 @@
       "type": "ground",
       "x": 0,
       "y": 960,
-      "width": 320,
+      "width": 480,
       "height": 320,
       "properties": {
         "style": "auto"
@@ -48,34 +48,12 @@
       }
     },
     {
-      "id": "ground-2",
-      "type": "ground",
-      "x": 320,
-      "y": 960,
-      "width": 64,
-      "height": 320,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "platform-1",
       "type": "platform",
       "x": 320,
       "y": 672,
       "width": 64,
       "height": 192,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-3",
-      "type": "ground",
-      "x": 384,
-      "y": 960,
-      "width": 96,
-      "height": 320,
       "properties": {
         "style": "auto"
       }
@@ -121,7 +99,7 @@
       "type": "ground",
       "x": 800,
       "y": 448,
-      "width": 192,
+      "width": 960,
       "height": 832,
       "properties": {
         "style": "auto"
@@ -138,28 +116,6 @@
         "kind": "bones",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-6",
-      "type": "ground",
-      "x": 992,
-      "y": 448,
-      "width": 128,
-      "height": 832,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-7",
-      "type": "ground",
-      "x": 1120,
-      "y": 448,
-      "width": 544,
-      "height": 832,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -201,17 +157,6 @@
         "kind": "bones",
         "layer": "back",
         "flip": true
-      }
-    },
-    {
-      "id": "ground-8",
-      "type": "ground",
-      "x": 1664,
-      "y": 448,
-      "width": 96,
-      "height": 832,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -291,18 +236,7 @@
       "type": "ground",
       "x": 2752,
       "y": 384,
-      "width": 160,
-      "height": 896,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-12",
-      "type": "ground",
-      "x": 2912,
-      "y": 384,
-      "width": 128,
+      "width": 288,
       "height": 896,
       "properties": {
         "style": "auto"
@@ -313,18 +247,7 @@
       "type": "ground",
       "x": 3040,
       "y": 576,
-      "width": 160,
-      "height": 704,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-14",
-      "type": "ground",
-      "x": 3200,
-      "y": 576,
-      "width": 192,
+      "width": 352,
       "height": 704,
       "properties": {
         "style": "auto"
@@ -497,7 +420,7 @@
       "type": "ground",
       "x": 4736,
       "y": 416,
-      "width": 224,
+      "width": 352,
       "height": 864,
       "properties": {
         "style": "auto"
@@ -514,17 +437,6 @@
         "kind": "candelabra",
         "layer": "back",
         "flip": true
-      }
-    },
-    {
-      "id": "ground-20",
-      "type": "ground",
-      "x": 4960,
-      "y": 416,
-      "width": 128,
-      "height": 864,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -568,18 +480,7 @@
       "type": "ground",
       "x": 5952,
       "y": 416,
-      "width": 160,
-      "height": 864,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-23",
-      "type": "ground",
-      "x": 6112,
-      "y": 416,
-      "width": 192,
+      "width": 352,
       "height": 864,
       "properties": {
         "style": "auto"
@@ -668,18 +569,7 @@
       "type": "ground",
       "x": 6880,
       "y": 448,
-      "width": 128,
-      "height": 832,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-26",
-      "type": "ground",
-      "x": 7008,
-      "y": 448,
-      "width": 64,
+      "width": 192,
       "height": 832,
       "properties": {
         "style": "auto"
@@ -727,7 +617,7 @@
       "type": "ground",
       "x": 7680,
       "y": 576,
-      "width": 192,
+      "width": 384,
       "height": 704,
       "properties": {
         "style": "auto"
@@ -744,17 +634,6 @@
         "kind": "torch",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-29",
-      "type": "ground",
-      "x": 7872,
-      "y": 576,
-      "width": 192,
-      "height": 704,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -785,7 +664,7 @@
       "type": "ground",
       "x": 8128,
       "y": 608,
-      "width": 224,
+      "width": 416,
       "height": 672,
       "properties": {
         "style": "auto"
@@ -817,17 +696,6 @@
       }
     },
     {
-      "id": "ground-32",
-      "type": "ground",
-      "x": 8352,
-      "y": 608,
-      "width": 192,
-      "height": 672,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "ground-33",
       "type": "ground",
       "x": 8544,
@@ -855,7 +723,7 @@
       "type": "ground",
       "x": 8608,
       "y": 640,
-      "width": 288,
+      "width": 384,
       "height": 640,
       "properties": {
         "style": "auto"
@@ -887,17 +755,6 @@
       }
     },
     {
-      "id": "ground-35",
-      "type": "ground",
-      "x": 8896,
-      "y": 640,
-      "width": 96,
-      "height": 640,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
       "id": "ground-36",
       "type": "ground",
       "x": 8992,
@@ -922,7 +779,7 @@
       "type": "ground",
       "x": 9088,
       "y": 608,
-      "width": 224,
+      "width": 608,
       "height": 672,
       "properties": {
         "style": "auto"
@@ -939,17 +796,6 @@
         "kind": "jackOLantern",
         "layer": "back",
         "flip": false
-      }
-    },
-    {
-      "id": "ground-38",
-      "type": "ground",
-      "x": 9312,
-      "y": 608,
-      "width": 192,
-      "height": 672,
-      "properties": {
-        "style": "auto"
       }
     },
     {
@@ -973,17 +819,6 @@
       "width": 32,
       "height": 64,
       "properties": {}
-    },
-    {
-      "id": "ground-39",
-      "type": "ground",
-      "x": 9504,
-      "y": 608,
-      "width": 192,
-      "height": 672,
-      "properties": {
-        "style": "auto"
-      }
     },
     {
       "id": "ground-40",
@@ -1235,18 +1070,7 @@
       "type": "ground",
       "x": 12896,
       "y": 672,
-      "width": 128,
-      "height": 608,
-      "properties": {
-        "style": "auto"
-      }
-    },
-    {
-      "id": "ground-50",
-      "type": "ground",
-      "x": 13024,
-      "y": 672,
-      "width": 384,
+      "width": 512,
       "height": 608,
       "properties": {
         "style": "auto"
