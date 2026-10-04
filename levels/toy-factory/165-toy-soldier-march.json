@@ -177,20 +177,6 @@
       }
     },
     {
-      "id": "shadow-1",
-      "type": "shadow",
-      "x": 1936,
-      "y": 920,
-      "width": 28,
-      "height": 40,
-      "properties": {
-        "triggerRange": 180,
-        "speed": 140,
-        "duration": 2,
-        "cooldown": 2.5
-      }
-    },
-    {
       "id": "decoration-7",
       "type": "decoration",
       "x": 2593,
@@ -696,20 +682,6 @@
       }
     },
     {
-      "id": "shadow-2",
-      "type": "shadow",
-      "x": 8576,
-      "y": 504,
-      "width": 28,
-      "height": 40,
-      "properties": {
-        "triggerRange": 180,
-        "speed": 140,
-        "duration": 2,
-        "cooldown": 2.5
-      }
-    },
-    {
       "id": "pumpkin-tortoise-2",
       "type": "pumpkinTortoise",
       "x": 8808,
@@ -813,20 +785,6 @@
         "kind": "gear",
         "layer": "back",
         "flip": true
-      }
-    },
-    {
-      "id": "shadow-3",
-      "type": "shadow",
-      "x": 10016,
-      "y": 504,
-      "width": 28,
-      "height": 40,
-      "properties": {
-        "triggerRange": 180,
-        "speed": 140,
-        "duration": 2,
-        "cooldown": 2.5
       }
     },
     {
@@ -1045,20 +1003,6 @@
         "kind": "crate",
         "layer": "back",
         "flip": true
-      }
-    },
-    {
-      "id": "shadow-4",
-      "type": "shadow",
-      "x": 12576,
-      "y": 440,
-      "width": 28,
-      "height": 40,
-      "properties": {
-        "triggerRange": 180,
-        "speed": 140,
-        "duration": 2,
-        "cooldown": 2.5
       }
     },
     {

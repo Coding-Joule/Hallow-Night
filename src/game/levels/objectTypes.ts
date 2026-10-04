@@ -758,6 +758,7 @@ const defs: ObjectTypeDef[] = [
     defaultWidth: 28,
     defaultHeight: 40,
     resize: 'none',
+    hidden: true,
     editorColor: '#1c1424',
     props: [
       { key: 'triggerRange', label: 'Trigger range', kind: 'number', default: 200, min: 32, step: 16 },

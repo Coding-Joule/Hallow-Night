@@ -175,7 +175,7 @@ An abbreviated example:
 | `boss` | enemies | A big end-of-world boss with a health bar. Stomp it until its health runs out; the exit door stays locked (greyed out) until every boss in the level is defeated. Hoppers leap at you, chargers rush across the arena and get dizzy when they hit a wall, flyers swoop down from above. It gets faster each time it is hit. | `kind`="pumpkinKing" (pumpkinKing / graveGolem / batQueen / gloomGhost / slimeKing / clockOwl / midnightKing), `hp`=3, `speed`=1, `jump`=720, `range`=320, `dive`=160 |
 | `bat` | enemies | Flies a repeating patrol. Can be stomped. | `axis`="horizontal" (horizontal / vertical), `distance`=160, `speed`=90, `startOffset`=0 |
 | `raven` | enemies | Fast horizontal flyer that sweeps across its range. Can be stomped. | `range`=640, `speed`=230, `direction`="left" (right / left), `pause`=0.8 |
-| `shadow` | enemies | Rises from a dark pool when the player comes close and gives chase briefly. | `triggerRange`=200, `speed`=150, `duration`=2.2, `cooldown`=2.5 |
+| `shadow` | enemies | Retired (hidden from the editor palette; older levels still load). Rises from a dark pool when the player comes close and gives chase briefly. | `triggerRange`=200, `speed`=150, `duration`=2.2, `cooldown`=2.5 |
 | `relic` | items | Hidden collectible. Each level usually hides one. | — |
 | `sign` | items | Shows a short hint when the player stands near it. | `text`="Hint text" |
 | `decoration` | scenery | Non-solid scenery. | `kind`="pumpkin" (pumpkin / jackOLantern / lamp / fence / gravestone / cross / deadTree / window / crate / barrel / coffin / candles / candelabra / bell / chain / cobweb / banner / gear / statue / bones / portrait / bookshelf / clockFace / torch / pillar / bush), `layer`="back" (back / front), `flip`=false |
@@ -284,7 +284,7 @@ The map lives in `src/ui/MapScreen.ts` and is laid out automatically from the wo
 | 4 Haunted Manor | Lady Gloom (swoops) | buttons, levers & gates, keys & doors, phantom platforms |
 | 5 Catacombs | The Slime King (big leaps) | dash, cracked walls, falling platforms, pendulums, poison sludge |
 | 6 Clocktower | The Clockwork Owl (fast swoops) | double jump, conveyors, elevators, path platforms |
-| 7 Black Castle | The Midnight King (6 hits: leaps, then charges, then swoops) | shadows, everything combined |
+| 7 Black Castle | The Midnight King (6 hits: leaps, then charges, then swoops) | everything combined |
 
 **After the exam** (levels 85–204) every ability is unlocked and each world is harder than the last: longer levels, wider pits, faster enemies, two threats per stretch, fewer breathers, three checkpoints per level, and tougher bosses:
 

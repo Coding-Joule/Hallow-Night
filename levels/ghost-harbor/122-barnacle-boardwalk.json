@@ -150,34 +150,6 @@
       }
     },
     {
-      "id": "shadow-1",
-      "type": "shadow",
-      "x": 1504,
-      "y": 856,
-      "width": 28,
-      "height": 40,
-      "properties": {
-        "triggerRange": 180,
-        "speed": 140,
-        "duration": 2,
-        "cooldown": 2.5
-      }
-    },
-    {
-      "id": "shadow-2",
-      "type": "shadow",
-      "x": 1824,
-      "y": 856,
-      "width": 28,
-      "height": 40,
-      "properties": {
-        "triggerRange": 180,
-        "speed": 140,
-        "duration": 2,
-        "cooldown": 2.5
-      }
-    },
-    {
       "id": "cannon-2",
       "type": "cannon",
       "x": 2400,

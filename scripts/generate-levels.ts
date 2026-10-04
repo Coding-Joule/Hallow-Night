@@ -265,7 +265,6 @@ function placeThreat(b: Builder, c0: number, c1: number, gy: number): void {
         for (let c = c0 + 2; c < c1 - 1; c += b.ri(3, 5)) b.add('fallingHazard', c * T, gy * T - 7 * T, 32, 40, { triggerWidth: 72, fallDelay: 0.3, respawn: 2.5 });
       },
     ]);
-  if (w >= 6) opts.push([2, () => b.add('shadow', ((c0 + c1) / 2) * T, gy * T - 40, 28, 40, { triggerRange: 180, speed: 140, duration: 2, cooldown: 2.5 })]);
   const total = opts.reduce((s, o) => s + o[0], 0);
   let k = b.rnd() * total;
   for (const [wt, fn] of opts) {

@@ -202,20 +202,6 @@
       }
     },
     {
-      "id": "shadow-1",
-      "type": "shadow",
-      "x": 2336,
-      "y": 952,
-      "width": 28,
-      "height": 40,
-      "properties": {
-        "triggerRange": 180,
-        "speed": 140,
-        "duration": 2,
-        "cooldown": 2.5
-      }
-    },
-    {
       "id": "pendulum-1",
       "type": "pendulum",
       "x": 2576,
