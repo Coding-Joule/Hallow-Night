@@ -728,6 +728,8 @@ function buildStage(wi: number, li: number, seed: number): LevelData {
     }
     // the first stages of the game stay gentle
     if (wi === 0 && li < 2) [segGap, segStep, segSpringWall, segThreat, segIslands][b.ri(0, 4)](b);
+    // after the exam every world keeps showing off its own mechanics
+    else if (wi >= 7 && i % 3 === 1) b.pick(SEGMENTS.filter((s) => s.worlds?.includes(wi)).map((s) => s.fn))(b);
     else pickSegment(b)(b);
     // a breather between pieces
     if (b.chance(d > 1 ? 0.55 - (d - 1) * 0.5 : 0.5)) flat(b, b.ri(2, 4));

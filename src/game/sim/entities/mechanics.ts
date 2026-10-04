@@ -118,7 +118,7 @@ export class FlameJet extends Entity {
   }
 }
 
-/** Step in one portal, come out of its partner (`target`). */
+/** Step in one portal, come out beside its partner (`target`). */
 export class Portal extends Entity {
   /** false right after someone arrived here, until they step out */
   armed = true;
@@ -137,7 +137,9 @@ export class Portal extends Entity {
     if (!(target instanceof Portal) || target === this) return;
     const p = world.player;
     world.emit('spring', this.x + this.w / 2, this.y + this.h / 2);
-    p.x = target.x + target.w / 2 - p.w / 2;
+    // step out beside the partner portal, carrying on in the direction of travel
+    const dir = Math.sign(target.x - this.x) || 1;
+    p.x = dir > 0 ? target.x + target.w + 2 : target.x - p.w - 2;
     p.y = target.y + target.h - p.h - 2;
     p.grounded = false;
     p.groundEntity = null;
