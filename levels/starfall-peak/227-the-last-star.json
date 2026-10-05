@@ -1,0 +1,469 @@
+{
+  "version": 1,
+  "id": "starfall-peak-11",
+  "name": "The Last Star",
+  "world": "starfall-peak",
+  "order": 11,
+  "number": 227,
+  "width": 6336,
+  "height": 1280,
+  "spawn": {
+    "x": 96,
+    "y": 960
+  },
+  "goal": {
+    "x": 6208,
+    "y": 672
+  },
+  "background": "starfall-peak",
+  "music": "starfall-peak",
+  "abilities": {
+    "wallJump": true,
+    "dash": true,
+    "doubleJump": true
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 960,
+      "width": 896,
+      "height": 320,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 183,
+      "y": 768,
+      "width": 48,
+      "height": 192,
+      "properties": {
+        "kind": "pillar",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "breakable-wall-1",
+      "type": "breakableWall",
+      "x": 480,
+      "y": 576,
+      "width": 32,
+      "height": 384,
+      "properties": {}
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 896,
+      "y": 0,
+      "width": 64,
+      "height": 1280,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "portal-1",
+      "type": "portal",
+      "x": 796,
+      "y": 896,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-2",
+        "color": "violet"
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 960,
+      "y": 1024,
+      "width": 544,
+      "height": 256,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 1117,
+      "y": 928,
+      "width": 48,
+      "height": 96,
+      "properties": {
+        "kind": "statue",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "portal-2",
+      "type": "portal",
+      "x": 1020,
+      "y": 960,
+      "width": 40,
+      "height": 64,
+      "properties": {
+        "target": "portal-1",
+        "color": "violet"
+      }
+    },
+    {
+      "id": "platform-1",
+      "type": "platform",
+      "x": 1344,
+      "y": 736,
+      "width": 64,
+      "height": 192,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 1504,
+      "y": 736,
+      "width": 352,
+      "height": 544,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 1683,
+      "y": 704,
+      "width": 64,
+      "height": 32,
+      "properties": {
+        "kind": "bush",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 1760,
+      "y": 672,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "crumbling-platform-1",
+      "type": "crumblingPlatform",
+      "x": 1920,
+      "y": 736,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.4,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-2",
+      "type": "crumblingPlatform",
+      "x": 2080,
+      "y": 736,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.4,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 2272,
+      "y": 768,
+      "width": 160,
+      "height": 512,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "wind-1",
+      "type": "wind",
+      "x": 2432,
+      "y": 416,
+      "width": 128,
+      "height": 864,
+      "properties": {
+        "direction": "up",
+        "strength": 1
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 2560,
+      "y": 544,
+      "width": 224,
+      "height": 736,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "crumbling-platform-3",
+      "type": "crumblingPlatform",
+      "x": 2816,
+      "y": 544,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.4,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "crumbling-platform-4",
+      "type": "crumblingPlatform",
+      "x": 2976,
+      "y": 576,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "delay": 0.4,
+        "respawn": 2.5
+      }
+    },
+    {
+      "id": "ground-15",
+      "type": "ground",
+      "x": 3168,
+      "y": 544,
+      "width": 320,
+      "height": 736,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 3423,
+      "y": 448,
+      "width": 48,
+      "height": 96,
+      "properties": {
+        "kind": "statue",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 3392,
+      "y": 480,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-17",
+      "type": "ground",
+      "x": 3584,
+      "y": 384,
+      "width": 192,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 3648,
+      "y": 336,
+      "width": 48,
+      "height": 48,
+      "properties": {
+        "kind": "bell",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-18",
+      "type": "ground",
+      "x": 3776,
+      "y": 512,
+      "width": 160,
+      "height": 768,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-19",
+      "type": "ground",
+      "x": 3936,
+      "y": 704,
+      "width": 384,
+      "height": 576,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-6",
+      "type": "decoration",
+      "x": 4023,
+      "y": 512,
+      "width": 48,
+      "height": 192,
+      "properties": {
+        "kind": "pillar",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-7",
+      "type": "decoration",
+      "x": 4215,
+      "y": 672,
+      "width": 64,
+      "height": 32,
+      "properties": {
+        "kind": "bush",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "checkpoint-3",
+      "type": "checkpoint",
+      "x": 4224,
+      "y": 640,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-21",
+      "type": "ground",
+      "x": 4512,
+      "y": 768,
+      "width": 224,
+      "height": 512,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ice-1",
+      "type": "ice",
+      "x": 4736,
+      "y": 768,
+      "width": 480,
+      "height": 512,
+      "properties": {}
+    },
+    {
+      "id": "ground-23",
+      "type": "ground",
+      "x": 5376,
+      "y": 736,
+      "width": 160,
+      "height": 544,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-24",
+      "type": "ground",
+      "x": 5632,
+      "y": 736,
+      "width": 160,
+      "height": 544,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-25",
+      "type": "ground",
+      "x": 5792,
+      "y": 672,
+      "width": 544,
+      "height": 608,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-8",
+      "type": "decoration",
+      "x": 6043,
+      "y": 480,
+      "width": 48,
+      "height": 192,
+      "properties": {
+        "kind": "pillar",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-9",
+      "type": "decoration",
+      "x": 6068,
+      "y": 624,
+      "width": 48,
+      "height": 48,
+      "properties": {
+        "kind": "bell",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "one-way-1",
+      "type": "oneWay",
+      "x": 6112,
+      "y": 416,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 6150,
+      "y": 390,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "spring-1",
+      "type": "spring",
+      "x": 6048,
+      "y": 656,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "power": 1200
+      }
+    }
+  ]
+}
