@@ -1,0 +1,911 @@
+{
+  "version": 1,
+  "id": "goblin-market-07",
+  "name": "Mask Makers Row",
+  "world": "goblin-market",
+  "order": 7,
+  "number": 211,
+  "width": 8512,
+  "height": 1280,
+  "spawn": {
+    "x": 96,
+    "y": 960
+  },
+  "goal": {
+    "x": 8384,
+    "y": 384
+  },
+  "background": "goblin-market",
+  "music": "goblin-market",
+  "abilities": {
+    "wallJump": true,
+    "dash": true,
+    "doubleJump": true
+  },
+  "objects": [
+    {
+      "id": "ground-1",
+      "type": "ground",
+      "x": 0,
+      "y": 960,
+      "width": 320,
+      "height": 320,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-1",
+      "type": "decoration",
+      "x": 253,
+      "y": 924,
+      "width": 28,
+      "height": 36,
+      "properties": {
+        "kind": "barrel",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-2",
+      "type": "ground",
+      "x": 320,
+      "y": 960,
+      "width": 544,
+      "height": 320,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-2",
+      "type": "decoration",
+      "x": 442,
+      "y": 924,
+      "width": 28,
+      "height": 36,
+      "properties": {
+        "kind": "barrel",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-3",
+      "type": "decoration",
+      "x": 565,
+      "y": 928,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "kind": "crate",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "pumpkin-tortoise-1",
+      "type": "pumpkinTortoise",
+      "x": 464,
+      "y": 938,
+      "width": 28,
+      "height": 22,
+      "properties": {
+        "speed": 85,
+        "direction": "right",
+        "shellSpeed": 460
+      }
+    },
+    {
+      "id": "moving-hazard-1",
+      "type": "movingHazard",
+      "x": 688,
+      "y": 800,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "axis": "vertical",
+        "distance": 128,
+        "speed": 199.9090909090909,
+        "wait": 0.5,
+        "startOffset": 0.014179504243656993,
+        "triggered": false
+      }
+    },
+    {
+      "id": "moving-hazard-2",
+      "type": "movingHazard",
+      "x": 720,
+      "y": 800,
+      "width": 32,
+      "height": 32,
+      "properties": {
+        "axis": "vertical",
+        "distance": 128,
+        "speed": 199.9090909090909,
+        "wait": 0.5,
+        "startOffset": 0.10500132385641336,
+        "triggered": false
+      }
+    },
+    {
+      "id": "balloon-1",
+      "type": "balloon",
+      "x": 1024,
+      "y": 960,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "purple"
+      }
+    },
+    {
+      "id": "balloon-2",
+      "type": "balloon",
+      "x": 1216,
+      "y": 960,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "pink"
+      }
+    },
+    {
+      "id": "balloon-3",
+      "type": "balloon",
+      "x": 1376,
+      "y": 960,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "orange"
+      }
+    },
+    {
+      "id": "ground-3",
+      "type": "ground",
+      "x": 1568,
+      "y": 864,
+      "width": 224,
+      "height": 416,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-4",
+      "type": "decoration",
+      "x": 1682,
+      "y": 752,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-4",
+      "type": "ground",
+      "x": 1792,
+      "y": 864,
+      "width": 96,
+      "height": 416,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-5",
+      "type": "ground",
+      "x": 1888,
+      "y": 864,
+      "width": 64,
+      "height": 416,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "elevator-1",
+      "type": "elevator",
+      "x": 1952,
+      "y": 864,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "direction": "up",
+        "distance": 288,
+        "speed": 130,
+        "mode": "ride",
+        "returnDelay": 1
+      }
+    },
+    {
+      "id": "ground-6",
+      "type": "ground",
+      "x": 1952,
+      "y": 896,
+      "width": 96,
+      "height": 384,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-7",
+      "type": "ground",
+      "x": 2048,
+      "y": 576,
+      "width": 160,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-8",
+      "type": "ground",
+      "x": 2208,
+      "y": 576,
+      "width": 64,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-9",
+      "type": "ground",
+      "x": 2272,
+      "y": 576,
+      "width": 192,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-5",
+      "type": "decoration",
+      "x": 2388,
+      "y": 464,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "checkpoint-1",
+      "type": "checkpoint",
+      "x": 2368,
+      "y": 512,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "timed-platform-1",
+      "type": "timedPlatform",
+      "x": 2528,
+      "y": 576,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 4,
+        "offTime": 1,
+        "offset": 0,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "timed-platform-2",
+      "type": "timedPlatform",
+      "x": 2688,
+      "y": 576,
+      "width": 96,
+      "height": 24,
+      "properties": {
+        "onTime": 4,
+        "offTime": 1,
+        "offset": 0,
+        "signalMode": "none"
+      }
+    },
+    {
+      "id": "ground-10",
+      "type": "ground",
+      "x": 2880,
+      "y": 576,
+      "width": 224,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-6",
+      "type": "decoration",
+      "x": 2905,
+      "y": 548,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "jackOLantern",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "balloon-4",
+      "type": "balloon",
+      "x": 3264,
+      "y": 576,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "orange"
+      }
+    },
+    {
+      "id": "balloon-5",
+      "type": "balloon",
+      "x": 3456,
+      "y": 608,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "purple"
+      }
+    },
+    {
+      "id": "ground-11",
+      "type": "ground",
+      "x": 3616,
+      "y": 448,
+      "width": 128,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-12",
+      "type": "ground",
+      "x": 3744,
+      "y": 448,
+      "width": 128,
+      "height": 832,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-13",
+      "type": "ground",
+      "x": 4000,
+      "y": 480,
+      "width": 224,
+      "height": 800,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-7",
+      "type": "decoration",
+      "x": 4086,
+      "y": 368,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-14",
+      "type": "ground",
+      "x": 4224,
+      "y": 480,
+      "width": 64,
+      "height": 800,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-15",
+      "type": "ground",
+      "x": 4288,
+      "y": 480,
+      "width": 192,
+      "height": 800,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-8",
+      "type": "decoration",
+      "x": 4391,
+      "y": 452,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "jackOLantern",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "checkpoint-2",
+      "type": "checkpoint",
+      "x": 4384,
+      "y": 416,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-16",
+      "type": "ground",
+      "x": 4608,
+      "y": 512,
+      "width": 64,
+      "height": 768,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spring-1",
+      "type": "spring",
+      "x": 4624,
+      "y": 496,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "power": 1100
+      }
+    },
+    {
+      "id": "ground-17",
+      "type": "ground",
+      "x": 4768,
+      "y": 544,
+      "width": 64,
+      "height": 736,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spring-2",
+      "type": "spring",
+      "x": 4784,
+      "y": 528,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "power": 1100
+      }
+    },
+    {
+      "id": "ground-18",
+      "type": "ground",
+      "x": 4928,
+      "y": 544,
+      "width": 64,
+      "height": 736,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spring-3",
+      "type": "spring",
+      "x": 4944,
+      "y": 528,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "power": 1200
+      }
+    },
+    {
+      "id": "ground-19",
+      "type": "ground",
+      "x": 5120,
+      "y": 480,
+      "width": 224,
+      "height": 800,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-9",
+      "type": "decoration",
+      "x": 5227,
+      "y": 456,
+      "width": 32,
+      "height": 24,
+      "properties": {
+        "kind": "candles",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-20",
+      "type": "ground",
+      "x": 5344,
+      "y": 480,
+      "width": 576,
+      "height": 800,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "cannon-1",
+      "type": "cannon",
+      "x": 5824,
+      "y": 440,
+      "width": 48,
+      "height": 40,
+      "properties": {
+        "direction": "left",
+        "interval": 2.201818181818182,
+        "speed": 249.77272727272725,
+        "range": 448,
+        "startOffset": 0.313901144079864
+      }
+    },
+    {
+      "id": "decoration-10",
+      "type": "decoration",
+      "x": 5421,
+      "y": 452,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "jackOLantern",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-11",
+      "type": "decoration",
+      "x": 5364,
+      "y": 456,
+      "width": 32,
+      "height": 24,
+      "properties": {
+        "kind": "candles",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-21",
+      "type": "ground",
+      "x": 5920,
+      "y": 480,
+      "width": 96,
+      "height": 800,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-22",
+      "type": "ground",
+      "x": 6016,
+      "y": 576,
+      "width": 160,
+      "height": 704,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "sludge-1",
+      "type": "sludge",
+      "x": 6016,
+      "y": 528,
+      "width": 160,
+      "height": 48,
+      "properties": {}
+    },
+    {
+      "id": "ground-23",
+      "type": "ground",
+      "x": 6176,
+      "y": 512,
+      "width": 128,
+      "height": 768,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "ground-24",
+      "type": "ground",
+      "x": 6304,
+      "y": 512,
+      "width": 192,
+      "height": 768,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-12",
+      "type": "decoration",
+      "x": 6467,
+      "y": 400,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "checkpoint-3",
+      "type": "checkpoint",
+      "x": 6400,
+      "y": 448,
+      "width": 32,
+      "height": 64,
+      "properties": {}
+    },
+    {
+      "id": "ground-25",
+      "type": "ground",
+      "x": 6496,
+      "y": 512,
+      "width": 448,
+      "height": 768,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "cannon-2",
+      "type": "cannon",
+      "x": 6848,
+      "y": 472,
+      "width": 48,
+      "height": 40,
+      "properties": {
+        "direction": "left",
+        "interval": 2.201818181818182,
+        "speed": 249.77272727272725,
+        "range": 320,
+        "startOffset": 0.5636971474159509
+      }
+    },
+    {
+      "id": "decoration-13",
+      "type": "decoration",
+      "x": 6705,
+      "y": 484,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "jackOLantern",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "decoration-14",
+      "type": "decoration",
+      "x": 6771,
+      "y": 488,
+      "width": 32,
+      "height": 24,
+      "properties": {
+        "kind": "candles",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-26",
+      "type": "ground",
+      "x": 6944,
+      "y": 512,
+      "width": 96,
+      "height": 768,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "balloon-6",
+      "type": "balloon",
+      "x": 7168,
+      "y": 544,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "green"
+      }
+    },
+    {
+      "id": "balloon-7",
+      "type": "balloon",
+      "x": 7360,
+      "y": 576,
+      "width": 32,
+      "height": 40,
+      "properties": {
+        "power": 980,
+        "respawn": 2.2,
+        "color": "orange"
+      }
+    },
+    {
+      "id": "ground-27",
+      "type": "ground",
+      "x": 7552,
+      "y": 416,
+      "width": 224,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-15",
+      "type": "decoration",
+      "x": 7602,
+      "y": 388,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "jackOLantern",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "ground-28",
+      "type": "ground",
+      "x": 7776,
+      "y": 416,
+      "width": 128,
+      "height": 864,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "spring-4",
+      "type": "spring",
+      "x": 7808,
+      "y": 400,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "power": 1200
+      }
+    },
+    {
+      "id": "ground-29",
+      "type": "ground",
+      "x": 7904,
+      "y": 384,
+      "width": 224,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-16",
+      "type": "decoration",
+      "x": 8029,
+      "y": 272,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": true
+      }
+    },
+    {
+      "id": "ground-30",
+      "type": "ground",
+      "x": 8128,
+      "y": 384,
+      "width": 384,
+      "height": 896,
+      "properties": {
+        "style": "auto"
+      }
+    },
+    {
+      "id": "decoration-17",
+      "type": "decoration",
+      "x": 8324,
+      "y": 356,
+      "width": 32,
+      "height": 28,
+      "properties": {
+        "kind": "jackOLantern",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "decoration-18",
+      "type": "decoration",
+      "x": 8154,
+      "y": 272,
+      "width": 24,
+      "height": 112,
+      "properties": {
+        "kind": "lamp",
+        "layer": "back",
+        "flip": false
+      }
+    },
+    {
+      "id": "one-way-1",
+      "type": "oneWay",
+      "x": 8288,
+      "y": 128,
+      "width": 96,
+      "height": 16,
+      "properties": {
+        "style": "wood"
+      }
+    },
+    {
+      "id": "relic-1",
+      "type": "relic",
+      "x": 8326,
+      "y": 102,
+      "width": 20,
+      "height": 20,
+      "properties": {}
+    },
+    {
+      "id": "spring-5",
+      "type": "spring",
+      "x": 8224,
+      "y": 368,
+      "width": 32,
+      "height": 16,
+      "properties": {
+        "power": 1200
+      }
+    }
+  ]
+}
