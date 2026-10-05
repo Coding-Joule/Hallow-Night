@@ -68,6 +68,8 @@ const ICONS: Record<string, string[]> = {
   'toy-factory': ['🧸', '🪀', '🎁'],
   'mirror-manor': ['🪞', '💠', '🕯️'],
   'moon-garden': ['🌙', '🌸', '🦋'],
+  'goblin-market': ['👺', '🪙', '🏮'],
+  'starfall-peak': ['🌠', '🏔️', '✨'],
   'nightmare-realm': ['👁️', '🌀', '🕸️'],
 };
 

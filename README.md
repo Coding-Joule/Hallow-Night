@@ -1,6 +1,6 @@
 # HALLOW NIGHT
 
-An atmospheric Halloween 2D platformer for the browser — 204 levels across 17 worlds on a zoomable world map (the first 84 form *The Placement Exam*; every world ends in a boss fight), a public level editor, and a separate (unlinked) built-in level creator. Everything is data-driven: **every level is a JSON file** interpreted by one game engine.
+An atmospheric Halloween 2D platformer for the browser — 228 levels across 19 worlds on a zoomable world map (the first 84 form *The Placement Exam*; every world ends in a boss fight), a public level editor, and a separate (unlinked) built-in level creator. Everything is data-driven: **every level is a JSON file** interpreted by one game engine.
 
 Built with **TypeScript + Vite + Phaser 3**. No backend, no database, no accounts, no external services. All art is original vector (SVG) generated in code; all sound is synthesised with the Web Audio API.
 
@@ -57,7 +57,7 @@ Movement uses coyote time, jump buffering, variable jump height, corner correcti
 ## Project structure
 
 ```
-levels/                     the 204 built-in levels (<world>/<NN-name>.json) + manifest.json
+levels/                     the 228 built-in levels (<world>/<NN-name>.json) + manifest.json
 index.html, assets/,        the BUILT site served by GitHub Pages (generated — don't edit)
 editor/, secret-creations/
 web/                        page sources (index.html, editor/, secret-creations/)
@@ -128,7 +128,7 @@ An abbreviated example:
 | `name` | Display name |
 | `world` | `old-town`, `graveyard`, `dead-woods`, `haunted-manor`, `catacombs`, `clocktower`, `black-castle` |
 | `order` | Position inside its world (1–5) |
-| `number` | Global level number (1–204); optional for user levels |
+| `number` | Global level number (1–228); optional for user levels |
 | `width`, `height` | Level size in pixels (one tile = 32 px; the screen shows 960 × 540) |
 | `spawn`, `goal` | **Bottom-centre** points (player's feet / exit door threshold) |
 | `background`, `music` | Which world's backdrop and music to use (defaults to `world`) |
@@ -272,7 +272,7 @@ The map lives in `src/ui/MapScreen.ts` and is laid out automatically from the wo
 
 ## The levels
 
-**204 levels: 17 worlds × 12.** Levels 1–11 of each world are stages; level 12 is a boss arena.
+**228 levels: 19 worlds × 12.** Levels 1–11 of each world are stages; level 12 is a boss arena.
 
 **The Placement Exam** (levels 1–84) teaches everything:
 
@@ -300,6 +300,8 @@ The map lives in `src/ui/MapScreen.ts` and is laid out automatically from the wo
 | 15 Mirror Manor | The Mirror Lady |
 | 16 Moon Garden | The Moth Queen |
 | 17 Nightmare Realm | The Nightmare King (9 hits) |
+| 18 Goblin Market *(bonus)* | The Goblin Baron |
+| 19 Starfall Peak *(bonus)* | The Star Wraith |
 
 The levels are built by **`scripts/generate-levels.ts`** from hand-tuned pieces (gaps, spring walls, island hops, chimneys, moving bridges, gates, …) and every one is checked with the reachability bot before it is written: the exit, the relic and any key must be reachable and there must be no spot you can get stuck in. Re-run it with `npx tsx scripts/generate-levels.ts` (or `… <world> <level>` for one level) after changing movement values. Every level hides one **moon relic**, usually on a high ledge with a spring nearby.
 

@@ -77,4 +77,6 @@ export const WORLD_TERRAIN: Record<string, { ground: TerrainStyle; platform: Ter
   'mirror-manor': { ground: 'wood', platform: 'stone', tint: 0xc8f4f4 },
   'moon-garden': { ground: 'earth', platform: 'stone', tint: 0xe8e8ff },
   'nightmare-realm': { ground: 'bone', platform: 'iron', tint: 0xe0b8f0 },
+  'goblin-market': { ground: 'brick', platform: 'wood', tint: 0xf0e8b0 },
+  'starfall-peak': { ground: 'stone', platform: 'stone', tint: 0xc8d8ff },
 };

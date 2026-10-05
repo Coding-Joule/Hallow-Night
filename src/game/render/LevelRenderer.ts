@@ -27,6 +27,8 @@ const AMBIENT_COLORS: Record<string, number> = {
   'mirror-manor': 0xa0f0f0,
   'moon-garden': 0xe0e0ff,
   'nightmare-realm': 0xc050e0,
+  'goblin-market': 0xd0d850,
+  'starfall-peak': 0x90b8ff,
 };
 
 export interface RenderOptions {

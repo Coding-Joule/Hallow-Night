@@ -481,6 +481,30 @@ const EXTRA_THEMES: Partial<Record<WorldId, () => BgTheme>> = {
       layer('bg-moon-garden-mid', 260, flowers(15, 260, '#12122a', '#4a4a80'), 0.32, 0.12, 0),
     ],
   }),
+  'goblin-market': () => ({
+    skyTop: 0x0e0c06,
+    skyBottom: 0x3a3418,
+    moon: { x: 200, y: 110, r: 48, color: '#f4f0c0', glow: 0xe0d870 },
+    stars: true,
+    fogColor: 0xb0a850,
+    darkness: 0.3,
+    layers: [
+      layer('bg-goblin-market-far', 320, tents(23, 320, '#2a2610', '#6a6020'), 0.12, 0.05, 50),
+      layer('bg-goblin-market-mid', 300, houses(57, 300, '#18160a', '#e0c040', 100, 210, 0.25), 0.3, 0.12, 0),
+    ],
+  }),
+  'starfall-peak': () => ({
+    skyTop: 0x040818,
+    skyBottom: 0x1a2a5a,
+    moon: { x: 760, y: 120, r: 70, color: '#e8f0ff', glow: 0xa0c0ff },
+    stars: true,
+    fogColor: 0x8098e0,
+    darkness: 0.2,
+    layers: [
+      layer('bg-starfall-peak-far', 360, hills(71, 360, '#141c3a', 120, 260) + snowCaps(31, 360, '#c8d8ff'), 0.1, 0.05, 60),
+      layer('bg-starfall-peak-mid', 260, pillars(41, 260, '#0c1228') + snowCaps(33, 200, '#ffffff'), 0.32, 0.12, 0),
+    ],
+  }),
   'nightmare-realm': () => ({
     skyTop: 0x0a0010,
     skyBottom: 0x30083a,

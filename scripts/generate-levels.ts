@@ -44,6 +44,8 @@ const NAMES: Record<WorldId, string[]> = {
   'toy-factory': ['Assembly Line', 'Building Blocks', 'Jack-in-the-Box Jump', 'Marble Run', 'Wind-up Walk', 'Spring Coil Corner', 'Puppet Theater', 'Conveyor Chaos', 'Toy Soldier March', 'Spinning Tops', 'Gift Wrap Gallery', 'The Wind-up King'],
   'mirror-manor': ['Looking Glass Lobby', 'Silver Stairs', 'Reflection Hall', 'Crystal Corridor', 'Shattered Salon', 'Gilded Gallery', 'Twin Towers', 'Chandelier Climb', 'Echo Chamber', 'Prism Passage', 'Hall of a Hundred Doors', 'The Mirror Lady'],
   'moon-garden': ['Silver Gate', 'Moonflower Meadow', 'Hedge Maze Hop', 'Fountain Steps', 'Lunar Lilies', 'Moth Wing Walk', 'Crescent Bridge', 'Night Bloom Bounce', 'Stardust Terrace', 'Orchard of Owls', 'The Glass Greenhouse', 'The Moth Queen'],
+  'goblin-market': ['Coin Toss Corner', 'Lantern Stalls', 'Haggle Hollow', 'Trinket Towers', 'Spice Bridge', 'Cauldron Bazaar', 'Mask Makers Row', 'Golden Gutter', 'Pickpocket Path', 'Bargain Bounce', 'Midnight Auction', 'The Goblin Baron'],
+  'starfall-peak': ['Comet Trail', 'Glimmer Slope', 'Meteor Steps', 'Aurora Ledge', 'Frozen Starlight', 'Moonbeam Lift', 'Constellation Climb', 'Nebula Bridge', 'Shooting Star Run', 'Summit Winds', 'The Last Star', 'The Star Wraith'],
   'nightmare-realm': ['First Nightmare', 'Upside-Down Hall', 'Shadow Stairs', 'Falling Dreams', 'Endless Corridor', 'Teeth Gate', 'Whisper Woods', 'Spiral Abyss', 'Clock of Dread', 'The Last Lantern', 'Nightmare Spire', 'The Nightmare King'],
 };
 
@@ -64,6 +66,8 @@ const BOSSES: Record<WorldId, { kind: string; hp: number; speed: number; flyer: 
   'toy-factory': { kind: 'pumpkinKing', hp: 6, speed: 1.55, flyer: false, title: 'the Wind-up King', tint: '#ffd36a' },
   'mirror-manor': { kind: 'gloomGhost', hp: 7, speed: 1.55, flyer: true, title: 'the Mirror Lady', tint: '#b8fff4' },
   'moon-garden': { kind: 'batQueen', hp: 7, speed: 1.65, flyer: true, title: 'the Moth Queen', tint: '#f0f0ff' },
+  'goblin-market': { kind: 'graveGolem', hp: 6, speed: 1.4, flyer: false, title: 'the Goblin Baron', tint: '#d8e070' },
+  'starfall-peak': { kind: 'gloomGhost', hp: 7, speed: 1.5, flyer: true, title: 'the Star Wraith', tint: '#a8c8ff' },
   'nightmare-realm': { kind: 'midnightKing', hp: 9, speed: 1.6, flyer: true, title: 'the Nightmare King', tint: '#e070ff' },
 };
 
@@ -84,6 +88,8 @@ const DECOR: Record<WorldId, string[]> = {
   'toy-factory': ['gear', 'crate', 'barrel', 'clockFace', 'bell', 'jackOLantern'],
   'mirror-manor': ['candelabra', 'portrait', 'bookshelf', 'statue', 'candles', 'banner'],
   'moon-garden': ['bush', 'statue', 'lamp', 'fence', 'pumpkin', 'bush'],
+  'goblin-market': ['crate', 'barrel', 'lamp', 'banner', 'jackOLantern', 'candles'],
+  'starfall-peak': ['pillar', 'statue', 'bush', 'lamp', 'bell', 'pillar'],
   'nightmare-realm': ['deadTree', 'statue', 'candelabra', 'bones', 'torch', 'jackOLantern'],
 };
 
@@ -105,6 +111,8 @@ const WORLD_SIGNS: Record<WorldId, string> = {
   'toy-factory': 'The toys are awake, and everything moves.',
   'mirror-manor': 'Step into a PORTAL to come out somewhere else.',
   'moon-garden': 'So quiet. So pretty. So dangerous.',
+  'goblin-market': 'BONUS WORLD! Goblins sell balloons, cannons and bottled fire.',
+  'starfall-peak': 'BONUS WORLD! Ride the star winds up the frozen peak.',
   'nightmare-realm': 'The final realm: ice, wind, fire, portals… everything at once.',
 };
 
@@ -497,7 +505,7 @@ const segThreat: Seg = (b) => flat(b, b.d > 1.15 ? b.ri(16, 22) : b.ri(10, 16), 
 
 // ── mechanics after the placement exam
 
-const FROZEN = 7, CANDY = 8, SWAMP = 9, HARBOR = 10, LAVA = 11, SKY = 12, TOY = 13, MIRROR = 14, MOON = 15, NIGHTMARE = 16;
+const FROZEN = 7, CANDY = 8, SWAMP = 9, HARBOR = 10, LAVA = 11, SKY = 12, TOY = 13, MIRROR = 14, MOON = 15, NIGHTMARE = 16, GOBLIN = 17, STARFALL = 18;
 
 const segIce: Seg = (b) => {
   // a long icy run that ends in a pit: start braking early!
@@ -648,14 +656,14 @@ const SEGMENTS: SegDef[] = [
   { fn: segConveyor, from: 5, w: 2, boost: 2 },
   { fn: segElevator, from: 5, w: 1, boost: 2 },
   { fn: segPathPlatform, from: 5, w: 1, boost: 2 },
-  { fn: segIce, from: FROZEN, w: 6, worlds: [FROZEN, NIGHTMARE] },
-  { fn: segBalloons, from: CANDY, w: 6, worlds: [CANDY, TOY, MOON, NIGHTMARE] },
+  { fn: segIce, from: FROZEN, w: 6, worlds: [FROZEN, NIGHTMARE, STARFALL] },
+  { fn: segBalloons, from: CANDY, w: 6, worlds: [CANDY, TOY, MOON, NIGHTMARE, GOBLIN] },
   { fn: segLilyPads, from: SWAMP, w: 6, worlds: [SWAMP, NIGHTMARE] },
-  { fn: segCannon, from: HARBOR, w: 6, worlds: [HARBOR, TOY, NIGHTMARE] },
-  { fn: segFlameJets, from: LAVA, w: 6, worlds: [LAVA, NIGHTMARE] },
-  { fn: segUpdraft, from: SKY, w: 5, worlds: [SKY, MOON, NIGHTMARE] },
+  { fn: segCannon, from: HARBOR, w: 6, worlds: [HARBOR, TOY, NIGHTMARE, GOBLIN] },
+  { fn: segFlameJets, from: LAVA, w: 6, worlds: [LAVA, NIGHTMARE, GOBLIN] },
+  { fn: segUpdraft, from: SKY, w: 5, worlds: [SKY, MOON, NIGHTMARE, STARFALL] },
   { fn: segTailwind, from: SKY, w: 3, worlds: [SKY, NIGHTMARE] },
-  { fn: segPortal, from: MIRROR, w: 5, worlds: [MIRROR, NIGHTMARE] },
+  { fn: segPortal, from: MIRROR, w: 5, worlds: [MIRROR, NIGHTMARE, STARFALL] },
 ];
 
 function pickSegment(b: Builder): Seg {
@@ -712,13 +720,14 @@ function finish(b: Builder, name: string, number: number, order: number): LevelD
 function buildStage(wi: number, li: number, seed: number): LevelData {
   const world = WORLDS[wi].id;
   // the placement exam ramps 0 → 1; the worlds after it keep climbing to 1.6
-  const d = wi < 7 ? Math.min(1, (wi * 11 + li) / 76) : 1 + (((wi - 7) * 11 + li) / 109) * 0.6;
+  // the bonus worlds (18+) are shorter, punchier and about as hard as the middle of the post-exam worlds
+  const d = wi < 7 ? Math.min(1, (wi * 11 + li) / 76) : wi >= 17 ? 1.25 + (li / 11) * 0.15 : 1 + (((wi - 7) * 11 + li) / 109) * 0.6;
   const b = new Builder(world, wi, li, d, abilitiesFor(wi), seed);
   b.gy = 30;
   flat(b, 10);
   const spawnRow = b.gy;
   if (li === 0) b.add('sign', 6 * T, spawnRow * T - 32, 32, 32, { text: WORLD_SIGNS[world] });
-  const segCount = Math.min(24, 12 + Math.round(d * 10)) + b.ri(0, 3);
+  const segCount = wi >= 17 ? 12 + b.ri(0, 2) : Math.min(24, 12 + Math.round(d * 10)) + b.ri(0, 3);
   // longer, harder levels after the exam get an extra checkpoint
   const cps = d > 1 ? [1, 2, 3].map((k) => Math.floor((k * segCount) / 4)) : [Math.floor(segCount / 3), Math.floor((2 * segCount) / 3)];
   for (let i = 0; i < segCount; i++) {

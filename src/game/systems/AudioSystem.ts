@@ -59,6 +59,8 @@ const THEMES: Record<WorldId, MusicTheme> = {
   'toy-factory': { root: 60, scale: [0, 2, 3, 5, 7, 8, 10], tempo: 140, pad: 'square', lead: 'triangle', pattern: [0, 2, 0, 4, 0, 2, 0, 5, 0, 2, 0, 4, 3, 2, 1, null], bassEvery: 2 },
   'mirror-manor': { root: 57, scale: [0, 2, 3, 6, 7, 8, 11], tempo: 84, pad: 'sine', lead: 'sine', pattern: [6, 5, 4, null, 3, null, 4, null, 2, 1, 0, null, 1, null, 2, null], bassEvery: 4 },
   'moon-garden': { root: 64, scale: [0, 2, 4, 5, 7, 9, 11], tempo: 70, pad: 'sine', lead: 'triangle', pattern: [0, null, 4, null, 7, null, 5, null, 4, null, 2, null, 0, null, null, null], bassEvery: 8 },
+  'goblin-market': { root: 53, scale: [0, 1, 4, 5, 7, 8, 11], tempo: 126, pad: 'triangle', lead: 'square', pattern: [0, 1, 4, 1, 0, null, 5, 4, 0, 1, 4, 7, 5, null, 4, null], bassEvery: 2 },
+  'starfall-peak': { root: 62, scale: [0, 2, 4, 6, 7, 9, 11], tempo: 96, pad: 'sine', lead: 'triangle', pattern: [0, 4, 7, 4, 9, null, 7, null, 4, 6, 7, null, 11, null, 9, null], bassEvery: 8 },
   'nightmare-realm': { root: 46, scale: [0, 1, 3, 4, 6, 7, 9], tempo: 104, pad: 'sawtooth', lead: 'square', pattern: [0, 0, 6, null, 3, null, 0, 1, 0, 0, 6, null, 4, 3, 1, null], bassEvery: 2 },
 };
 

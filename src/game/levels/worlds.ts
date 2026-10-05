@@ -16,7 +16,9 @@ export type WorldId =
   | 'toy-factory'
   | 'mirror-manor'
   | 'moon-garden'
-  | 'nightmare-realm';
+  | 'nightmare-realm'
+  | 'goblin-market'
+  | 'starfall-peak';
 
 export interface WorldInfo {
   id: WorldId;
@@ -51,6 +53,9 @@ export const WORLDS: WorldInfo[] = [
   { id: 'mirror-manor', index: 15, name: 'Mirror Manor', subtitle: 'Every hallway looks back at you', accent: '#a0e0e0' },
   { id: 'moon-garden', index: 16, name: 'Moon Garden', subtitle: 'Silver flowers that bloom at midnight', accent: '#dcdcf5' },
   { id: 'nightmare-realm', index: 17, name: 'Nightmare Realm', subtitle: 'The last door of Halloween night', accent: '#b04ad0' },
+  // bonus worlds
+  { id: 'goblin-market', index: 18, name: 'Goblin Market', subtitle: 'Everything is for sale, even your shadow', accent: '#c8d040' },
+  { id: 'starfall-peak', index: 19, name: 'Starfall Peak', subtitle: 'Where the night sky touches the ground', accent: '#80b0ff' },
 ];
 
 export const WORLD_IDS = WORLDS.map((w) => w.id);
